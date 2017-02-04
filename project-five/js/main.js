@@ -31,7 +31,7 @@
    // });
 
 ////////////////////////////////////////////////////////////
-c
+
 /*-------Start scroll to menu-border js-------------*/
       $(window).scroll(function () {
           if ($(".navbar-fixed-top").offset().top > 50) {
