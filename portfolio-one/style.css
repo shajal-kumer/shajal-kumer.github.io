@@ -516,7 +516,7 @@ a.read-more:hover {
 }
 /*
 * ----------------------------------------------------------------------------------------
-* WHAT I DO SECTION
+* My WORK SECTION
 * ----------------------------------------------------------------------------------------
 */
 .my-work-sec:hover .title-sec h2:after {
@@ -547,9 +547,6 @@ a.read-more:hover {
     transition: all 0.3s ease-in-out 0s;
     z-index: 2
 }
-.singel-work:hover .overlay {
-    transform: scale(1);
-}
 .overlay:after {
     position: absolute;
     content: "";
@@ -565,6 +562,12 @@ a.read-more:hover {
 }
 .singel-work:hover .overlay:after {
     opacity: 1
+}
+.singel-work:hover .overlay {
+    transform: scale(1);
+}
+.popup {
+  margin: 0 auto;
 }
 .overlay i {
     width: 45px;
