@@ -17,21 +17,6 @@
         $('.overlay-text').css('height', spi + 'px');
 
 
-      // Scroll To menu background color change......
-   //    var scroll_start = 0;
-   //       var startchange = $('.navbar');
-   //       var offset = startchange.offset();
-   //       $(document).scroll(function() { 
-   //          scroll_start = $(this).scrollTop();
-   //          if(scroll_start > offset.top) {
-   //        $('.navbar').css('background-color', '#222').addClass('fadeIn');
-   //     } else {
-   //        $('.navbar').css('background-color', 'transparent');
-   //     }
-   // });
-
-////////////////////////////////////////////////////////////
-
 /*-------Start scroll to menu-border js-------------*/
       $(window).scroll(function () {
           if ($(".navbar-fixed-top").offset().top > 50) {
@@ -44,7 +29,7 @@
       });
   /*-------End scroll to menu-border js-------------*/
 
- // Scroll to menu active class active
+  
         $(document).on("scroll", onScroll);
         function onScroll(event){
             var scrollPos = $(document).scrollTop();
@@ -62,16 +47,14 @@
         };
 
 
-////////////////////////////////////////////////////
-
 /*--------Bootstrap Menu Fix For Mobile----------*/
 
       $('.navbar-default .navbar-nav li a').on('click', function () {
           $('.navbar-collapse ').removeClass('in');
       });
-      /*--------Bootstrap Menu Fix For Mobile-----------*/
+/*--------Bootstrap Menu Fix For Mobile-----------*/
 
-// menu click to animate scroll
+/* menu click to animate scroll*/
     $('.mynav li a').click(function(){
         $('html, body').animate({
             scrollTop: $( $(this).attr('href') ).offset().top
@@ -85,9 +68,8 @@
         $(this).addClass("active");
     });
 
-///////////////////////////////////////////////////
 
-// scroll to Reveal or scroll on animate div
+      /* scroll to Reveal or scroll on animate div*/
         window.sr = ScrollReveal({
           easing   : 'ease-in-out',
           distance: '200px',
