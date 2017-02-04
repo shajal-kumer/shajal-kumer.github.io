@@ -1,0 +1,293 @@
+/* Extra large Desktop - 1920px */
+@media only screen and (min-width: 1920px) {
+      
+    .container{
+        width: 1880px
+    }  
+    
+}/*End Query*/
+
+/* Large Desktop - 1366px */
+@media only screen and (min-width: 1200px) and (max-width: 1919px){
+     
+    .container{
+        width: 1170px
+    }   
+    
+}/*End Query*/
+
+/* Medium Desktop - 992px - 1024px */
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+    
+    .container{
+        width: 970px;
+    }
+    .form-control.text, .form-control.email {
+      width: 220px;
+    }
+    .form-control.email {
+      margin-left: 0;
+    }
+    .form-inline .form-control.textarea {
+      width: 325px;
+    }
+    .footer-social-menu i {
+      font-size: 15px;
+      height: 30px;
+      line-height: 30px;
+      margin-right: 6px;
+      width: 30px;
+    }
+            
+}/*End Query*/
+
+/* Tablet - 768px */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+     
+    .container{
+        width: 750px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .row {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+    .col-sm-4 {
+        padding: 0 10px;
+    }
+    .welcome-title h1 {
+      font-size: 55px;
+      line-height: 55px;
+    }
+    .welcome-title p {
+      margin-bottom: 20px;
+      padding: 0 0;
+    }
+    .about-com-left h1 {
+      font-size: 35px;
+      line-height: 32px;
+      margin-bottom: 15px;
+    }   
+    .about-com-left h2 {
+      font-size: 24px;
+    }
+    .why-choose-us i {
+      background: rgba(0, 0, 0, 0) url("img/p-one.png") no-repeat scroll 0 0 / 140px auto;
+      height: 140px;
+      width: 140px;
+    }
+    .why-choose-us .fa {
+      font-size: 40px;
+      line-height: 140px;
+    }
+    .my-btn {
+        margin: 0px 5px
+    }
+    .form-control.email {
+      margin-left: 0;
+    }
+    .btn-default {
+      margin-left: 0;
+      margin-top: 15px;
+      padding: 8px 20px;
+    }
+    .review-btm-left h1 {
+      margin: 0 0 15px;
+    }
+    .review-btm-left h2 {
+      line-height: 35px;
+    }
+    .single-footer {
+      margin-bottom: 50px;
+    }
+    .date {
+      font-size: 10px;
+      height: 45px;
+      line-height: 18px;
+      margin-right: 10px;
+      width: 45px;
+    }
+    .single-footer ul li {
+      margin-bottom: 10px;
+    }
+    .f-col-2, .f-col-4 {
+      text-align: center;
+    }
+    .f-col-3 ul li {
+        margin-bottom: 25px
+    }
+   .post {
+      line-height: 20px;
+      width: 50%;
+    }
+    .address i {
+      margin-right: 5px;
+    }
+    .address .pnone-nm- {
+      margin-left: 15px;
+    }
+    .reviews .owl-controls .owl-dots {
+      margin-left: -35px;
+      position: absolute;
+    }
+    .single-choose-us {
+      margin-bottom: 40px
+    }
+                    
+}/*End Query*/
+
+/*   All Mobile Device */
+@media only screen and (max-width: 767px){
+     
+    .container{
+        width: 100%;
+        padding: 0px 15px;
+        box-sizing: border-box;
+    } 
+    
+.navbar-toggle {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-color: #fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+    .reviews .owl-controls .owl-dots {
+        margin-left: -65px
+    }  
+    .xs-center {
+      text-align: center;
+    }
+        .welcome-title h1 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    .welcome-title a {
+      margin: 0 15px;
+    }
+    .welcome-title h2 {
+      font-size: 26px;
+      line-height: 26px;
+    }
+        .welcome-title p {
+      margin-bottom: 50px;
+      padding: 0 
+    }
+    .about-com-left h1 {
+      font-size: 30px;
+    }
+    .about-com-left h2 {
+      font-size: 20px;
+    }
+    .single-choose-us {
+          margin-bottom: 40px
+        }
+    .single-service {
+      text-align: center;
+      margin-bottom: 40px
+    }
+    .single-service img {
+      margin: 0 auto 30px;
+    }
+    .form-control.email {
+      margin-left: 0px;
+    }
+    .btn-default {
+      margin-left: 0px;
+      margin-top: 15px
+    }
+    .review-btm-left {
+      margin-bottom: 20px;
+    }
+    .single-footer {
+      text-align: center;
+      margin-bottom: 30px
+    }
+    .single-footer img {
+      margin: 0px auto 25px auto;
+    }
+    .single-footer h2 {
+      margin-bottom: 25px;
+    }
+    .f-col-3 ul li {
+      margin-left: -50%
+    }
+  .header-top {
+    display: none
+  }
+}/*End Query*/
+
+/* Wide Screen Mobile Device */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     
+    .container{
+        width: 450px;
+        /*background: #da52eb;*/
+    }   
+     .reviews .owl-controls .owl-dots {
+        margin-left: -65px
+    }  
+    .xs-center {
+      text-align: center;
+    }
+        .welcome-title h1 {
+      font-size: 40px;
+      line-height: 40px;
+    }
+    .welcome-title a {
+      margin: 0 15px;
+    }
+    .welcome-title h2 {
+      font-size: 26px;
+      line-height: 26px;
+    }
+        .welcome-title p {
+      margin-bottom: 50px;
+      padding: 0 
+    }
+    .about-com-left h1 {
+      font-size: 30px;
+    }
+    .about-com-left h2 {
+      font-size: 20px;
+    }
+    .single-choose-us {
+          margin-bottom: 40px
+        }
+    .single-service {
+      text-align: center;
+      margin-bottom: 40px
+    }
+    .single-service img {
+      margin: 0 auto 30px;
+    }
+    .form-control.email {
+      margin-left: 0px;
+    }
+    .btn-default {
+      margin-left: 0px;
+      margin-top: 15px
+    }
+    .review-btm-left {
+      margin-bottom: 20px;
+    }
+    .single-footer {
+      text-align: center;
+      margin-bottom: 30px
+    }
+    .single-footer img {
+      margin: 0px auto 25px auto;
+    }
+    .single-footer h2 {
+      margin-bottom: 25px;
+    }
+    .f-col-3 ul li {
+      margin-left: -50%
+    }
+    
+}/*End Query*/
