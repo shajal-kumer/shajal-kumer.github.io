@@ -45,7 +45,7 @@
       $('.hand-picked').height(hpHeight + 'px');
 
 
-      $('.slide-item').imagesLoaded({
+      $('.slide-item').imagesLoaded().progress({
         
         background: true
 
