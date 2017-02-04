@@ -200,7 +200,7 @@ li {
     display: table;
     z-index: 99999999;
     position: relative;
-    height: 100%
+    overflow: hidden;
 }
 .slide-content-inner {
     display: table-cell;

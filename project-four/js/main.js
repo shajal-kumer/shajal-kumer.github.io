@@ -16,7 +16,7 @@
         $(".slider").owlCarousel({
 			    items: 1,
 			    loop: true,
-			    autoplay: 0,
+			    autoplay: 5000,
                 smartSpeed: 800
         });  
 
@@ -33,7 +33,9 @@
 
         $(".testimonial").owlCarousel({
 			    items: 1,
-			    autoplay: 1,
+                loop: true,
+                autoplay: 5000,
+                smartSpeed: 800
         });
         /*----------Bootstrap Menu Fix For Mobile---------------*/
     $(document).on('click', '.navbar-collapse.in', function(e) {
