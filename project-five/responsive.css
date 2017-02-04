@@ -1,0 +1,98 @@
+/* Extra large Desktop - 1920px */
+@media only screen and (min-width: 1920px) {
+      
+    .container{
+        width: 1880px
+    }  
+    
+}/*End Query*/
+
+/* Large Desktop - 1366px */
+@media only screen and (min-width: 1200px) and (max-width: 1919px){
+     
+    .container{
+        width: 1170px
+    }   
+    
+}/*End Query*/
+
+/* Medium Desktop - 992px - 1024px */
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+    
+    .container{
+        width: 970px;
+    }
+    
+    
+}/*End Query*/
+
+/* Tablet - 768px */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+     
+    .container{
+        width: 750px;
+    }   
+    .welcome-title h1 {
+      font-size: 65px;
+      line-height: 70px;
+    }
+    .welcome-title h2 {
+      font-size: 30px;
+      line-height: 30px;
+    }
+    .single-team-mem img {
+        width: 200px;
+        height: 200px
+    }
+}/*End Query*/
+
+/*   All Mobile Device */
+@media only screen and (max-width: 767px){
+     
+    .container{
+        width: 100%;
+        padding: 0px 15px;
+        box-sizing: border-box;
+    }   
+    .welcome-title h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .welcome-title h1 {
+        font-size: 48px;
+        line-height: 50px;
+    }
+    .single-service, .single-team-mem {
+        margin-bottom: 40px
+    }
+    .navbar-collapse {
+        background: #222;
+    }
+    .single-team-mem img {
+        width: 200px;
+        height: 200px
+    }
+}/*End Query*/
+
+/* Wide Screen Mobile Device */
+@media only screen and (min-width: 480px) and (max-width: 767px){
+     
+    .container{
+        width: 450px;
+    } 
+    .welcome-title h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .welcome-title h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+    .single-team-mem {
+        margin-bottom: 30px
+    }
+    .navbar-collapse {
+        background: #222;
+    }  
+    
+}/*End Query*/

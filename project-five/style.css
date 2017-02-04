@@ -1,0 +1,321 @@
+
+html,
+body {height: 100%}
+body {
+    font-family: 'Roboto Slab', serif;
+    color: #777777;
+    font-size: 16px;
+    background: #fff;
+}
+h1, h2, h3, h4, h5, h6  {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    color: #222222;
+}
+h2 {
+  text-transform: uppercase;
+}
+.fix {
+  overflow: hidden;
+}
+.title-area {
+  margin-bottom: 60px
+}
+.title-area h2 {
+  font-size: 40px;
+}
+.title-area p {
+  font-family: 'Droid Serif', serif;
+}
+img {display: block; max-width: 100%}
+
+.navbar-nav > li > a.active{
+  background: #111 none repeat scroll 0 0;
+  border-radius: 6px;
+  transition: all 0.5s ease-in-out;
+}
+.preloader-area {
+    background: #181818;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 99999;
+}
+#preloader {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -60px 0 0 -60px;
+    background: url(img/preloader.gif);
+}
+/*------------------------*/
+
+a:hover {
+  text-decoration: none;
+}
+.header-area {
+  background: url(img/welcome.jpg) no-repeat scroll 0 0 / cover;
+  height: 100%;
+  position: relative;
+  box-sizing: content-box;
+  z-index: 9999;
+}
+.header-area:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.header-area .welcome-message, .header-area .welcome-message div {
+  height: 100%;
+}
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+.navbar-default .navbar-nav > li > a {
+  color: white;
+  transition: all 0.5s ease-in-out;
+  margin: 0px 0px 10px 10px
+}
+.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+  background: #111 none repeat scroll 0 0;
+  border-radius: 6px;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+  background-color: #fed337;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background: #fff;
+}
+.navbar {
+  padding: 25px 0px;
+  transition: .3s
+}
+.menu-bg{
+  background: #222;
+  padding: 15px 0px  
+}
+.welcome-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.welcome-title h2, h1 {
+  color: #fff
+}
+.welcome-title h2 {
+  font-family: 'Droid Serif', serif;
+  font-size: 40px;
+  line-height: 60px;
+}
+.welcome-title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 75px;
+  font-weight: bold;
+  line-height: 90px;
+}
+.more {
+  background: #fed337 none repeat scroll 0 0;
+  border-radius: 6px;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  padding: 20px 50px;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.more:hover {
+    color: #fff
+}
+/* Service _area */
+.services-area {
+  padding: 120px 0px;
+  text-align: center;
+}
+.single-service .fa {
+  border: 3px solid #fed136;
+  border-radius: 50%;
+  color: #fed136;
+  font-size: 50px;
+  height: 95px;
+  line-height: 95px;
+  margin-bottom: 30px;
+  width: 95px;
+  transform: scale(1);
+  transition: all .6s ease-in-out;
+}
+.single-service .fa:hover {
+  transform: scale(1.2);
+}
+.single-service h3  {
+  font-size: 18px
+}
+/*  Portfolio Area */
+.portfolio-area {
+  background-color: #f7f7f7;
+  padding: 120px 0px 70px;
+}
+.single-portfolio {
+  background-color: #fff;
+  margin-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.single-portfolio h2 {
+  font-size: 18px;
+}
+.single-portfolio h3, .single-team-mem h3 {
+  font-size: 14px;
+  font-family: 'Droid Serif', serif;
+}
+.s-p-text {
+  padding: 20px 0px;
+  transition: all 0.3s ease-in-out;
+}
+.s-p-img {
+  position: relative;
+}
+.s-p-img:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0px;
+  background-color: rgba(0,0,0, .5);
+  -webkit-transition:all 0.4s linear;
+  transition:all 0.4s linear;
+  visibility: hidden;
+}
+.single-portfolio:hover .s-p-img:before {
+  top: 0;
+  visibility: visible;
+}
+.overlay-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  transition:all 0.4s linear;
+}
+.overlay-text h2 {
+  border: 4px solid #d0a462;
+  color: #d0a462;
+  margin: 0 0 0 25%;
+  width: 50%;
+  padding: 5px;
+}
+.single-portfolio:hover .overlay-text {
+  visibility: visible;
+  animation-name: bounce;
+  cursor: pointer;
+}
+/* Team Area */
+.team-area-header {
+  padding-bottom: 85px
+}
+.team-area img {
+  margin: 0 auto;
+}
+.team-area {
+  padding: 75px 0px;
+}
+.single-team-mem img{
+  border-radius: 50%;
+  width: 292px;
+  height: 292px;
+  border: 1px solid #333;
+  padding: 10px
+}
+.single-team-mem h2 {
+  font-size: 16px;
+  margin-top: 25px
+}
+.single-team-mem .fa {
+  border: 2px solid #222222;
+  border-radius: 50%;
+  color: #222;
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 5px;
+  width: 40px;
+}
+/* contact-us-area */
+.contact-us-area {
+  padding: 120px 0px 0px;
+  background: #222;
+}
+.contact-us-inner {
+  background: rgba(0, 0, 0, 0) url("img/map.png") no-repeat scroll 120% 0;
+  padding-bottom: 120px;
+}
+.contact-us-inner .title-area h2 {
+  color: #fff
+}
+.form-control {
+  height: 45px
+}
+.form-group {
+  margin-bottom: 30px
+}
+.text-area {
+  height: 194px !important
+}
+/*Footer Area*/
+
+.footer {
+  overflow: hidden;
+  padding: 40px 0px;
+}
+.copy-right-text {
+  display: flex;
+  flex-direction: column;
+  float: left;
+  height: 40px;
+  justify-content: center;
+  width: 42%;
+}
+.copy-right-text p {
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+.footer-social-menu {
+  float: left
+}
+.footer-social-menu .fa {
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  background: #222;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  margin: 0px 5px;
+}
+.fa:hover {
+  color: #fed337;
+  transition: all .3s ease;
+  border-color: #fed337
+}
+
+
+
+
+
