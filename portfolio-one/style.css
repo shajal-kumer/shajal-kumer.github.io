@@ -534,6 +534,21 @@ a.read-more:hover {
     margin-bottom: 20px;
     overflow: hidden;
 }
+.single-work-inner {
+    position: relative;
+}
+.single-work-inner:after {
+    position: absolute;
+    content: "";
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,214,100,.5);    
+    transition: all 0.3s ease-in-out 0s;
+    display: block;
+    opacity: 0;
+}
 .overlay {
     position: absolute;
     top: 0px;
@@ -547,20 +562,7 @@ a.read-more:hover {
     transition: all 0.3s ease-in-out 0s;
     z-index: 2
 }
-.overlay:after {
-    position: absolute;
-    content: "";
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,214,100,.5);    
-    transition: all 0.3s ease-in-out 0s;
-    display: block;
-    opacity: 0;
-    z-index: -1
-}
-.singel-work:hover .overlay:after {
+.singel-work:hover .single-work-inner:after{
     opacity: 1
 }
 .singel-work:hover .overlay {
