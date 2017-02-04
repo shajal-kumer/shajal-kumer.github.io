@@ -43,6 +43,21 @@
       var hpHeight = $('.hand-picked').height();
 
       $('.hand-picked').height(hpHeight + 'px');
+
+
+      $('.slide-item').imagesLoaded({
+        
+        background: true
+
+      });
+
+
+
+
+
+
+
+
         
     });// end of document ready function
 })(jQuery);
