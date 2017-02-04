@@ -134,7 +134,6 @@ a:hover {
   justify-content: center;
   height: 692px;
 }
-.slide-text:after {}
 .slide-text-inner {
   border: 3px solid #fff;
   width: 30%;
@@ -165,20 +164,36 @@ a:hover {
 }
 .slide-text-inner p{
   font-size: 30px;color: #000;
-  margin-bottom: 30px
+  margin-bottom: 30px;
 }
 a.shop-now{
-  background: #f09d67;
   padding: 15px 0px;
   color: #fff;
-  font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   display: block;
   width: 150px;
-  margin: 50px auto
+  margin: 50px auto;
+  border: 1px solid #f0975d;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-transform: uppercase;
+  text-align: center;
 }
-a.shop-now:hover {
-  color: #222
+a.shop-now:after{
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #f09d67;
+  z-index: -1;
+  transition: all .6s ease;
+}
+a.shop-now:hover:after {
+  color: #fff;
+  transform: translateX(-100%);
 }
 .slider .owl-controls .owl-dots {
   bottom: 15px;
@@ -448,7 +463,7 @@ transform: rotate(90deg);
   -moz-transition: all .7s ease;
 
 }
-.s-picked-link a{
+/*.s-picked-link a{
   display: inline-block;
   padding: 10px 15px;
   background: #f0975d;
@@ -462,7 +477,7 @@ transform: rotate(90deg);
   background: transparent;
   border: 1px solid #f0975d;
   color: #f0975d;
-}
+}*/
 .picked-mid{
   height: 100%
 }

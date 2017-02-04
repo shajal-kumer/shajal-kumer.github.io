@@ -7,7 +7,8 @@
       		items: 1,
       		nav: true,
       		loop: true,
-      		autoplay: 1,
+      		autoplay: 3000,
+          smartSpeed:1000,
       		navText : ['<i class="fa fa-angle-left"></i>' , '<i class="fa fa-angle-right"></i>']
 
       });
@@ -15,7 +16,8 @@
        $(".brand-area").owlCarousel({
        		items : 6,
       		loop: true,
-      		// autoplay: true,
+      		autoplay: 4000,
+          smartSpeed: 1000,
       		responsiveClass:true,
 		    responsive:{
 		        0:{
@@ -40,7 +42,7 @@
 
       var hpHeight = $('.hand-picked').height();
 
-      $('.hand-picke').height(hpHeight + 'px');
+      $('.hand-picked').height(hpHeight + 'px');
         
     });// end of document ready function
 })(jQuery);
