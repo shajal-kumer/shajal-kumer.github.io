@@ -11,7 +11,7 @@
         });
         $('.blog-post').owlCarousel({
         	items: 3,
-        	// autoplay: 5000,
+        	autoplay: 5000,
         	smartSpeed: 700,
         	loop: 1,
         	margin: 30,
