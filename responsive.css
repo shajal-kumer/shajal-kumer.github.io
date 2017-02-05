@@ -22,9 +22,6 @@
     .container{
         width: 970px;
     }
-    .welcome-text h1 {
-        font-size: 80px
-    }
     
 }/*End Query*/
 
@@ -33,22 +30,22 @@
      
     .container{
         width: 750px;
-    }
-    .navbar-default .navbar-nav > li > a {
-        margin: 0px 8px;
-    }
-    .welcome-text h1 {
-        font-size: 60px
-    }
-    .welcome-text h2 {
-        font-size: 18px
-    }
-    .contact-left-sec{
+    }   
+    .about-info{
         text-align: center;
-        margin-bottom: 50px
+        margin-top:30px 
     }
-    .footer-social-menu {
-        text-align: left;
+    .single-service {
+        margin-bottom: 30px
+    }
+    .contact-left-sec {
+        text-align: center;
+        margin-bottom: 30px
+    }
+    .contact-right-sec .submit{
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px
     }
     
 }/*End Query*/
@@ -61,24 +58,40 @@
         padding: 0px 15px;
         box-sizing: border-box;
     }
-    .welcome-text h1 {
-        font-size: 30px
+    .welcome-text h1{
+        font-size: 26px;
     }
-    .welcome-text h2 {
-        font-size: 15px
-    }
-    .contact-left-sec{
+    .welcome-text h2{
+        font-size: 16px;
+    }   
+    .about-info{
         text-align: center;
-        margin-bottom: 50px
+        margin-top:30px 
     }
-    .testimonial {
-        width: 100%
+    .about-info h1{
+        font-size: 28px 
     }
-    .footer-social-menu {
-        text-align: left;
+    .about-info h2{
+        font-size: 16px 
     }
-   
-    
+    .single-service {
+        margin-bottom: 30px
+    }
+    .hire-me h2{
+        font-size: 20px;
+    }
+    .hire-me h1{ 
+        font-size: 26px;
+    }
+    .contact-left-sec {
+        text-align: center;
+        margin-bottom: 30px
+    }
+    .contact-right-sec .submit{
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px
+    }
 }/*End Query*/
 
 /* Wide Screen Mobile Device */
@@ -87,18 +100,39 @@
     .container{
         width: 450px;
     }
-    .welcome-text h1 {
-        font-size: 35px
+        .welcome-text h1{
+        font-size: 26px;
     }
-    .welcome-text h2 {
-        font-size: 15px
-    }
-    .contact-left-sec{
+    .welcome-text h2{
+        font-size: 16px;
+    }   
+    .about-info{
         text-align: center;
-        margin-bottom: 50px
+        margin-top:30px 
     }
-    .testimonial {
-        width: 100%
+    .about-info h1{
+        font-size: 28px 
+    }
+    .about-info h2{
+        font-size: 16px 
+    }
+    .single-service {
+        margin-bottom: 30px
+    }
+    .hire-me h2{
+        font-size: 20px;
+    }
+    .hire-me h1{ 
+        font-size: 26px;
+    }
+    .contact-left-sec {
+        text-align: center;
+        margin-bottom: 30px
+    }
+    .contact-right-sec .submit{
+        margin: 0 auto;
+        display: block;
+        margin-top: 30px
     }   
     
 }/*End Query*/

@@ -5,21 +5,17 @@
          <meta http-equiv="X-UA-Compatible" content="IE=edge">
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <title>Bootstrap 101 Template</title>
-         <!-- GOOGLE FONT -->
-         <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700" rel="stylesheet">
+         <!-- GOOGLE FONTS -->
+         <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700|Lato:300,400,700" rel="stylesheet">
          <!-- Fontawesome -->
          <link rel="stylesheet" href="css/font-awesome.min.css">
-         <!-- OWl Carousel  -->
+         <!-- OWl Carousel  css-->
          <link href="css/owl.carousel.css" rel="stylesheet">
          <!-- Animate css  -->
          <link href="css/animate.css" rel="stylesheet">
-         <!-- MAGNIFIC POPUP css  -->
-         <link href="css/magnific-popup.css" rel="stylesheet">
-         <!-- AOS css  -->
-         <link href="css/aos.css" rel="stylesheet">
-         <!-- Bootstrap -->
+         <!-- Bootstrap css-->
          <link href="css/bootstrap.min.css" rel="stylesheet">
-         <!-- Maincss -->
+         <!-- Main css -->
          <link rel="stylesheet" href="style.css">
         <!-- Responsive -->
         <link rel="stylesheet" href="responsive.css">
@@ -31,13 +27,13 @@
          <![endif]-->
     </head>
     <body>
-        <!-- START PRELOADER -->
+         <!-- =============== START PRELOADER  =============== -->
             <div class="animationload">
                 <div id="intro"></div>
             </div>
-        <!-- END PRELOADER -->
-        <!-- START HEADER SEC -->
-        <header class="header-sec" id="home">
+         <!-- =============== END PRELOADER  =============== -->
+         <!-- =============== START HEADER SEC =============== -->
+        <header class="header-sec" id="home" data-stellar-background-ratio="0.6">
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container">
                     <div class="navbar-header">
@@ -47,205 +43,102 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand" href="#"><h1>SK.</h1></a>
+                      <a class="navbar-brand" href="#">
+                          <h1>shajal</h1>
+                      </a>
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                       <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a class="smoth-scroll" href="#home">Home</a></li>
+                        <li><a class="smoth-scroll" href="#home">Home</a></li>
                         <li><a class="smoth-scroll" href="#about">About</a></li>
-                        <li><a class="smoth-scroll" href="#resume">Resume</a></li>
-                        <li><a class="smoth-scroll" href="#work">work</a></li>
-                        <li><a class="smoth-scroll" href="#testimonial">testimonial</a></li>
-                        <li><a class="smoth-scroll" href="#blog">Blog</a></li>
+                        <li><a class="smoth-scroll" href="#skill">Skill</a></li>
+                        <li><a class="smoth-scroll" href="#portfolio">Portfolio</a></li>
                         <li><a class="smoth-scroll" href="#contact">Contact</a></li>
                       </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
+                    </div><!-- navbar-collapse -->
+                </div><!-- container-->
             </nav>
-            <div id="particles-js"></div>
-            <div class="welcome-hero-area" data-stellar-background-ratio="0.6">
+            <div class="welcome-hero-area">
                 <div class="display-table-cell">
                     <div class="welcome-text">
-                        <h1>I'm Shajal kumer</h1>
-                        <h2>I'm Front-End web developer from bangladesh</h2>
-                        <a href="#contact" class="smoth-scroll read-more welcome-btn">Hire me</a>
+                        <img class="center-block" src="img/shajal.jpg" alt="">
+                        <h1>HEllo I'm Shajal KUmer</h1>
+                        <h2>Front-end web developer!</h2>
+                        <a href="#about" class="read-more smoth-scroll mlr wl-read-more">About more</a>
+                        <a href="#contact" class="read-more smoth-scroll mlr wl-read-more">Hire me</a>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- END HEADER SEC -->
-        <!-- START ABOUT SEC -->
+        <!-- =============== END HEADER SEC =============== -->
+
+        <!-- =============== START ABOUT SEC =============== -->
         <section class="about-sec padding-sec" id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="title-sec text-center">
-                            <h2>About me.</h2>
-                        </div>
+                    <div class="col-md-4">
+                        <img src="img/me.jpg" alt="">
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5 col-sm-12">
-                        <div class="about-left-sec">
-                            <h2>Learn more about me</h2>
-                            <h1>I'm front end web developer</h1>
-                        </div>
-                    </div>
-                    <div class="col-md-7 col-sm-12">
-                        <div class="about-right-sec">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, aperiam quidem iste sint saepe, facilis dicta quisquam quibusdam error sunt </p>
-                        <br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam omnis nemo, quaerat eos obcaecati unde aliquam ratione, quis reiciendis. Reiciendis voluptatem animi eum sunt accusamus, dolores hic vero obcaecati Repudiandae, accusamus?</p>
-                        <a href="#work" class="smoth-scroll read-more about-btn">my work</a>
+                    <div class="col-md-6">
+                        <div class="about-info">
+                            <h1>learn more about me</h1>
+                            <h2>Creative Front-end web developer</h2>
+                            <p>I'm Shajal Kumer, Front-End Web Developer. I have experience for more than two years.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt reprehenderit, nisi fuga autem repellat ratione. Vero ad doloribus repellendus, voluptatem.</p>
+                            <a href="#portfolio" class="read-more smoth-scroll">check my work</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- END ABOUT SEC -->
-        <!-- START WHAT I DO SEC -->
-        <section class="services-sec padding-sec" id="services">
+        <!-- =============== END ABOUT SEC =============== -->
+
+          <!-- =============== START SERVICES SEC =============== -->
+        <section class="services-sec padding-sec" id="skill">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="title-sec text-center">
-                            <h2>WHat I do</h2>
+                        <div class="title-sec">
+                            <h2>my skills</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="200">
-                     <a href="#">
-                        <div class="single-service text-center">
-                            <i class="fa fa-laptop "></i>
-                            <h3>Web Design</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="400">
-                        <a href="#">
-                        <div class="single-service text-center">
-                            <i class="fa fa-pencil "></i>
-                            <h3>Development</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="600">
-                     <a href="#">
-                        <div class="single-service text-center">
-                            <i class="fa fa-camera "></i>
-                            <h3>Photography</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="800">
-                     <a href="#">
-                        <div class="single-service text-center">
-                            <i class="fa fa-line-chart  "></i>
-                            <h3>Branding</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="1000">
-                     <a href="#">
-                        <div class="single-service text-cent">
-                            <i class="fa fa-laptop "></i>
-                            <h3>Web Design</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="1200">
-                        <a href="#">
-                        <div class="single-service text-center">
-                            <i class="fa fa-pencil "></i>
-                            <h3>Development</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="1400">
-                     <a href="#">
-                        <div class="single-service text-center">
-                            <i class="fa fa-camera "></i>
-                            <h3>Photography</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6" data-aos="zoom-in-up"  data-aos-delay="1600">
-                     <a href="#">
-                        <div class="single-service text-center">
-                            <i class="fa fa-line-chart  "></i>
-                            <h3>Branding</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                        </div>
-                    </a>
-                    </div>
-            </div>
-        </section>
-        <!-- END WHAT I DO SEC -->
-        <!-- START RESUME SEC -->
-        <section class="resume-sec padding-sec" id="resume">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="title-sec text-center">
-                            <h2>Resume.</h2>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".2s">
+                            <i class="fa fa-html5 "></i>
+                            <h3>Html 5</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6" data-aos="slide-right">
-                        <div class="education">
-                            <h2>education:</h2>
-                            <div class="single-edu">
-                                <h4>Computer Sciense</h4>
-                                <h5>Google University,Melborne</h5>
-                                <span class="edu-year">2001-2005</span>
-                            </div>
-                            <div class="single-edu">
-                                <h4>Computer Sciense</h4>
-                                <h5>Google University,Melborne</h5>
-                                <span class="edu-year">2001-2005</span>
-                            </div>
-                            <div class="single-edu">
-                                <h4>Computer Sciense</h4>
-                                <h5>Google University,Melborne</h5>
-                                <span class="edu-year">2001-2005</span>
-                            </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".4s">
+                            <i class="fa fa-css3"></i>
+                            <h3>Css 3</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
                         </div>
                     </div>
-                    <div class="col-md-6" data-aos="slide-left">
-                        <div class="experience">
-                            <h2>Experience</h2>
-                            <div class="single-exp">
-                                <h4>Computer Sciense</h4>
-                                <h5>Google University,Melborne</h5>
-                                <span class="exp-year">2001-2005</span>
-                            </div>
-                            <div class="single-exp">
-                                <h4>Computer Sciense</h4>
-                                <h5>Google University,Melborne</h5>
-                                <span class="exp-year">2001-2005</span>
-                            </div>
-                            <div class="single-exp">
-                                <h4>Computer Sciense</h4>
-                                <h5>Google University,Melborne</h5>
-                                <span class="exp-year">2001-2005</span>
-                            </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".6s">
+                            <i class="fa fa-code "></i>
+                            <h3>Bootstrap</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".8s">
+                            <i class="fa fa-file-code-o"></i>
+                            <h3>javascript</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- END RESUME SEC -->
-        <!-- START WORK SEC -->
-        <section class="work-sec padding-sec" id="work">
+         <!-- =============== END SERVICES SEC =============== -->
+
+         <!-- =============== START WORK SEC =============== -->
+        <section class="work-sec padding-sec" id="portfolio">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -255,167 +148,112 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12 text-center">
-                        <div class="work-sorting-menu">
-                            <button class="work-btn is-checked" data-filter="*">All</button>
-                            <button class="work-btn" data-filter=".design">Design</button>
-                            <button class="work-btn" data-filter=".development">Development</button>
-                            <button class="work-btn" data-filter=".photography">Photography</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                <div class="work-list">
-                    <div class="col-md-4 col-sm-6 grid-gutter development">
-                        <div class="work-single-item" data-aos="zoom-in-up"  data-aos-delay="200">
-                            <img src="img/1.jpg" alt="">
-                            <div class="overlay-icon">
-                                <a class="popup" href="img/1.jpg" data-effect="fadeIn"><i class="fa fa-search"></i></a>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay=".2s">
+                            <div class="single-work-img">
+                                <img src="img/1.jpg" alt="">
+                                <div class="single-work-link">
+                                    <a href="http://shajal-kumer.github.io/portfolio-one" target="blank"><i class="fa fa-link"></i></a>
+                                </div>
                             </div>
-                            <div class="overlay-text">
-                                <h3>web design project</h3>
+                            <div class="caption">
+                                <h3>Project One</h3>
                                 <h4>Client: smith dev</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 grid-gutter design">
-                        <div class="work-single-item" data-aos="zoom-in-up"  data-aos-delay="400">
-                            <img src="img/2.jpg" alt="">
-                            <div class="overlay-icon">
-                                <a class="popup" href="img/2.jpg" data-effect="fadeIn"><i class="fa fa-search"></i></a>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay=".4s">
+                            <div class="single-work-img">
+                                <img src="img/1.jpg" alt="">
+                                <div class="single-work-link">
+                                   <a href="http://shajal-kumer.github.io/project-one" target="blank"><i class="fa fa-link"></i></a>
+                                </div>
                             </div>
-                            <div class="overlay-text">
-                                <h3>web design project</h3>
+                            <div class="caption">
+                                <h3>Project One</h3>
                                 <h4>Client: smith dev</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 grid-gutter development">
-                        <div class="work-single-item" data-aos="zoom-in-up"  data-aos-delay="600">
-                            <img src="img/3.jpg" alt="">
-                            <div class="overlay-icon">
-                                <a class="popup" href="img/3.jpg" data-effect="fadeIn"><i class="fa fa-search"></i></a>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay=".6s">
+                            <div class="single-work-img">
+                                <img src="img/1.jpg" alt="">
+                                <div class="single-work-link">
+                                    <a href="http://shajal-kumer.github.io/project-two" target="blank"><i class="fa fa-link"></i></a>
+                                </div>
                             </div>
-                            <div class="overlay-text">
-                                <h3>web design project</h3>
+                            <div class="caption">
+                                <h3>Project One</h3>
                                 <h4>Client: smith dev</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 grid-gutter design">
-                        <div class="work-single-item" data-aos="zoom-in-up"  data-aos-delay="800">
-                            <img src="img/1.jpg" alt="">
-                            <div class="overlay-icon">
-                                <a class="popup" href="img/1.jpg" data-effect="fadeIn"><i class="fa fa-search"></i></a>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-work-item wow fadeInUp" data-wow-delay=".8s">
+                            <div class="single-work-img">
+                                <img src="img/1.jpg" alt="">
+                                <div class="single-work-link">
+                                    <a href="http://shajal-kumer.github.io/project-three" target="blank"><i class="fa fa-link"></i></a>
+                                </div>
                             </div>
-                            <div class="overlay-text">
-                                <h3>web design project</h3>
+                            <div class="caption">
+                                <h3>Project One</h3>
                                 <h4>Client: smith dev</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 grid-gutter photography">
-                        <div class="work-single-item" data-aos="zoom-in-up"  data-aos-delay="1000">
-                            <img src="img/2.jpg" alt="">
-                            <div class="overlay-icon">
-                                <a class="popup" href="img/2.jpg" data-effect="fadeIn"><i class="fa fa-search"></i></a>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-work-item wow fadeInUp" data-wow-delay="1s">
+                            <div class="single-work-img">
+                                <img src="img/1.jpg" alt="">
+                                <div class="single-work-link">
+                                    <a href="http://shajal-kumer.github.io/project-four" target="blank"><i class="fa fa-link"></i></a>
+                                </div>
                             </div>
-                            <div class="overlay-text">
-                                <h3>web design project</h3>
+                            <div class="caption">
+                                <h3>Project One</h3>
                                 <h4>Client: smith dev</h4>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 grid-gutter photography development">
-                        <div class="work-single-item" data-aos="zoom-in-up"  data-aos-delay="1200">
-                            <img src="img/3.jpg" alt="">
-                            <div class="overlay-icon">
-                                <a class="popup" href="img/3.jpg" data-effect="fadeIn"><i class="fa fa-search"></i></a>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-work-item wow fadeInUp" data-wow-delay="1.2s">
+                            <div class="single-work-img">
+                                <img src="img/1.jpg" alt="">
+                                <div class="single-work-link">
+                                    <a href="http://shajal-kumer.github.io/project-five" target="blank"><i class="fa fa-link"></i></a>
+                                </div>
                             </div>
-                            <div class="overlay-text">
-                                <h3>web design project</h3>
+                            <div class="caption">
+                                <h3>Project One</h3>
                                 <h4>Client: smith dev</h4>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
         </section>
-        <!-- END WORK SEC -->
-         <!-- Start Testimonial sec -->
-        <section class="testimonial-sec padding-sec" id="testimonial">
+        <!-- =============== END WORK SEC =============== -->
+
+         <!-- =============== START HIRE ME SEC ==============-->
+        <section class="hire-me-sec padding-sec">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="testimonial">
-                            <div class="single-testi text-center">
-                                <div class="testi-img">
-                                    <img src="img/author.jpg" alt="">
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic officia natus omnis minus debitis praesentium fugit perferendis porro repellendus facere!</p>
-                                <h4 class="testi-author">Shajal Kumer</h4>
-                                <h5 class="testi-author-position">Ceo of Foundation</h5>
-                            </div>
-                            <div class="single-testi text-center">
-                                <div class="testi-img">
-                                    <img src="img/author.jpg" alt="">
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic officia natus omnis minus debitis praesentium fugit perferendis porro repellendus facere!</p>
-                                <h4 class="testi-author">Shawdesh Kumer</h4>
-                                <h5 class="testi-author-position">Ceo of Foundation</h5>
-                            </div>
-                            <div class="single-testi text-center">
-                                <div class="testi-img">
-                                    <img src="img/author.jpg" alt="">
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic officia natus omnis minus debitis praesentium fugit perferendis porro repellendus facere!</p>
-                                <h4 class="testi-author">Liton Kumer</h4>
-                                <h5 class="testi-author-position">Ceo of Foundation</h5>
-                            </div>
+                        <div class="hire-me text-center">
+                            <h2>Love this?</h2>
+                            <h1>Start your next project with me</h1>
+                            <a href="#contact" class="read-more smoth-scroll">Hire me</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    <!-- End Testimonial sec -->
-     <!-- START BLOG SEC -->
-        <section class="blog-sec padding-sec" id="blog">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="title-sec text-center">
-                            <h2>Latest Blog</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <div class="single-blog-post">
-                        <img src="img/blog1.png" alt="">
-                        <h3>Blog Post Title</h3>
-                        <span class="blog-post-date">11 dec 2016</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-                        <a href="#" class="read-more"><span>Read More</span></a>
-                    </div>
-                    <div class="single-blog-post">
-                        <img src="img/blog2.png" alt="">
-                        <h3>Blog Post Title</h3>
-                        <span class="blog-post-date">11 dec 2016</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-                        <a href="#" class="read-more"><span>Read More</span></a>
-                    </div>
-                    <div class="single-blog-post">
-                        <img src="img/blog3.png" alt="">
-                        <h3>Blog Post Title</h3>
-                        <span class="blog-post-date">11 dec 2016</span>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
-                        <a href="#" class="read-more"><span>Read More</span></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End BLOG sec -->
-        <!-- START GET IN TOUCH SEC -->
+        <!-- =============== END HIRE ME SEC ==============-->
+
+        <!-- =============== START GET IN TOUCH SEC ==============-->
         <section class="get-in-touch-sec padding-sec" id="contact">
             <div class="container">
                 <div class="row">
@@ -439,7 +277,7 @@
                                 <a href="tel:+8801747562381">+880 01747-562381</a>
                             </div>
                             <div class="single-contact" data-aos="fade-right"  data-aos-delay="600">
-                                <i class="fa fa-envelope-open"></i>
+                               <i class="fa fa-envelope"></i>
                                 <h3>Email</h3>
                                 <a href="mailto: shajalkumer@gmail.com">shajalkumer@gmail.com</a>
                             </div>
@@ -447,18 +285,19 @@
                     </div>
                     <div class="col-md-9 col-sm-12">
                         <div class="contact-right-sec">
-                            <form>
+                         <div id="form-messages"></div>
+                            <form id="ajax-contact" method="post" action="mailer.php">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
                                 </div>
                                 <div class="form-group">
-                                  <input type="Email" class="form-control" id="email" placeholder="Your Email">
+                                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
                                 </div>
                                 <div class="form-group">
-                                   <textarea class="form-control" rows="10"  placeholder="Enter Your Message"></textarea>
+                                   <textarea name="message" id="message" class="form-control" rows="10"  placeholder="Enter Your Message"></textarea>
                                 </div>
                                 <div class="form-group col-sm-12">
-                                  <button type="submit" class="read-more">Submit now</button>
+                                  <button type="submit" class="read-more submit">Submit now</button>
                                 </div>
                             </form>
                         </div>
@@ -466,43 +305,43 @@
                 </div>
             </div>
         </section>
-        <!-- START GET IN TOUCH SEC-->
-        <!-- START FOOTER SEC -->
-        <footer class="footer-sec padding-sec" data-aos="fade-in">
+        <!-- =============== START GET IN TOUCH SEC ================-->
+        
+         <!-- =============== START Footer SEC ==============-->
+        <footer class="footer-sec padding-sec">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 col-sm-10 col-xs-10">
-                        <div class="copy-right-text">
-                            &copy; 2017 Sk | All Right Reserved.
-                        </div>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2">
-                        <div class="scrollup">
-                            <i class="fa fa-angle-up"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-sm-12 col-xs-12">
-                        <div class="footer-social-menu">
-                            <a href="#">facebook</a>
-                            <a href="#">Twitter</a>
-                            <a href="#">Bribbble</a>
-                            <a href="#">Instagram</a>
+                    <div class="col-sm-12 text-center">
+                        <div class="footer">
+                            <div class="social-menu">
+                                <a href=""><i class="fa fa-facebook"></i></a>
+                                <a href=""><i class="fa fa-twitter"></i></a>
+                                <a href=""><i class="fa fa-google-plus"></i></a>
+                            </div>
+                            &copy;Copyright 2017 SHAJAL  | All RightReserved.
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-        <!-- END FOOTER SEC -->
-             
-    <script src="js/jquery-1.12.4.min.js"></script>
+        <!-- =============== END Footer SEC ==============-->
+
+        <!-- START SCROLL TO UP -->
+         <div class="scrollup">
+            <i class="fa fa-angle-up"></i>
+        </div>
+        <!-- END SCROLL TO UP -->
+       
+
+    <!-- ==============  js file ============== -->
+    <!-- <script src="js/jquery-1.12.4.min.js"></script> -->
+    <script src="jquery-2.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/particles.min.js"></script>
+    <script src="js/jquery.waypoint.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/custom.js"></script>
   </body>
 </html>

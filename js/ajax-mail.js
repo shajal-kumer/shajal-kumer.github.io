@@ -1,10 +1,10 @@
 $(function() {
 
 	// Get the form.
-	var form = $('#ajax-contact');
+	var form = $('#contact-form');
 
 	// Get the messages div.
-	var formMessages = $('#form-messages');
+	var formMessages = $('.form-messege');
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
@@ -29,9 +29,7 @@ $(function() {
 			$(formMessages).text(response);
 
 			// Clear the form.
-			$('#name').val('');
-			$('#email').val('');
-			$('#message').val('');
+			$('#contact-form input,#contact-form textarea').val('');
 		})
 		.fail(function(data) {
 			// Make sure that the formMessages div has the 'error' class.
@@ -45,7 +43,6 @@ $(function() {
 				$(formMessages).text('Oops! An error occured and your message could not be sent.');
 			}
 		});
-
 	});
 
 });

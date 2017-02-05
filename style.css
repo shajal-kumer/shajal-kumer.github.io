@@ -10,12 +10,12 @@
     outline: none;
 }
 body {
-    font-size: 16px;     /* It will be change */
-    font-weight: 300;
-    line-height: 24px;      /* It will be change */
-    font-family: 'Poppins', sans-serif;
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 26px;      /* It will be change */
+    font-family: 'Lato', sans-serif;   /* It will be change */
     letter-spacing: 1px;
-    color: #333333;    /* It will be change */
+    color: #666666;    /* It will be change */
 }
 
 html,
@@ -24,29 +24,23 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-    font-weight: 600;
-    font-family: inherit;   /* It will be change */
+    font-family: 'Dosis', sans-serif;
     margin-bottom: 15px;
     margin-top: 0px;
-    text-transform: capitalize;
+    color: #464646;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
-p{
-    line-height: 32px;
-}
+
 a {
     text-decoration: none;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    font-family: 'Raleway', sans-serif;    /* It will be change */
-    color: #000
+    -webkit-transition: .3s;
+    transition: .3s;
+    color: inherit;
 }
 
-a:hover {
-    color: #000;  /* It will be change */
-    text-decoration: none;
-}
-
-a:focus {
+a:hover, a:focus {
+    color: #888888;  /* It will be change */
     text-decoration: none;
 }
 
@@ -62,109 +56,90 @@ ul{
 li{
     list-style: none
 }
+.fix{
+    overflow: hidden;
+}
 .padding-sec {
-    padding: 70px 0
+    padding: 80px 0
 }
-
-.read-more {
-    padding: 10px 40px;
-    border: 1px solid #000;
-    color: #333;
-    border-radius: 30px;
-    text-transform: uppercase;;
-    margin-top: 40px;
-    display: inline-block;
-    background: transparent;
-    position: relative;
-}
-.read-more:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    background: rgba(3,3,3,.8);
-    z-index: -1;
-    border-radius: 30px;
-    transform: scaleX(0);
-    opacity: 0;
-    transition: .3s
-}
-.read-more:hover:after {
-    transform: scaleX(1);
-    opacity: 1;
-}
-.read-more:hover {
-    color: #fff
-}
-
 .title-sec {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    text-align: center;
 }
 .title-sec h2 {
-    font-size: 40px;
-    font-weight: 900;
-    line-height: 35px;
+    font-size: 30px;  /* It will be change */
     position: relative;
+    z-index: 1;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+a.read-more, .read-more {
+    display: inline-block;
+    color: #000;
+    padding: 10px 20px;
+    background: transparent;
+    margin-top: 20px;
+    width: 160px;
+    border-radius: 30px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    font-weight: 700;
+    text-align: center;
     text-transform: capitalize;
+    transition: all .3s ease-in-out;
+}
+a.read-more:hover, .read-more:hover {
+    border-radius: 0px
+}
+.mlr{
+    margin-right: 10px;
+    margin-left: 10px
 }
 .scrollup {
-    background: #292929 none repeat scroll 0 0;
-    border-radius: 50%;
-    color: #fff;
+    bottom: 30px;
     cursor: pointer;
-    font-size: 25px;
-    height: 40px;
-    line-height: 35px;
+    position: fixed;
+    right: 20px;
     text-align: center;
-    width: 40px;
-    z-index: 9;
-    transition: all .3s ease;
-    margin: auto;
-}
-.scrollup:hover {
-     box-shadow: 0px 15px 15px 0 rgba(0, 0, 0, .2);
-     transform: translateY(-10px);
+    z-index: 999
 }
 .scrollup i{
-    transition: all .3s ease
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #464646;
+    color: #fff;
+    font-size: 25px;
 }
-.animationload {
-    background: #181818;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: 99999;
-}
-#intro {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -33px 0 0 -33px;
-    background: url(img/preloader.gif);
-}
-
 /*
 * ----------------------------------------------------------------------------------------
 * Main Style
 * ----------------------------------------------------------------------------------------
 */
 .header-sec {
-    background: #000000;
+    background: url(img/stay.jpg) no-repeat scroll center center ;
+    background-position: fixed;
     height: 100%;
+    position: relative;
+    z-index: 999
 }
-#particles-js {
+.header-sec:after{
     position: absolute;
+    background: rgba(0, 0, 0, .8);
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    top: 0;
+    content: "";
+    z-index: -1;
 }
 .navbar-brand {
   padding: 0px;
   padding-left: 15px
+}
+.navbar-brand h1{
+    color: #fff
 }
 .navbar-fixed-top{
     border: 0px
@@ -173,55 +148,62 @@ li{
   font-size: 30px;
   line-height: 55px;
   margin: 0;
-  color: #fff;
   text-transform: uppercase;
-}
-.navbar-default {
-    padding: 20px 0px;
-    transition: all .4s ease;
-    background: none
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover{
-    background-color: transparent;
-    color: #ccc
-}
-.navbar-default .navbar-nav > li{
-}
-.navbar-default .navbar-nav > li > a {
-    font-size: 14px;
-    color: #fff;
-    padding: 14px 5px;
-    margin: 0px 15px;
-    text-transform: capitalize;
-    position: relative;
-}
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
-    color: #fff
 }
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
     background: transparent;
-    border-color: transparent;
+    border-color: #ccc;
+}
+.navbar-default .navbar-toggle:hover{
+    border-radius: 0px
 }
 .navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar {
     background: #fff;
 }
 .navbar-default .navbar-toggle .icon-bar{
     background: #fff;
+    transition: all .3s ease
 }
 .navbar-default .navbar-toggle {
-  border-color: #181818;
+  border-color: #ccc;
   background: transparent;
+  transition: all .3s ease
 }
-.menu-bg {
-    background: #000 !important;
-    padding: 8px
+.navbar-default {
+    padding: 20px 0px;
+    transition: all .4s ease;
+    background: transparent;
+    z-index: 99999;
+}
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+    background-color: transparent;
+    color: #f6f6f6;
+}
+.navbar-default .navbar-nav > li{
+    transition: all .3s ease;
+    overflow: hidden;
+}
+.navbar-default .navbar-nav > li > a {
+    font-size: 13px;
+    color: #FFF;
+    padding: 14px 5px;
+    margin: 0px 15px;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 400
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: #fff;
+}
+.menu-bg{
+    background: rgba(6, 6, 6, 0.8) none repeat scroll 0 0;
+    padding: 10px 0px
 }
 .welcome-hero-area {
     height: 100%;
     display: table;
     width: 100%;
     text-align: center;
-    background: url(img/bg.jpg) no-repeat scroll top right;
 }
 .display-table-cell{
     display: table-cell;
@@ -229,47 +211,40 @@ li{
     height: 100%;
 }
 .welcome-text h1{
+    color: #FFF;
+    font-size: 45px;
+    text-transform: uppercase;
+}
+.welcome-text h2{
     color: #fff;
-    font-size: 70px;
+    font-size: 22px;
     text-transform: capitalize;
-    letter-spacing: 5px;
-    margin: 0px;
-    font-weight: 900
 }
-.welcome-text h2 {
+.welcome-text img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 30px
+}
+a.wl-read-more{
     color: #fff;
-    font-size: 20px;
-    text-transform: capitalize;
-    margin-top: 20px;
+    margin-top: 40px
 }
- .welcome-btn {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 1px solid #FFF;
-    color: #fff
-}
- .welcome-btn:hover:after{
-    background: #fff;
- }
- .welcome-btn:hover,  .welcome-btn:focus {
-    color: #000
-}
-
-
 /*
 * ----------------------------------------------------------------------------------------
-* ABOUT SECTION
+* AQBOUT SECTION
 * ----------------------------------------------------------------------------------------
 */
-.about-left-sec h2{
-    font-size: 20px
-}
-.about-left-sec h1{
-    font-size: 40px
-}
 
+.about-info{}
+.about-info h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.about-info h2{
+    font-size: 22px;
+    margin-bottom: 30px;
+}
 
 /*
 * ----------------------------------------------------------------------------------------
@@ -278,89 +253,25 @@ li{
 */
 .services-sec {
     background: #F6F6F6;
-    padding-bottom: 50px;
-    overflow: hidden;
-}
-.services-sec a:hover {
-    color: inherit;
-}
-.services-sec:hover .title-sec h2:after {
-    width: 100%
 }
 .single-service {
     background: #fff;
     padding: 30px;
-    box-shadow: 2px 5px 20px 5px rgba(214, 214, 214, 0.41);
-    margin-bottom: 30px;
     transform: scale(1);
     z-index: 1;
     transition: all .5s ease-in-out;
-
 }
 .single-service:hover {
-  box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
 }
-.single-service h3, .single-skill h3 {
-    font-size: 14px;
-    font-weight: 600;
+.single-service h3 {
+    font-size: 16px;
 }
 .single-service i {
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    color: #fff;
-    
-    font-size: 25px;
-    border-radius: 50%;
+    font-size: 30px;
     margin-bottom:20px;
-    transition: all .7s ease-in-out;
-    background: #000
-}
-.single-service:hover i {
-    background: #fff;
-    border: 1px solid #000;
-    color: #000;
-    transform: rotate(360deg);
-}
-/*
-* ----------------------------------------------------------------------------------------
-* RESUME SECTION
-* ----------------------------------------------------------------------------------------
-*/
-.resume-sec {
-    background: #000;
-    overflow: hidden;
-}
-.resume-sec .title-sec h2 {
-    color: #fff
-}
-.education h2, .experience h2 {
-    color: #FFF;
-    margin-bottom: 40px
-}
-.single-edu, .single-exp {
-    position: relative;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 20px;;
-    margin-bottom: 35px
-}
-.single-edu h4, .single-exp h4{
-    color: #fff;
-    font-size: 14px;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-.single-edu h5, .single-exp h5{
-    color: #fff;
-    font-size: 16px;
-    font-weight: 300;
-}
-.single-edu span.edu-year, .single-exp span.exp-year{
-    position: absolute;
-    color: #fff;
-    top:0px;
-    right: 0px
 }
 
 /*
@@ -368,169 +279,82 @@ li{
 * WORK SECTION
 * ----------------------------------------------------------------------------------------
 */
-
-.work-sorting-menu .work-btn {
-    display: inline-block;
-    padding: 8px 25px;
-    border-radius: 30PX;
-    border: 1px solid #CCC;
-    background: transparent;
-    text-transform: uppercase;
-    margin: 0px 10px 10px;
-}
-.work-sorting-menu .is-checked {
-    border-color: #000
-}
-.work-single-item{
-    position: relative;
-    z-index: 1;
+.work-sec{
     overflow: hidden;
-    margin-top: 30px
 }
-.work-single-item:hover .overlay-text {
-    background: rgba(0,0,0,0.9);
-    opacity: 1;
+.work-sec .title-sec{
+    margin-bottom: 20px
 }
-.work-single-item:hover .overlay-text h3{
-    bottom: 50px;
-    
+.single-work-item{
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+    margin-top: 30px;
+    overflow: hidden;
 }
-.work-single-item:hover .overlay-text h4{
-    bottom: 20px;
+.single-work-item:hover .single-work-img:after{
+    opacity: 1
 }
-.work-single-item:hover .overlay-icon {
+.single-work-item:hover .single-work-link i{
+    z-index: 2;
     opacity: 1;
     transform: scale(1);
 }
-.overlay-icon {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    z-index: 33;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transform: scale(0);
-    transition: all .3s;
-    opacity: 0
-}
-.overlay-icon i {
-    color: #fff;
-    font-size: 30px;
-}
-.overlay-text {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    color: #fff;
-    opacity: 0;
-    transition: all .3s ease;
-}
-.overlay-text h3{
-    position: absolute;;
-    bottom: -50px;
-    left: 10%;
-    z-index: 3;
-    margin-bottom: 10px;
-    font-size: 16px;
-    transition: all .3s ease
-}
-.overlay-text h4 {
-    position:  absolute;
-    bottom: -50px;
-    left: 10%;
-    font-size: 12px;
-    transition: all .5s ease
-}
-/*
-* ----------------------------------------------------------------------------------------
-* TEstimonial Area
-* ----------------------------------------------------------------------------------------
-*/
-.testimonial-sec {
-    background:rgba(0,0,0,1) url("img/testimonial-bg.jpg") repeat scroll 0 0 / cover;
-    background-attachment: fixed;
+.single-work-img{
     position: relative;
 }
-.testi-img {
-    width: 100px;
-    margin: auto;
-}
-.testi-img img {
-    border-radius: 50%;
-    border: 4px solid #3ac4fa
-}
-.testimonial {
-  margin: auto;
-  padding-bottom: 30px;
-  width: 70%;
-}
-.single-testi p {
-    color: #fff;
-    margin: 20px auto 20px auto
-}
-.single-testi h4.testi-author{
-    font-size: 14px;
-    color: #fff;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-.single-testi h5.testi-author-position {
-    font-size: 12px;
-    color: #1da
-}
-.testimonial .owl-controls .owl-dots {
+.single-work-img:after {
     position: absolute;
-    bottom: 0px;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background: rgba(0,0,0,.8);
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+.single-work-link i{
+    position: absolute;
     left: 50%;
-    margin-left: -35px;
-    overflow: hidden;
+    top: 50%;
+    color: #fff;
+    font-size: 25px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border: 1px solid #fff;
+    text-align: center;
+    opacity: 0;
+    margin: -30px 0 0 -30px;
+    transition: all .5s ease-in-out 0s;
+    transform: scale(0);
 }
-.testimonial .owl-controls .owl-dot{
-    height: 10px;
-    width: 10px;
-    float: left;
-    margin-left: 10px;
-    background: transparent;
-    border-radius: 50%;
-    background: #ddd
+.caption{
+    padding: 20px 0px;
+    text-align: center;
 }
-.testimonial .owl-controls .owl-dot.active {
-    background: #3ac4fa;
-    height: 10px;
-    width: 10px
+.caption h3 {
+    font-size: 20px
 }
+.caption h4{
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
 /*
 * ----------------------------------------------------------------------------------------
-*  BLOG SECTION
+*  HIRE ME SECTION
 * ----------------------------------------------------------------------------------------
 */
-.blog-sec:hover .title-sec h2:after {
-    width: 100%
+.hire-me-sec{
+    background: #f6f6f6;
 }
-.single-blog-post h3 {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 20px;
-  margin: 30px 0px 5px;
-  text-transform: uppercase;
+.hire-me h2{
+    font-size: 28px;
 }
-.single-blog-post span.blog-post-date {
-    color: #333;
-    font-size: 12px;
-    margin-bottom: 5px;
-    display: inline-block;
-}
-.single-blog-post .read-more{
-    font-size: 10px;
-    padding: 4px 14px;
-    margin-top: 0px
+.hire-me h1{ 
+    font-size: 34px;
 }
 
 /*
@@ -538,37 +362,27 @@ li{
 *  CONTACT SECTION
 * ----------------------------------------------------------------------------------------
 */
+.get-in-touch-sec{
+}
 .single-contact{
     margin-bottom: 30px
 }
 .single-contact i{
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    color: #000
 }
 .single-contact h3{
     font-size: 12px
 }
 
 .contact-right-sec .submit{
-    background: transparent;
-    border: 1px solid #ccc;
-    border-radius: 30px;
-    padding: 0px 26px;
-    text-transform: uppercase;
-    font-size: 12px;
-    font-weight: 600;
-    color: #333;
-    height: 44px;
-    line-height: 44px;
-    transition: all .3s ease;
-    margin-top: 20px
+    border-color:#ccc;
 }
-.contact-right-sec .submit:hover {
-    border-color: #000
-}
+
 .form-control {
     height: 50px;
     margin-bottom:  15px;
-    border-radius: 6px
+    border-radius: 6px;
 }
 .form-control:focus {
   border-color: inherit;
@@ -580,28 +394,23 @@ li{
 *  FOOTER SECTION
 * ----------------------------------------------------------------------------------------
 */
-.footer-sec {
-    background: #000;
-    color: #fff;
-    padding: 50px 0px;
-    font-size: 14px;
+
+.footer-sec{
+    background: #f6f6f6;
 }
-.copy-right-text{
-    padding: 8px 0px
+.social-menu{
+    margin-bottom: 20px
 }
-.footer-social-menu {
-    text-align: right;
-    padding-top: 8px;
+.social-menu i{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #666;
+    margin: 0px 5px;
+    color: #222;
+    transition: .3s 
 }
-.footer-social-menu a {
-    color: #ccc;
-    font-size: 12px;
-    text-transform: uppercase;
-    display: inline-block;
-    transition: .3s;
-    margin-left: 10px;
-    margin-right: 10px
-}
-.footer-social-menu a:hover {
-    transform: scaleX(1.2);
+.social-menu i:hover {
+    color: #666
 }
