@@ -118,7 +118,7 @@ a.read-more:hover, .read-more:hover {
 * ----------------------------------------------------------------------------------------
 */
 .header-sec {
-    background: url(img/stay.jpg) no-repeat scroll center center ;
+    background: url(img/welcome-bg.jpeg) no-repeat scroll center center / cover;
     background-position: fixed;
     height: 100%;
     position: relative;
@@ -178,6 +178,25 @@ a.read-more:hover, .read-more:hover {
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
     background-color: transparent;
     color: #f6f6f6;
+    transition: .3s;
+}
+.navbar-default .navbar-nav > li.active > a{
+    background: transparent;
+    color: #41C4FF
+}
+.navbar-default .navbar-nav > li > a:after {
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #41C4FF;
+    transform: scale(0);
+    transition: .3s
+}
+.navbar-default .navbar-nav > li.active > a:after {
+    transform: scale(1);
 }
 .navbar-default .navbar-nav > li{
     transition: all .3s ease;
@@ -295,6 +314,14 @@ a.wl-read-more{
 .single-work-item:hover .single-work-img:after{
     opacity: 1
 }
+.single-work-img img{
+    transform: scale(1);
+    transition: all .7s ease
+}
+.single-work-item:hover .single-work-img img{
+    transform: scale(1.2);
+    
+}
 .single-work-item:hover .single-work-link i{
     z-index: 2;
     opacity: 1;
@@ -302,6 +329,7 @@ a.wl-read-more{
 }
 .single-work-img{
     position: relative;
+    overflow: hidden;
 }
 .single-work-img:after {
     position: absolute;
@@ -411,6 +439,15 @@ a.wl-read-more{
     color: #222;
     transition: .3s 
 }
-.social-menu i:hover {
-    color: #666
+.social-menu .facebook:hover i {
+    color: #3B589E;
+    border-color: #3B589E
+}
+.social-menu .twittre:hover i {
+    color: #1DA0F2;
+    border-color: #1DA0F2
+}
+.social-menu .googleplus:hover i {
+    color: #DD5144;
+    border-color: #DD5144
 }

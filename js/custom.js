@@ -10,6 +10,7 @@
             $("#intro").delay(300).fadeOut();
             $(".animationload").delay(600).fadeOut("slow");
         });
+
         /*--------End Preloader---------*/
 
 
@@ -45,6 +46,17 @@
         /*-------End smooth scroll js-----------*/
 
 
+        /*-------Start Scrollspy js-------------*/
+        $('body').scrollspy({
+            target: '.navbar-collapse',
+            offset: 150
+        });
+        $('[data-spy="scroll"]').each(function () {
+          var $spy = $(this).scrollspy('refresh')
+        })
+        /*-------End Scrollspy js-------------*/
+        
+
         /*-------Start Scroll to top----------*/
         $(window).on('scroll', function() {
             if ($(this).scrollTop() > 300) {
@@ -61,7 +73,22 @@
         });
         /*--------End Scroll to top-----------*/
 
-        new WOW().init();
+
+        /*----------WOW js-------------------*/
+
+        new WOW().init({
+        });
+
+        /*----------WOW js-------------------*/
+
+        /*----------PARALAX js-------------------*/
+        $(window).stellar({
+            responsive: true,
+            positionProperty: 'transform',
+            horizontalScrolling: false,
+        });
+
+        /*-------End PARALAX js--------*/
 
 
 
