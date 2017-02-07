@@ -79,10 +79,10 @@
         padding: 0px 15px;
         box-sizing: border-box;
     } 
-    .slide-content p {
+    .slider .slide-content p {
       padding: 0px;
     }
-    .slide-content h1 {
+    .slider .slide-content h1 {
       font-size: 25px;
       line-height: 25px
     }

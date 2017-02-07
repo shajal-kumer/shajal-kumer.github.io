@@ -134,57 +134,48 @@ a.read-more:hover, .read-more:hover {
     content: "";
     z-index: -1;
 }
-.navbar-brand {
-  padding: 0px;
-  padding-left: 15px
-}
-.navbar-brand h1{
-    color: #fff
-}
-.navbar-fixed-top{
-    border: 0px
-}
-.navbar-brand h1 {
-  font-size: 30px;
-  line-height: 55px;
-  margin: 0;
-  text-transform: uppercase;
-}
-.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
-    background: transparent;
-    border-color: #ccc;
-}
-.navbar-default .navbar-toggle:hover{
-    border-radius: 0px
-}
-.navbar-default .navbar-toggle:focus .icon-bar, .navbar-default .navbar-toggle:hover .icon-bar {
-    background: #fff;
-}
-.navbar-default .navbar-toggle .icon-bar{
-    background: #fff;
-    transition: all .3s ease
-}
-.navbar-default .navbar-toggle {
-  border-color: #ccc;
-  background: transparent;
-  transition: all .3s ease
-}
-.navbar-default {
+.header-top-sec{
+    position: fixed;
+    z-index: 999;
+    width: 100%;
     padding: 20px 0px;
-    transition: all .4s ease;
-    background: transparent;
-    z-index: 99999;
+    transition: .3s
 }
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover{
+.logo{
+    min-height: 50px;
+}
+.logo h1{
+    padding: 6px 0px;
+    margin: 0px;
+    color: #fff;
+    letter-spacing: 1px;
+    color: #41C4FF;
+}
+.logo h1 span{
+    font-size: 20px;
+    color: #fff;
+}
+.navbar{
+    margin-bottom: 0px;
+    border: none
+}
+.menu-bg{
+    background: rgba(0, 0, 0, .8) none repeat scroll 0 0;
+    padding: 10px 0px;
+}
+.navbar-nonbg {
+    background: transparent;
+}
+.navbar-nonbg .navbar-nav > li > a, .navbar-nonbg .navbar-nav > li > a:focus, .navbar-nonbg .navbar-nav > li > a:hover{
     background-color: transparent;
     color: #f6f6f6;
     transition: .3s;
 }
-.navbar-default .navbar-nav > li.active > a{
+.navbar-nonbg .navbar-nav > li.active > a{
     background: transparent;
     color: #41C4FF
 }
-.navbar-default .navbar-nav > li > a:after {
+.navbar-nonbg .navbar-nav > li > a:after {
     position: absolute;
     content: "";
     bottom: 0px;
@@ -195,14 +186,13 @@ a.read-more:hover, .read-more:hover {
     transform: scale(0);
     transition: .3s
 }
-.navbar-default .navbar-nav > li.active > a:after {
+.navbar-nonbg .navbar-nav > li.active > a:after {
     transform: scale(1);
 }
-.navbar-default .navbar-nav > li{
+.navbar-nonbg .navbar-nav > li{
     transition: all .3s ease;
-    overflow: hidden;
 }
-.navbar-default .navbar-nav > li > a {
+.navbar-nonbg .navbar-nav > li > a {
     font-size: 13px;
     color: #FFF;
     padding: 14px 5px;
@@ -211,12 +201,61 @@ a.read-more:hover, .read-more:hover {
     position: relative;
     font-weight: 400
 }
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-nonbg .navbar-nav > li > a:hover {
     color: #fff;
 }
-.menu-bg{
-    background: rgba(6, 6, 6, 0.8) none repeat scroll 0 0;
-    padding: 10px 0px
+.nav-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.toggle-btn {
+    background-color: transparent;
+}
+.toggle-btn .icon-bar {
+    background-color: #41C4FF; 
+    display: block;
+    height: 2px;
+    margin-bottom: 5px;
+    width: 25px;
+    position: relative;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+.toggle-btn .icon-bar:last-child {
+    margin-bottom: -3px;
+}
+.toggle-btn.active .icon-bar:nth-child(2) {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    visibility: hidden;
+}
+.toggle-btn.active .icon-bar:nth-child(1) {
+    top: 7px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.toggle-btn.active .icon-bar:nth-child(3) {
+    top: -7px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.nav-toggle + .navbar-collapse {
+    margin-right: 43px;
+}
+.header-sec .navbar-collapse {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
+.header-sec.active .navbar-collapse {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
 }
 .welcome-hero-area {
     height: 100%;
@@ -276,14 +315,14 @@ a.wl-read-more{
 .single-service {
     background: #fff;
     padding: 30px;
-    transform: scale(1);
+    transform: scale(1) !important;
     z-index: 1;
-    transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out !important;
 }
 .single-service:hover {
   cursor: pointer;
   box-shadow: 0 25px 45px rgba(0, 0, 0, 0.15);
-  transform: translateY(-10px);
+  transform: translateY(-10px) !important;
 }
 .single-service h3 {
     font-size: 16px;

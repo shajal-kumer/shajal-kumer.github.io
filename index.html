@@ -12,7 +12,7 @@
          <!-- OWl Carousel  css-->
          <link href="css/owl.carousel.css" rel="stylesheet">
          <!-- Animate css  -->
-         <link href="css/animate.css" rel="stylesheet">
+         <link href="css/animate.min.css" rel="stylesheet">
          <!-- Bootstrap css-->
          <link href="css/bootstrap.min.css" rel="stylesheet">
          <!-- Main css -->
@@ -32,40 +32,58 @@
                 <div id="intro"></div>
             </div>
          <!-- =============== END PRELOADER  =============== -->
+
          <!-- =============== START HEADER SEC =============== -->
-        <header class="header-sec" id="home" data-stellar-background-ratio=".6">
-            <nav class="navbar navbar-default navbar-fixed-top">
+        <header class="header-sec wow fadeIn" id="home" data-stellar-background-ratio=".6" data-wow-delay=".1s">
+            <div class="header-top-sec">
                 <div class="container">
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                      <a class="navbar-brand" href="#">
-                          <h1>shajal</h1>
-                      </a>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="logo">
+                                <a href=""><h1>s<span>k</span></h1></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="mainmenu">
+                                <div class="navbar navbar-nonbg">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>                    
+                                    </div>
+                                    <div class="nav-toggle hidden-xs">
+                                        <button class="toggle-btn">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                                      <ul class="nav navbar-nav navbar-right">
+                                        <li class="active"><a class="smoth-scroll" href="#home">Home</a></li>
+                                        <li><a class="smoth-scroll" href="#about">About</a></li>
+                                        <li><a class="smoth-scroll" href="#skill">Skill</a></li>
+                                        <li><a class="smoth-scroll" href="#portfolio">Portfolio</a></li>
+                                        <li><a class="smoth-scroll" href="#contact">Contact</a></li>
+                                      </ul>
+                                    </div><!-- navbar-collapse -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                      <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a class="smoth-scroll" href="#home">Home</a></li>
-                        <li><a class="smoth-scroll" href="#about">About</a></li>
-                        <li><a class="smoth-scroll" href="#skill">Skill</a></li>
-                        <li><a class="smoth-scroll" href="#portfolio">Portfolio</a></li>
-                        <li><a class="smoth-scroll" href="#contact">Contact</a></li>
-                      </ul>
-                    </div><!-- navbar-collapse -->
-                </div><!-- container-->
-            </nav>
+                </div>
+            </div>
             <div class="welcome-hero-area">
                 <div class="display-table-cell">
                     <div class="welcome-text">
                         <!-- <img class="center-block" src="img/sk.jpg" alt=""> -->
-                        <h1>HEllo I'm Shajal KUmer</h1>
-                        <h2>Front-end web developer!</h2>
-                        <a href="#about" class="read-more smoth-scroll mlr wl-read-more">About more</a>
-                        <a href="#contact" class="read-more smoth-scroll mlr wl-read-more">Hire me</a>
+                        <h1 class="wow fadeInDown" data-wow-delay=".2s">HEllo I'm Shajal KUmer</h1>
+                        <h2 class="wow fadeInDown" data-wow-delay=".4s">Front-end web developer!</h2>
+                        <a href="#about" class="read-more smoth-scroll mlr wl-read-more wow fadeInDown" data-wow-delay=".6s">About more</a>
+                        <a href="#contact" class="read-more smoth-scroll mlr wl-read-more wow fadeInDown" data-wow-delay=".8s">Hire me</a>
                     </div>
                 </div>
             </div>
@@ -73,19 +91,19 @@
         <!-- =============== END HEADER SEC =============== -->
 
         <!-- =============== START ABOUT SEC =============== -->
-        <section class="about-sec padding-sec wow fadeInUp" id="about" data-wow-delay=".6s">
+        <section class="about-sec padding-sec" id="about">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-4 wow fadeInLeft" data-wow-delay=".4s">
                         <img src="img/me3.jpg" alt="">
                     </div>
                     <div class="col-md-6">
                         <div class="about-info">
-                            <h1>learn more about me</h1>
-                            <h2>Creative Front-end web developer</h2>
-                            <p>I'm Shajal Kumer, Front-End Web Developer. I have experience for more than two years.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt reprehenderit, nisi fuga autem repellat ratione. Vero ad doloribus repellendus, voluptatem.</p>
-                            <a href="#portfolio" class="read-more smoth-scroll">check my work</a>
+                            <h1 class="wow fadeInDown" data-wow-delay=".4s">learn more about me</h1>
+                            <h2 class="wow fadeInDown" data-wow-delay=".6s">Creative Front-end web developer</h2>
+                            <p class="wow fadeInDown" data-wow-delay=".8s">I'm Shajal Kumer, Front-End Web Developer. I have experience for more than two years.</p>
+                            <p class="wow fadeInDown" data-wow-delay="1s">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt reprehenderit, nisi fuga autem repellat ratione. Vero ad doloribus repellendus, voluptatem.</p>
+                            <a href="#portfolio" class="read-more smoth-scroll wow fadeInDown" data-wow-delay="1.2s">check my work</a>
                         </div>
                     </div>
                 </div>
@@ -103,30 +121,30 @@
                         </div>
                     </div>
                 </div>
-                <div class="row fix">
+                <div class="row">
                     <div class="col-md-3 col-sm-6">
-                        <div class="single-service text-center wow fadeInUp" data-wow-delay=".2s">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".2s">
                             <i class="fa fa-html5 "></i>
                             <h3>Html 5</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
-                        <div class="single-service text-center wow fadeInUp" data-wow-delay=".4s">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".4s">
                             <i class="fa fa-css3"></i>
                             <h3>Css 3</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
-                        <div class="single-service text-center wow fadeInUp" data-wow-delay=".6s">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".6s">
                             <i class="fa fa-code "></i>
                             <h3>Bootstrap</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
-                        <div class="single-service text-center wow fadeInUp" data-wow-delay=".8s">
+                        <div class="single-service text-center wow fadeInDown" data-wow-delay=".8s">
                             <i class="fa fa-file-code-o"></i>
                             <h3>javascript</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo placeat nesciunt at laboriosam</p>
@@ -149,7 +167,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-6">
-                        <div class="single-work-item wow fadeInUp" data-wow-delay=".2s">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay=".2s">
                             <div class="single-work-img">
                                 <img src="img/1.jpg" alt="">
                                 <div class="single-work-link">
@@ -162,11 +180,11 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <div class="single-work-item wow fadeInUp" data-wow-delay=".4s">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay=".4s">
                             <div class="single-work-img">
                                 <img src="img/1.jpg" alt="">
                                 <div class="single-work-link">
-                                   <a href="http://shajal-kumer.github.io/project-one" target="blank"><i class="fa fa-link"></i></a>
+                                   <a href="http://shajal-kumer.github.io/portfolio-two" target="blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
                             <div class="caption">
@@ -175,11 +193,11 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <div class="single-work-item wow fadeInUp" data-wow-delay=".6s">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay=".6s">
                             <div class="single-work-img">
                                 <img src="img/1.jpg" alt="">
                                 <div class="single-work-link">
-                                    <a href="http://shajal-kumer.github.io/project-two" target="blank"><i class="fa fa-link"></i></a>
+                                    <a href="http://shajal-kumer.github.io/project-four" target="blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
                             <div class="caption">
@@ -188,11 +206,11 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <div class="single-work-item wow fadeInUp" data-wow-delay=".8s">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay=".8s">
                             <div class="single-work-img">
                                 <img src="img/1.jpg" alt="">
                                 <div class="single-work-link">
-                                    <a href="http://shajal-kumer.github.io/project-three" target="blank"><i class="fa fa-link"></i></a>
+                                    <a href="http://shajal-kumer.github.io/project-five" target="blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
                             <div class="caption">
@@ -201,11 +219,11 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <div class="single-work-item wow fadeInUp" data-wow-delay="1s">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay="1s">
                             <div class="single-work-img">
                                 <img src="img/1.jpg" alt="">
                                 <div class="single-work-link">
-                                    <a href="http://shajal-kumer.github.io/project-four" target="blank"><i class="fa fa-link"></i></a>
+                                    <a href="http://shajal-kumer.github.io/project-one" target="blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
                             <div class="caption">
@@ -214,11 +232,11 @@
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-6">
-                        <div class="single-work-item wow fadeInUp" data-wow-delay="1.2s">
+                        <div class="single-work-item wow fadeInDown" data-wow-delay="1.2s">
                             <div class="single-work-img">
                                 <img src="img/1.jpg" alt="">
                                 <div class="single-work-link">
-                                    <a href="http://shajal-kumer.github.io/project-five" target="blank"><i class="fa fa-link"></i></a>
+                                    <a href="http://shajal-kumer.github.io/project-two" target="blank"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
                             <div class="caption">
@@ -232,7 +250,7 @@
         <!-- =============== END WORK SEC =============== -->
 
          <!-- =============== START HIRE ME SEC ==============-->
-        <section class="hire-me-sec padding-sec wow fadeInUp" data-wow-delay=".2s">
+        <section class="hire-me-sec padding-sec wow fadeInDown" data-wow-delay=".2s">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
@@ -278,7 +296,7 @@
                         </div>
                     </div>
                     <div class="col-md-9 col-sm-12">
-                        <div class="contact-right-sec wow fadeInUp" data-wow-delay=".2s">
+                        <div class="contact-right-s wow fadeInDown" data-wow-delay=".4">
                          <div id="form-messages"></div>
                             <form id="ajax-contact" method="post" action="mailer.php">
                                 <div class="form-group">
@@ -308,9 +326,9 @@
                     <div class="col-sm-12 text-center">
                         <div class="footer">
                             <div class="social-menu">
-                                <a class="wow fadeInDown facebook" href="" data-wow-delay=".2s"><i class="fa fa-facebook"></i></a>
-                                <a class="wow fadeInDown twittre" href="" data-wow-delay=".4s"><i class="fa fa-twitter"></i></a>
-                                <a class="wow fadeInDown googleplus" href="" data-wow-delay=".6s"><i class="fa fa-google-plus"></i></a>
+                                <a class="facebook wow fadeInLeft" data-wow-delay=".2s" href="https://www.facebook.com/shajal.sarker.50"><i class="fa fa-facebook"></i></a>
+                                <a class="twittre wow fadeInLeft" data-wow-delay=".5s" href=""><i class="fa fa-twitter"></i></a>
+                                <a class="googleplus wow fadeInLeft" data-wow-delay=".8s" href="https://plus.google.com/105345086833321797210"><i class="fa fa-google-plus"></i></a>
                             </div>
                             &copy;Copyright 2017 SHAJAL  | All RightReserved.
                         </div>
@@ -331,10 +349,7 @@
     <script src="js/jquery-1.12.4.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/jquery.waypoint.min.js"></script>
     <script src="js/wow.min.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/jquery.stellar.min.js"></script>
     <script src="js/custom.js"></script>
   </body>

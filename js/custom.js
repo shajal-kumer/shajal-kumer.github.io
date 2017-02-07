@@ -4,6 +4,20 @@
     jQuery(document).ready(function() {
         
         
+
+
+            /*
+         * ----------------------------------------------------------------------------------------
+         *  MENU JS
+         * ----------------------------------------------------------------------------------------
+         */
+        $(".toggle-btn").on("click", function () {
+            $(this).toggleClass("active");
+            $(".header-sec").toggleClass("active");
+        });
+
+
+
     	/*--------Start Preloader---------*/
 
         $(window).load(function() {
@@ -24,11 +38,11 @@
 
 	    /*-------Start scroll to menu-border js-------------*/
 	    $(window).scroll(function () {
-	        if ($(".navbar-fixed-top").offset().top > 50) {
-	            $(".navbar-fixed-top").addClass("menu-bg");
+	        if ($(".header-top-sec").offset().top > 50) {
+	            $(".header-top-sec").addClass("menu-bg");
 
 	        } else {
-	            $(".navbar-fixed-top").removeClass("menu-bg");
+	            $(".header-top-sec").removeClass("menu-bg");
 
 	        }
 	    });
@@ -74,12 +88,9 @@
         /*--------End Scroll to top-----------*/
 
 
-        /*----------WOW js-------------------*/
-
-        new WOW().init({
-        });
-
-        /*----------WOW js-------------------*/
+        /*----------Start WOW js-------------------*/
+        new WOW().init();
+        /*-------End WOW js--------*/
 
         /*----------PARALAX js-------------------*/
         $(window).stellar({
