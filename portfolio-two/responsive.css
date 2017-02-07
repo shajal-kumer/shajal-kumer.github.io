@@ -61,11 +61,20 @@
         padding: 0px 15px;
         box-sizing: border-box;
     }
+    .title-sec h2{
+        font-size: 35px
+    }
+    .navbar-collapse{
+        background: #000;
+    }
     .welcome-text h1 {
         font-size: 30px
     }
     .welcome-text h2 {
         font-size: 15px
+    }
+    .about-left-sec h1{
+        font-size: 35px
     }
     .contact-left-sec{
         text-align: center;
