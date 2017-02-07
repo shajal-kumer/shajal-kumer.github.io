@@ -72,6 +72,9 @@
         width: 200px;
         height: 200px
     }
+    .s-p-img img {
+        width: 100%
+    }
 }/*End Query*/
 
 /* Wide Screen Mobile Device */
@@ -94,5 +97,8 @@
     .navbar-collapse {
         background: #222;
     }  
+    .s-p-img img {
+        width: 100%
+    }
     
 }/*End Query*/
