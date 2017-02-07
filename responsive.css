@@ -66,14 +66,14 @@
         min-height: 0px
     }
     .navbar-nonbg .navbar-toggle {
-      border-color: #ccc;
+      border-color: #41C4FF;
       background: transparent;
       transition: all .3s ease;
       margin-top: -42px
     }
     .navbar-nonbg .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
         background: transparent;
-        border-color: #ccc;
+        border-color: #41C4FF;
     }
     .navbar-nonbg .navbar-toggle:hover{
         border-radius: 0px
@@ -82,7 +82,7 @@
         background: #fff;
     }
     .navbar-nonbg .navbar-toggle .icon-bar{
-        background: #fff;
+        background: #41C4FF;
         transition: all .3s ease
     }
     
@@ -125,11 +125,38 @@
 /* Wide Screen Mobile Device */
 @media only screen and (min-width: 480px) and (max-width: 767px){
      
-   /* .container{
+   .container{
         width: 450px;
     }
-        .welcome-text h1{
-        font-size: 26px;
+    .header-sec .navbar-collapse {
+        opacity: 1;
+        visibility: visible;
+    }
+    .navbar{
+        min-height: 0px
+    }
+    .navbar-nonbg .navbar-toggle {
+      border-color: #41C4FF;
+      background: transparent;
+      transition: all .3s ease;
+      margin-top: -42px
+    }
+    .navbar-nonbg .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+        background: transparent;
+        border-color: #41C4FF;
+    }
+    .navbar-nonbg .navbar-toggle:hover{
+        border-radius: 0px
+    }
+    .navbar-nonbg .navbar-toggle:focus .icon-bar, .navbar-nonbg .navbar-toggle:hover .icon-bar {
+        background: #fff;
+    }
+    .navbar-nonbg .navbar-toggle .icon-bar{
+        background: #41C4FF;
+        transition: all .3s ease
+    }
+    .welcome-text h1{
+        font-size: 28px;
     }
     .welcome-text h2{
         font-size: 16px;
@@ -161,6 +188,6 @@
         margin: 0 auto;
         display: block;
         margin-top: 30px
-    }   */
+    }   
     
 }/*End Query*/

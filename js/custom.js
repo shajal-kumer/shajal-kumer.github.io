@@ -3,26 +3,33 @@
     
     jQuery(document).ready(function() {
         
+
+        /*--------Start TYPED JS---------*/
         
+            $(".typed").typed({
+                strings: ["<h1>Hello I'm Shajal Kumer.</h1>"],
+                typeSpeed: 30,
+                showCursor:0
+        });
+
+        /*--------END TYPED JS---------*/
 
 
-            /*
-         * ----------------------------------------------------------------------------------------
-         *  MENU JS
-         * ----------------------------------------------------------------------------------------
-         */
+        /*--------Start TOGGLE MENU---------*/
+      
         $(".toggle-btn").on("click", function () {
             $(this).toggleClass("active");
             $(".header-sec").toggleClass("active");
         });
 
+        /*--------END TOGGLE MENU---------*/
 
 
     	/*--------Start Preloader---------*/
 
         $(window).load(function() {
-            $("#intro").delay(300).fadeOut();
-            $(".animationload").delay(600).fadeOut("slow");
+            $("#preloader").delay(300).fadeOut();
+            $(".preloader-area").delay(600).fadeOut("slow");
         });
 
         /*--------End Preloader---------*/
@@ -30,7 +37,7 @@
 
         /*--------Bootstrap Menu Fix For Mobile----------*/
 
-	    $('.navbar-default .navbar-nav li a').on('click', function () {
+	    $('.navbar-nonbg .navbar-nav li a').on('click', function () {
 	        $('.navbar-collapse ').removeClass('in');
 	    });
 	    /*--------Bootstrap Menu Fix For Mobile-----------*/
