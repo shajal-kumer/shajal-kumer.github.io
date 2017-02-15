@@ -134,8 +134,9 @@ a.read-more:hover, .read-more:hover {
 * ----------------------------------------------------------------------------------------
 */
 .header-sec {
-    /*background: url(img/welcome-bg.jpeg) no-repeat scroll center center / cover;*/
-    background: url(http://lorempixel.com/659/509/?845) no-repeat scroll 0 0 / cover;
+    background-image: url(img/welcome-bg.jpeg);
+    /*background: url(http://lorempixel.com/659/509/?845) no-repeat scroll 0 0 / cover;*/
+    background-size: cover;
     height: 100%;
     position: relative;
     z-index: 999

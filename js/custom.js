@@ -8,8 +8,9 @@
         
             $(".typed").typed({
                 strings: ["<h1>Hello I'm Shajal Kumer.</h1>"],
-                typeSpeed: 30,
-                showCursor:0
+                typeSpeed: 40,
+                showCursor:0,
+                startDelay: 5000,
         });
 
         /*--------END TYPED JS---------*/
@@ -29,7 +30,7 @@
 
         $(window).load(function() {
             $("#preloader").delay(300).fadeOut();
-            $(".preloader-area").delay(600).fadeOut("slow");
+            $(".preloader-area").delay(500).fadeOut("slow");
         });
 
         /*--------End Preloader---------*/
