@@ -134,12 +134,12 @@ a.read-more:hover, .read-more:hover {
 * ----------------------------------------------------------------------------------------
 */
 .header-sec {
-    background-image: url(img/welcome-bg.jpeg);
-    /*background: url(http://lorempixel.com/659/509/?845) no-repeat scroll 0 0 / cover;*/
+    background-image: url(img/welcome-bg.jpg) no-repeat;
+    background: url(http://lorempixel.com/659/509/?845) no-repeat scroll 0 0 / cover;
     background-size: cover;
     height: 100%;
     position: relative;
-    z-index: 999
+    z-index: 1;
 }
 .header-sec:after{
     position: absolute;

@@ -1,0 +1,142 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #222;
+}
+h2 {
+    font-size: 32px;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #565656;
+    font-size: 17px;
+}
+section.section-padding {
+    padding: 100px 0;
+}
+a:hover { text-decoration: none }
+
+/************ 
+            Main Css
+***********/
+
+/************ Section Title Css ***********/
+.section-title {
+    font-size: 17px;
+    margin-bottom: 70px;
+    text-align: center;
+}
+.section-title h2 {
+    padding-bottom: 20px;
+    position: relative;
+}
+.section-title h2::after {
+    background: #F87900 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    margin-left: -30px;
+    position: absolute;
+    width: 60px;
+}
+.section-title h2::before {
+    background: #222 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    margin-left: -12px;
+    position: absolute;
+    width: 24px;
+    z-index: 1
+}
+
+
+/************ Blog Background Image ***********/
+.blog-box-bg-1{background-image: url(../img/news-img-1.jpg)}
+.blog-box-bg-2{background-image: url(../img/news-img-2.jpg)}
+.blog-box-bg-3{background-image: url(../img/news-img-3.jpg)}
+
+.blog-box-bg{
+    background-position: center center;
+    background-size: cover;
+    background-color: #ddd;
+    height: 200px;
+    border: 2px solid #F87900 
+}
+.blog-box-bg {
+    border-bottom: none;
+}
+.blog-box-content{
+    padding: 20px;
+    border: 2px solid #e2e2e2;
+    transition: 2s
+}
+.blog-box-content .blog-box-meta {
+    font-size: 14px;
+    color: #333;
+}
+.blog-box-content .blog-box-meta a{
+    color: #333;
+    transition: .2s
+}
+.blog-box-content .blog-box-meta a:hover{
+    color: #F87900;
+}
+.blog-box-content .blog-box-meta .fa {
+    color: #F87900;
+    padding-right: 10px;
+    font-size:16px;
+}
+.blog-box-content .blog-box-meta span {
+    padding-right: 10px
+}
+.blog-box-content .blog-box-meta span:last-child{
+    padding-right: 0px
+}
+.blog-box-content h3 {
+    font-size: 20px;
+    margin-top: 15px
+}
+.blog-box-content a.blog-readmore-btn {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: inline-block;
+    background-color: #F87900;
+    color: #fff;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: .5s
+}
+.blog-box-content a.blog-readmore-btn:hover {
+    background-color: #333;
+}
+.single-blog-box:hover .blog-box-content {
+    border-color: #F87900; 
+}
