@@ -53,7 +53,7 @@ a:hover { text-decoration: none }
     padding-bottom: 20px;
     position: relative;
 }
-.section-title h2::after {
+.section-title h2:after {
     background: #F87900 none repeat scroll 0 0;
     bottom: 0;
     content: "";
@@ -63,7 +63,7 @@ a:hover { text-decoration: none }
     position: absolute;
     width: 60px;
 }
-.section-title h2::before {
+.section-title h2:before {
     background: #222 none repeat scroll 0 0;
     bottom: 0;
     content: "";
@@ -94,6 +94,7 @@ a:hover { text-decoration: none }
 .blog-box-content{
     padding: 20px;
     border: 2px solid #e2e2e2;
+    -webkit-transition: 2s;
     transition: 2s
 }
 .blog-box-content .blog-box-meta {
@@ -102,6 +103,7 @@ a:hover { text-decoration: none }
 }
 .blog-box-content .blog-box-meta a{
     color: #333;
+    -webkit-transition: .2s;
     transition: .2s
 }
 .blog-box-content .blog-box-meta a:hover{
@@ -132,6 +134,7 @@ a:hover { text-decoration: none }
     color: #fff;
     border-radius: 4px;
     margin-top: 10px;
+    -webkit-transition: .5s;
     transition: .5s
 }
 .blog-box-content a.blog-readmore-btn:hover {
