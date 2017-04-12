@@ -1,0 +1,47 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+ 
+    
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+ 
+ .video-area-bg, a.video-area-bg {
+    height: 350px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px
+}
+a.video-area-bg {
+	position: absolute;
+}
+.Demo3 .text {
+	padding-top: 350px
+}
+a.video-play-btn {
+	left: 50%;
+	margin-left: -40px;
+	right: auto;
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+
+.video-area-bg {
+    height: 350px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px
+}
+a.video-play-btn {
+	left: 50%;
+	margin-left: -40px;
+	right: auto;
+}
+
+
+}

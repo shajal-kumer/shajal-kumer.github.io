@@ -1,0 +1,147 @@
+/* Base CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus {
+    outline: 0 solid
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+body {
+    line-height: 24px;
+}
+a:hover {
+    text-decoration: none
+}
+.Demo1,
+.Demo2,
+.Demo3 {
+    padding: 50px 0;
+    text-align: center;
+}
+.Demo1 h1,
+.Demo2 h1,
+.Demo3 h1 {
+    color: #333;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+section.video-area {
+    position: relative;
+    padding: 80px 0px;
+    text-align: initial;
+}
+.video-area-bg {
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../img/bg.jpg);
+}
+.video-area-bg {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 43%;
+}
+a.video-play-btn {
+    background: red none repeat scroll 0 0;
+    border-radius: 50%;
+    font-size: 30px;
+    height: 80px;
+    line-height: 80px;
+    margin-top: -40px;
+    padding-left: 7px;
+    position: absolute;
+    right: -40px;
+    text-align: center;
+    top: 50%;
+    width: 80px;
+    -webkit-transition: .2s;
+    transition: .2s
+}
+a.video-play-btn:hover {
+    background: #e91d1d
+}
+.video-play-btn i {
+    color: #fff;
+}
+.video-area h2 {
+    color: #333;
+    font-size: 26px;
+}
+ul.check-icon {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    margin-top: 30px
+}
+ul.check-icon li {
+    line-height: 26px
+}
+ul.check-icon li:before {
+    color: red;
+    font-family: fontawesome;
+    content: "\f00c";
+    padding-right: 10px
+}
+/**************    DEMO TWO   ******************/
+
+.Demo2 a.video-play-btn {
+    left: 50%;
+    margin-left: -40px;
+    right: auto;
+}
+.Demo2 a.video-play-btn:hover,
+.Demo3 .video-area-bg:hover i {
+    background: #CF1F1F
+}
+.video-play-btn i {
+    color: #fff;
+}
+/* *************   DEMO 3 CSS    *************/
+
+.Demo3 .video-area-bg i {
+    background: red none repeat scroll 0 0;
+    border-radius: 50%;
+    font-size: 30px;
+    height: 80px;
+    left: 50%;
+    line-height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 80px;
+    color: #fff;
+    padding-left: 7px;
+    -webkit-transition: .2s;
+    transition: .2s
+}
