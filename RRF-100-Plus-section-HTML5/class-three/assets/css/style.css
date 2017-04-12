@@ -70,7 +70,11 @@ section.video-area {
     position: absolute;
     top: 0;
     width: 43%;
+    -webkit-box-shadow: 0px 0px 15px 1px #ccc; 
+  -moz-box-shadow:    0px 0px 15px 1px #ccc; 
+  box-shadow:         0px 0px 15px 1px #ccc
 }
+
 a.video-play-btn {
     background: red none repeat scroll 0 0;
     border-radius: 50%;
