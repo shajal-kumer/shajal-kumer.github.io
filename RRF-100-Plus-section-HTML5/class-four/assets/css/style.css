@@ -1,0 +1,113 @@
+/* Base CSS */
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #222222
+}
+body {
+    color: #565656;
+    font-size: 17px;
+    line-height: 30px;
+}
+a{
+    text-decoration: none 
+}
+a:hover, a:focus, a:active { text-decoration: none }
+
+
+section.section-padding {
+    padding: 100px 0;
+}
+.section-title {
+    margin-bottom: 80px;
+    text-align: center;
+}
+.section-title h2 {
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    position: relative;
+    font-size: 32px
+}
+.section-title h2::before {
+    background: red none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    margin-left: -40px;
+    position: absolute;
+    width: 80px;
+}
+.section-title h2::after {
+    background: yellow none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50%;
+    margin-left: -10px;
+    position: absolute;
+    width: 20px;
+}
+.single-service {
+  margin-bottom: 40px;
+  min-height: 257px;
+  text-align: center;
+   padding: 20px;
+  transition:border .5s ease
+}
+a.single-service {
+  color: #333;
+  display: block;
+}
+.single-service:hover {
+    border: 1px solid #ddd
+}
+.single-service-icon-container {
+    display: table;
+    height: 80px;
+    width: 100%;
+}
+.single-service-icon-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.single-service h3 {
+    font-size: 22px;
+    margin: 20px 0;
+}
+.single-service-icon-table-cell i {
+  background: #ffdb77 none repeat scroll 0 0;
+  border-radius: 50%;
+  color: #ff7876;
+  font-size: 50px;
+  height: 80px;
+  line-height: 80px;
+  width: 80px;
+}
