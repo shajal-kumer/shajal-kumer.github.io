@@ -1,0 +1,141 @@
+/* Base CSS */
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    
+}
+body {
+    color: #787978;
+}
+a:focus {
+    outline: 0 solid
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    color: #333
+}
+a:hover {
+    text-decoration: none
+}
+.section-padding {
+    padding: 80px 0px;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px
+}
+.section-title span {
+    color: #2fa55e;
+}
+.single-pricing-box {
+    border: 1px solid #ddd;
+    padding: 25px;
+    text-align: center;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+.single-pricing-box:hover {
+    border-color: #2fa55e;
+    box-shadow: 0 0 50px #f1f1f1
+}
+.single-pricing-box h3 {
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.single-pricing-box .pricing-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+    -webkit-transition: .3s;
+    transition: .3s
+}
+.single-pricing-box:hover .pricing-icon {
+    color: #2fa55e
+}
+.single-pricing-box .pricing-icon img {
+    max-width: 64px;
+    -webkit-transition: .3s;
+    transition: .3s
+}
+.single-pricing-box:hover .pricing-icon img {
+    opacity: .5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"
+}
+.pricing-lists ul {
+    line-height: 28px;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0 0 0 20px;
+    text-align: left;
+}
+.pricing-lists ul li:before {
+    font-family: fontAwesome;
+    content: "\f00c";
+    padding-right: 10px;
+    color: #2fa55e;
+}
+.pricing-lists ul li.off:before {
+    font-family: fontAwesome;
+    content: "\f00d";
+    color: red
+}
+.pricing-lists ul li {
+    -webkit-transition: .2s;
+    transition: .2s
+}
+.pricing-lists ul li:hover {
+    padding-left: 8px;
+    cursor: pointer;
+}
+.single-pricing-box h3.pricing-count {
+    text-transform: none;
+}
+.pricing-lists {
+    margin-bottom: 25px;
+}
+.single-pricing-box .order-btn {
+    border: 1px solid #2fa55e;
+    border-radius: 50px;
+    color: #333;
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 30px;
+    text-transform: capitalize;
+    -webkit-transition: .2s;
+    transition: .2s;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px
+}
+.single-pricing-box .order-btn:before {
+    position: absolute;
+    content: "";
+    background: #2fa55e;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: -100%;
+    visibility: hidden;
+    -webkit-transition: .3s;
+    transition: .3s;
+    z-index: -1;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.single-pricing-box .order-btn:hover:before {
+    visibility: visible;
+    left: 0px;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+}
