@@ -1,0 +1,97 @@
+/* Base CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+body {
+    color: #a9a9a9;
+    font-size: 14px;
+    line-height: 1.7
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    color: #333;
+    font-weight: 700;
+}
+a:hover {
+    text-decoration: none
+}
+a {
+    font-weight: 700;
+    text-decoration: none;
+}
+/* ------------  MAIN STYLE -------------*/
+.section-padding {
+    padding: 30px 0px;
+    margin: 50px 0px
+}
+.section-bg-1 {
+    position: relative;
+}
+.section-bg-1:after {
+    background-image: url(../img/1.jpg);
+    background-position: center;
+    background-size: cover;
+    content: "";
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 45%;
+    background-color: #ddd;
+    position: absolute;
+}
+.section-title span {
+    color: #18b5fd;
+}
+.styled-faq {
+    min-height: 410px;
+    margin-top: 30px
+}
+.styled-faq .panel {
+    border-radius: 0px;
+    box-shadow: none;
+    margin-bottom: 20px
+}
+.styled-faq .panel .panel-heading {
+    padding: 0px;
+    background: none;
+    border: 0px;
+    border-radius: 0px
+}
+.styled-faq .panel .panel-heading h4 a {
+    display: block;
+    padding: 15px
+}
+.styled-faq h4.panel-title > a:hover,
+.styled-faq h4.panel-title > a:focus,
+.styled-faq h4.panel-title > a:active {
+    text-decoration: none;
+}
+.styled-faq .panel-group .panel-heading + .panel-collapse > .list-group,
+.panel-group .panel-heading + .panel-collapse > .panel-body {
+    border: none;
+}
+.styled-faq .panel .panel-heading h4 a i.fa {
+    display: none;
+    float: right;
+    font-size: 150%;
+    line-height: 18px;
+}
+.styled-faq .panel .panel-heading h4 a[aria-expanded="true"] i.fa.fa-angle-down {
+    display: block;
+}
+.styled-faq .panel .panel-heading h4 a[aria-expanded="false"] i.fa-angle-up {
+    display: block;
+}
