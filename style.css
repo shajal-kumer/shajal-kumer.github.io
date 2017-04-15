@@ -396,7 +396,7 @@ a.wl-read-more{
     height: 100%;
     left: 0px;
     top: 0px;
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.6);
     opacity: 0;
     transition: all .4s ease-in-out;
 }
