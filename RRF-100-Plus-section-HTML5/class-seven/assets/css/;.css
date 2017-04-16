@@ -1,0 +1,75 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin:0 0 15px;
+    color: #464646;
+    text-transform: uppercase;
+    font-weight: 700
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 26px;      /* It will be change */
+    font-family: 'Lato', sans-serif;   /* It will be change */
+    letter-spacing: 1px;
+    color: #666666;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.section-padding{
+    padding: 80px 0px;
+}
+.section-title{
+    margin-bottom: 60px
+}
+.section-title h2 {
+  font-size: 28px;
+  position: relative;
+}
+.section-title h2:after {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    background-color: red
+}
+.owl-carousel .owl-item .single-staff-item img {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+    max-width: 160px;
+    width: 160px;
+}
+.staff-meta h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.staff-meta p {
+    font-size: 12px;
+    line-height: 22px;
+}
