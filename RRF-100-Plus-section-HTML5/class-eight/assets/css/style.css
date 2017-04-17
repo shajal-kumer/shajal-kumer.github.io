@@ -80,7 +80,7 @@ a:hover {
     background-image: url(http://lorempixel.com/500/500);
 }
 .service-content {
-    padding: 30px 20px;
+    padding: 30px 20px 20px;
 }
 .service-content h3 {
     font-size: 18px
