@@ -1,0 +1,109 @@
+/* Base CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+a:focus {
+    outline: 0 solid
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin: 0 0 15px;
+    color: #464646;
+    text-transform: uppercase;
+    font-weight: 700
+}
+body {
+    font-size: 14px;
+    /* It will be change */
+    
+    font-weight: 400;
+    line-height: 26px;
+    /* It will be change */
+    
+    font-family: 'Lato', sans-serif;
+    /* It will be change */
+    
+    letter-spacing: 1px;
+    color: #666666;
+    /* It will be change */
+}
+a:hover {
+    text-decoration: none
+}
+.gray-bg {
+    background-color: #f1f1f1;
+}
+.section-padding {
+    padding: 80px 0px;
+}
+.section-title {
+    margin-bottom: 60px
+}
+.section-title h2 {
+    s font-size: 28px;
+}
+.single-service {
+    background-color: #fff;
+    transition: .3s
+}
+.single-service:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2)
+}
+.service-bg {
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+    height: 225px;
+}
+.service-bg-1 {
+    background-image: url(http://lorempixel.com/500/500);
+}
+.service-bg-2 {
+    background-image: url(http://lorempixel.com/500/500);
+}
+.service-bg-3 {
+    background-image: url(http://lorempixel.com/500/500);
+}
+.service-bg-4 {
+    background-image: url(http://lorempixel.com/500/500);
+}
+.service-content {
+    padding: 30px 20px;
+}
+.service-content h3 {
+    font-size: 18px
+}
+.service-content a.service-more-btn {
+    display: inline-block;
+    padding: 8px 0px;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #39ca74;
+    margin-top: 10px;
+    transition: .3s;
+}
+.service-content a.service-more-btn:hover {
+    background: #39ca74;
+    color: #fff;
+    padding: 8px 26px
+}
+.service-content a.service-more-btn i.fa {
+    padding-left: 10px;
+    color: #39ca74;
+    transition: .3s;
+}
+.service-content a.service-more-btn:hover i.fa {
+    color: #fff
+}
