@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin:0 0 15px;
+    color: #464646;
+    text-transform: uppercase;
+    font-weight: 700
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 24px;      /* It will be change */
+    font-family: 'Open Sans', sans-serif;   /* It will be change */
+    color: #666666;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.section-padding{
+    padding: 80px 0px;
+}
+.section-title{
+    text-align: center;
+    margin-bottom: 60px
+}
+
+.section-border span {
+    background: #86bc39 none repeat scroll 0 0;
+    border-radius: 2px;
+    display: inline-block;
+    height: 5px;
+    width: 50px;
+}
+.section-border span.black-border {
+    background: #333 none repeat scroll 0 0;
+    height: 5px;
+    margin: 0 8px;
+    width: 40px;
+}
+.single-testimonial-item {
+    box-shadow: 0 0 4px #ccc;
+    margin: 4px;
+    padding: 20px 20px 20px 100px;
+    position: relative;
+}
+.single-testimonial-item p, .single-testimonial-content p {
+    font-style: italic;
+}
+.single-testimonial-item:before{
+    position: absolute;
+    content: "\f10e";
+    top: 50%;
+    font-size: 30px;
+    line-height: 30px;
+    margin-top: -15px;
+    left: 20px;
+    color: #86bc39;
+    font-family: fontAwesome
+}
+
+.single-testimonial-item::after {
+    background: #d1d1d1 none repeat scroll 0 0;
+    content: "";
+    height: 60%;
+    left: 70px;
+    position: absolute;
+    top: 20%;
+    width: 1px;
+}
+
+.single-testimonial-item h3, .single-testimonial-content h3 {
+    font-size: 18px;
+}
+.single-testimonial-item h3 span, .single-testimonial-content h3 span {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    margin-top: 5px;
+    text-transform: none;
+}
+
+/********************       DEMO 2      **************/
+
+.single-testimonial-item-demo2{
+    box-shadow: 0 0 4px #ccc;
+    margin: 4px;
+    padding: 20px;
+    position: relative;
+}
+
+.single-testimonial-content {
+    padding-left: 80px;
+    position: relative;
+}
+.single-testimonial-content::before {
+  background: #d1d1d1 none repeat scroll 0 0;
+  content: "";
+  height: 80%;
+  left: 55px;
+  position: absolute;
+  top: 10%;
+  width: 1px;
+}
+.icon-container {
+    font-size: 30px;
+    left: 20px;
+    line-height: 30px;
+    margin-top: -15px;
+    position: absolute;
+    top: 50%;
+    color: #86bc39
+}
