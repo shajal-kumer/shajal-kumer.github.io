@@ -90,6 +90,25 @@ a:hover { text-decoration: none }
     text-transform: none;
 }
 
+.client-testimonial-carousel .owl-dots div {
+    background: #86bc39;
+    border-radius: 2px;
+    display: inline-block;
+    height: 4px;
+    margin: 0 10px;
+    transition: all 0.2s ease 0s;
+    width: 30px;
+}
+.client-testimonial-carousel .owl-dots {
+    margin-top: 20px;
+    text-align: center;
+}
+.client-testimonial-carousel .owl-dots div.active {
+    width: 40px;
+    background: #333
+}
+
+
 /********************       DEMO 2      **************/
 
 .single-testimonial-item-demo2{
