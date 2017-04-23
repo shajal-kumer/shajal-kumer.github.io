@@ -47,7 +47,8 @@ a:focus {
     background-image: url(../img/hero-img.jpg);
     background-position: center;
     background-size: cover;
-    height: 509px;
+    height: 509px;;
+    background-color: #ddd
 }
 .welcome-hero-img-sec {
     margin-bottom: 70px
