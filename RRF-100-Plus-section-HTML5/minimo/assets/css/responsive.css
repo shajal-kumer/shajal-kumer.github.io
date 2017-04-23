@@ -1,0 +1,156 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+ 
+ .mainmenu ul li a{
+ 	margin-left: 60px
+ }
+ .form-outer-area{
+ 	width: 45%
+ }
+ input[type="email"] {
+ 	width: 89%
+ }
+
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+ 
+ .header--area{
+ 	padding: 30px 0px
+ }
+ .mainmenu {
+ 	display: none
+ }
+ .responsive-menu-wrap{
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.slicknav_menu{
+	background: #333;
+	transition: .3s
+}
+.slicknav_btn.slicknav_collapsed {
+    border-radius: 0;
+    margin: 0 5px;
+}
+.slicknav_btn.slicknav_open {
+    border-radius: 0;
+    margin: 0 5px;
+}
+.slicknav_nav {
+    background: #333 none repeat scroll 0 0;
+    margin: 0 5px;
+    width: 120px;
+}
+.slicknav_nav a {
+  margin: 0;
+  padding: 8px 0;
+}
+.slicknav_nav a:hover {
+	border-radius: none;
+	background: #000;
+	color: #fff
+}
+ .welcome-hero-img{
+ 	height: 300px;
+
+ }
+ .welcome-hero-img-sec{
+ 	margin-bottom: 30px
+ }
+ .single-blog-box{
+ 	margin-bottom: 50px
+ }
+  .form-outer-area{
+ 	width: 90%
+ }
+ input[type="email"] {
+ 	width: 85%
+ }
+  .footer-left a{
+  	margin-right: 18px
+  }
+  .footer-social-link{
+  	text-align: center;
+  	margin-top: 20px
+  }
+   .load-more-button{
+ 	padding: 16px 30px
+ }
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+ .header--area{
+ 	padding: 30px 0px
+ }
+ .mainmenu {
+ 	display: none
+ }
+ .responsive-menu-wrap{
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.slicknav_menu{
+	background: #333;
+	transition: .3s
+}
+.slicknav_btn.slicknav_collapsed {
+    border-radius: 0;
+    margin: 0 5px;
+}
+.slicknav_btn.slicknav_open {
+    border-radius: 0;
+    margin: 0 5px;
+}
+.slicknav_nav {
+    background: #333 none repeat scroll 0 0;
+    margin: 0 5px;
+    width: 120px;
+}
+.slicknav_nav a {
+  margin: 0;
+  padding: 8px 0;
+}
+.slicknav_nav a:hover {
+	border-radius: none;
+	background: #000;
+	color: #fff
+}
+ .welcome-hero-img{
+ 	height: 300px;
+
+ }
+ .welcome-hero-img-sec{
+ 	margin-bottom: 30px
+ }
+ .single-blog-box{
+ 	margin-bottom: 50px
+ }
+  .form-outer-area{
+ 	width: 75%
+ }
+ input[type="email"] {
+ 	width: 90%
+ }
+  .footer-left a{
+  	margin-right: 18px
+  }
+  .footer-social-link{
+  	text-align: center;
+  	margin-top: 20px
+  }
+   .load-more-button{
+ 	padding: 16px 30px
+ }
+
+
+}
