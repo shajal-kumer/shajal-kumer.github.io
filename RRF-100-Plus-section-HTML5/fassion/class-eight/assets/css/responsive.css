@@ -1,0 +1,216 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  .big-menu li {
+	font-size: 40px;
+}
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+ 
+    .container {
+    }
+    .big-menu li {
+		font-size: 30px;
+	}
+    .big-menu li a {
+		padding-top: 100px;
+	}
+	.single-product-item{
+		width: 31.3333%
+	}
+	.single-product-item:nth-child(2), .single-product-item:nth-child(4), .single-product-item:nth-child(9){
+		width: 64.6667%
+	}
+	.promo-bg {
+		padding-top: 15px;
+	}
+
+	.footer-area, .footer-area .text-right {
+	  text-align: center;
+	}
+	.focial-links {
+	  margin-top: 10px;
+	}
+	.footer-menu ul li a {
+	  margin: 0;
+	  padding: 0px 10px;
+	}
+
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+
+	.header-left ul, .header-right{
+		display: none
+	}
+ 	.slide-text-tablecell {
+		font-size: 50px;
+		line-height: 60px;
+	}
+	.homepage-slides.owl-carousel .owl-item img {
+		display: none;
+	}
+	.homepage-slider-wrap, .homepage-slider-wrap div{
+		height: auto;
+	}
+	.header-top-area{
+		position: relative;
+	}
+	.slide-text-table {
+		display: block;
+	}
+	.slide-text-tablecell {
+		font-size: 50px;
+		line-height: 60px;
+		display: block;
+		padding: 50px 0px;
+		text-align: center;
+	}
+
+	.big-menu li {
+	    float: none;
+	    font-size: 40px;
+	    width: 100%;
+	}
+	.big-menu li a {
+  		padding: 50px;
+	}
+	.big-menu > li:nth-child(1), .big-menu > li:nth-child(4), .big-menu > li:nth-child(2), .big-menu > li:nth-child(3) {
+		text-align: center;
+		width: 100%
+	}
+	.single-product-item, .single-product-item:nth-child(2), .single-product-item:nth-child(4), .single-product-item:nth-child(9){
+		width: 100%;
+		float: none;
+	}
+	.promo-content {
+		padding: 50px 15px;
+	}
+	.promo-title h2 {
+		font-size: 25px;
+	}
+	.year-text {
+		top: 65px;
+		left: 60%;
+		font-size: 50px;
+	}
+	.product-promotions .owl-dots {
+		position: relative;
+		top: 0;
+		right: 0;
+		margin-top: 0;
+		text-align: center;
+	}
+	.product-promotions .owl-dots div {
+		display: inline-block;
+		margin: 0px 5px;
+	}
+	.product-promotions {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+	}
+	.footer-area, .footer-area .text-right {
+	 	text-align: center;
+	}
+	.focial-links {
+		margin-top: 10px;
+	}
+	.footer-menu ul li a {
+	  margin: 0;
+	  padding: 0px 10px;
+	}
+	.email-subscriber-area input[type="submit"]{
+		margin-top: 10px;
+	}
+    
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+
+
+.header-left ul, .header-right{
+		display: none
+	}
+ 	.slide-text-tablecell {
+		font-size: 50px;
+		line-height: 60px;
+	}
+	.homepage-slides.owl-carousel .owl-item img {
+		display: none;
+	}
+	.homepage-slider-wrap, .homepage-slider-wrap div{
+		height: auto;
+	}
+	.header-top-area{
+		position: relative;
+	}
+	.slide-text-table {
+		display: block;
+	}
+	.slide-text-tablecell {
+		font-size: 50px;
+		line-height: 60px;
+		display: block;
+		padding: 50px 0px;
+		text-align: center;
+	}
+
+	.big-menu li {
+	    float: none;
+	    font-size: 40px;
+	    width: 100%;
+	}
+	.big-menu li a {
+  		padding: 50px;
+	}
+	.big-menu > li:nth-child(1), .big-menu > li:nth-child(4), .big-menu > li:nth-child(2), .big-menu > li:nth-child(3) {
+		text-align: center;
+		width: 100%
+	}
+	.single-product-item, .single-product-item:nth-child(2), .single-product-item:nth-child(4), .single-product-item:nth-child(9){
+		width: 100%;
+		float: none;
+	}
+	.promo-content {
+		padding: 50px 15px;
+	}
+	.promo-title h2 {
+		font-size: 25px;
+	}
+	.year-text {
+		top: 65px;
+		left: 40%;
+		font-size: 50px;
+	}
+	.product-promotions .owl-dots {
+		position: relative;
+		top: 0;
+		right: 0;
+		margin-top: 0;
+		text-align: center;
+	}
+	.product-promotions .owl-dots div {
+		display: inline-block;
+		margin: 0px 5px;
+	}
+	.product-promotions {
+		margin-bottom: 30px;
+		padding-bottom: 30px;
+	}
+	.footer-area, .footer-area .text-right {
+	 	text-align: center;
+	}
+	.focial-links {
+		margin-top: 10px;
+	}
+	.footer-menu ul li a {
+	  margin: 0;
+	  padding: 0px 10px;
+	}
+	.email-subscriber-area input[type="submit"]{
+		margin-top: 10px;
+	}
+
+
+}
