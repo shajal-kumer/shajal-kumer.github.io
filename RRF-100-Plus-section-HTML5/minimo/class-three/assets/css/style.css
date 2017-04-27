@@ -59,8 +59,14 @@ a:hover { text-decoration: none }
 .single-blog-item{
     padding-bottom: 120px
 }
+.single-blog-item img {
+    width: 100%;
+}
 .single-blog-item h2 {
     margin: 20px 0 25px;
+}
+.single-blog-item h2 a {
+    color: #626262;
 }
 .blog-box-content {
     margin-bottom: 30px;
@@ -74,11 +80,6 @@ a:hover { text-decoration: none }
 .big-blog-box .blog-feature-content {
     margin-bottom: 92px;
 }
-
-
-
-
-
 
 .newsletter-area {
   background: #F0F0F0;
