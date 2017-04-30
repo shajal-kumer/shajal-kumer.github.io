@@ -45,7 +45,7 @@ a:hover { text-decoration: none }
 }
 .service-box-bg > h2 {
     position: absolute;
-    bottom: -24px;
+    bottom: -22px;
     left: 8%;
     background: #F97230;
     color: #fff;
