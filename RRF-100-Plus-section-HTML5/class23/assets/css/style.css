@@ -1,0 +1,88 @@
+/* Base CSS */
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin:0 0 15px;
+    color: #464646;
+    font-weight: 700
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 26px;      /* It will be change */
+    font-family: 'Lato', sans-serif;   /* It will be change */
+    letter-spacing: 1px;
+    color: #666666;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.section-padding{
+    padding: 80px 0px;
+}
+.section-title{
+    text-align: center;
+    margin-bottom: 60px
+}
+
+
+.single-service-box {
+  border: 1px solid #e3e3e3;
+  text-align: center;
+}
+.service-box-bg {
+  height: 200px;
+  background: #ddd;
+  position: relative;
+}
+.service-box-bg > h2 {
+    position: absolute;
+    bottom: -24px;
+    left: 8%;
+    background: #F97230;
+    color: #fff;
+    font-size: 18px;
+    text-transform: capitalize;
+    width: 84%;
+    padding: 15px 0px;
+    text-align: center;
+    margin: 0;
+}
+.service-box-content {
+  padding: 50px 20px 20px;
+}
+.service-box-content p:last-child {
+    margin: 0;
+}
+.service-readmore {
+    color: #333;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 5px;
+    position: relative;
+    transition: .2s;
+    font-size: 16px
+}
+.service-readmore i.fa {
+    display: inline-block;
+    margin-left: 0px;
+    transition: .3s;
+    position: absolute;
+    bottom: 4px;
+    right: -22px;
+}
+.service-readmore:hover i.fa {
+    right: -26px;
+    color: #F97230;
+}
+.service-readmore:hover{
+    color: #F97230;
+}
