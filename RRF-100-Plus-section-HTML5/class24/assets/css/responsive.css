@@ -1,0 +1,75 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+ 
+ .mainmenu ul li a{
+ 	font-size: 14px;
+ 	padding-left: 25px
+ }
+ .single-slide-item .slide-img-right {
+	max-height: 441px;
+}
+.slide-text h2 {
+	font-size: 28px;
+	line-height: 38px;
+}
+.slide-text {
+	padding: 120px 0px;
+}
+    
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+ 	.slide-text h2 {
+	font-size: 24px;
+	line-height: 34px;
+}
+    .single-slide-item .slide-img-right {
+	display: none;
+}
+.header-area {
+	text-align: center;
+}
+.mainmenu ul {
+	text-align: center;
+	margin-top: 15px
+}
+.mainmenu ul li a{
+	padding: 10px;
+}
+.slide-text {
+	padding: 240px 0px;
+}
+
+
+
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+
+.slide-text h2 {
+	font-size: 24px;
+	line-height: 34px;
+}
+.single-slide-item .slide-img-right {
+	display: none;
+}
+.header-area {
+	text-align: center;
+}
+.mainmenu ul {
+	text-align: center;
+	margin-top: 15px
+}
+.mainmenu ul li a{
+	padding: 10px 15px;
+}
+.slide-text {
+	padding: 200px 0px;
+}
+
+}
