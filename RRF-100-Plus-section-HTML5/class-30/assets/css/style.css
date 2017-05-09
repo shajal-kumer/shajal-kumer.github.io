@@ -1,0 +1,98 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin:0 0 15px;
+    color: #464646;
+    text-transform: uppercase;
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 26px;      /* It will be change */
+    font-family: 'Lato', sans-serif;   /* It will be change */
+    letter-spacing: 1px;
+    color: #666666;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.section-padding{
+    padding-bottom: 150px;
+    padding-top: 30px
+}
+.section-title{
+    text-align: center;
+    margin-bottom: 60px
+}
+.section-padding.gallery-sec {
+    background: #EFEFF1;
+}
+.bigger-text {
+    padding: 0px 60px;
+}
+.bigger-text h1 {
+    line-height: 44px;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+.boxed-btn {
+  display: inline-block;
+  background: #4752e9;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: 50px;
+  margin-top: 25px;
+  transition: .4s
+}
+.boxed-btn:hover {
+    border-radius: 0px;
+    color: #fff
+}
+
+.shadow-gallery {
+  padding-left: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+.shadow-gallery img {
+    max-width: 65%;
+    box-shadow: 0 0 50px #CDD1D8;
+}
+.shadow-gallery img:nth-child(2) {
+  position: absolute;
+  top: 70px;
+  right: 0px;
+  width: 55%;
+  z-index: 2;
+  max-height: 95%
+}
+.shadow-gallery img:nth-child(3) {
+  position: absolute;
+  bottom: -120px;
+  left: -20px;
+  z-index: 3;;
+  max-width: 65%;
+}
