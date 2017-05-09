@@ -1,0 +1,126 @@
+/* Base CSS */
+
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin:0 0 15px;
+    color: #fff;
+    text-transform: uppercase;
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 26px;      /* It will be change */
+    font-family: 'Lato', sans-serif;   /* It will be change */
+    letter-spacing: 1px;
+    color: #666666;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.section-padding{
+    padding: 80px 0px;
+}
+.section-title{
+    text-align: center;
+    margin-bottom: 60px
+}
+.footer-area{
+    background-color: #13A3E6;
+    padding: 50px 0px
+}
+.footer-area, .footer-area a {
+    color: #fff
+}
+.footer-wid img {
+    margin-bottom: 20px;
+}
+.footer-social-link a {
+  display: inline-block;
+  padding-right: 15px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.footer-wid ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-transform: capitalize;
+}
+.footer-wid a {
+    transition: .5s;
+    display: inline-block;
+}
+.footer-wid a:hover {
+    padding-left: 10px
+}
+.contact-info{
+    position: relative;
+    padding-left: 30px;
+}
+.contact-info i.fa {
+    position: absolute;
+    left: 0;
+    top: 10px
+}
+.footer-subscriber-form{
+    margin-top: 35px
+}
+.footer-subscriber-form h4 {
+    font-size: 15px
+}
+.footer-subscriber-form input[type="email"] {
+    border: navajowhite;
+    padding: 5px 10px;
+    color: #000;
+    width: 73%;
+    background-color: #fff
+}
+.footer-subscriber-form input[type="submit"] {
+    border: navajowhite;
+    width: 25%;
+    color: #13A3E6;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 10px;
+    background-color: #fff
+}
+.footer-subscriber-form form {
+    margin-bottom: 10px
+}
+.footer-form-p{
+    font-size: 13px
+}
+
+
+.footer-btm-area{
+    padding: 20px 0px
+}
+.footer-btm-area ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.footer-btm-area ul li {
+    display: inline-block;
+    position: relative;
+}
+.footer-btm-area ul li:after {
+    content: "|";
+    padding: 0px 5px 0px 10px
+}
+.footer-btm-area ul li:last-child::after {
+    display: none;
+}
+.footer-btm-area, .footer-btm-area a {
+    color: #a0a0a0;
+    background: #fff;
+}
