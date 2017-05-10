@@ -40,7 +40,7 @@ a:hover, a:focus { text-decoration: none; outline: 0 }
     margin-right: -7.5px;
     margin-left: -7.5px;
 }
-.row.project-lists .col-md-4 {
+.row.project-lists .col-sm-4 {
     padding-left: 7.5px;
     padding-right: 7.5px;
 }
@@ -131,8 +131,8 @@ a:hover, a:focus { text-decoration: none; outline: 0 }
     font-size: 80%;
     margin-top: 10px
 }
-.row.project-lists .col-md-4:nth-child(2) .single-project-item,
-.row.project-lists .col-md-4:nth-child(4) .single-project-item,
-.row.project-lists .col-md-4:nth-child(5) .single-project-item{
+.row.project-lists .col-sm-4:nth-child(2) .single-project-item,
+.row.project-lists .col-sm-4:nth-child(4) .single-project-item,
+.row.project-lists .col-sm-4:nth-child(5) .single-project-item{
     height: 615px
 }

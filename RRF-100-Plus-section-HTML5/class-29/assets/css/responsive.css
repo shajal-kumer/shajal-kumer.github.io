@@ -6,7 +6,15 @@
 /* Tablet Layout: 768px. */
 @media only screen and (min-width: 768px) and (max-width: 991px) { 
  
-    
+    .single-project-item{
+    	 height: 220px;
+    }
+    .row.project-lists .col-sm-4:nth-child(2) .single-project-item,
+	.row.project-lists .col-sm-4:nth-child(4) .single-project-item,
+	.row.project-lists .col-sm-4:nth-child(5) .single-project-item{
+	    height: 455px
+	}
+
 }
 /* Mobile Layout: 320px. */
 @media only screen and (max-width: 767px) { 
