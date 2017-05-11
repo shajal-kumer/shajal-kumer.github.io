@@ -5,7 +5,7 @@
         
 
         $(window).scroll(function() {
-        	if($(this).scrollTop() > 100) {
+        	if($(this).scrollTop() > 150) {
         		$('.scrollToTop').fadeIn();
         	} else {
         		$('.scrollToTop').fadeOut();
