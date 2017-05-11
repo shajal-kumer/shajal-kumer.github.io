@@ -1,0 +1,116 @@
+/* Base CSS */
+
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus {
+    outline: 0 solid
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Changa One', cursive;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+body {
+    font-size: 14px;
+    /* It will be change */
+    
+    font-weight: 400;
+    line-height: 26px;
+    /* It will be change */
+    /* It will be change */
+    
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+a:hover {
+    text-decoration: none
+}
+.section-padding {
+    padding: 100px 0px;
+    background-color: #F2F3F8;
+    margin: 20px 0px;
+}
+.promo-bg-1 {
+    background-image: url(../img/1.jpg);
+}
+.promo-bg-2 {
+    background-image: url(../img/2.jpg)
+}
+.promo-bg-3 {
+    background-image: url(../img/3.jpg)
+}
+.single-promo-box {
+    background-size: cover;
+    background-color: #ddd;
+    background-position: center;
+    height: 260px;
+    display: block;
+    color: #fff;
+    position: relative;
+    -webkit-transition: .5s;
+    transition: .5s
+}
+.single-promo-box:hover {
+    color: #fff;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+.promo-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 50px 10px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+.single-promo-box:hover .promo-content {
+    bottom: 10px;
+}
+.promo-content h2 {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+.scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #ffad2e;
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+.scrollToTop:hover {
+    background-color: #FFA315;
+    color: #fff;
+    bottom: 40px;
+}

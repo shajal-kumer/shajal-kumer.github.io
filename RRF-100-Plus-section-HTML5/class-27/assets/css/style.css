@@ -64,6 +64,9 @@ ol, ul{
     line-height: 35px;
     margin: 0px 15px;
 }
+.events-content img {
+  width: 100%
+}
 
 /* -------------------------------- 
 
