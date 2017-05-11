@@ -73,6 +73,7 @@ a:hover {
     color: #fff;
     -webkit-transform: scale(1.03);
     transform: scale(1.03);
+    box-shadow: 0 0 10px #999;
 }
 .promo-content {
     position: absolute;
