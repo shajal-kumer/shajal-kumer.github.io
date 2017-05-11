@@ -62,6 +62,7 @@ a:hover { text-decoration: none }
     padding: 25px;
     padding-right: 0;
     padding-left: 40px;
+    -webkit-transition: .3s;
     transition: .3s;
 }
 .header-area ul li a:hover {

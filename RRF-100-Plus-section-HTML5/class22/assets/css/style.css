@@ -66,11 +66,14 @@ a:hover { text-decoration: none }
   text-align: center;
   border-radius: 4px;
   margin: 0px 5px;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: .3s;
   transition: .3s
 }
 .team-social-icon a:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
 }
 .single-team-itam{
     box-shadow: 0 0 10px #ccc;

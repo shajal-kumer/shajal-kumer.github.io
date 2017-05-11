@@ -71,7 +71,7 @@ a:hover { text-decoration: none }
     position: relative;
     border: 1px solid #fff
 }
-.small-featured-bordered-img::before {
+.small-featured-bordered-img:before {
     position: absolute;
     content: "";
     width: 100%;
@@ -105,7 +105,7 @@ a:hover { text-decoration: none }
     position: relative;
     border: 1px solid #fff
 }
-.big-featured-bordered-img::after {
+.big-featured-bordered-img:after {
     position: absolute;
     content: "";
     background: #000;
@@ -114,8 +114,9 @@ a:hover { text-decoration: none }
     top: 0;
     left: 0;
     opacity: .5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
-.big-featured-bordered-img::before {
+.big-featured-bordered-img:before {
     position: absolute;
     content: "";
     width: 100%;

@@ -89,6 +89,7 @@ html, body, .full-height{
     z-index: 2;
     color: #fff;
     padding:30px;
+    -webkit-transition: 1s;
     transition: 1s
 }
 .single-service-item:after {
@@ -134,5 +135,6 @@ html, body, .full-height{
     padding-left: 7px;
 }
 .video-play-box{
+    -webkit-transition: .8s;
     transition: .8s
 }

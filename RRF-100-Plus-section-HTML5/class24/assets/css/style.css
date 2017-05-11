@@ -66,6 +66,7 @@ a:hover { text-decoration: none }
     padding-right: 0;
     padding-left: 30px;
     color: #fff;
+    -webkit-transition: .3s;
     transition: .3s;
     font-size: 16px;
     font-weight: 700
@@ -102,6 +103,7 @@ a:hover { text-decoration: none }
     padding: 10px 20px;
     font-size: 16px;
     font-weight: 700;
+    -webkit-transition: .3s;
     transition: .3s;
     margin-top: 20px;
     border: 1px solid #fff;
@@ -124,8 +126,10 @@ a:hover { text-decoration: none }
     margin-top: -24px;
     left: 0%;
     padding: 10px;
+    -webkit-transition: .3s;
     transition: .3s;
-    opacity: 0
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
 }
 .owl-nav div.owl-next {
     left: auto;
@@ -133,7 +137,8 @@ a:hover { text-decoration: none }
 }
 .homepage-slides:hover .owl-nav div {
     left: 2%;
-    opacity: 1
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
 }
 .homepage-slides:hover .owl-nav div.owl-next {
     right: 2%;

@@ -68,12 +68,14 @@ a:hover { text-decoration: none }
     display: inline-block;
     margin-top: 5px;
     position: relative;
+    -webkit-transition: .2s;
     transition: .2s;
     font-size: 16px
 }
 .service-readmore i.fa {
     display: inline-block;
     margin-left: 0px;
+    -webkit-transition: .3s;
     transition: .3s;
     position: absolute;
     bottom: 4px;
