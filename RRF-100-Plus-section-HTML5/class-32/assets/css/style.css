@@ -105,7 +105,7 @@ a:hover {
     text-align: center;
     background-color: #ffad2e;
     color: #fff;
-    display: block;
+    display: none;
     font-size: 18px;
     -webkit-transition: .4s;
     transition: .4s

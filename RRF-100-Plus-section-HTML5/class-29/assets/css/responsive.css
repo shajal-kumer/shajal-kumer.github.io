@@ -18,10 +18,24 @@
 }
 /* Mobile Layout: 320px. */
 @media only screen and (max-width: 767px) { 
- 
+  .single-project-item{
+    	 height: 250px;
+    }
+    .row.project-lists .col-sm-4:nth-child(2) .single-project-item,
+	.row.project-lists .col-sm-4:nth-child(4) .single-project-item,
+	.row.project-lists .col-sm-4:nth-child(5) .single-project-item{
+	    height: 250px
+	}
     
 }
 /* Wide Mobile Layout: 480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) { 
-
+	.single-project-item{
+    	 height: 300px;
+    }
+    .row.project-lists .col-sm-4:nth-child(2) .single-project-item,
+	.row.project-lists .col-sm-4:nth-child(4) .single-project-item,
+	.row.project-lists .col-sm-4:nth-child(5) .single-project-item{
+	    height: 300px
+	}
 }
