@@ -1,0 +1,165 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin:0 0 15px;
+    text-transform: capitalize;
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 26px;      /* It will be change */
+    font-family: 'Lato', sans-serif;   /* It will be change */
+    letter-spacing: 1px;
+    color: #666666;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.section-padding{
+    padding: 80px 0px;
+}
+.fullwidth-bg-area{
+    background-image: url(../img/bg.jpg);
+    margin-top: 70px;
+    margin-bottom: 70px;
+    background-size: cover;
+    background-position: center;
+}
+.padding-top-bottom {
+    padding: 120px 30px;
+    margin-top: -70px;
+    margin-bottom: -70px
+}
+.dark-bg{
+    background-color: #2B2F41;
+    color: #fff;
+
+}
+.boxed-content{
+    padding: 30px 50px 50px 70px;
+    position: relative;
+    margin-top: 20px
+}
+.boxed-content:before {
+    position: absolute;
+    content: "";
+    top:0px;
+    left: 0px;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    width: 60px;
+    height: 60px
+}
+.boxed-content:after {
+    position: absolute;
+    content: "";
+    bottom: 0px;
+    right: 0px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    width: 60px;
+    height: 60px
+}
+.boxed-content h2 {
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.boxed-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 20px;
+  padding-left: 30px;
+  position: relative;
+  margin-top: 20px
+}
+.boxed-content h4:before {
+    position: absolute;
+    content: "";
+    top:8px;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    background:#fff;
+}
+.boxed-content h4 span {
+  opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  font-size: 70%;
+  font-weight: 400;
+}
+.bordered-btn{
+    display: inline-block;
+    border: 2px solid #CDA973;
+    padding: 10px 20px;
+    font-weight: 700;
+    margin-top:10px;
+    font-size: 16px;
+    color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+    position: relative;
+}
+
+.padding-top-bottom .bordered-btn {
+  margin-left: 70px;
+}
+.padding-top-bottom img {
+    padding-top: 20px;
+}
+.bordered-btn:hover {
+    color: #fff;
+    border: 2px solid transparent;
+}
+.bordered-btn:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    width: 0px;
+    height: 0px;
+    border-right: 2px solid #CDA973;
+    border-bottom: 2px solid #CDA973;
+    /*transform: scale(0);*/
+    -webkit-transition: .3s;
+    transition: .3s
+}
+.bordered-btn:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    border-left: 2px solid #CDA973;
+    border-top: 2px solid #CDA973;
+    /*transform: scale(0);*/
+    -webkit-transition: .3s;
+    transition: .3s
+}
+.bordered-btn:hover:before, .bordered-btn:hover:after {
+    /*transform: scale(1);*/
+    width: 50px;
+    height: 50px
+}
