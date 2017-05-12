@@ -46,7 +46,7 @@ a:hover { text-decoration: none }
     background-size: cover;
     background-position: center;
 }
-.padding-top-bottom {
+.margin-minus {
     padding: 120px 30px;
     margin-top: -70px;
     margin-bottom: -70px
@@ -122,10 +122,10 @@ a:hover { text-decoration: none }
     position: relative;
 }
 
-.padding-top-bottom .bordered-btn {
+.margin-minus .bordered-btn {
   margin-left: 70px;
 }
-.padding-top-bottom img {
+.margin-minus img {
     padding-top: 20px;
 }
 .bordered-btn:hover {
@@ -135,8 +135,8 @@ a:hover { text-decoration: none }
 .bordered-btn:after {
     position: absolute;
     content: "";
-    right: 0;
-    bottom: 0;
+    right: -2px;
+    bottom: -2px;
     width: 0px;
     height: 0px;
     border-right: 2px solid #CDA973;
@@ -148,8 +148,8 @@ a:hover { text-decoration: none }
 .bordered-btn:before {
     position: absolute;
     content: "";
-    left: 0;
-    top: 0;
+    left: -2px;
+    top: -2px;
     width: 0px;
     height: 0px;
     border-left: 2px solid #CDA973;
