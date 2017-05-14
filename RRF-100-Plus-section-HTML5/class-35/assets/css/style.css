@@ -1,0 +1,130 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+    margin:0 0 15px;
+    color: #464646;
+    text-transform: uppercase;
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 1.8;      /* It will be change */
+    font-family: 'Lato', sans-serif;   /* It will be change */
+    letter-spacing: 1px;
+    color: #666666;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.section-padding{
+    padding: 80px 0px;
+    color: #fff;
+    background-color: #222931;
+    color: #bbbec0;
+    position: relative;
+}
+
+.boxed-content{
+    position: relative;
+    padding-right: 80px;
+    padding-left: 40px
+}
+.boxed-content:before{
+    position: absolute;
+    content: "";
+    top:0;
+    left: 0;
+    width: 1px;
+    height: 80px;
+    background: #fff
+}
+.boxed-content h2 {
+  color: #fff;
+  font-size:22px;
+}
+.border-btn {
+  color: #fff;
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 8px 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  font-weight: 700
+}
+.absulate-bg-1{background-image: url(../img/1.jpg);}
+.absulate-bg-2{background-image: url(../img/2.jpg);}
+
+.section-absulate-bg{
+    background-size: cover;
+    background-color: #ddd;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%
+}
+.absulate-bg-left .section-absulate-bg {
+    right: auto;
+    left: 0
+}
+.absulate-bg-left .boxed-content {
+    margin-left: 80px;
+    padding-right: 0px
+}
+.section-absulate-bg:after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.4); 
+}
+.absulate-bg-1:before{
+    position: absolute;
+    content: "";
+    left: 0px;
+    top: 50%;
+    border-left: 20px solid #222931;
+    border-top: 10px solid transparent;
+    border-bottom:10px solid transparent;
+    width: 0px;
+    height: 0px;
+    z-index: 3;;
+    margin-top: -10px
+}
+.absulate-bg-2:before{
+    position: absolute;
+    content: "";
+    right: 0px;
+    top: 50%;
+    border-right: 20px solid #222931;
+    border-top: 10px solid transparent;
+    border-bottom:10px solid transparent;
+    width: 0px;
+    height: 0px;
+    z-index: 3;;
+    margin-top: -10px
+}

@@ -141,9 +141,9 @@ a:hover { text-decoration: none }
     height: 0px;
     border-right: 2px solid #CDA973;
     border-bottom: 2px solid #CDA973;
-    /*transform: scale(0);*/
     -webkit-transition: .3s;
-    transition: .3s
+    transition: .3s;
+    opacity: 0;
 }
 .bordered-btn:before {
     position: absolute;
@@ -154,12 +154,12 @@ a:hover { text-decoration: none }
     height: 0px;
     border-left: 2px solid #CDA973;
     border-top: 2px solid #CDA973;
-    /*transform: scale(0);*/
     -webkit-transition: .3s;
-    transition: .3s
+    transition: .3s;
+    opacity: 0;
 }
 .bordered-btn:hover:before, .bordered-btn:hover:after {
-    /*transform: scale(1);*/
     width: 50px;
-    height: 50px
+    height: 50px;
+    opacity: 1
 }
