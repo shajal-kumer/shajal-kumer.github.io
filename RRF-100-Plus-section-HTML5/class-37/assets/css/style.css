@@ -76,3 +76,6 @@ a:hover { text-decoration: none }
 .team-title {
     margin-top: -14px;
 }
+.col-md-4:nth-child(2) .single-team-item {
+    margin-top: 110px;
+}
