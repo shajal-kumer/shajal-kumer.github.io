@@ -1,0 +1,90 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  
+
+
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+ 
+  
+.section-title {
+    margin: 0px;
+    padding-top: 30px;
+    transform: rotate(0deg);
+    margin-bottom: 50px
+}
+.section-title:before {
+    left: 0px;
+    width: 35%;
+}
+.team-title {
+	margin-top: -13px;
+}
+.borderd-content {
+    font-size: 15px;
+    line-height: 1.6
+}
+.borderd-content h3 {
+    font-size: 18px;
+}
+
+
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+
+.single-team-item{
+margin-bottom: 30px;
+}
+ .section-title {
+    margin: 0px;
+    padding-top: 30px;
+    transform: rotate(0deg);
+    margin-bottom: 50px
+}
+.section-title:before {
+    left: 0px;
+    width: 35%;
+}
+.team-title {
+	margin-top: -12px;
+}
+.borderd-content {
+    font-size: 15px;
+    line-height: 1.6
+}
+.borderd-content h3 {
+    font-size: 18px;
+}
+    
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+.single-team-item{
+margin-bottom: 30px;
+}
+ .section-title {
+    margin: 0px;
+    padding-top: 30px;
+    transform: rotate(0deg);
+    margin-bottom: 50px;
+}
+.section-title:before {
+    left: 0px;
+    width: 35%;
+}
+.team-bg{
+	height: 300px
+}
+.team-title {
+	margin-top: -12px;
+}
+.borderd-content {
+    font-size: 15px;
+    line-height: 1.6
+}
+.borderd-content h3 {
+    font-size: 18px;
+}
+}
