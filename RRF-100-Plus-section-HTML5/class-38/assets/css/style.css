@@ -1,0 +1,174 @@
+/* Base CSS */
+
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    margin:0 0 15px;
+    color: #2d2e2e;
+    font-weight: 700
+}
+body {
+    font-size: 14px;     /* It will be change */
+    font-weight: 400;
+    line-height: 1.8;      /* It will be change */
+    font-family: 'Roboto', sans-serif;  /* It will be change */
+    color: #2d2e2e;    /* It will be change */
+}
+a:hover { text-decoration: none }
+
+.header-area{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    padding: 25px 0px;
+    z-index: 99
+}
+.logo img {
+    max-width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    padding-left: 115px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 29px
+}
+.logo a {
+  color: #333;
+}
+.logo span{
+    display: block;
+    font-size:80%;
+    font-weight: 300
+}
+.right-contact-box {
+    display: inline-block;
+    margin-left: 30px;
+    position: relative;
+    color: #2d2e2e;
+    padding-left: 30px;
+    font-size: 16px;
+    text-align: left;
+    font-weight: 400;
+    margin-top: 20px;
+}
+.right-contact-box a {
+    color: #2d2e2e
+}
+.right-contact-box i {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 28px;
+}
+.single-slide-item{
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+    padding-top: 200px;
+    padding-bottom: 110px
+}
+.slide-bg-1{
+    background-image: url(../img/1.jpg);
+}
+.slide-bg-2{ background-image: url(../img/2.jpg);}
+.slide-bg-3{ background-image: url(../img/3.jpg);}
+.slide-text {
+    padding-left: 80px;
+    padding-bottom: 70px;
+    padding-top: 50px;
+    padding-right: 130px;
+    font-size:20px;
+    position: relative;
+    z-index: 1;
+}
+
+.slide-text:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #fff;
+  opacity: .7;
+  z-index: -1;
+}
+.slide-text h1 {
+    font-size: 48px;
+}
+.boxed-btn {
+    background: #ef800d;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+    
+}
+.single-slide-item .boxed-btn {
+    margin-top: 20px;
+}
+.boxed-btn:hover {
+    color: #fff
+}
+
+.homepage-slides .owl-nav div {
+  position: absolute;
+  top: 50%;
+  line-height: 60px;
+  margin-top: -30px;
+  font-size: 50px;
+  color: #333;
+  transition: .3s;
+  opacity: 0;
+  left: 0%
+}
+.homepage-slides .owl-nav div.owl-next {
+  left: auto;
+  right: 0%;
+}
+.homepage-slides:hover .owl-nav div {
+  opacity: 1;
+  left: 3%;
+  color: #ef800d
+}
+.homepage-slides:hover .owl-nav div.owl-next{
+    right: 3%;
+    left:auto;
+}
+.homepage-slides .owl-dots{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    text-align: center;
+    width: 100%
+}
+.homepage-slides .owl-dots div {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0px 5px
+}
+.homepage-slides .owl-dots div.active {
+    background: #ef800d
+}

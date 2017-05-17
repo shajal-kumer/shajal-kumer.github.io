@@ -210,10 +210,10 @@ a:hover, a:focus, a:active { text-decoration: none }
   transition: .3s
 }
 .homepage-slider-wrap .owl-nav div.owl-next {
-  left: auto!important;
+  left: auto;
   right: 0;
 }
-.homepage-slider-wrap:hover .owl-nav div.next{
+.homepage-slider-wrap:hover .owl-nav div.owl-next{
     right: 5%;
     left: auto;
 }
