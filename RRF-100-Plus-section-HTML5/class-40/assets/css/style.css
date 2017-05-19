@@ -79,6 +79,7 @@ a:hover { text-decoration: none }
   text-transform: uppercase;
   position: relative;
   padding-bottom: 10px
+  font-size:28px;
 }
 .price-box-inner h2:after {
     position: absolute;
