@@ -1,0 +1,91 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 400;
+    font-family: 'Droid Serif', serif;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ecebf0;
+    line-height: 1.8
+}
+a:hover { text-decoration: none }
+.section-padding{
+    padding: 80px 0px
+}
+.colored-bg {
+    background-color: #79d4d9;
+    position: relative;
+}
+.boxed-btn {
+    background-color: #f5f45e;
+    color: #5b5c4f;
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    box-shadow: 0 15px 40px #e4e350;
+    font-size: 14px
+}
+
+.lady-img {
+  position: absolute;
+  bottom: 0;
+  right: -25px;
+}
+.slide-text {
+  max-width: 500px;
+  color: #fff;
+  padding-left: 100px;
+  padding-top: 100px;
+  padding-bottom: 163px;
+  font-size: 18px;
+  min-height: 773px;
+  line-height: 1.4
+}
+.slide-text h1 {
+  font-size: 55px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+.top-ticker-text {
+  text-transform: uppercase;
+  font-size: 18px;
+  position: relative;
+  padding-bottom: 10px;
+}
+.top-ticker-text:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+.slide-text .boxed-btn {
+  margin-top: 30px;
+}
