@@ -31,6 +31,9 @@
     .container{
         width: 750px;
     }   
+    .navbar-nonbg .navbar-nav > li > a{
+        padding: 14px 4px;
+    }
     .about-info{
         text-align: center;
         margin-top:30px 
