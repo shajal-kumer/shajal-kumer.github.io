@@ -140,7 +140,7 @@ a.read-more:hover, .read-more:hover {
     background-position: center;
     height: 100%;
     position: relative;
-    z-index: 1;
+    z-index: 999;
 }
 .header-sec:after{
     position: absolute;
