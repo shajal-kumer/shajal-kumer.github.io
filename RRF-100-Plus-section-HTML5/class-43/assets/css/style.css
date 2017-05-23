@@ -137,6 +137,7 @@ body, html {
   overflow: hidden;
   margin: 0 auto;
   max-width: 265px;
+  height: 30px
 }
 .bordered-area-left-border, .bordered-area-right-border {
     float: left;
@@ -147,9 +148,33 @@ body, html {
 }
 .bordered-area-left-border {
   margin-right: 29px;
+  position: relative;
+}
+.bordered-area-left-border:after{
+  position: absolute;
+  left: 0;
+  top: -5px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 12px solid #fff;
+  border-bottom: 6px solid transparent;
 }
 .bordered-area-right-border {
   margin-left: 29px;
+  position: relative;
+}
+.bordered-area-right-border:after{
+  position: absolute;
+  right: 0;
+  top: -5px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-right: 12px solid #fff;
+  border-bottom: 6px solid transparent;
 }
 .bordered-area i {
     float: left;
