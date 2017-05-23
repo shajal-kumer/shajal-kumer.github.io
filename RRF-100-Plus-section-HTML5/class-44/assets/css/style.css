@@ -1,0 +1,168 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+body {
+font-family: 'Lato', sans-serif;
+color: #42413e;
+line-height: 1.8
+}
+a:hover { text-decoration: none }
+body, html {
+    height: 100%;
+}
+.welcome-hero-area {
+    height: 100%;
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #ddd;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-hero-area:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  content: "";
+  z-index: -1;
+  opacity: 0.6;
+}
+.logo {
+  max-width: 140px;
+}
+.mainmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: right;
+}
+.mainmenu ul li {
+  display: inline-block;
+}
+.mainmenu ul li a {
+  display: block;
+  color: #42413e;
+  text-transform: uppercase;
+  padding: 12px 40px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+.mainmenu li.bordered a {
+  color: #ef4447;
+  border: 1px solid;
+}
+.header-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px 0px;
+}
+.copyright-area {
+  background: #42413e;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0px;
+}
+.copyright-area, .copyright-area a {
+  color: #969c9c;
+}
+.copyright-area ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.copyright-area ul li {
+  display: inline-block;
+}
+.copyright-area ul li a {
+  display: block;
+  padding-left: 20px;
+}
+.hero-area-table {
+  display: table;
+  height: 100%;
+  width: 100%
+}
+.hero-area-tablecell {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+}
+.hero-text {
+  font-size: 20px;
+  line-height: 1.3
+}
+.hero-text h1 {
+  color: #42413e;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.email-subscriber-form {
+  margin-top: 100px;
+  max-width: 550px;
+  font-size: 16px;
+}
+.email-subscriber-form input[type="email"] {
+  border: none;
+  padding: 14px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 60%;
+  margin-right: 2%;
+}
+.email-subscriber-form button[type="submit"] {
+  background: #ef4043;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+}
+.social-icon a {
+  font-size: 20px;
+  display: inline-block;
+  color: #42413e;
+  padding-right: 20px;
+  transition: 1s
+}
+.social-icon {
+  margin-top: 15px;
+}
+.social-icon a:hover {
+    transform: rotate(360deg);
+    color: #ef4043
+}
