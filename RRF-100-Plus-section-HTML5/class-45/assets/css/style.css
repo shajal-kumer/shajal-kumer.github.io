@@ -1,0 +1,123 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a {
+    color: #14abf4;
+    -webkit-transition: .3s;
+    transition: .3s
+}
+a:focus, a:active { outline: 0 solid; text-decoration: none;
+ color: #fff; }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #768591
+}
+a:hover { text-decoration: none }
+
+.section-padding {
+  padding: 80px 0px;
+}
+.single-pricing-box {
+  border: 1px solid #f0f4f9;
+  padding: 50px;
+  margin-bottom: 50px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  text-align: center;
+}
+
+.single-pricing-box h4 {
+  color: #5b707f;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+.pricing-box-price {
+  padding: 35px 0px;
+  border-bottom: 1px solid #f1f5fa;
+}
+.pricing-amount {
+  color: #14abf4;
+  font-size: 50px;
+  margin: 0;
+  line-height: 1;
+}
+.pricing-box-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pricing-box-content ul li {
+  margin-bottom: 15px;
+}
+.pricing-box-content {
+  padding: 35px 0px 20px;
+}
+.boxed-btn {
+  background: #14abf4;
+  display: inline-block;
+  padding: 16px 40px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 4px;
+  -webkit-transition: background .6s ease-in-out 0s;
+  transition: background .6s ease-in-out 0s
+}
+.boxed-btn:hover {
+    color: #fff;
+    background: #333
+}
+.single-pricing-box.active {
+    position: relative;
+    box-shadow: 0 0 25px #f2f2f2;
+}
+.single-pricing-box.active:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: #97cd7b;
+    height: 2px;
+    width: 100%;
+}
+.single-pricing-box.active h4 {
+    margin-top: -20px;
+    margin-bottom: 0px;
+}
+.single-pricing-box h4 span {
+    color: #97cd7b;
+    display: block;
+    font-size: 78%;
+    line-height: 2;
+}
+.single-pricing-box:hover {
+    box-shadow: 0 0 25px #f2f2f2;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+}
