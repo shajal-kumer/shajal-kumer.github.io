@@ -117,7 +117,7 @@ a:hover { text-decoration: none }
     line-height: 2;
 }
 .single-pricing-box:hover {
-    box-shadow: 0 0 25px #f2f2f2;
-    -webkit-transform: scale(1.05);
-            transform: scale(1.05);
+    box-shadow: 0 0 25px #ddd;
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
 }
