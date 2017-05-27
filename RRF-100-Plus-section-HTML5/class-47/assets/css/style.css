@@ -24,7 +24,7 @@ body {
 a:hover { text-decoration: none }
 
 .user-avater img {
-  max-width: 120px;
+  max-width: 100px;
   border-radius: 50%;
   margin: 0 auto;
   margin-bottom: 30px;
