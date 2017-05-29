@@ -1,0 +1,60 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+html, body {
+    height: 100%
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+    color: #fff
+}
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+a:hover { text-decoration: none }
+
+.single-card {
+  display: block;
+  height: 240px;
+  border: 1px solid whitesmoke;
+  color: #fff
+}
+.thumb-details {
+  text-align: center;
+  padding: 20px 0px;
+  color: #333;
+}
+.welcome-hero-area {
+    padding: 100px 0px;
+    background: #333;
+    color: #fff;
+    height: 100%;
+}
+.title-section{
+    padding-bottom: 70px
+}
