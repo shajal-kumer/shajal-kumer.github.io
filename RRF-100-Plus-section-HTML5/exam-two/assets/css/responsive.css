@@ -41,9 +41,6 @@
         font-size: 22px;
         line-height: 36px;
     }
-    .one-time-job-section .col-sm-6 {
-        padding-left: 50px;
-    }
     .colored-btn{
         font-size: 14px
     }
@@ -54,7 +51,7 @@
         padding: 72px 30px;
     }
     .minus-margin-right {
-        padding: 34.5555% 0%;
+        padding: 31% 0%;
     }
 }
 /* Mobile Layout: 320px. */
@@ -225,7 +222,7 @@
         line-height: 32px;
     }
     .job-price-minus-margin{
-        padding: 25px;
+        padding: 40px;
         margin-top: 100px;
         margin-bottom: 0px
     }
