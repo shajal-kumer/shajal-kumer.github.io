@@ -146,7 +146,8 @@ a:active {
     background-image: url(../img/hero-bg.png);
     background-position: bottom left;
     background-size: cover;
-    z-index: 2
+    z-index: 2;
+    opacity: .7
 }
 .welcome-hero-area div {
     position: relative;
