@@ -1,0 +1,81 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    background: #0E0E0E;
+    color: #fff
+}
+a:hover, a:focus { text-decoration: none }
+
+.section-padding {
+  padding: 100px 0px;
+}
+.tab-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tab-list li {
+  display: inline-block;
+}
+.tab-list li a {
+  display: block;
+  color: #333;
+  padding: 10px 31.4999px;
+  background: #AD1C1C;
+  color: #fff;
+  font-weight: 700;
+  position: relative;
+}
+.tab-list li a:after{
+    position: absolute;
+    content: "";
+    right: -11px;
+    top: -7px;
+    width: 30px;
+    height: 20px;
+    background: #191919;
+    transform: rotate(45deg);
+}
+.tab-list li.active a {
+    background: #fff;
+    color: #333
+}
+.custom-tab{
+    background: #191919;
+    padding: 50px;
+}
+.tab-content{
+    background: #fff;
+    color: #333;
+    padding: 30px
+}
