@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Khula:300,400,600,700,800');
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus, input:focus, textarea:focus, button:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 400;
+    color: #373737
+}
+body {
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Khula', sans-serif;
+    color: #999;
+}
+a:hover { text-decoration: none }
+.hearder-area {
+    padding: 20px 0px;
+}
+.mainmenu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mainmenu li {
+  position: relative;
+  display: inline-block;
+}
+.mainmenu li a {
+    display: block;
+    color: #888;
+    padding: 12px 15px;
+}
+.hero-area{
+    font-weight: 300;
+    padding: 150px 0px;
+    border-bottom: 1px solid #f7f7f7;
+}
+.hero-area h1 {
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    max-width: 440px
+}
+.boxed-btn, input[type="submit"] {
+    display: inline-block;
+    background: #ef476f;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: 400;
+    text-transform: capitalize;
+    border: none
+}
+input[type="submit"], button[type="submit"]{
+    padding: 11px 25px;
+    font-weight: 400
+}
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="url"], textarea {
+    border: 1px solid #f0f0f;
+    padding: 10px 15px;
+}
+.website-checker-form{
+    margin-top: 20px
+}
+.website-checker-form input[type="url"]{
+    width: 300px;
+    margin-right: 20px
+}
+
+
+.section-padding {
+  padding: 120px 0px;
+}
+.section-title {
+  margin-bottom: 90px;
+}
+.section-title h2 {
+  font-size: 28px;
+}
+.single-service-box {
+  border: 1px solid #f3f3f3;
+}
+.service-icon i.zmdi {
+  font-size: 30px;
+  color: #231f20;
+}
+.single-service-box h3 {
+  font-size: 20px;
+  margin: 30px 0px;
+}
+.single-service-box {
+  padding: 30px 20px;
+  font-weight: 300;
+  transition: .5s
+}
+ .single-service-box:hover h3, .single-service-box:hover .service-icon i.zmdi,  .single-service-box:hover .service-readmore-btn{
+    color: #ef476f
+}
+.single-service-box:hover {
+    border-color: #ef476f
+}
+.service-readmore-btn {
+  color: #373737;
+  font-weight: 400;
+  font-size: 15px;
+}
+.how-work-left .boxed-btn {
+    margin-top: 30px;
+    padding: 13px 40px;
+    font-size: 15px;
+}
+.pd-t-50 h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+.mb-50{
+    margin-bottom: 50px
+}
+.mb-120{
+    margin-bottom: 120px
+}
+.mt-60{
+    margin-top: 60px
+}
