@@ -126,6 +126,11 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="password
   color: #373737;
   font-weight: 400;
   font-size: 15px;
+  margin-top: 10px;
+  display: inline-block;
+}
+.service-readmore-btn i.zmdi{
+    padding-left: 6px
 }
 .how-work-left .boxed-btn {
     margin-top: 30px;
