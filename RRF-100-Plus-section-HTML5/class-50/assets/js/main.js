@@ -9,8 +9,9 @@
        	loop: true,
        	dots:true,
        	nav:false,
-       	autoplay: false,
-       	margin:30
+       	autoplay: true,
+       	margin:30,
+        smartSpeed: 600
        })
 
 

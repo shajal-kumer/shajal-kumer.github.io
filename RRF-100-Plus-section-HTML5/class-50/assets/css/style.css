@@ -37,6 +37,7 @@ body {
 }
 .section-title{
     margin-bottom: 50px;
+    font-size: 18px
 }
 a:hover { text-decoration: none }
 .listing-bg-1{background-image: url(https://placeimg.com/400/400/animals);}
@@ -83,6 +84,11 @@ a:hover { text-decoration: none }
   border-radius: 50px;
   color: #fff;
   margin-top: 10px;
+  transition: .4s
+}
+.bordered-btn:hover {
+  color: #fff;
+  border-color: red
 }
 .listing-carousel{
     position: relative;
@@ -112,7 +118,7 @@ a:hover { text-decoration: none }
     color: red;
 }
 .section-title h2 {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .listing-carousel .owl-dots div {
