@@ -1,0 +1,132 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+.section-padding{
+    padding: 80px 0px
+}
+.section-title{
+    margin-bottom: 50px;
+}
+a:hover { text-decoration: none }
+.listing-bg-1{background-image: url(https://placeimg.com/400/400/animals);}
+.listing-bg-2{background-image: url(https://placeimg.com/400/400/nature);}
+.listing-bg-3{background-image: url(https://placeimg.com/400/400/nature/grayscale);}
+.listing-bg-4{background-image: url(https://placeimg.com/400/400/animals);}
+.listing-bg-5{background-image: url(https://placeimg.com/400/400/nature);}
+.single-listing-box{
+    background-size: cover;
+    background-color: #ddd;
+    background-position: center;
+    height: 300px;
+    position: relative;
+    z-index: 1
+}
+.single-listing-box:after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .6;
+    z-index: -1
+}
+.listing-box-content {
+  position: absolute;
+  bottom: 50px;
+  left: 10%;
+  width: 80%;
+  height: auto;
+  color: #ddd;
+  font-size: 18px;
+}
+.listing-box-content h3 {
+  color: #fff;
+  font-size: 30px;
+}
+.bordered-btn {
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 10px 30px;
+  border-radius: 50px;
+  color: #fff;
+  margin-top: 10px;
+}
+.listing-carousel{
+    position: relative;
+}
+.listing-carousel:before, .listing-carousel:after{
+    position: absolute;
+    content: "";
+    left: -500%;
+    top: 0;
+    width: 500%;
+    height: 100%;
+    background:#fff;
+    z-index: 1;
+    opacity: .5
+}
+.listing-carousel:after{
+    left: auto;
+    right: -500%;
+}
+.owl-carousel .owl-stage-outer{
+    overflow: inherit;
+}
+.listing-carousel-wraper{
+    overflow-x: hidden; 
+}
+.section-title span {
+    color: red;
+}
+.section-title h2 {
+    font-size: 40px;
+}
+
+.listing-carousel .owl-dots div {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 2px solid #BEBEBE;
+  margin: 0px 5px;
+  border-radius: 50%;
+}
+.listing-carousel .owl-dots {
+  text-align: center;
+  margin-top: 40px
+}
+.listing-carousel .owl-dots div.active {
+  background: #Bebebe;
+}
