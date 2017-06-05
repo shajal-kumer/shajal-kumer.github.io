@@ -37,7 +37,6 @@ body {
 }
 .section-title{
     margin-bottom: 50px;
-    font-size: 18px
 }
 a:hover { text-decoration: none }
 .listing-bg-1{background-image: url(https://placeimg.com/400/400/animals);}
@@ -84,29 +83,24 @@ a:hover { text-decoration: none }
   border-radius: 50px;
   color: #fff;
   margin-top: 10px;
-  transition: .4s
-}
-.bordered-btn:hover {
-  color: #fff;
-  border-color: red
 }
 .listing-carousel{
     position: relative;
 }
-.listing-carousel:before, .listing-carousel:after{
+.listing-carousel .owl-stage-outer:before, .listing-carousel .owl-stage-outer:after{
     position: absolute;
     content: "";
-    left: -500%;
+    left: -502.6%;
     top: 0;
     width: 500%;
     height: 100%;
     background:#fff;
     z-index: 1;
-    opacity: .5
+    opacity: .5;
 }
-.listing-carousel:after{
+.listing-carousel .owl-stage-outer:after{
     left: auto;
-    right: -500%;
+    right: -502.6%;
 }
 .owl-carousel .owl-stage-outer{
     overflow: inherit;
@@ -118,7 +112,7 @@ a:hover { text-decoration: none }
     color: red;
 }
 .section-title h2 {
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .listing-carousel .owl-dots div {
