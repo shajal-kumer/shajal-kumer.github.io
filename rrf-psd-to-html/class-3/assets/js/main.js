@@ -1,5 +1,5 @@
 (function ($) {
-	"use strict";
+  "use strict";
 
     jQuery(document).ready(function($){
 
@@ -10,7 +10,8 @@
             loop:true,
             dots:true,
             nav:false,
-            autoplay: true
+            autoplay: true,
+            smartSpeed: 800,
        });
 
        $(".testimonial-carousel").owlCarousel({
@@ -18,7 +19,8 @@
             loop:true,
             dots:true,
             nav:false,
-            autoplay: true
+            autoplay: true,
+            smartSpeed: 800,
        });
 
 
@@ -29,4 +31,4 @@
     });
 
 
-}(jQuery));	
+}(jQuery)); 
