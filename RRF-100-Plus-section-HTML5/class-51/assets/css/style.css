@@ -1,0 +1,113 @@
+/* Base CSS */
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+a:hover { text-decoration: none }
+
+.box-bg-1{background-image: url(../img/img1.jpg);}
+.box-bg-2{background-image: url(../img/img2.jpg);}
+.box-bg-3{background-image: url(../img/img3.jpg);}
+.box-bg-4{background-image: url(../img/img4.jpg);}
+.box-bg-5{background-image: url(../img/img5.jpg);}
+.single-boxed-item {
+    background-position: center;
+    background-color: #ddd;
+    background-size: cover;
+    height: 600px;
+    position: relative;
+}
+.single-boxed-item.half-size{
+    height: 300px
+}
+.row.no-padding{
+    margin: 0
+}
+.row.no-padding .col-md-4{
+    padding: 0px
+}
+
+.section-padding {
+  padding: 50px 0px;
+}
+.section-title {
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+.boxed-item-table{
+    display: table;
+    width: 100%;
+    height: 100%
+}
+.boxed-item-tablecell{
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    text-align: center;
+}
+.boxed-item-tablecell .large-img {
+    font-size: 30px;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #fff;
+}
+.boxed-item-hover {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    height: 90%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
+    transform: scale(0)
+}
+.boxed-item-hover:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-color: #333;
+    opacity: .8;
+    z-index: -1
+}
+.single-boxed-item:hover .boxed-item-hover{
+    visibility: visible;
+    opacity: 1;
+    transform:  scale(1);
+
+    }
