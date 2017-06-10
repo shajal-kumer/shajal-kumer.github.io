@@ -1,0 +1,257 @@
+/* Base CSS 01515647024*/
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+a:hover, a:focus { text-decoration: none }
+.section-padding{
+    padding: 80px 0px
+}
+.section-title{
+    margin-bottom: 60px;
+    color: #848484;
+    font-size: 18px
+}
+.section-title h2 {
+    color: #333;
+    text-transform: uppercase;
+}
+.section-title span {
+    color: #1cc9ce
+}
+.service-box-bg{background-image: url(../img/img1.jpg);
+    background-size: cover;
+    background-color: #ddd;
+    background-position: center;
+    height: 250px;
+    border-radius: 5px 5px 0px 0px;
+    position: relative;
+}
+.service-box-bg-2{background-image: url(../img/img2.jpg);}
+.service-box-bg-3{background-image: url(../img/img3.jpg);}
+.single-service-box{
+    border: 1px solid #e5e5e5;
+    border-radius: 5px 5px 0px 0px;
+    display: block;
+}
+.single-service-box:hover .service-box-bg i{
+    background:#1cc9ce;
+    border-color: #26395a;
+}
+.single-service-box:hover h2{
+    background:#26395a;
+    color: #fff;
+}
+.service-box-bg i {
+  color: #fff;
+  background: #26395a;
+  width: 80px;
+  height: 80px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  margin-left: -40px;
+  text-align: center;
+  border: 5px solid;
+  transition: .3s;
+}
+.service-box-bg {
+}
+.service-box-bg i:before {
+  font-size: 35px;
+  line-height: 69px;
+  margin: 0;
+}
+.service-box-bg {
+}
+.single-service-box h2 {
+  color: #222;
+  text-transform: uppercase;
+  font-size: 22px;
+  text-align: center;
+  margin: 0;
+  padding: 30px;
+  padding-top: 60px;
+  transition: .3s;
+}
+
+/*
+    MEnu Default Css
+*/
+
+.mainmenu-area ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #262626;
+}
+.mainmenu-area ul li {
+  display: inline-block;
+  position: relative;
+}
+.mainmenu-area ul li a {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  text-transform: capitalize;
+  padding: 15px 25px;
+}
+.mainmenu-area ul > li:hover > a {
+  background: #0C0C0C
+}
+.mainmenu-area ul li > ul.drop-menu{
+  position: absolute;
+  z-index: 9;
+  width: 200px;
+  background: #0fa1e0;
+}
+.mainmenu-area ul li > ul.drop-menu li{
+  display: block;
+}
+.mainmenu-area ul li > ul.drop-menu li:hover a{
+  background: #0C7FB0;
+}
+.mainmenu-area ul li > ul.drop-menu li a {
+  font-size: 13px;
+  text-transform: capitalize;
+  padding: 10px 15px;
+  border-bottom: 1px dotted #21b2f0
+}
+.mainmenu-area ul li > ul.menu-1{
+  top: 100%;
+  left: 0%;
+}
+/*
+  End Menu Default Css
+*/
+
+
+/*
+  Menu 1
+*/
+.mainmenu-area ul li > ul.menu-1 li:last-child a{
+  border-bottom: none
+}
+.mainmenu-area ul li > ul.menu-1{
+  top: 140%;
+  left: 0%;
+  visibility: hidden;
+  opacity: 0;
+  transition:all .5s ease-in-out
+}
+.mainmenu-area ul li > ul.menu-1:after {
+    position: absolute;
+    left: 25px;
+    top: -14px;
+    width: 0px;
+    height: 0px;
+    border-bottom: 14px solid #0fa1e0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    content: "";
+}
+.mainmenu-area ul li:hover > ul.menu-1 {
+  opacity: 1;
+  visibility: visible;
+  top: 100%;
+}
+
+
+/*
+  Menu 2
+*/
+
+.mainmenu-area ul li > ul.menu-2{
+  transition:all .5s ease-in-out;
+  transform: rotateY(-45deg);
+  opacity: 0;
+  visibility: hidden;
+}
+.mainmenu-area ul li:hover > ul.menu-2 {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateY(0deg);
+}
+
+/*
+  MEnu 3
+*/
+
+.mainmenu-area ul li > ul.menu-3{
+  transition:all .5s ease-in-out;
+  transform: scale(0.8);
+  opacity: 0;
+  visibility: hidden;
+}
+.mainmenu-area ul li:hover > ul.menu-3 {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/*
+  Menu 4
+*/
+
+.mainmenu-area ul li > ul.menu-4{
+  
+    transition: all .5s ease-in-out;
+    transform: rotate(20deg);
+    transform-origin: top left;
+    visibility: hidden;
+    opacity: 0
+}
+.mainmenu-area ul li:hover > ul.menu-4{
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(0deg);
+}
+
+/*
+  Menu 5
+*/
+
+.mainmenu-area ul li > ul.menu-5{
+  
+    transition: all .5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
+    right: 50px
+}
+.mainmenu-area ul li:hover > ul.menu-5{
+
+  visibility: visible;
+  opacity: 1;
+  right: 0px
+}
