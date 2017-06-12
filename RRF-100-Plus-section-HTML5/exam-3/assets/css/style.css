@@ -53,6 +53,7 @@ a.logo {
   width: 0%;
   height: 2px;
   background-color: #333;
+  -webkit-transition: .3s;
   transition: .3s
 }
 .contact:hover:after, .more:hover:after {
@@ -98,6 +99,7 @@ a.logo {
   line-height: 28px;
   text-align: center;
   font-size: 21px;
+  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 .footer-area i.fa-twitter {
