@@ -1,0 +1,17 @@
+.boxed-btn{
+	background-color: #06d6a0
+}
+.hero-area{
+	background-image: url(../img/hero-bg-2.png);
+	background-position: center;
+	background-size: cover;
+	background-color: #3196f6;
+	color: #fff;
+	padding: 100px 0px
+}
+
+.hero-area h1 {
+  color: #fff;
+  font-size: 48px;
+  margin-top: 170px
+}
