@@ -1,0 +1,112 @@
+/* Base CSS */
+a:focus { outline: 0 solid }
+img {
+    max-width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 400;
+}
+a:hover { text-decoration: none; color:inherit; }
+
+.nebula-wrapper {
+  background-image: url(../img/bg.jpg);
+  background-color: #ddd;
+  background-position: center;
+  background-size: cover;
+}
+a.logo {
+    color: #262d30;
+    font-size: 34px;
+    text-transform: capitalize;
+    font-weight: 400;
+}
+.header-area h2 {
+  margin: 0;
+}
+.header-area {
+  padding-top: 80px;
+}
+.contact {
+  color: #262d30;
+  display: inline-block;
+  padding-top: 5px;
+  position: relative;
+}
+.contact:after, .more:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom:0px;
+  width: 0%;
+  height: 2px;
+  background-color: #333;
+  transition: .3s
+}
+.contact:hover:after, .more:hover:after {
+  width: 100%
+}
+.welcome-hero-area {
+  padding: 180px 0px;
+}
+.hero-text h1 {
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 40px;
+  margin-bottom: 25px;
+  color: #262d30
+}
+.hero-text {
+  max-width: 490px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.more {
+    color: #262d30;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 2px
+}
+
+.footer-area {
+  border-top: 1px solid #ddd;
+  padding: ;
+  color: #7f7f7f;
+  font-size: 14px;
+  padding: 30px 0px;
+}
+.footer-area a {
+    margin-left: 25px;
+}
+.footer-area i {
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  background: #b2afb1;
+  line-height: 28px;
+  text-align: center;
+  font-size: 21px;
+  transition: all .5s ease-in-out;
+}
+.footer-area i.fa-twitter {
+    background: none;
+    color: #b2afb1
+} 
+.footer-area i.fa-twitter:hover {
+    color: #fff
+}
+.footer-area i:hover {
+    background:#333 
+}
