@@ -399,6 +399,7 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="password
   background: #fff;
   border-radius: 5px;
   padding: 50px;
+  color: #999999;
   position: relative;
   z-index: 1;
 }
@@ -409,7 +410,7 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="password
   top: 10px;
   width: 100%;
   height: 100%;
-  background: red;
+  background:rgba(255, 255, 255, 0.2);
   z-index: -1;
   border-radius: 5px;
 }
