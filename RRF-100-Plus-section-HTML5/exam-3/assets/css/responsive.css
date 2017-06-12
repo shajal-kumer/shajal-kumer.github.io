@@ -1,71 +1,19 @@
 /* Medium Layout: 1280px. */
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {}
-
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  
+    
+}
 /* Tablet Layout: 768px. */
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+ 
+    
 }
-
 /* Mobile Layout: 320px. */
-
-@media only screen and (max-width: 767px) {
-    .header-area {
-        text-align: center;
-        padding-top: 40px
-    }
-    .header-area .col-sm-6.text-right {
-        text-align: center;
-        margin-top: 15px;
-    }
-    .welcome-hero-area {
-        padding: 100px 0px;
-        text-align: center;
-    }
-    .hero-text h1 {
-        font-size: 36px
-    }
-    .footer-area {
-        text-align: center;
-    }
-    .footer-area .col-sm-6.text-right {
-        margin-top: 20px;
-        text-align: center;
-    }
-    .footer-area a {
-        margin: 0px 10px;
-    }
+@media only screen and (max-width: 767px) { 
+ 
+    
 }
-
 /* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-	 .header-area {
-        text-align: center;
-        padding-top: 40px
-    }
-    .header-area .col-sm-6.text-right {
-        text-align: center;
-        margin-top: 15px;
-    }
-    .welcome-hero-area {
-        padding: 100px 0px;
-        text-align: center;
-    }
-    .hero-text{
-    	max-width: inherit;
-    }
-    .hero-text h1 {
-        font-size: 36px
-    }
-    .footer-area {
-        text-align: center;
-    }
-    .footer-area .col-sm-6.text-right {
-        margin-top: 20px;
-        text-align: center;
-    }
-    .footer-area a {
-        margin: 0px 10px;
-    }
 }

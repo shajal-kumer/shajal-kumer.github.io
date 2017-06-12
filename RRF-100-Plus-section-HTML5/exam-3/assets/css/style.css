@@ -4,6 +4,9 @@ img {
     max-width: 100%;
     height: auto;
 }
+html, body,.welcome-hero-area {
+  height: 100%
+}
 h1,
 h2,
 h3,
@@ -24,8 +27,9 @@ a:hover { text-decoration: none; color:inherit; }
 .nebula-wrapper {
   background-image: url(../img/bg.jpg);
   background-color: #ddd;
-  background-position: center;
+  background-position: center top;
   background-size: cover;
+  height: 100%;
 }
 a.logo {
     color: #262d30;
@@ -37,7 +41,11 @@ a.logo {
   margin: 0;
 }
 .header-area {
-  padding-top: 80px;
+  padding-top: 70px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%
 }
 .contact {
   color: #262d30;
@@ -53,15 +61,21 @@ a.logo {
   width: 0%;
   height: 2px;
   background-color: #333;
-  -webkit-transition: .3s;
   transition: .3s
 }
 .contact:hover:after, .more:hover:after {
   width: 100%
 }
-.welcome-hero-area {
-  padding: 180px 0px;
+.hero-area-table{
+  display: table;
+  width: 100%;
+  height: 100%;
+
 }
+.hero-area-table-cell{
+  display: table-cell;vertical-align: middle;
+}
+
 .hero-text h1 {
   font-weight: 300;
   line-height: 1.2;
@@ -72,7 +86,7 @@ a.logo {
 .hero-text {
   max-width: 490px;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 .more {
     color: #262d30;
@@ -83,10 +97,13 @@ a.logo {
 
 .footer-area {
   border-top: 1px solid #ddd;
-  padding: ;
   color: #7f7f7f;
   font-size: 14px;
   padding: 30px 0px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%
 }
 .footer-area a {
     margin-left: 25px;
@@ -99,7 +116,6 @@ a.logo {
   line-height: 28px;
   text-align: center;
   font-size: 21px;
-  -webkit-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 .footer-area i.fa-twitter {
