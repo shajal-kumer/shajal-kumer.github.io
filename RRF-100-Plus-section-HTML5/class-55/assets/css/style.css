@@ -46,6 +46,7 @@ a:hover { text-decoration: none }
     background-color: #333;
     color: #fff;
     position: relative;
+    -webkit-transition: all .4s ease-in-out;
     transition:all .4s ease-in-out;
 }
 .video-play-btn:hover {
@@ -54,7 +55,9 @@ a:hover { text-decoration: none }
 .video-play-btn:hover .video-overlay {
     visibility: visible;
     opacity: 1;
-    transform: scale(1);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: scale(1);
+            transform: scale(1);
 }
 .video-play-btn i.fa-play{
     background-color: #eb1c38;
@@ -76,12 +79,16 @@ a:hover { text-decoration: none }
   display: table-cell;
   vertical-align: middle;
   text-align: center;
+  height: 100%;
   position: relative;
   z-index: 1;
   visibility: hidden;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-  transform: scale(.8);
+  -webkit-transform: scale(.8);
+          transform: scale(.8);
 }
 .video-overlay:after{
     position: absolute;
@@ -119,7 +126,7 @@ a:hover { text-decoration: none }
     display: inline-block;
     position: relative;
 }
-.video-top-desc span::after, .video-top-desc span::before {
+.video-top-desc span:after, .video-top-desc span:before {
     position: absolute;
     content: "";
     top: 9px;
@@ -127,9 +134,9 @@ a:hover { text-decoration: none }
     width: 50px;
     height: 2px;
 }
-.video-top-desc span::after{
+.video-top-desc span:after{
     left: -65px;
 }
-.video-top-desc span::before{
+.video-top-desc span:before{
     right: -65px
 }
