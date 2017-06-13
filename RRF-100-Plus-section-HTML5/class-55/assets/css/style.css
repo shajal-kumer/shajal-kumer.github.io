@@ -41,15 +41,15 @@ a:hover { text-decoration: none }
     display: table;
     height: 450px;
     width: 100%;
-    background-size: 100%;
+    background-size: 110%;
     background-position: center;
     background-color: #333;
     color: #fff;
     position: relative;
-    transition:all .3s ease-in-out;
+    transition:all .4s ease-in-out;
 }
 .video-play-btn:hover {
-    background-size: 110%;
+    background-size: 115%;
 }
 .video-play-btn:hover .video-overlay {
     visibility: visible;
@@ -71,7 +71,6 @@ a:hover { text-decoration: none }
     top: 50%;
     margin-top: -50px;
     margin-left: -50px;
-    transition: .3s
 }
 .video-overlay {
   display: table-cell;
@@ -81,7 +80,7 @@ a:hover { text-decoration: none }
   z-index: 1;
   visibility: hidden;
   opacity: 0;
-  transition: all .5s ease-in-out;
+  transition: all .4s ease-in-out;
   transform: scale(.8);
 }
 .video-overlay:after{
