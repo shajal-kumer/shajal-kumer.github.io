@@ -1,0 +1,91 @@
+.boxed-btn, input[type="sumbit"], button[type="submit"]{
+	background-color: #06d6a0
+}
+.hero-area{
+	background-image: url(../img/hero-bg-2.png);
+	background-position: center;
+	background-size: cover;
+	background-color: #3196f6;
+	color: #fff;
+	padding: 100px 0px
+}
+.hero-area h1 {
+  color: #fff;
+  font-size: 48px;
+  margin-top: 170px
+}
+
+
+
+.padding-top-0{
+	padding-top: 0px
+}
+.about-text h3 {
+  margin-bottom: 30px;
+}
+.about-text .boxed-btn {
+  margin-top: 20px;
+}
+.about-text {
+  margin-top: 28px;
+}
+
+
+
+.single-service-box-2 {
+  display: table;
+  width: 100%;
+  height: 250px;
+  background: #fbfbfb;
+  padding: 30px;
+  position: relative;
+  z-index: 1
+}
+.service-box-tablecell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.service-box-icon i.fa {
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #2c9af7;
+}
+.single-service-box-2:after{
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #04befe;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0YmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0NDgxZWMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #04befe 0%, #4481ec 100%);
+    background: -webkit-linear-gradient(top, #04befe 0%,#4481ec 100%);
+    background: linear-gradient(to bottom, #04befe 0%,#4481ec 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#04befe', endColorstr='#4481ec',GradientType=0 );
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+    z-index: -1
+}
+.single-service-box-2:hover:after{
+    visibility: visible;
+    opacity: 1;
+}
+.single-service-box-2 i.fa{
+	transition: .3s
+}
+.single-service-box-2:hover i.fa, .single-service-box-2:hover h3{
+	color: #fff
+}
+a.single-service-box-2{
+	display: inline-block;
+}
+.service-box-flex{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;;
+	height: 100%;
+	text-align: center;
+}
