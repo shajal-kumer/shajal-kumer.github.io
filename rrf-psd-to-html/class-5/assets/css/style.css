@@ -313,10 +313,7 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="password
   margin-top: 30px;
 }
 
-.logo-carousel.owl-carousel .owl-item img {
-  display: block;
-  width: auto;
-}
+
 
 
 .single-logo-item {
@@ -327,15 +324,24 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="password
 .logo-item-inner {
   display: table-cell;
   vertical-align: middle;
+  position: relative;
 }
-.logo-item-inner img {
+.logo-carousel.owl-carousel .owl-item .logo-item-inner a img {
   margin: 0 auto;
-  opacity: .7;
-  transition: .3s;
+  width: auto;
+  display: block;
 }
-.logo-item-inner img:hover {
-  opacity: 1;
+.logo-carousel.owl-carousel .logo-item-inner a:hover img, .logo-carousel.owl-carousel .logo-item-inner a img#hover-img{
+  display: none;
 }
+.logo-carousel.owl-carousel .logo-item-inner a:hover img#hover-img{
+  display: block;
+}
+
+
+
+
+
 .foote-area{
   padding: 70px 0px
 }
