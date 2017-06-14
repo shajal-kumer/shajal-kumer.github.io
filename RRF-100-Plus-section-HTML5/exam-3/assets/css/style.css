@@ -106,25 +106,14 @@ a.logo {
   width: 100%
 }
 .footer-area a {
-    margin-left: 25px;
+    margin-left: 20px;
 }
 .footer-area i {
-  color: #fff;
-  width: 28px;
-  height: 28px;
-  background: #b2afb1;
-  line-height: 28px;
+  color: #b2afb1;
   text-align: center;
-  font-size: 21px;
+  font-size: 28px;
   transition: all .5s ease-in-out;
 }
-.footer-area i.fa-twitter {
-    background: none;
-    color: #b2afb1
-} 
-.footer-area i.fa-twitter:hover {
-    color: #fff
-}
 .footer-area i:hover {
-    background:#333 
+    color: #333 
 }
