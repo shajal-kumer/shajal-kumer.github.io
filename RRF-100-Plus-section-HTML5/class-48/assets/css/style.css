@@ -127,3 +127,6 @@ body {
 .active .pricing-heading h4, .active .pricing-heading h1 {
     color: #fff;
 }
+.single-pricing-box.active .pricing-content {
+  padding-bottom: 130px;
+}
