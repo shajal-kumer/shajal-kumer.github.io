@@ -169,20 +169,24 @@ a:focus {
     visibility: visible;
     top: 100%
 }
+.mainmenu-area i.fa-arrow-right{
+    float: right;
+    padding-top: 5px
+}
 
 
 
 /* Second Level Menu*/
 
-.mainmenu-area li:hover ul.level-1 ul.level-2 {
+.mainmenu-area li:hover ul ul {
     visibility: hidden;
     opacity: 0;
 }
-.mainmenu-area ul ul.level-1 ul.level-2 {
+.mainmenu-area ul ul ul {
     left: 200px;
     top: 50px
 } 
-.mainmenu-area ul ul.level-1 li:hover ul.level-2{
+.mainmenu-area ul ul li:hover ul{
     opacity: 1;
     visibility: visible;
     top: 0px
@@ -193,13 +197,23 @@ a:focus {
 .mainmenu-area ul ul li:hover ul ul{
     visibility: hidden;
     opacity: 0;
-    top: 0px
-}
-.mainmenu-area ul ul ul ul{
-    top: 10px;
-    left: 200px;
+    top: 50px
 }
 .mainmenu-area ul ul ul li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    top: 0px;
+}
+/*
+
+/* Four Level Menu*/
+
+.mainmenu-area ul ul li:hover ul ul ul{
+    visibility: hidden;
+    opacity: 0;
+    top: 50px
+}
+.mainmenu-area ul ul ul ul li:hover ul{
     visibility: visible;
     opacity: 1;
     top: 0px;

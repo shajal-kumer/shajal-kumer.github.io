@@ -42,18 +42,18 @@
 
 	    /*--------Start Progress bar-----------*/
 
-	     $('#bar1').barfiller({
-	     	barColor: "#00D664",
-	     });
-		 $('#bar2').barfiller({
-			barColor: "#00D664",
-		});
-		 $('#bar3').barfiller({
-			barColor: "#00D664",
-		});
-		 $('#bar4').barfiller({
-			barColor: "#00D664",
-		});
+	    $('#bar1').barfiller({
+            barColor: "#00D664",
+         });
+         $('#bar2').barfiller({
+            barColor: "#00D664",
+        });
+         $('#bar3').barfiller({
+            barColor: "#00D664",
+        });
+         $('#bar4').barfiller({
+            barColor: "#00D664",
+        });
 
 		 /*--------END Progress bar-----------*/
 
