@@ -65,14 +65,7 @@
         });
         /*--------End Counter UP Js-----------*/
 
-        /*-------Start Masonry js---------*/
-        $('.my-work-area').masonry({
-		  itemSelector: '.singel-work',
-		  columnWidth: '.grid-sizer',
-		  percentPosition: true,
-		  gutter: 20,
-		});
-        /*-------END Masonry js---------*/
+       
 
         /*-------Start Magnificpopup js---------*/
         	$(".popup").magnificPopup({
@@ -166,7 +159,16 @@
 
 
 
-
+        $(window).load(function() {
+             /*-------Start Masonry js---------*/
+        $('.my-work-area').masonry({
+          itemSelector: '.singel-work',
+          columnWidth: '.grid-sizer',
+          percentPosition: true,
+          gutter: 20,
+        });
+        /*-------END Masonry js---------*/
+        })
 
 
 	        
