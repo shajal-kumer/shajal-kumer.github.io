@@ -1,0 +1,172 @@
+/*===================
+  Hero area CSS
+=====================*/
+
+.hero-area {
+    background-image: url(../img/hero-bg-2.png);
+    background-position: center;
+    background-size: cover;
+    background-color: #3196f6;
+    color: #fff;
+    padding: 100px 0px
+}
+.hero-area h1 {
+    color: #fff;
+    font-size: 48px;
+    margin-top: 170px
+}
+.hero-form-wrapper input {
+    margin-bottom: 25px
+}
+.hero-form-wrapper input[type="submit"] {
+    margin-top: 25px
+}
+.hero-form-inner {
+    box-shadow: 0 5px 10px #f1f1f1;
+}
+ .hero-form-overlay {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+}
+.boxed-btn,
+input[type="submit"],
+button[type="submit"] {
+    background-color: #06d6a0
+}
+
+/*===================
+  Main Menu CSS
+=====================*/
+
+.mainmenu li ul {
+    background-color: #fff;
+    border-radius: 0px
+}
+.mainmenu li ul li a {
+    color: #888
+}
+.mainmenu li a:hover, .mainmenu li ul li a:hover {
+    color: #06d6a0
+}
+
+.mainmenu li a.boxed-btn {
+    color: #fff;
+    background-color: #06d6a0
+}
+.mega-menu {
+    color: #999
+}
+.mega-menu h4,
+.mega-menu h5 {
+    color: #373737;
+}
+.menu-cta h4 span {
+    color: #06d6a0;
+}
+
+/*===================
+  Featured CSS
+=====================*/
+
+.single-feature-item h4 {
+    font-weight: 700
+}
+.seo-analytic-content h3 {
+    margin-bottom: 30px;
+    font-weight: 700
+}
+
+/*===================
+  Blog CSS
+=====================*/
+
+.single-blog-box {
+    padding: 0px;
+    display: block;
+    margin: 15px 0px;
+}
+.theme-2 .single-blog-box {
+    padding: 25px;
+}
+
+/*===================
+  case Study CSS
+=====================*/
+
+.single-case-study h4 {
+    color: #fff
+}
+.case-study-more {
+    background: none;
+    color: #fff;
+    line-height: 30px;
+    height: auto;
+    margin-top: 5px;
+    font-size: 22px;
+}
+.case-study-wraper:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #06D6A0;
+    opacity: .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+    z-index: -1;
+}
+.case-studies-carousel .owl-dots div {
+    background: #06D6A0;
+}
+.theme-2.boxed-case-study .boxed-btn {
+    display: inline-block;
+}
+
+/*===================
+  Pricing Table CSS
+=====================*/
+
+.single-pricing-box:hover {
+    border-color: #06d6a0;
+}
+.single-pricing-box:hover .pricing-heading {
+    border-color: #06d6a0;
+}
+.pricing-heading .pricing-count {
+    color: #06d6a0;
+}
+
+/*===================
+  Service CSS
+=====================*/
+
+.single-service-box:hover {
+    border-color: #06d6a0;
+}
+.single-service-box:hover h3,
+.single-service-box:hover .service-icon i,
+.single-service-box:hover .service-readmore-btn {
+    color: #06d6a0;
+}
+.testimonial-carousel .owl-dots div {
+    background-color: #06d6a0;
+    transition: 
+}
+.case-study-wraper {
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+/*===================
+  Footer CSS
+=====================*/
+
+.footer-area a:hover {
+    color: #06D6A0;
+}
+.footer-area ul.social-link li a:hover,
+.footer-area ul.social-link li a:hover i {
+    color: #06D6A0;
+}
