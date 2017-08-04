@@ -1,0 +1,65 @@
+*{
+    margin:0;
+    padding: 0px;
+    outline: none
+}
+
+
+
+
+
+
+.Switcher {
+    position: fixed;
+    top: 157px;
+    left: -140px;
+    width: 140px;
+    padding: 20px;
+    transition: .4s;
+    z-index: 9999;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    background: #fff
+}
+
+.Switcher.active{
+    left: 0;
+}
+
+ul#colors li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: pink;
+}
+
+ul#colors {
+    margin: 0;
+    padding: 0;
+}
+
+button.Switcher-control {
+    position: absolute;
+    right: -50px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    background: #fff;
+    top: 0;
+}
+
+.Switcher h5 {
+    color: #fff;
+    font-size: 15px;
+}
+button.Switcher-control:after {
+    position: absolute;
+    content: "\f013";
+    top: 0;
+    left: -4px;
+    width: 100%;
+    height: 100%;
+    font-family: 'fontawesome';
+    font-size: 28px;
+    background-color: #fff
+}
