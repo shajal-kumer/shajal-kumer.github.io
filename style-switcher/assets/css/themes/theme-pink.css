@@ -1,6 +1,7 @@
 /*style switcher*/
 body{
-	background: #ef476f
+	background: #ef476f;
+	transition: .3s
 }
 h1 {
 	color: #16a085
