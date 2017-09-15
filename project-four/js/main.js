@@ -8,7 +8,6 @@
     	/*--------Start Preloader---------*/
 
         $(window).load(function() {
-            $("#intro").delay(300).fadeOut();
             $(".animationload").delay(400).fadeOut("slow");
         });
         /*--------End Preloader---------*/
