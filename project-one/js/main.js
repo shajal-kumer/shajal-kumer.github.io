@@ -17,35 +17,7 @@
 		var dSmall = small * 2 + 10;
 	   $('.big').css('height', dSmall +'px');
 
-   // Start Of masonry...............
-		var $grid = $('.portfolio').isotope({
-			 		filter: '.Buildings, .Interior, .Isolation, .Plumbing', 
-			 		filter: '*',
-			 		itemSelector: '.grid-item',
-			 		percentPosition: true,
-			 		masonry: {
-			 			columnWidth: '.grid-sizer',
-			 		},
 
-			 	});
-
-			// filter items on button click
-			$('.port-navigation').on( 'click', 'button', function() {
-			  var filterValue = $(this).attr('data-filter');
-			  $grid.isotope({ filter: filterValue });
-			});
-
-
-
-			$('.port-navigation').each( function( i, buttonGroup ) {
-			  var $buttonGroup = $( buttonGroup );
-			  $buttonGroup.on( 'click', 'button', function() {
-			    $buttonGroup.find('.is-checked').removeClass('is-checked');
-			    $( this ).addClass('is-checked');
-  			});
-		});
-
-  //  End  Of masonry...............
   // Start Of Scroll to fixed nav............
 	    $(window).bind('scroll', function () {
 	    	if ($(window).scrollTop() > 50) {
@@ -79,7 +51,41 @@
 		}
 	});
         
-    });// End of jQuery document function   
+    });// End of jQuery document function  
+
+    jQuery(window).load(function(){
+
+          // Start Of masonry...............
+		var $grid = $('.portfolio').isotope({
+			 		filter: '.Buildings, .Interior, .Isolation, .Plumbing', 
+			 		filter: '*',
+			 		itemSelector: '.grid-item',
+			 		percentPosition: true,
+			 		masonry: {
+			 			columnWidth: '.grid-sizer',
+			 		},
+
+			 	});
+
+			// filter items on button click
+			$('.port-navigation').on( 'click', 'button', function() {
+			  var filterValue = $(this).attr('data-filter');
+			  $grid.isotope({ filter: filterValue });
+			});
+
+
+
+			$('.port-navigation').each( function( i, buttonGroup ) {
+			  var $buttonGroup = $( buttonGroup );
+			  $buttonGroup.on( 'click', 'button', function() {
+			    $buttonGroup.find('.is-checked').removeClass('is-checked');
+			    $( this ).addClass('is-checked');
+  			});
+		});
+
+  //  End  Of masonry...............
+        
+    }); 
 })(jQuery);
 
 
