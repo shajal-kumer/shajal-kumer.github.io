@@ -116,28 +116,7 @@
             });
         /*----------End Magnificpopup js--------------*/
 
-        /*----------Start Isotop js-------------------*/
-        	// init Isotope
-			var $grid = $('.work-area').isotope({
-			 		filter: '*, .design, .development, .print, .video',
-			 		itemSelector: '.witem',
-			 		percentPosition: true,
-			 	});
-			// filter items on button click
-			$('.work-sorting-menu').on( 'click', 'button', function() {
-			  var filterValue = $(this).attr('data-filter');
-			  $grid.isotope({ filter: filterValue });
-			});
-			// CHECKED ITEM
-			$('.work-sorting-menu').each( function( i, buttonGroup ) {
-			  var $buttonGroup = $( buttonGroup );
-			  $buttonGroup.on( 'click', 'button', function() {
-			    $buttonGroup.find('.is-checked').removeClass('is-checked');
-			    $( this ).addClass('is-checked');
-  			});
-		});
-			
-        /*-------End Isotop js--------*/
+
 
         /*-------Start Progress bar js----------*/
         	$('.progress-d').circleProgress({
@@ -159,15 +138,33 @@
 		   		value: 0.85,
 		   })
 		/*-------End Progress bar js----------*/
-
-
-
-
-
-
-
-
-
         
     });// End of jQuery document function   
+    
+    jQuery(window).load(function() {
+                /*----------Start Isotop js-------------------*/
+            // init Isotope
+            var $grid = $('.work-area').isotope({
+                    filter: '*, .design, .development, .print, .video',
+                    itemSelector: '.witem',
+                    percentPosition: true,
+                });
+            // filter items on button click
+            $('.work-sorting-menu').on( 'click', 'button', function() {
+              var filterValue = $(this).attr('data-filter');
+              $grid.isotope({ filter: filterValue });
+            });
+            // CHECKED ITEM
+            $('.work-sorting-menu').each( function( i, buttonGroup ) {
+              var $buttonGroup = $( buttonGroup );
+              $buttonGroup.on( 'click', 'button', function() {
+                $buttonGroup.find('.is-checked').removeClass('is-checked');
+                $( this ).addClass('is-checked');
+            });
+        });
+            
+        /*-------End Isotop js--------*/
+    })
+
+    
 })(jQuery);
