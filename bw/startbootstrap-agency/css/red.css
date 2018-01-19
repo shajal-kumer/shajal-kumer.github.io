@@ -1,0 +1,71 @@
+.btn-primary {
+    background-color: red;
+    border-color: red;
+}
+
+.text-primary {
+    color: red!important;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+    background: rgba(255,0,0, .9);
+}
+
+.timeline>li .timeline-image {
+    background-color: red;
+}
+
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover {
+    background-color: #d41818!important;
+    border-color: #d41818!important;
+}
+
+ul.social-buttons li a:active,
+ul.social-buttons li a:focus,
+ul.social-buttons li a:hover {
+    background-color: #d41818;
+}
+
+a {
+    color: red;
+}
+
+a:hover {
+    color: #d41818;
+}
+
+#mainNav .navbar-toggler {
+    background-color: red;
+}
+
+body {
+    -webkit-tap-highlight-color: red;
+}
+
+::-moz-selection {
+    background: red;
+}
+
+::selection {
+    background: red;
+}
+
+#mainNav .navbar-brand {
+    color: red;
+}
+
+#mainNav .navbar-brand.active,
+#mainNav .navbar-brand:active,
+#mainNav .navbar-brand:focus,
+#mainNav .navbar-brand:hover {
+    color: #d41818;
+}
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+    color: red;
+}
+section#contact .form-control:focus {
+    border-color: red;
+   }
