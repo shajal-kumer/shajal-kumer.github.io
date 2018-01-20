@@ -1,0 +1,66 @@
+function initMap() {
+
+	var Barisal = {
+		lat: 22.6954585,
+		long: 90.3347492
+	};
+
+	var Chittagong = {
+		lat: 22.3260781,
+		long: 91.7498273
+	};
+
+	var Dhaka = {
+		lat: 23.7808875,
+		long: 90.2792396
+	};	
+	var Khulna = {	
+		lat: 22.8454448,
+		long: 89.4624612
+	};
+	var Mymensingh  = {
+		lat: 24.7489998,
+		long: 90.3614764
+	};	
+	var Rajshahi  = {
+		lat: 24.5074816,
+		long: 88.3402721
+	};
+	var Sylhet  = {
+		lat: 24.8998373,
+		long: 91.8259623
+	};
+
+	var locations = [
+      [Barisal.info, Barisal.lat, Barisal.long, 0],
+      [Chittagong.info, Chittagong.lat, Chittagong.long, 1],
+      [Dhaka.info, Dhaka.lat, Dhaka.long, 2],
+      [Khulna.info, Khulna.lat, Khulna.long, 2],
+      [Mymensingh .info, Mymensingh .lat, Mymensingh .long, 2],
+      [Sylhet .info, Sylhet .lat, Sylhet .long, 2],
+    ];
+
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 7,
+		center: new google.maps.LatLng(23.7840639, 90.3291619),
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+
+	var infowindow = new google.maps.InfoWindow({});
+
+	var marker, i;
+
+	for (i = 0; i < locations.length; i++) {
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map
+		});
+
+		google.maps.event.addListener(marker, 'click', (function (marker, i) {
+			return function () {
+				infowindow.setContent(locations[i][0]);
+				infowindow.open(map, marker);
+			}
+		})(marker, i));
+	}
+}
