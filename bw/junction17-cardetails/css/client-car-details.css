@@ -102,11 +102,20 @@
 }
 .scroling-menu-area .nav-tabs .nav-link.active {
     border: none;
-    border-top: 2px solid #e03337
+    background-color: #E03339;
+    color: #fff;
+    position: relative;
 }
-.scroling-menu-area .nav-tabs .nav-link.active:hover {
-    border-top: 2px solid #e03337
+.scroling-menu-area .nav-tabs .nav-link.active:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 18px solid #E03339;
 }
+
 .scroling-menu-area .nav-tabs .nav-link {
     border: inherit;
 }
@@ -681,7 +690,7 @@ button[type="submit"]:hover {
 /* Accordion*/
 
 #accordion .card h4 {
-    background: #484848;
+    background: #E84A49;
     color: #fff;
     margin: 0;
     border-bottom: 1px solid #fff;
@@ -689,6 +698,9 @@ button[type="submit"]:hover {
     font-weight: 400;
     padding: 15px 20px;
     position: relative;
+}
+#accordion .card h4.collapsed{
+     background: #484848;
 }
 #accordion .card h4:hover {
     cursor: pointer
@@ -708,16 +720,3 @@ button[type="submit"]:hover {
 #accordion .card h4.collapsed:after {
     content: "\f067"
 }
-
-/*.tab-content>.active {
-    display: inherit;
-}
-.tab-content .active {
-    display: block;
-}
-.tab-content>.tab-pane {
-    display: inherit;
-}
-.tab-content .tab-pane {
-    display: none
-}*/
