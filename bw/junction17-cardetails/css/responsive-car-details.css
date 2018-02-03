@@ -1,0 +1,459 @@
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+.card-columns{column-count: inherit;}
+
+
+/*==========.car-details- style============*/
+.review-bottom {
+    text-align: center;
+}
+.card.car-slider-wrap {
+    margin: 10px 15px 0 15px;
+}
+.blue-bar {
+    padding: 10px 15px;
+    margin: 15px 15px 0px
+}
+
+.blue-bar .crossline, .blue-bar .curret-amount {
+    line-height: 34px;
+    margin-left: 0;
+}
+.blue-bar h1 {
+    font-size: 20px;
+    margin: 4px 0 0px 0px;
+}
+.blue-bar .curret-amount {
+    font-size: 30px;
+}
+.caradd-content .col-lg-12.col-xl-8 {
+    order: 2;
+}
+.caradd-icons-row{
+    display: none !important;
+}
+.car-slider-bottom {
+    padding-top: 10px;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.single-car-slider-bottom {
+    margin: 0 50px 0 0;
+}
+.deposit-large-bg-area {
+    /*height: 300px;*/
+    border-bottom: 1px solid #fff;
+}
+.deposit-large-bg {
+    padding: 0 15px;
+}
+.deposit-large-bg h2 {
+    font-size: 46px;
+    line-height: 43px;
+    margin-left: 138px;
+}
+.deposit-large-bg h2 span {
+    left: -141px;
+    font-size: 105px;
+}
+.section-title.spec-title {
+    margin: 0;
+}
+.exchange-acc-single-carousel{
+    padding: 10px 15px;
+}
+.cust-review-acc-single-carousel {
+    padding: 15px 15px 10px 15px;
+}
+.cust-review-acc-body-mobile .owl-dots {
+    padding-bottom: 15px;
+}
+.specification-area {
+    padding: 35px 15px;
+}
+.section-title {
+    font-size: 18px;
+}
+.caradd-content-right span {
+    display: block;
+}
+.caradd-content-right .boxed-btn {
+    margin-bottom: 10px;
+}
+.visible-on-mobile {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.slider-for .slick-dots {
+    margin-top: 15px;
+}
+.caradd-content {
+    padding: 10px 15px 0px;
+}
+.caradd-text {
+    margin-right: 0;
+    margin-top: 5px;
+}
+.scroling-menu-area {
+    display: none;
+}
+.cust-review-acc-single-carousel {
+    padding: 15px 15px 7px;
+    text-align: center;
+}
+.exchange-acc-single-carousel {
+    text-align: center;
+    padding: 15px;
+}
+.cust-review-acc-single-carousel img.quote {
+    margin: 10px auto;
+}
+.caradd-content {
+    padding: 20px 20px 0px;
+}
+
+.footer-widget-left:after, .newsletter-signup:after, .footer-widget-left:before, .newsletter-signup:before {
+     width: 5000px; 
+}
+.slider-for .slick-dots li {
+    display: inline-block;
+    margin: 0px 8px;
+    background: #0DA0F4;
+    width: 10px;
+    height: 10px;
+    transform: scale(.8);
+    border-radius: 50%;
+    position: relative;
+}
+.slider-for .slick-dots .slick-active {
+    transform: scale(.5);
+}
+.slider-for .slick-dots .slick-active::after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #0DA0F4;
+    border-radius: 50%;
+}
+
+
+
+}
+
+
+@media (min-width: 480px) and (max-width: 575px) {
+
+
+/*========.car-details-style===========*/
+.card-columns{column-count: inherit;}
+.container {
+     width: 470px; 
+}
+.single-car-slider img {
+     max-width: 420px; 
+     max-height: 315px; 
+}
+
+
+
+
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) { 
+ .card-columns {
+    column-count: inherit;
+}
+
+/*==========car-details-style==============*/
+.scroling-menu-area {
+    display: none !important;
+}
+.caradd-icons-row {
+    margin: 5px 0 13px 0;
+}
+.review-bottom {
+    text-align: center;
+}
+.cust-review-acc-single-carousel {
+    padding: 15px 15px 7px;
+    text-align: center;
+}
+.exchange-acc-single-carousel {
+    text-align: center;
+    padding: 15px;
+}
+.cust-review-acc-single-carousel img.quote {
+    margin: 10px auto;
+}
+.cardetails-area .card-deck {
+    flex-direction: column;
+}
+.caradd-content .col-xl-8 {
+    order: 2;
+}
+.caradd-text {
+    margin-right: 0;
+}
+.car-slider-bottom {
+    padding: 8px 0px 20px;
+    justify-content: center !important;
+}
+.blue-bar {
+    width: 540px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.slider-for .slick-dots {
+    margin-top: 15px;
+}
+.caradd-content-right .boxed-btn.blue-btn {
+    margin: 0 10px;
+}
+.blue-bar h1 {
+    margin: 4px 0 3px 0px;
+}
+.blue-bar .crossline, .blue-bar .curret-amount {
+    margin-left: 0;
+}
+#headingOne a.exchange-acc-heading-desk {
+    font-size: 79px;
+    top: 135px;
+}
+.caradd-content {
+    padding: 20px 30px 0px;
+}
+
+.slider-for .slick-dots li {
+    display: inline-block;
+    margin: 0px 8px;
+    background: #0DA0F4;
+    width: 10px;
+    height: 10px;
+    transform: scale(.8);
+    border-radius: 50%;
+    position: relative;
+}
+.slider-for .slick-dots .slick-active {
+    transform: scale(.5);
+}
+.slider-for .slick-dots .slick-active::after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #0DA0F4;
+    border-radius: 50%;
+}
+
+
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+
+/*=========.car-details-style===========*/
+.card-columns{column-count: inherit;}
+.scroling-menu-area ul li a {
+    padding: 15px 20px;
+}
+#headingOne a.exchange-acc-heading-desk {
+    font-size: 110px;
+    top: 110px;
+}
+
+
+
+
+/*==========car-details-style==============*/
+
+.caradd-icons-row {
+    margin: 5px 0 13px 0;
+    justify-content: center;
+}
+.review-bottom {
+    text-align: center;
+}
+.cust-review-acc-single-carousel {
+    padding: 15px 15px 7px;
+    text-align: center;
+}
+.exchange-acc-single-carousel {
+    text-align: center;
+    padding: 15px;
+}
+.cust-review-acc-single-carousel img.quote {
+    margin: 10px auto;
+}
+.cardetails-area .card-deck {
+    flex-direction: column;
+}
+.caradd-content .col-xl-8 {
+    order: 2;
+}
+.caradd-text {
+    margin-right: 0;
+}
+.car-slider-bottom {
+    padding: 8px 0px 20px;
+    justify-content: center !important;
+}
+.blue-bar {
+    width: 720px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}
+.slider-for .slick-dots {
+    margin-top: 15px;
+}
+.caradd-content-right .boxed-btn.blue-btn {
+    margin: 0 10px;
+}
+.blue-bar h1 {
+    margin: 16px 0 3px 0px;
+}
+.blue-bar .crossline, .blue-bar .curret-amount {
+    margin-left: 0;
+}
+.blue-bar .col-md-4 {
+    text-align: right;
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+.curret-amount {
+    display: block;
+}
+.caradd-content {
+    padding: 20px 50px 0px;
+}
+.slider-for .slick-dots li {
+    display: inline-block;
+    margin: 0px 8px;
+    background: #0DA0F4;
+    width: 10px;
+    height: 10px;
+    transform: scale(.8);
+    border-radius: 50%;
+    position: relative;
+}
+.slider-for .slick-dots .slick-active {
+    transform: scale(.5);
+}
+.slider-for .slick-dots .slick-active::after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #0DA0F4;
+    border-radius: 50%;
+}
+
+
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) { 
+
+
+
+/*==========.car-details style=============*/
+.card-columns{column-count: 2;}
+
+.card.car-slider-wrap {
+    margin: 0 8px 0 15px;
+}
+.card.caradd-wrap {
+    margin: 0 15px 0 8px;
+}
+/*.caradd-content-right {
+    text-align: left;
+}*/
+.caradd-content-right .boxed-btn {
+    margin: 10px 15px 0 0;
+}
+.car-slider-bottom {
+    padding-top: 10px;
+}
+.caradd-icons-row {
+    margin-top: 10px;
+}
+.blue-bar h1 {
+    font-size: 20px;
+}
+/*.popup-icon {
+    width: 462px;
+    height: 347px;
+}*/
+.single-small-image img {
+    width: 110px;
+    height: 83px;
+}
+.scroling-menu-area ul li a {
+    padding: 15px 14px;
+}
+.blue-bar {
+    padding: 4px 15px;
+    margin: 0 0 7px 0px;
+}
+.blue-bar .curret-amount {
+    font-size: 30px;
+}
+.blue-bar .crossline {
+    font-size: 18px;
+}
+.blue-bar .crossline, .blue-bar .curret-amount {
+    line-height: 15px;
+    margin-left: 30px;
+}
+.blue-bar h1 {
+    margin: 12px 0 0px 0px;
+}
+.caradd-content {
+    padding: 10px 10px 0px;
+}
+.caradd-text {
+    margin-right: 0;
+}
+.caradd-text p {
+    margin-bottom: 5px;
+}
+
+
+
+
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+
+/*=======.car-details style========*/
+.card-columns{column-count: 2;}
+span.d-none.d-xl-block {
+    display: inline-block !important;
+}
+
+}
+
+
+
+
+
+
+
+
+
+

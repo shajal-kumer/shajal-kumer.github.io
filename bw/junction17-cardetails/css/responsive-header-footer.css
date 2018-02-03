@@ -1,0 +1,387 @@
+/*=======================================================
+		  responsive css for header and footer
+=========================================================*/
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+.off-canvas-menu, .menu-trigger {
+    display: block !important;
+}
+/*=====mobile-header-style======*/
+.header-wrap {
+    padding: 10px 0;
+    border-radius: 0;
+}
+.header-wrap .col-auto {
+    width: 180px;
+    position:  relative;
+    z-index: 3;
+    margin:  0 auto;
+}
+.header-wrap .col-auto .logo {
+    margin:  0 auto;
+}
+.header-wrap .col {
+    position:  absolute;
+    top: -25px;
+    left: 0;
+}
+.header-wrap .col.d-flex {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    z-index:  1;
+}
+.menu-trigger {
+    position: absolute;
+    left: 15px;
+    top: 30px;
+    z-index: 999;
+    cursor: pointer;
+}
+.menu-trigger span {
+    display: block;
+    height: 3px;
+    margin-bottom: 5px;
+    width: 30px;
+    background-color: #DF3239;
+}
+.contact-icons {
+    top: -3px;
+    right: 10px;
+}
+.logo img {
+    margin-left: 0;
+}
+.contact-icons a {
+    height: 30px;
+    width: 30px;
+    line-height: 29px;
+    margin: 28px 0 0 0px;
+    font-size: 18px;
+}
+.logo img {
+    max-width: 160px;
+}
+
+
+
+/*=========.footer-style==========*/
+.footer-widget-area .middlewidth {
+    width: 300px;
+    margin: 0 auto;
+}
+.footer-logo {
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.footer-widget-area .middlewidth {
+    margin: 0 auto;
+    width: 300px;
+}
+.quick-links, .newsletter-signup {
+    padding-top: 20px;
+}
+.quick-links {
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+}
+.footer-widget-area .flxnone {
+    flex-direction: column;
+}
+.newsletter-signup {
+    width: 100%;
+    padding-left: 15px;
+    text-align: center;
+}
+.newsletter-signup button[type="submit"] {
+    right: 47px;
+    top: -2px;
+}
+.newsletter-signup input[type="email"] {
+    width: 80%;
+}
+.footer-widget-area {
+    padding-bottom: 0;
+}
+.footer-area, .footer-area .text-right {
+    text-align: center !important;
+}
+.footer-area .text-right p {
+    margin: 0px 0px 10px 0px;
+}
+.newsletter-signup:before, .newsletter-signup:after, .footer-widget-left:after, .footer-widget-left:before {
+    position: relative;
+}
+.quick-links {
+    margin-left: 0;
+}
+.newsletter-signup h2, .signup, .newsletter-signup p {
+    display: none;
+}
+.newsletter-signup {
+    padding-left: 0;
+    min-height: 150px;
+}
+
+
+}
+@media (min-width: 480px) and (max-width: 575px) {
+
+
+
+
+
+}
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) { 
+.off-canvas-menu, .menu-trigger {
+    display: block !important;
+}
+/*=====mobile-header-style======*/
+.header-wrap {
+    padding: 10px 0;
+}
+.header-wrap .col-auto {
+    width: 300px;
+    position:  relative;
+    z-index: 3;
+    margin:  0 auto;
+}
+.header-wrap .col-auto .logo {
+    margin:  0 auto;
+}
+.header-wrap .col {
+    position:  absolute;
+    top: -25px;
+    left: 0;
+}
+.header-wrap .col.d-flex {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    z-index:  1;
+}
+.menu-trigger {
+    position: absolute;
+    left: 2px;
+    top: 31px;
+    z-index: 999;
+    cursor: pointer;
+}
+.menu-trigger span {
+    display: block;
+    height: 3px;
+    margin-bottom: 5px;
+    width: 30px;
+    background-color: #DF3239;
+}
+.contact-icons {
+    top: -4px;
+    right: 0;
+}
+.logo img {
+    margin-left: 0;
+}
+.contact-icons a {
+    height: 40px;
+    width: 40px;
+    line-height: 41px;
+    margin: 24px 0 0 1px;
+}
+.header-area-2 {
+    background-color: #fff;
+}
+.header-wrap {
+    border-radius: 0;
+}
+.logo {
+    height: 60px;
+}
+
+/*=========.footer-style==========*/
+.footer-widget-area .middlewidth {
+    width: 300px;
+    margin: 0 auto;
+}
+.footer-logo {
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.footer-widget-area .middlewidth {
+    margin: 0 auto;
+    width: 300px;
+}
+.quick-links, .newsletter-signup {
+    padding-top: 20px;
+}
+.quick-links {
+    width: 100%;
+    padding-left: 0px;
+    text-align: center;
+}
+.footer-widget-area .flxnone {
+    flex-direction: column;
+}
+.newsletter-signup {
+    width: 100%;
+    padding-left: 15px;
+    text-align: center;
+}
+.newsletter-signup button[type="submit"] {
+    right: 47px;
+    top: -2px;
+}
+.newsletter-signup input[type="email"] {
+    width: 80%;
+}
+.footer-widget-area {
+    padding-bottom: 0;
+}
+.footer-area, .footer-area .text-right {
+    text-align: center !important;
+}
+.footer-area .text-right p {
+    margin: 0px 0px 10px 0px;
+}
+.newsletter-signup:before, .newsletter-signup:after, .footer-widget-left:after, .footer-widget-left:before {
+    position: relative;
+}
+.quick-links {
+    margin-left: 0;
+}
+.newsletter-signup h2, .signup, .newsletter-signup p {
+    display: none;
+}
+.newsletter-signup {
+    padding-left: 0;
+    min-height: 150px;
+}
+
+
+
+
+
+
+
+}
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+.off-canvas-menu, .menu-trigger {
+    display: block !important;
+}
+
+/*=====mobile-header-style======*/
+.header-wrap {
+    padding: 10px 0;
+}
+.header-wrap .col-auto {
+    width: 300px;
+    position:  relative;
+    z-index: 3;
+    margin:  0 auto;
+}
+.header-wrap .col-auto .logo {
+    margin:  0 auto;
+}
+.header-wrap .col {
+    position:  absolute;
+    top: -25px;
+    left: 0;
+}
+.header-wrap .col.d-flex {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    z-index:  1;
+}
+.menu-trigger {
+    position: absolute;
+    left: 2px;
+    top: 31px;
+    z-index: 999;
+    cursor: pointer;
+}
+.menu-trigger span {
+    display: block;
+    height: 3px;
+    margin-bottom: 5px;
+    width: 30px;
+    background-color: #DF3239;
+}
+.contact-icons {
+    top: -5px;
+    right: 0;
+}
+.logo img {
+    margin-left: 0;
+}
+.header-area-2 {
+    background-color: #fff;
+}
+.header-wrap {
+    border-radius: 0;
+}
+.logo {
+    height: 60px;
+}
+
+
+
+/*=====.footer-style========*/
+.footer-area, .footer-area .text-right {
+    text-align: center !important;
+}
+.footer-area .text-right p {
+    margin: 0px 0px 10px 0;
+}
+.quick-links, .newsletter-signup {
+    padding-top: 20px;
+}
+.newsletter-signup:before, .newsletter-signup:after, .footer-widget-left:after, .footer-widget-left:before {
+    position: relative;
+}
+.quick-links {
+    margin-left: 0;
+}
+.newsletter-signup button[type="submit"] {
+    line-height: 33px;
+}
+
+
+
+
+}
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) { 
+
+.logo img {
+    max-width: 240px;
+    margin-left: 10px;
+}
+.contact-icons {
+    right: 10px;
+}
+.contact-icons a {
+    margin: 23px 0 0 5px;
+}
+.mainmenu ul {
+    /* margin-left: 5px; */
+}
+.mainmenu ul li a {
+    font-size: 17px;
+    margin: 28px 4px;
+    padding:5px 2px;
+}
+.footer-social-icons a {
+    margin-right: 5px;
+}
+
+
+}
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+
+
+}
