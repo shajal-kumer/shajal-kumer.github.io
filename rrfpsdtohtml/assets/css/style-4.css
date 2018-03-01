@@ -1,0 +1,277 @@
+/*===================
+    Base CSS
+=====================*/
+
+html,
+body,
+.homepage-hero-area-4,
+.single-slide-item {
+    height: 100vh
+}
+.homepage-hero-area-4 .single-slide-item{
+    background-color: transparent;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+}
+body {
+    font-weight: 300;
+    line-height: 1.7;
+}
+.boxed-btn,
+input[type="submit"],
+button[type="submit"] {
+    background-color: #06d6a0
+}
+
+/*===================
+  Main Menu CSS
+=====================*/
+
+.mainmenu li ul {
+    background-color: #fff;
+    border-radius: 0px
+}
+.mainmenu li ul li a {
+    color: #888
+}
+.mainmenu li a:hover,
+.mainmenu li ul li:hover a {
+    color: #06d6a0
+}
+.mainmenu li a.boxed-btn {
+    color: #fff;
+    background-color: #06d6a0
+}
+.mega-menu {
+    color: #999
+}
+.mega-menu h4,
+.mega-menu h5 {
+    color: #373737;
+}
+.menu-cta h4 span {
+    color: #06d6a0;
+}
+.off-canvas-menu li ul {
+    position: absolute;
+    left: 60%;
+    background: #06D6A0;
+    top: 15px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding: 20px;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    visibility: hidden;
+    -webkit-transition: .3s;
+    transition: .3s;
+    z-index: 99;
+    width: 220px;
+    transition: .3s
+}
+.off-canvas-menu li ul:before {
+    position: absolute;
+    content: "";
+    left: -15px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 20px solid #06D6A0;
+    border-bottom: 10px solid transparent;
+    margin-top: -10px;
+    z-index: 99
+}
+.off-canvas-menu li:hover ul {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
+    left: 50%
+}
+.off-canvas-menu li ul a {
+    color: #fff;
+    -webkit-transition: ;
+    transition:
+}
+.off-canvas-menu li ul a:hover {
+    color: #fff;
+    padding-left: 5px
+}
+.off-canvas-menu li.mega-menu ul {
+    width: 720px;
+    line-height: 2;
+}
+.off-canvas-menu li.mega-menu ul ul {
+    position: relative;
+    left: auto;
+    top: auto;
+    padding: 0;
+}
+.off-canvas-menu li.mega-menu ul ul {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    width: 100%
+}
+.off-canvas-menu li.mega-menu ul ul li {
+    line-height: 2
+}
+.off-canvas-menu li.mega-menu ul ul:before {
+    display: none
+}
+.off-canvas-menu .menu-cta,
+.off-canvas-menu .menu-cta h4 span {
+    color: #fff;
+}
+.off-canvas-menu .menu-cta .boxed-btn {
+    background-color: #fff;
+    color: #06D6A0;
+}
+.off-canvas-menu .menu-cta a.boxed-btn:hover {
+    padding-left: 35px
+}
+
+/*===================
+  Hero area CSS
+=====================*/
+
+.homepage-hero-area-4 h2 {
+    color: #fff;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 55px
+}
+.single-slide-item {
+    display: table;
+    width: 100%;
+    background-color: transparent;
+}
+.single-slide-item:after {
+    display: none
+}
+.single-slide-item-inner {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+.website-check-form input {
+    background-color: #073b4c;
+    color: #fff;
+    border-color: #073b4c;
+}
+.website-check-form input[type="submit"] {
+    background-color: #06d6a0;
+    border-radius: 0px;
+    color: #fff;
+    height: 47px;
+    line-height: 47px;
+}
+.website-check-form {
+    margin-top: 35px;
+}
+.website-check-form::-webkit-input-placeholder {
+    color: #fff
+}
+.website-check-form::-moz-placeholder {
+    color: #fff
+}
+.website-check-form:-ms-input-placeholder {
+    color: #fff
+}
+.website-check-form:-moz-placeholder {
+    color: #fff
+}
+
+/*===================
+  Service CSS
+=====================*/
+
+.section-padding.service-section {
+    position: relative;
+    z-index: 1;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    margin-top: 130px;
+    margin-bottom: 115px
+}
+.service-section:before {
+    position: absolute;
+    right: 0;
+    top: -60px;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-image: url(../img/service-bg-1.jpg);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 5px 8px #dbdbdb;
+    border-radius: 4px
+}
+.service-section:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 53%;
+    height: 100%;
+    background-color: #fdfdfd;
+    content: "";
+    z-index: -1;
+    box-shadow: 0 0 10px #dbdbdb
+}
+.service-icon {
+    margin-bottom: 20px
+}
+a.video-play-btn {
+    background: #06d6a0;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    line-height: 70px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+.padding-top-40 h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/*===================
+  Footer CSS
+=====================*/
+
+.footer-area.theme-4 a i {
+    margin-right: 5px;
+}
+.copyright-area.theme-4 {
+    background-color: #0f2e38;
+    color: #fff
+}
+.email-subscriber-form {
+    margin-top: 50px;
+    color: #999999
+}
+.email-subscriber-form input[type="email"] {
+   height: 47px;
+   line-height: 47px
+}
+.email-subscriber-form::-webkit-input-placeholder {
+    color: #999999
+}
+.email-subscriber-form::-moz-placeholder {
+    color: #999999
+}
+.email-subscriber-form:-ms-input-placeholder {
+    color: #999999
+}
+.email-subscriber-form:-moz-placeholder {
+    color: #999999
+}
+ul.social-link li a:hover,
+ul.social-link li a:hover i {
+    color: #06d6a0;
+}

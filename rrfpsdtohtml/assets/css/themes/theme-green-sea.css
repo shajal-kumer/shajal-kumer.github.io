@@ -1,0 +1,23 @@
+/*style switcher*/
+
+.boxed-btn,
+input[type="submit"],
+button[type="submit"], .mainmenu li ul, .case-study-wraper, .testimonial-carousel .owl-dots div,
+.case-studies-carousel .owl-dots div, .case-study-wraper {
+    background-color:#16a085;
+}
+.mainmenu li a:hover, .mainmenu li a.boxed-btn, .single-service-box:hover h3,
+.single-service-box:hover .service-icon i,
+.single-service-box:hover .service-readmore-btn, .pricing-heading .pricing-count, .footer-area a:hover, ul.social-link li a:hover,
+ul.social-link li a:hover i {
+    color: #16a085;
+}
+.single-service-box:hover, .single-pricing-box:hover, .single-pricing-box:hover .pricing-heading  {
+    border-color: #16a085;
+}
+.mainmenu li ul li a{
+	color: #fff
+}
+.mainmenu li ul li a:hover {
+	color: #fff
+}

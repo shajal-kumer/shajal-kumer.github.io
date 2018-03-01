@@ -1,0 +1,100 @@
+html,
+body {
+    height: 100%;
+}
+.website-check-form input[type="submit"],
+button[type="submit"] {
+    background-color: #06d6a0;
+}
+
+/*===================
+  Main Menu CSS
+=====================*/
+
+.mainmenu li ul {
+    background-color: #fff;
+    border-radius: 0px
+}
+.hearder-area.header-absolute .mainmenu li ul li a {
+    color: #888
+}
+.hearder-area.header-absolute .mainmenu li a:hover,
+.mainmenu li ul li:hover a {
+    color: #06d6a0
+}
+.hearder-area.header-absolute .mainmenu li a.boxed-btn {
+    color: #fff;
+    background-color: #06d6a0
+}
+.mega-menu {
+    color: #999
+}
+.mega-menu h4,
+.mega-menu h5 {
+    color: #373737;
+}
+.menu-cta h4 span {
+    color: #06d6a0;
+}
+.mainmenu li:last-child ul {
+    left: auto;
+    right: 0;
+}
+.hearder-area.header-absolute .mainmenu li ul li a {
+    color: #888
+}
+
+/*===================
+  Services CSS
+=====================*/
+
+.single-service-box {
+    margin-bottom: 0px;
+}
+.single-service-box:hover {
+    border-color: #06D6A0;
+}
+.single-service-box:hover a.service-readmore-btn {
+    color: #06D6A0;
+}
+
+/*===================
+  Case Study CSS
+=====================*/
+
+.single-case-study {
+    background-color: #ddd;
+    background-position: center;
+    background-size: cover;
+}
+.case-study-wraper {
+    background: rgba(6, 214, 160, 0.9);
+    font-size: 14px;
+
+}
+.case-study-wraper h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff
+}
+.case-study-more {
+    background: none;
+    color: #fff;
+    line-height: 30px;
+    height: auto;
+    margin-top: 5px;
+    font-size: 22px;
+}
+.case-studies-carousel .owl-dots div {
+    background: #06D6A0;
+}
+
+/*===================
+  BLog CSS
+=====================*/
+
+.single-blog-box {
+    display: block;
+    color: #999;
+    padding: 0px;
+}
