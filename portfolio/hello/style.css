@@ -243,7 +243,7 @@ li {
 }
 .slide-content {
     display: table;
-    z-index: 99999999;
+    z-index: 99;
     position: relative;
     overflow: hidden;
 }
