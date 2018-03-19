@@ -1,0 +1,181 @@
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+
+/*=============.finance-style====================*/
+.single-carlogo {
+    margin: 0 15px;
+}
+.finance-deposit, .breadcrumb-text, .finance-text {
+    text-align: center;
+}
+.finance-deposit h2 span {
+    left: -121px;
+    font-size: 102px;
+}
+.finance-deposit h2 {
+    font-size: 47px;
+    line-height: 43px;
+    margin-left: 145px;
+}
+.finance-deposit h2 span {
+    top: 20px;
+}
+.finance-deposit span {
+    display: block;
+}
+.finance-deposit .boxed-btn {
+    margin-bottom: 20px;
+}
+.video-list, .blog-list {
+    flex-direction: column;
+    margin: 0 15px;
+}
+.single-video-item, .single-blog-item {
+    flex-basis: 100%;
+}
+.blog-img img {
+    width: 100%;
+}
+.single-video-item {
+    margin-bottom: 30px;
+}
+.breadcrumb-text, .finance-text {
+    text-align: left;
+    margin: 15px 15px 0 15px;
+}
+.gray-bg.gray-bg-2 .carlogo {
+    display: flex !important;
+}
+.single-carlogo {
+    margin: 0 5px;
+}
+
+
+
+
+}
+
+
+@media (min-width: 480px) and (max-width: 575px) {
+
+
+
+}
+
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) { 
+
+/*=============.finance-style====================*/
+.single-carlogo {
+    margin: 0 15px;
+}
+.finance-deposit, .breadcrumb-text, .finance-text {
+    text-align: center;
+}
+.finance-deposit h2 span {
+    left: -155px;
+    font-size: 140px;
+}
+.finance-deposit h2 {
+    font-size: 62px;
+}
+.finance-deposit span {
+    display: block;
+}
+.finance-deposit .boxed-btn {
+    margin-bottom: 20px;
+}
+.video-list, .blog-list {
+    flex-direction: column;
+    margin: 0 30px;
+}
+.single-video-item, .single-blog-item {
+    flex-basis: 100%;
+}
+.blog-img img {
+    width: 100%;
+}
+.single-video-item {
+    margin-bottom: 30px;
+}
+.breadcrumb-wrap {
+    justify-content: center;
+}
+.breadcrumb-text, .finance-text {
+    margin: 15px 15px 0 15px;
+}
+
+
+
+
+}
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+
+/*=============.finance-style====================*/
+.single-carlogo {
+    margin: 0 15px;
+}
+.finance-deposit, .breadcrumb-text, .finance-text {
+    text-align: center;
+}
+.finance-deposit h2 span {
+    left: -155px;
+}
+.breadcrumb-wrap {
+    justify-content: center;
+}
+.breadcrumb-text, .finance-text {
+    margin: 15px 15px 0 15px;
+}
+
+
+
+
+
+}
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) { 
+
+
+/*============.finance-page==============*/
+.finance-deposit h2 {
+    font-size: 67px;
+    line-height: 59px;
+    margin-left: 200px;
+}
+.finance-deposit h2 span {
+    left: -205px;
+    font-size: 153px;
+}
+.diposit-btn span {
+    margin-left: 10px;
+}
+.finance-deposit .boxed-btn {
+    padding: 0px 30px;
+}
+
+
+
+
+
+}
+
+/*// Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+
+
+}
+
+
+
+
+
+
+
+
+
+

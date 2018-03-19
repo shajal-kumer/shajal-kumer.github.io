@@ -1,0 +1,45 @@
+/*========================================================================
+                colour definitions for the finance page
+==========================================================================*/
+.breadcrumb-text {
+    color: #8c8c8c;
+}
+.breadcrumb-text a {
+    color: #ba0000;
+    border-right: 1px solid #D6D6D6;
+}
+.pricefrm-text h3 {
+    color: #484848;
+}
+.pricefrm-text h3 span {
+    color: #ba0000;
+}
+.finance-text {
+    color:  #000;
+    font-size:  22px;
+}
+
+/*=============.finance-deposit=================*/
+.finance-deposit h2 {
+    color: #2c2c2c;
+}
+.diposit-btn span {
+    color:  #ba0000;
+}
+.finance-deposit .boxed-btn {
+    background-color:  transparent;
+    color: #ba0000;
+}
+.finance-deposit .boxed-btn:hover, .finance-deposit .boxed-btn:hover:after {
+    background: #ba0000;
+    color: #fff;
+}
+
+
+/*=========.finance-video-area=============*/
+.finance-video-area .section-title{
+    color: #484848;
+}
+.single-blog-item:hover h4 {
+    color: #ba0000;
+}

@@ -1,0 +1,224 @@
+l/*==============================================================================
+   all other css definitions for the sell-your-car page (including font families)
+=================================================================================*/
+
+.breadcrumb-text {
+   
+}
+.breadcrumb-text a {
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.breadcrumb-text {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    font-size: 17px;
+}
+
+.valuation-text h1 {
+    font-size:  37px;
+    font-weight:  400;
+}
+.valuation-text {
+	font-size:  22px;
+}
+
+
+
+.gray-bg-3 {
+    padding-bottom: 30px;
+}
+.reg-btn {
+    text-transform: uppercase;
+    padding: 6px;
+    height: 54px;
+    width: 55px;
+    border-radius: 5px 0 0 5px;
+}
+.reg-btn .dots-style {
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 39px;
+    font-weight: 700;
+}
+.reg-box {
+    width: 275px;
+    height: 60px;
+    margin: 30px 0 30px;
+    position: relative;
+}
+.check-mark {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    font-size: 27px;
+    width: 30px;
+    height: 30px;
+    margin-top: -21px;
+}
+.bg-text {
+    margin-top: 12px;
+    display:  block;
+}
+.gray-bg-3 button[type="submit"] {
+    background:  no-repeat;
+}
+.input-box input {
+    width: 100%;
+    padding: 2px 0 0 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+    height: 54px;
+    font-family: 'charles_wright_bold_capsRg', Arial, sans-serif;
+    font-weight: 700;
+    border-radius: 0 5px 5px 0;
+}
+
+
+
+
+
+.booking-form input[type="text"], .booking-form input[type="email"], .booking-form input[type="password"], .booking-form input[type="tel"] {
+    width: 255px;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+.your-details input {
+    width: 100% !important;
+}
+
+.booking-form textarea {
+    height: 150px;
+    width: 100%;
+}
+.booking-form-wrap {
+    padding: 40px 0 45px;
+    display: none; 
+}
+.booking-form-wrap button[type="submit"], .booking-form-wrap button[type="button"] {
+    margin:  0 auto;
+    display:  block;
+    margin-top: 20px;
+}
+
+
+
+
+.booking-form label {
+    font-weight: 700;
+}
+.your-details span {
+    padding: 14px;
+    display:  block;
+    margin-bottom: -23px;
+    border-radius:  5px;
+}
+.first-left {
+    margin-right:  30px;
+}
+.last-right {
+    margin-left: 30px;
+}
+.booking-form select {
+    width: 100%;
+    padding: 14px 12px;
+}
+.closing-text i.fa {
+    font-size: 25px;
+}
+
+
+
+
+/* booking-form-wrap*/
+.booking-form-wrap fieldset {
+    display: none
+}
+
+#progressbar {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  margin-bottom: 40px;
+}
+#progressbar li {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 50%;
+  margin: 0px 20px;
+  font-size: 20px;
+  position: relative;
+}
+#progressbar li:not(:last-child):after {
+  position: absolute;
+  content: "";
+  left: 45px;
+  top: 23px;
+  width: 44px;
+  height: 2px;
+}
+#progressbar li:not(:first-child):before {
+    position: absolute;
+    content: "";
+    left: -43px;
+    top: 23px;
+    width: 0px;
+    height: 2px;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+}
+#progressbar li.active:not(:first-child):before {
+    width: 45px
+}
+.mileage-text  input.input-error[type="text"], .aditional-info textarea.input-error {
+    border: 1px solid red;
+}
+.submit-reg-btn[disabled] {
+    cursor: not-allowed;
+}
+.submit-reg-btn-wrap {
+    position:  relative;
+}
+.submit-reg-btn-wrap i {
+    margin-left:  70px;
+    font-size: 20px
+}
+
+
+
+
+
+.slider-for .slick-dots {
+    padding: 0px;
+    margin: 0px;
+}
+.slider-for .slick-dots li {
+  display: inline-block;
+  margin: 0px 8px;
+  width: 10px;
+  height: 10px;
+  transform: scale(.8);
+  border-radius: 50%;
+  position: relative;
+}
+.slider-for .slick-dots .slick-active{
+    transform: scale(.5);
+}
+.slider-for .slick-dots .slick-active::after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}

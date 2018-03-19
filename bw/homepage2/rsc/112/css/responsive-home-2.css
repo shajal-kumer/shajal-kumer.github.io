@@ -1,0 +1,196 @@
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+
+.single-header-top {
+    border-right: 0;
+}
+.header-area, .logo {
+    min-height: 80px;
+}
+.menu-trigger {
+    top: 30px;
+}
+.icons-small-devices {
+    margin-top: 9px;
+}
+.single-three-col:nth-child(2), .single-three-col:nth-child(3) {
+    display: none;
+}
+.three-col-bg-1 {
+    width: 100%;
+    padding-right: 240px;
+}
+.single-two-col h2 {
+    font-size: 33px;
+    line-height: 38px;
+}
+
+
+
+.fnc-logo {
+    display: block !important;
+}
+.single-fnc-logo {
+    padding-bottom: 20px;
+}
+.shootout-two-col.d-flex {
+    display: block !important;
+}
+.single-two-col.shootout-two-col-left {
+    margin-bottom: 3px;
+}
+.three-col-bg-1 {
+    padding-right: 0;
+    margin-right: 0;
+}
+.shootout-area input[type="text"] {
+    width: 195px;
+}
+.banner-area, .single-slider {
+    height: 450px;
+}
+.slide-text {
+    margin-top: 25px
+}
+
+
+.homepage-slides-wrap .owl-dots div{
+    display: none;
+}
+
+.banner-area:after{
+    background: #e96539;
+background: -moz-linear-gradient(top, #e96539 0%, #fdd0c1 100%);
+background: -webkit-linear-gradient(top, #e96539 0%,#fdd0c1 100%);
+background: linear-gradient(to bottom, #e96539 0%,#fdd0c1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e96539', endColorstr='#fdd0c1',GradientType=0 );
+}
+
+}
+/*// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) { 
+.header-area, .logo {
+    min-height: 80px;
+}
+.menu-trigger {
+    top: 30px;
+}
+.icons-small-devices {
+    margin-top: 9px;
+}
+.single-three-col:nth-child(2), .single-three-col:nth-child(3) {
+    display: none;
+}
+.three-col-bg-1 {
+    width: 100%;
+    padding-right: 240px;
+    margin-right: 0;
+}
+.shootout-area input[type="text"] {
+    width: 167px;
+}
+.single-two-col h2 {
+    font-size: 33px;
+    line-height: 38px;
+}
+.homepage-slides-wrap .owl-dots div{
+    display: none;
+}
+.banner-area, .single-slider {
+    height: 470px;
+}
+.single-slider {
+    background-position: 90% 54%;
+}
+
+
+.banner-area:after{
+    background: #e96539;
+background: -moz-linear-gradient(top, #e96539 0%, #fdd0c1 100%);
+background: -webkit-linear-gradient(top, #e96539 0%,#fdd0c1 100%);
+background: linear-gradient(to bottom, #e96539 0%,#fdd0c1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e96539', endColorstr='#fdd0c1',GradientType=0 );
+}
+
+
+}
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+
+.single-slider h2 {
+    font-size: 52px;
+}
+
+
+
+}
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+
+.single-header-top {
+    border-right: 0;
+}
+.single-three-col:nth-child(2) {
+    display: none;
+}
+.three-col-bg-1 {
+    width: 358px;
+    padding-right: 100px;
+}
+.three-col-bg-3 {
+    width: 359px;
+}
+
+
+}
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) { 
+
+.mainmenu ul li a {
+    padding: 0px 5px;
+}
+.logo img {
+    max-width: 185px;
+}
+.logo {
+    top: 15px;
+}
+.single-slider h2 {
+    font-size: 50px;
+}
+.three-col-bg-1 {
+    width: 460px;
+    padding-right: 135px;
+}
+.shootout-three-col h2, .shootout-two-col h2 {
+    font-size: 34px;
+}
+.footer-widget-area a {
+    font-size: 14px;
+}
+.footer-widget-area .pdn {
+    padding-left: 10px;
+}
+.col-lg-4{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.signup-form input[type="email"] {
+    width: 150px;
+}
+.footer-text img {
+    padding-left: 60px;
+}
+.footer-widget-right {
+    height: 541px;
+}
+.slide-text {
+    margin-top: 200px;
+}
+
+
+}
+
+@media  (min-width: 1200px) { 
+
+}

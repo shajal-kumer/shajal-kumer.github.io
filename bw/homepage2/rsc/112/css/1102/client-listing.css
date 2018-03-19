@@ -1,0 +1,328 @@
+/*========================================================================
+                 colour definitions for the listing page
+==========================================================================*/
+
+
+/*======.breadcrumb-text========*/
+.breadcrumb-text {
+    color: #8c8c8c;
+}
+.breadcrumb-text a {
+    color: #ba0000;
+    border-right: 1px solid #D6D6D6;
+}
+
+/*=========refine-text==========*/
+.refine-text {
+    background-color:  #393939;
+}
+.refine-text h3, .refine-text a {
+    color: #fff;
+}
+.refine-text a {
+    background-color: #4D4D4D;
+}
+
+/*==========single-listing-item============*/
+.single-listing-item-1 {
+    background-color: #fff;
+}
+/*.single-listing-item-1 h3 {
+    color: #484848;
+} */
+.pricefrm-text h3 {
+    color: #484848;
+}
+.single-listing-item-1 h3 span {
+    color: #484848;
+}
+.pricefrm-text h3 span {
+    color: #ba0000;
+}
+.share-icon {
+    background-color: #F1F1F1;
+    color: #ba0000;
+}
+.share-icon:hover {
+    background-color: #ba0000;
+    color: #fff;
+}
+a {
+    color: #484848;
+}
+a:hover {
+    color: #393939;
+}
+
+/*=============Toogle Buttons==============*/
+.button-group {
+    background-color:  #FFFFFF;
+}
+.button-group-wrap {
+    background-color: #ddd;
+}
+.button-group label {
+    background-color: #FFFFFF;
+    color: #ba0000;
+}
+.btn-grp.active_btn label {
+    color: #fff;
+    background-color: #0D9FF4;
+}
+
+/*==========tab css=========*/
+.single-tab {
+    color:  #fff;
+}
+.tab-header a {
+    color:  #fff;
+    background-color:  #ba0000;
+}
+.tab-body {
+    background-color: #393939;
+}
+.tab-header .collapsed {
+    background-color: #fff;
+    color: #848484;
+    border-bottom: 1px solid #EFEFEF;
+    border-left: 2px solid #fff;
+}
+.tab-header .collapsed:hover {
+    border-left: 2px solid #ba0000;
+    color: #ba0000;
+}
+
+
+/*============color css==============*/
+.colour-btn-wrap {
+    background-color: #fff;
+}
+.colour-btn-wrap h5, .tab-header h5 {
+    color: #757575;
+}
+.single-color input[type="checkbox"] + label:before {
+    border-color: #B8B8B8;
+}
+.single-color input[type="checkbox"]:checked + label:before {
+    border-color: #1A2F5C;
+}
+.single-color.black-color input[type="checkbox"] + label:before {
+    background-color: #212121;
+}
+.single-color.gray-color input[type="checkbox"] + label:before {
+    background-color:  #BFBFBF;
+}
+.single-color.red-color input[type="checkbox"] + label:before {
+    background-color:  #E62C2D;
+}
+.single-color.blue-color input[type="checkbox"] + label:before {
+    background-color:  #3494C6;
+}
+.single-color.yellow-color input[type="checkbox"] + label:before {
+    background-color:  #F0D023;
+}
+
+/*=========.range slider-3==========*/
+.finance-range-slider-2.range-slider-3 {
+    background-color: #fff;
+}
+.range-slider-3 .irs:after, .range-slider-3 .irs:before {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #D2D5D7;
+    top: 30px;
+    right: 0px;
+}
+.range-slider-3 .range-slider-2:after, .range-slider-3 .range-slider-2:before {
+    color: #757575;
+}
+.range-slider-2 .irs-line-left, .range-slider-2 .irs-line-mid, .range-slider-2 .irs-line-right {
+    background-color: #E0E0E0 !important;
+}
+.range-slider-2 .irs-from:before, .range-slider-2 .irs-to:before, .range-slider-2 .irs-single:before {
+    background-color: #ba0000;
+}
+.range-slider-2 .irs-bar {
+    background-color: #ba0000 !important;
+}
+.range-slider-2 .irs:after, .range-slider-2 .irs:before {
+    background-color: #fff;
+}
+.range-slider-2 .irs-from, .range-slider-2 .irs-to, .range-slider-2 .irs-single {
+    color: #ba0000;
+}
+
+/*=========== min max dropdown ==========*/
+.single-dropdown-item.years-dropdown select {
+    color: #757575;
+}
+.single-dropdown-item.years-dropdown:first-child {
+    border-right: 1px solid #EFEFEF;
+}
+.years-dropdown {
+    border-bottom:  1px solid #EFEFEF;
+}
+
+/*==============top bar css===============*/
+.top-filter {
+    background-color: #fff;
+}
+.top-filter-left h2 span {
+    color:  #ba0000;
+    border-right:  1px solid #DBDBDB;
+}
+.sort-dropdown span {
+    color: #ba0000;
+}
+.sort-dropdown select {
+    background-color: #ba0000;
+    color:  #fff;
+}
+.btns-switch .fa.active {
+   color:#0DA0F4;    
+}
+
+/*
+.btns-switch .fa-bars {
+    color: #C6C6C6;
+}
+*/
+
+.sort-dropdown select option {
+    background-color: #fff;
+	color: #000;
+}
+
+/*==========pagination css==========*/
+.pagination-list ul li a {
+    color:  #8c8c8c;
+    border: 1px solid #F4F4F4;
+}
+.pagination-list ul li.active-page a {
+    border-color: #ba0000;
+    color: #ba0000;
+}
+.pagination-list ul li:hover a {
+    border-color: #ba0000;
+}
+
+
+/*=======.additional-info========*/
+.additional-info {
+    background-color: #ba0000;
+}
+.additional-info h3 {
+    color: #fff;
+}
+.carspec-left, .carspec-right  {
+    background-color:  #0c5c9c;
+    color:  #fff;
+}
+
+/*========.camera-360-icons==========*/
+.camera-icon, .degreeicon {
+    color:  #4a4a4a;
+}
+.camera-icon:before {
+    background-color: #fff;
+}
+.degreeicon:before, .listing-view .camera-2:before {
+    background-color: #393939;
+}
+.listing-view .camera-2{color: #fff}
+
+/*======.deposit-large-bg======*/
+.deposit-large-bg-3 {
+    color: #fff;
+    background-color: #ba0000;
+}
+.deposit-large-bg-3 .boxed-btn {
+    border-color: #fff;
+    color: #fff;
+}
+.deposit-large-bg-3 .boxed-btn:hover {
+    color: #ba0000 !important;
+}
+.deposit-large-bg-3 .boxed-btn:after {
+    background-color: #fff;
+    color: #ba0000;
+}
+.refine-close {
+    background-color: #333;
+    color: #fff;
+}
+
+.listing-text h3 {
+    color: #ba0000;
+}
+
+/*===========listing view==============*/
+.single-tag {
+    background-color: #EBEBEB;
+}
+.single-tag:hover {
+    background-color:  #ba0000;
+    color: #fff;
+}
+
+/*==============.blue-box css===============*/
+.blue-box {
+    background-color: #ba0000;
+}
+.blue-box .prctag {
+    color: #fff;
+}
+.blue-box .pricefrm-text h3 {
+    color: #fff;
+}
+.blue-box .pricefrm-text h3 span {
+    color: #00f1ff;
+}
+.blue-box .permonth {
+    color: #fff;
+}
+.blue-box .caradd-content-right .boxed-btn.blue-btn {
+    background-color: #ba0000;
+    color: #fff;
+    border-color: #fff;
+}
+.blue-box .caradd-content-right .boxed-btn.blue-btn:hover:after {
+    border-color: #ba0000;
+    background-color: #fff;
+}
+.blue-box .caradd-content-right .boxed-btn.blue-btn:hover {
+    color: #ba0000 !important;
+}
+.blue-box .boxed-btn.white-btn {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+
+.car-icon i {
+    background-color: #F1F1F1;
+	color:#ba0000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: .3s;
+}
+.car-icon i:hover {
+    background-color: #ba0000;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: .3s;
+
+}
+
+.modal-header {
+    background-color: #ba0000;
+    color: #fff;
+    /*border-radius: 6px 6px 0 0;*/
+	display:block;
+}
+.btns-switch .fa.active {
+   color:#ba0000;    
+}

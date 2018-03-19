@@ -1,0 +1,756 @@
+/*========================================================================
+   all other css definitions for the listing page (including font families)
+==========================================================================*/
+
+
+/*======.breadcrumb-text========*/
+.breadcrumb-text {
+    font-size: 17px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.breadcrumb-text a {
+    text-decoration: none;
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+
+.refine-search-box {
+    width: 25.7%;
+    padding-right: 20px;
+}
+.car-listing-wrap-1 {
+    width: 74.33%;
+}
+
+/*=============refine-text===============*/
+.refine-text {
+    border-radius:  5px 5px 0 0;
+    position:  relative;
+    padding: 12px;
+}
+.refine-text h3 {
+    font-weight:  400;
+    font-size: 23px;
+    margin: 0;
+}
+.refine-text a {
+    position: absolute;
+    right: 12px;
+    top: 11px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 31px;
+}
+
+
+/*=========.range slider-3==========*/
+.finance-range-slider-2.range-slider-3 {
+    padding: 30px 0px 40px;
+}
+.finance-range-slider-2.range-slider-3 .finance-slider {
+    width: 210px;
+    margin: 0 auto;
+}
+.range-slider-3 .irs:after {
+    left: 0px;
+}
+/*
+.range-slider-3 .irs:after, .range-slider-3 .irs:before {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #D2D5D7;
+    top: 30px;
+    right: 0px;
+}*/
+.range-slider-3 .irs-line-left, .range-slider-3 .irs-line-mid, .range-slider-3 .irs-line-right {
+    height: 2px !important;
+}
+.range-slider-3 .range-slider-2 .irs-bar {
+    height: 2px !important;
+}
+.range-slider-3  .irs-from, .range-slider-3  .irs-to, .range-slider-3 .irs-single {
+    top: 32px;
+    font-size: 16px !important;
+    font-weight: normal;
+}
+.range-slider-3 .irs-from:after, .range-slider-3 .irs-to:after, .range-slider-3 .irs-single:after, .range-slider-3 .irs-min:after, .range-slider-3 .irs-max:after {
+    font-size: 13px;
+    left: -2px;
+    top: 3px;
+}
+.range-slider-3 .irs-max:before {
+    content: "";
+}
+.range-slider-3 .range-slider-2 {
+    position:  relative;
+}
+.range-slider-3 .range-slider-2:after, .range-slider-3 .range-slider-2:before {
+    position:  absolute;
+    top: -15px;
+    width:  100%;
+    height:  100%;
+    font-size:  15px;
+}
+.range-slider-3 .range-slider-2:after {
+    left: -17px;
+    content: "Min Price";
+}
+.range-slider-3 .range-slider-2:before {
+    right: -168px;
+    content: "Max Price";
+}
+.range-slider-3 .irs-from:before, .range-slider-3 .irs-to:before, .range-slider-3 .irs-single:before {
+    width: 18px;
+    height: 18px;
+    left: 18px;
+    top: -15px;
+    background-image:inherit;
+}
+.range-slider-2 .irs-from, .range-slider-2 .irs-to, .range-slider-2 .irs-single {
+    line-height: 32px;
+    background: none;
+    z-index: 7;
+}
+.range-slider-2 .irs:before {
+    margin-top: -13px;
+}
+.range-slider-2 .irs:after {
+    margin-top: -13px;
+}
+.range-slider-2 .irs:after, .range-slider-2 .irs:before {
+    position: absolute;
+    content: "";
+    border-radius: 50%;
+    z-index: 5;
+}
+.range-slider-2 .irs-from:before, .range-slider-2 .irs-to:before, .range-slider-2 .irs-single:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+}
+.irs-from:after, .irs-to:after, .irs-single:after{border: 0;}
+.range-slider-2 .irs-from:before {
+    left: 11px;
+}
+
+
+
+
+
+/*single-listing-item*/
+.single-listing-item-1 {
+    padding: 13px 13px 15px 13px;
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 20px;
+    -webkit-flex-basis: calc(33.3333% - 20px);
+    flex-basis: calc(33.3333% - 20px);
+    margin-right: 19px
+}
+
+.single-listing-item-1:last-child{
+    margin-right: 0px;
+}
+.single-listing-item-1 .carphoto {
+    margin-bottom: 10px;
+    position: relative;
+}
+.single-listing-item-1 img {
+    border-radius: 5px;
+    max-height: 183px;
+    max-width: 244px;
+}
+.single-listing-item-1 h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.pricefrm-text h3 {
+    font-weight: 400;
+    font-size: 20px;
+    position: relative;
+}
+.single-listing-item-1 h3 span{
+    font-weight: 400;
+}
+.pricefrm-text h3 span {
+    font-weight: 600;
+    font-size: 28px;
+}
+.single-listing-item-1 .boxed-btn {
+    padding: 0px 15px;
+}
+.share-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0px 0 0 0;
+    padding: 6px 0 0 10px;
+    position: absolute;
+    right: 7px;
+    bottom: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+    font-size: 20px;
+}
+.permonth {
+    line-height: 11px;
+    font-size: 13px;
+    margin: 0;
+    position: absolute;
+    right: -41px;
+    top: 6px;
+}
+.pricefrm-text {
+    position: relative;
+    display: inline-block;
+}
+.listing-content-1 .col-lg-4 {
+    padding-right:  15px;
+}
+.listing-content-1 .col-lg-4:last-child {
+    padding-right:  0;
+}
+
+
+
+
+/*Toogle Buttons*/
+.button-group {
+    padding:  20px 15px;
+}
+.button-group-wrap {
+    padding: 5px;
+    border-radius: 50px;
+}
+.button-group input[type="radio"]:checked + label:before, .button-group input[type="radio"] + label:before {
+    content: "";
+}
+.button-group label {
+    margin: 0 0px;
+    padding: 5px 19px;
+    position: relative;
+    border-radius: 50px;
+    font-size: 18px;
+}
+.btn-grp.used-cars {
+    margin-right: 7px;
+    margin-left: 2px;
+}
+.button-group input[type="radio"] + label:before {
+    width: 100%;
+    height: 35px;
+    left: 0;
+    top: 3px;
+    position: absolute;
+    border-radius: 50px;
+    border: 0;
+    background: none;
+}
+
+
+/*===========tab css===========*/
+.tab-header a {
+    display:  block;
+    padding: 10px;
+}
+.tab-body {
+    padding: 15px 10px 20px 15px;
+}
+.tab-header .collapsed {
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+
+/*===========color css===========*/
+.colour-btn-wrap {
+    padding: 10px 10px 30px;
+    border-radius: 0 0 5px 5px;
+}
+.colour-btn-wrap h5, .tab-header h5 {
+    font-size: 18px;
+    font-weight: 400;
+}
+.single-color input[type="checkbox"] + label:before {
+    border-radius:  50%;
+    width: 25px;
+    margin: 0;
+    height:  25px;
+}
+.single-color input[type="checkbox"]:checked + label:before {
+    content:  "";
+}
+
+
+
+/* ===========min max dropdown============= */
+.single-dropdown-item.years-dropdown select {
+    width: 135px;
+    margin: 0;
+    border-radius: 0;
+    padding: 7px 10px;
+    font-size: 18px;
+}
+.single-dropdown-item.years-dropdown:first-child select {
+    width: 136px;
+}
+/*
+.single-dropdown-item.years-dropdown:first-child {
+    border-right: 1px solid #EFEFEF;
+}
+.years-dropdown {
+    border-bottom:  1px solid #EFEFEF;
+}
+*/
+
+
+
+/*=============top bar css===============*/
+.top-filter {
+    padding: 10px 15px 6px 15px;
+    border-radius: 5px;
+}
+.top-filter-left {
+    width: 40%;
+}
+.top-filter-right {
+    width: 60%;
+    -webkit-box-pack:  end;
+        -ms-flex-pack:  end;
+            justify-content:  flex-end;
+}
+.top-filter-left h1, .top-filter-left h2 {
+    font-size: 30px;
+    margin: -2px 0 0 0;
+}
+.top-filter-left h2 span {
+    padding-right: 10px;
+    margin-right: 6px;
+}
+.sort-dropdown span {
+    font-size:  17px;
+    margin-right: 10px;
+}
+.sort-dropdown select {
+    width:  200px;
+    height:  32px;
+    padding: 0px 10px;
+    font-size:  17px;
+    margin-right: 35px;
+}
+.btns-switch {
+    font-size: 24px;
+}
+.btns-switch .fa-bars {
+    margin-right: 14px;
+    font-size: 30px !important;
+}
+.btns-switch i.fa {
+    cursor:  pointer;
+    font-size: 29px;
+}
+
+
+/*=================pagination css==================*/
+.pagination-list ul {
+    margin:  0;
+    padding:  0;
+    list-style:  none;
+}
+.pagination-list ul li {
+    display:  inline-block;
+}
+.pagination-list ul li a {
+    width:  30px;
+    height:  30px;
+    display:  block;
+    text-align:  center;
+    line-height: 28px;
+    font-size: 18px;
+    border-radius: 50%;
+}
+.pagination-list {
+    margin: 14px 0 17px 20px;
+}
+
+
+
+
+.single-listing-item-1 h3 .price-changed {
+    position:  relative;
+    margin-right:  10px;
+}
+.single-listing-item-1 h3 .price-changed:after {
+    position:  absolute;
+    left: 0;
+    top: 13px;
+    width:  100%;
+    height:  2px;
+    content:  "";
+}
+.single-listing-item-1 .car-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-transition: .3s;
+    transition: .3s;
+    line-height: 39px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 12px;
+}
+.car-icon i {
+    width:  100%;
+    height:  100%;
+    padding-top: 10px 
+}
+
+/*=======.additional-info========*/
+.additional-info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 9;
+}
+.additional-info.show-addicons {
+    visibility: visible;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+.additional-info h3 {
+    font-size:  26px;
+    font-weight: 400;
+}
+.carspec-left, .carspec-right  {
+    width:  70px;
+    height:  70px;
+    text-align:  center;
+    border-radius: 50%;
+    font-size:  13px;
+}
+.carspec-left{
+    margin-right: 25px;
+}
+.carspec-left p, .carspec-right p {
+    margin: 2px 0 0 0;
+}
+.single-carspec {
+    margin-bottom: 5px;
+}
+.single-carspec:last-child {
+    margin-bottom:  0;
+}
+.close-icon {
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    cursor: pointer;
+}
+
+
+/*========.flipbox css=========*/
+.flipbox-container{
+    -webkit-perspective:1000;
+    perspective:1000;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.flipbox-container.grid {
+	margin-right: -20px
+}
+.flipbox {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.flipbox.flip {
+    transform: rotateY( 180deg );
+    -webkit-transform: rotateY(180deg);
+}
+.flipbox .back, .flipbox .front{
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.flipbox .front {
+    z-index: 2
+}
+
+.flipbox .back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY( 180deg );
+}
+
+
+
+/*========.camera-360-icons==========*/
+.camera-360-icons {
+    position:  absolute;
+    left: 3px;
+    bottom: 3px;
+}
+.camera-icon, .degreeicon {
+    position:  relative;
+    z-index:  2;
+    width:  65px;
+    height:  30px;
+    text-align:  center;
+    font-size:  18px;
+}
+.degreeicon {
+    width: 54px;
+    margin-left: 4px;
+}
+.camera-icon:before, .degreeicon:before {
+    position:  absolute;
+    left:  0;
+    top: 0;
+    width:  100%;
+    height:  100%;
+    content:  "";
+    z-index:  -1;
+    border-radius: 3px;
+    opacity:  .8;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+.camera-icon img {
+    margin-right: 3px;
+}
+
+
+
+/*======.deposit-large-bg======*/
+.deposit-large-bg-3 {
+    height: 240px;
+    font-size: 17px;
+    padding-left: 20px;
+    border-radius: 5px;
+    margin: 30px 0 43px 0;
+}
+.deposit-large-bg-3 img {
+    margin-bottom: -25px;
+}
+.deposit-large-bg-3 h2 {
+    font-size: 55px;
+    line-height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    margin-left: 160px;
+}
+.deposit-large-bg-3 h2 span {
+    position: absolute;
+    left: -165px;
+    top: 23px;
+    font-size: 120px;
+}
+.pagination-list.bottom-pagination {
+    margin: 30px 0 120px 0;
+}
+.refine-close {
+    float: right;
+    left: 0;
+    height: 40px;
+    position: fixed;
+    width: 40px;
+    top: 0;
+    text-align: center;
+    font-size: 20px;
+    line-height: 35px;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    transition: .3s;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    visibility: hidden;
+}
+.refine-close.show-searchbox {
+    left: 287px;
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    visibility: visible;
+}
+
+
+
+.listing-text h3 {
+    font-size: 21px;
+    margin-bottom: 5px;
+    line-height: 21px;
+}
+.listing-text h4 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+
+/*
+.listing-view .caradd-icons-row {
+    height: 46px;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+                -ms-grid-row-align: flex-end;
+            align-items: flex-end;
+    text-align: center;
+    font-size: 11px;
+    margin: 11px 0 9px 0;
+}
+*/
+
+.listing-view .caradd-icons-row {
+height: 55px;
+text-align: center;
+font-size: 11px;
+margin: 10px 0 5px 0;
+width: 371px;
+}
+
+
+
+.listing-view .single-add-icon {
+    width: 51px;
+}
+
+
+
+/*===========listing view==============*/
+.single-tag {
+    padding: 3px 12px;
+    border-radius: 5px;
+    margin: 10px 10px 3px 0;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    transition: .3s;
+    display: inline-block;
+}
+
+.single-tag i.fa {
+    margin-right: 4px;
+}
+.listing-content-2 {
+    width: 78%;
+    padding: 15px;
+}
+
+.listing-content-1.listing-view .single-listing-item-1 {
+    padding:  0;
+}
+.lstbottom-info {
+    position: relative;
+}
+.listing-content-1.listing-view .share-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    padding: 3px 0 0 7px;
+    font-size: 18px;
+}
+.listing-content-1.listing-view .carphoto {
+    width: 41%;
+}
+.listing-text {
+    width: 59%;
+}
+.listing-content-1.listing-view .carphoto {
+    margin: 0 8px 0 0;
+}
+
+/*======.blue-box css=======*/
+.blue-box {
+    width: 22%;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    padding-top: 5px;
+}
+.blue-box .prctag {
+    margin: 0px 0 -8px;
+    font-size: 31px;
+    font-weight: 600;
+    display: block;
+	line-height: 21px;
+}
+
+.blue-box .wasPrice { font-size:16px; margin:0; color:#fff }
+.blue-box .wasPrice span { text-decoration:line-through }
+
+
+.blue-box .pricefrm-text {
+    position: relative;
+    display: inline-block;
+    margin: 10px 0 6px -46px;
+}
+.blue-box .pricefrm-text h3 {
+    font-weight: 400;
+    font-size: 20px;
+    position: relative;
+}
+.blue-box .pricefrm-text h3 span {
+    font-weight: 600;
+    font-size: 28px;
+}
+.blue-box .permonth {
+    line-height: 11px;
+    font-size: 13px;
+    margin: 0;
+    position: absolute;
+    right: -41px;
+    top: 6px;
+}
+.blue-box .caradd-content-right .boxed-btn {
+    padding: 0;
+    min-width: 170px;
+    margin-bottom: 15px;
+}
+.blue-box .boxed-btn.white-btn {
+    margin-bottom: 0;
+}
+.blue-box .caradd-content-right .boxed-btn {
+    min-width: 150px;
+}
+.listing-view .degreeicon {
+    width: 45px;
+}
+
+
+
+/* tmp hide grid icon */
+/*.sort-dropdown select {margin-right:0 }*/
+
+
+/* code for sticky side bar*/
+.refine-search-box.fixed {
+    position: fixed;
+    top: 110px;
+    width: 293px;
+    z-index: 9;
+}
+
+
+.btns-switch .fa {
+    color: #C6C6C6;
+}
+
