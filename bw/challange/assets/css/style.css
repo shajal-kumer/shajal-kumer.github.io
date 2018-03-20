@@ -67,7 +67,7 @@ a:hover { text-decoration: none }
   }
   .section-about {
       height: 500px;
-      background-image: linear-gradient(to right, rgba(85, 197, 122, .7), rgba(40, 180, 133, .7)), url(../img/me.jpg);
+      background-image: linear-gradient(to right, rgba(85, 197, 122, .7), rgba(40, 180, 133, .7)), url(../img/welcome-bg.jpg);
         background-size: cover;
     }
     .section-about__inner {
