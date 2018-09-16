@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>100 Plus Section Development Class-</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700i,900,900i|Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+     <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Image Modal Example</h2>
+                <img id="myimg" src="https://picsum.photos/1000/600?image=0" alt="Someone is watching...">
+
+                <div class="s-modal" id="s-my-modal">
+                    <div class="s-modal-content animated fadeIn">
+                        <img id="img01" alt="">
+                        <span class="s-close">&times;</span>
+                    </div>
+                    <div id="caption" class="animated zoomIn"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        let modal = document.querySelector("#s-my-modal");
+        let myImg = document.querySelector("#myimg");
+        let img01 = document.querySelector("#img01");
+        let caption = document.querySelector("#caption");
+        let closeModal = document.querySelector(".s-close");
+
+        myImg.onclick = function () {
+            modal.style.display = "block";
+            img01.src = this.src;
+            caption.innerHTML = this.alt
+        }
+        closeModal.onclick = function () {
+            modal.style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
