@@ -44,7 +44,7 @@ $(function () {
         scrollSpeed: 1200,
         updateHash: true,
         setHeights: true,
-        offset: 30,
+        offset: -10,
         interstitialSection: '.footer',
         standardScrollElements: '',
         before: function before(index, sections) {
