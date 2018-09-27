@@ -179,15 +179,16 @@
             });
         }
 
-        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        //     //For MOBILE devices only. Scrollify takes care of it on desktop.
-        //     $(document).on("scroll", onScroll);
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+            //For MOBILE devices only. Scrollify takes care of it on desktop.
             
-        //     $(".section-navigate__link").click(function () {
-        //         $(".section-navigate__name").css("opacity", "0");
-        //     });
+            $(".section-navigate__link").click(function () {
+               var that =  $(this);
+                $(that + " .section-navigate__name").css("opacity", "0");
+                $(".section-navigate__name").css("opacity", "1");
+            });
 
-        // }
+        }
 
         function onScroll(event) {
             // Function that takes care of higlighting of the active navigate section on scroll 
