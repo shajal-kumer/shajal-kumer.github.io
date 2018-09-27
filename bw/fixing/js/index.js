@@ -129,7 +129,7 @@
             section: '.js--scrollify',
             sectionName: 'section-name',
             overflowScroll: true,
-            touchScroll: true, //disable on mobile        
+            touchScroll: true,      
             scrollSpeed: 1200,
             updateHash: true,
             setHeights: true,
@@ -169,41 +169,12 @@
             afterRender: function afterRender() {}
         });
 
-        function onScroll(event) {
-            // Function that takes care of higlighting of the active navigate section on scroll 
-            var scrollPos = $(document).scrollTop();
-
-
-            $('.js--navigate-items a').each(function () {
-                //iterate over the navigate-item links
-
-                var currLink = $(this);        //current link
-
-                var href = currLink.attr("href"); //get href attribute e.g. #first 
-                href = href.substr(1); //remove # from Link eg. #first --> first
-                var refElement = $(".section__" + href); //get element with classname of corresponding section
-
-
-                // if (refElement.visible( true )) { true allows for navigate item where section is in partial view to be highlighted. To test added false and horizontal. Original: 
-                // if (refElement.visible()) { 
-                if (refElement.visible(false, 'horizontal')) {
-                    // if section is fully in viewport (function from visible.js above)                       
-                    $('.js--navigate-item li a').removeClass("is--active"); //remove highlighting from all links 
-                    currLink.addClass("is--active"); // add highlighting to current link               
-                }
-                else {
-                    if (!(refElement.visible(true))) {
-                        currLink.removeClass("is--active"); //remove highlighting when element is not in viewport
-                    }
-                }
-
-            });
-        }
+       
 
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
             //For MOBILE devices only. Scrollify takes care of it on desktop.
-            //$(window).on("scroll", onScroll);
+
             $(".section-navigate__link").click(function () {
                 $(".section-navigate__name").css("opacity", "0");
             });
