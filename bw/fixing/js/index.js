@@ -129,7 +129,7 @@
             section: '.js--scrollify',
             sectionName: 'section-name',
             overflowScroll: true,
-            touchScroll: false, //disable on mobile        
+            touchScroll: true, //disable on mobile        
             scrollSpeed: 1200,
             updateHash: true,
             setHeights: true,
