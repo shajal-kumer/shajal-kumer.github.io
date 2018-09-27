@@ -133,6 +133,7 @@
             scrollSpeed: 1200,
             updateHash: true,
             setHeights: true,
+            offset : 0,
             interstitialSection: '.footer',
             standardScrollElements: '',
             before: function before(index, sections) {
