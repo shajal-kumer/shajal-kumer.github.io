@@ -27,7 +27,8 @@ section.is--scrolled.js--scrollify {
   .header.is--active {
     opacity: 1;
     position: absolute;
-    transition: all 0.3s ease-in; }
+    transition: all 0.3s ease-in;
+    z-index: 9999 }
 
 ul {
   margin: 0;
