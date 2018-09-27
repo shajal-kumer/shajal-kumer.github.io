@@ -181,12 +181,8 @@
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
             //For MOBILE devices only. Scrollify takes care of it on desktop.
-            
             $(".section-navigate__link").click(function () {
-                $(".section-navigate__name").css("opacity", "1");
-               var that =  $(this);
-                $(that + " .section-navigate__name").css("opacity", "0");
-                
+                $(".section-navigate__name").css("opacity", "0");
             });
 
         }
