@@ -203,7 +203,7 @@
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
             //For MOBILE devices only. Scrollify takes care of it on desktop.
-            $(window).on("scroll", onScroll);
+            //$(window).on("scroll", onScroll);
             $(".section-navigate__link").click(function () {
                 $(".section-navigate__name").css("opacity", "0");
             });
