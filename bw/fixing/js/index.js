@@ -125,95 +125,55 @@
             elements.block.slideToggle();
         });
 
-        if ($(window).width() < 769) {
-            $.scrollify({
-                section: '.js--scrollify',
-                sectionName: 'section-name',
-                overflowScroll: true,
-                touchScroll: false, //disable on mobile        
-                scrollSpeed: 1200,
-                updateHash: true,
-                setHeights: true,
-                offset: -30,
-                interstitialSection: '.footer',
-                standardScrollElements: '',
-                before: function before(index, sections) {
-                    var ref = sections[index].data('section-name');
 
-                    /*   if (ref === 'project' || ref === 'toc' || ref === 'intro') {
-                               //elements.header.removeClass('is--active');
-                           // elements.navigate.addClass('invisible');
-                           } 
-                
-                               else {
-                               //elements.navigate.removeClass('invisible');
-                           } */
 
-                    /* if (ref === 'first') {
-                        // elements.header.removeClass('is--active');
-                        } */
-                    // leave this in because its smoother than the function below
-                    elements.navigateLink.parent().siblings().find('.js--navigate-link').removeClass('is--active');
-                    if (index > 0) {
-                        elements.navigateLink.eq(index - 1).addClass('is--active');
-                    }
-                },
 
-                after: function after(index, sections) {
-                    var ref = sections[index].data('section-name');
-                    /*
-    
-                    if (!!ref && ref !== 'toc' && ref !== 'intro' && ref !== 'project') {
-                        elements.header.addClass('is--active');
-                    }  */
-                },
-                afterRender: function afterRender() { }
-            })
-        } else {
-            $.scrollify({
-                section: '.js--scrollify',
-                sectionName: 'section-name',
-                overflowScroll: true,
-                touchScroll: false, //disable on mobile        
-                scrollSpeed: 1200,
-                updateHash: true,
-                setHeights: true,
-                offset: 0,
-                interstitialSection: '.footer',
-                standardScrollElements: '',
-                before: function before(index, sections) {
-                    var ref = sections[index].data('section-name');
+        $.scrollify({
+            section: '.js--scrollify',
+            sectionName: 'section-name',
+            overflowScroll: true,
+            touchScroll: false, //disable on mobile        
+            scrollSpeed: 1200,
+            updateHash: true,
+            setHeights: true,
+            offset: -30,
+            interstitialSection: '.footer',
+            standardScrollElements: '',
+            before: function before(index, sections) {
+                var ref = sections[index].data('section-name');
 
-                    /*   if (ref === 'project' || ref === 'toc' || ref === 'intro') {
-                            //elements.header.removeClass('is--active');
-                        // elements.navigate.addClass('invisible');
-                        } 
-                
-                            else {
-                            //elements.navigate.removeClass('invisible');
-                        } */
+                /*   if (ref === 'project' || ref === 'toc' || ref === 'intro') {
+                           //elements.header.removeClass('is--active');
+                       // elements.navigate.addClass('invisible');
+                       } 
+            
+                           else {
+                           //elements.navigate.removeClass('invisible');
+                       } */
 
-                    /* if (ref === 'first') {
-                        // elements.header.removeClass('is--active');
-                        } */
-                    // leave this in because its smoother than the function below
-                    elements.navigateLink.parent().siblings().find('.js--navigate-link').removeClass('is--active');
-                    if (index > 0) {
-                        elements.navigateLink.eq(index - 1).addClass('is--active');
-                    }
-                },
+                /* if (ref === 'first') {
+                    // elements.header.removeClass('is--active');
+                    } */
+                // leave this in because its smoother than the function below
+                elements.navigateLink.parent().siblings().find('.js--navigate-link').removeClass('is--active');
+                if (index > 0) {
+                    elements.navigateLink.eq(index - 1).addClass('is--active');
+                }
+            },
 
-                after: function after(index, sections) {
-                    var ref = sections[index].data('section-name');
-                    /*
-    
-                    if (!!ref && ref !== 'toc' && ref !== 'intro' && ref !== 'project') {
-                        elements.header.addClass('is--active');
-                    }  */
-                },
-                afterRender: function afterRender() { }
-            });
-        }
+            after: function after(index, sections) {
+                var ref = sections[index].data('section-name');
+                /*
+ 
+                if (!!ref && ref !== 'toc' && ref !== 'intro' && ref !== 'project') {
+                    elements.header.addClass('is--active');
+                }  */
+            },
+            afterRender: function afterRender() { }
+        });
+
+
+
 
         var total_images = $("body img").length;
         var images_loaded = 0;
