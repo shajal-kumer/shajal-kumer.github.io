@@ -13,6 +13,26 @@ section.is--scrolled.js--scrollify {
   height: auto !important;
   min-height: 100vh !important; }
 
+
+.section__first .container .contents,
+.section__second .container .contents,
+.section__third .container .contents,
+.section__fourth .container .contents,
+.section__fifth .container .contents,
+.section__sixth .container .contents,
+.section__seventh .container .contents,
+.section__eighth .container .contents,
+.section__ninth .container .contents,
+.section__tenth .container .contents,
+.section__eleventh .container .contents,
+.section__twelfth .container .contents,
+.section__thirteenth .container .contents,
+.section__fourteenth .container .contents,
+.section__fifteenth .container .contents {
+  padding: 4rem 0rem 2rem 0rem;
+  position: relative !important;
+}
+
 .invisible {
   visibility: hidden; }
 
@@ -28,6 +48,7 @@ section.is--scrolled.js--scrollify {
     opacity: 1;
     position: absolute;
     transition: all 0.3s ease-in;
+    z-index: 9999
      }
 
 ul {
@@ -3607,7 +3628,7 @@ input[type="button"].btn-block {
 .navbar-light .navbar-toggler {
   color: #99a6af;
   border-color: rgba(0, 0, 0, 0.1);
-  margin-right: 20px }
+  margin-right: 15px }
 
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2399a6af' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
