@@ -1,4 +1,3 @@
-
 (function ($) {
 
     /**
@@ -170,7 +169,7 @@
         });
 
         if ($(window).width() < 769) {
-            $.scrollify({ 
+            $.scrollify({
                 offset: -30,
             });
         } else {
@@ -181,6 +180,7 @@
 
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
             //For MOBILE devices only. Scrollify takes care of it on desktop.
+            $(window).on("scroll", onScroll);
             $(".section-navigate__link").click(function () {
                 $(".section-navigate__name").css("opacity", "0");
             });
@@ -251,9 +251,8 @@
         });
 
 
-// On scroll show header
+        // On scroll show header
         $(window).scroll(function () {
-            onScroll();
             // Take care of appearing/disappearing of header and navigation
             if ($(".section__masthead").visible(true) || $(".section__toc").visible(true) || $(".section__project").visible(true)) {
                 $(".header").removeClass('is--active');
@@ -263,7 +262,7 @@
 
         });
 
-       
+
 
     }); // end document ready function
 
@@ -271,5 +270,3 @@
 
 
 })(jQuery);
-
-// Code from the visible.js Plugin
