@@ -1,3 +1,4 @@
+
 (function ($) {
 
     /**
@@ -33,17 +34,17 @@
             // Use this native browser method, if available.
             var rec = t.getBoundingClientRect(),
                 tViz = isContained ?
-                    rec.top - wPosition.top >= 0 && rec.top < vpHeight + wPosition.top :
-                    rec.top >= 0 && rec.top < vpHeight,
+                rec.top - wPosition.top >= 0 && rec.top < vpHeight + wPosition.top :
+                rec.top >= 0 && rec.top < vpHeight,
                 bViz = isContained ?
-                    rec.bottom - wPosition.top > 0 && rec.bottom <= vpHeight + wPosition.top :
-                    rec.bottom > 0 && rec.bottom <= vpHeight,
+                rec.bottom - wPosition.top > 0 && rec.bottom <= vpHeight + wPosition.top :
+                rec.bottom > 0 && rec.bottom <= vpHeight,
                 lViz = isContained ?
-                    rec.left - wPosition.left >= 0 && rec.left < vpWidth + wPosition.left :
-                    rec.left >= 0 && rec.left < vpWidth,
+                rec.left - wPosition.left >= 0 && rec.left < vpWidth + wPosition.left :
+                rec.left >= 0 && rec.left < vpWidth,
                 rViz = isContained ?
-                    rec.right - wPosition.left > 0 && rec.right < vpWidth + wPosition.left :
-                    rec.right > 0 && rec.right <= vpWidth,
+                rec.right - wPosition.left > 0 && rec.right < vpWidth + wPosition.left :
+                rec.right > 0 && rec.right <= vpWidth,
                 vVisible = partial ? tViz || bViz : tViz && bViz,
                 hVisible = partial ? lViz || rViz : lViz && rViz,
                 vVisible = (rec.top < 0 && rec.bottom > vpHeight) ? true : vVisible,
@@ -83,7 +84,7 @@
 })(jQuery);
 
 
-
+// Our main jquery code start
 (function ($) {
     'use strict';
 
@@ -125,9 +126,6 @@
             elements.block.slideToggle();
         });
 
-
-
-
         $.scrollify({
             section: '.js--scrollify',
             sectionName: 'section-name',
@@ -136,20 +134,19 @@
             scrollSpeed: 1200,
             updateHash: true,
             setHeights: true,
-            offset: -30,
             interstitialSection: '.footer',
             standardScrollElements: '',
             before: function before(index, sections) {
                 var ref = sections[index].data('section-name');
 
                 /*   if (ref === 'project' || ref === 'toc' || ref === 'intro') {
-                           //elements.header.removeClass('is--active');
-                       // elements.navigate.addClass('invisible');
-                       } 
-            
-                           else {
-                           //elements.navigate.removeClass('invisible');
-                       } */
+                            //elements.header.removeClass('is--active');
+                        // elements.navigate.addClass('invisible');
+                        } 
+                
+                            else {
+                            //elements.navigate.removeClass('invisible');
+                        } */
 
                 /* if (ref === 'first') {
                     // elements.header.removeClass('is--active');
@@ -164,65 +161,33 @@
             after: function after(index, sections) {
                 var ref = sections[index].data('section-name');
                 /*
- 
-                if (!!ref && ref !== 'toc' && ref !== 'intro' && ref !== 'project') {
-                    elements.header.addClass('is--active');
-                }  */
+    
+                    if (!!ref && ref !== 'toc' && ref !== 'intro' && ref !== 'project') {
+                        elements.header.addClass('is--active');
+                    }  */
             },
-            afterRender: function afterRender() { }
+            afterRender: function afterRender() {}
         });
 
-
-
-
-        var total_images = $("body img").length;
-        var images_loaded = 0;
-
-        $("body").find('img').each(function () {
-            var fakeSrc = $(this).attr('src');
-            $("<img/>").attr("src", fakeSrc).css('display', 'none').on('load', function () {
-                images_loaded++;
-                if (images_loaded >= total_images) {
-                    $("body img").show();
-                    $(window).scroll(function () {
-                        // Take care of appearing/disappearing of header and navigation
-                        if ($(".section__masthead").visible(true) || $(".section__toc").visible(true) || $(".section__project").visible(true)) {
-                            $(".section-navigate").addClass('invisible');
-                        } else {
-                            $(".section-navigate").removeClass('invisible');
-                        }
-                    });
-
-                }
+        if ($(window).width() < 769) {
+            $.scrollify({ 
+                offset: -30,
             });
-
-        });
-
-
-        $(window).scroll(function () {
-            // Take care of appearing/disappearing of header and navigation
-            if ($(".section__masthead").visible(true) || $(".section__toc").visible(true) || $(".section__project").visible(true)) {
-                $(".header").removeClass('is--active');
-            } else {
-                $(".header").addClass('is--active');
-            }
-            if ($(window).width() < 768) {
-                var bodyHeight = $("body").height() - 800;
-                if ($(window).scrollTop() > bodyHeight) {
-                    $(".section-navigate").addClass('invisible');
-                }
-            }
-
-        });
-
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-            //For MOBILE devices only. Scrollify takes care of it on desktop.
-            $(document).on("scroll", onScroll);
-            $(".section-navigate__link").click(function () {
-                $(".section-navigate__name").css("opacity", "0");
+        } else {
+            $.scrollify({
+                offset: 0,
             });
-
         }
+
+        // if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        //     //For MOBILE devices only. Scrollify takes care of it on desktop.
+        //     $(document).on("scroll", onScroll);
+            
+        //     $(".section-navigate__link").click(function () {
+        //         $(".section-navigate__name").css("opacity", "0");
+        //     });
+
+        // }
 
         function onScroll(event) {
             // Function that takes care of higlighting of the active navigate section on scroll 
@@ -254,6 +219,54 @@
             });
         }
 
+        /*
+            After image load show right side navigation
+         */
+        var total_images = $("body img").length;
+        var images_loaded = 0;
+
+        $("body").find('img').each(function () {
+            var fakeSrc = $(this).attr('src');
+            $("<img/>").attr("src", fakeSrc).css('display', 'none').on('load', function () {
+                images_loaded++;
+                if (images_loaded >= total_images) {
+                    $("body img").show();
+                    $(window).scroll(function () {
+                        if ($(".section__masthead").visible(true) || $(".section__toc").visible(true) || $(".section__project").visible(true)) {
+                            $(".section-navigate").addClass('invisible');
+                        } else {
+                            $(".section-navigate").removeClass('invisible');
+                        }
+                        if ($(window).width() < 769) {
+                            var bodyHeight = $("body").height() - 800;
+                            if ($(window).scrollTop() > bodyHeight) {
+                                $(".section-navigate").addClass('invisible');
+                                console.log("HEllo");
+
+                            }
+                        }
+                    });
+
+                }
+            });
+
+        });
+
+
+// On scroll show header
+        $(window).scroll(function () {
+            onScroll();
+            // Take care of appearing/disappearing of header and navigation
+            if ($(".section__masthead").visible(true) || $(".section__toc").visible(true) || $(".section__project").visible(true)) {
+                $(".header").removeClass('is--active');
+            } else {
+                $(".header").addClass('is--active');
+            }
+
+        });
+
+       
+
     }); // end document ready function
 
 
@@ -261,8 +274,4 @@
 
 })(jQuery);
 
-// Code from the visible.js Plugin 
-
-
-
-
+// Code from the visible.js Plugin
