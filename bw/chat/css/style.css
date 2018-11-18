@@ -52,3 +52,14 @@
   background-color: #4472c4;
   color: #fff;
 }
+.btn.btn-warning {
+  background-color: #4472c4;
+  border-color: #4472c4;
+}
+.btn-warning:focus,
+.btn-warning:active {
+  background: #4472c4 !important;
+}
+img#Foto {
+  width: 40px;
+}

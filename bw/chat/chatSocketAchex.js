@@ -15,7 +15,7 @@ $.fn.extend({
       textoAyuda: "Nettie Beeldzorg",
       Nombre: "Anónimo",
 
-      urlImg: "http://placehold.it/50/55C1E7/fff&text=U",
+      urlImg: "http://placehold.it/50/55C1E7/55C1E7",
       btnEntrar: "btnEntrar",
       btnEnviar: "btnEnviar",
       lblBtnEnviar: "Stuur",
@@ -201,7 +201,8 @@ $.fn.extend({
         var h = formattedDate.getHours();
         var min = formattedDate.getMinutes();
 
-        Fecha = d + "/" + m + "/" + y + " " + h + ":" + min;
+        // Fecha = d + "/" + m + "/" + y + " " + h + ":" + min;
+        Fecha = h + ":" + min;
 
         $(".chatpluginchat .itemtemplate #Tiempo").html(Fecha);
         $(".chatpluginchat .itemtemplate").removeClass("itemtemplate");
