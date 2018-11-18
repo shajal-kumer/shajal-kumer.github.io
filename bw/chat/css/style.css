@@ -1,0 +1,54 @@
+.chat__box {
+  position: fixed;
+  right: 0px;
+  top: 5%;
+}
+
+.chat__box--btn {
+  background: #4472c4;
+  border-radius: 15px 15px 0px 0;
+  padding: 18px 60px 18px 30px;
+  line-height: 10px;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 53px;
+  left: -99px;
+  transform: rotate(-90deg);
+  border: 1px solid #2f5597;
+  border-bottom-color: transparent;
+  z-index: 2;
+}
+.chat__box--btn.active:after {
+  content: "";
+  left: 108px;
+  top: 17px;
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+}
+.chat__box--btn:hover {
+  cursor: pointer;
+}
+
+.chat__box-field {
+  background: #fff;
+  width: 0;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.chat__box-field.open {
+  width: 700px;
+  transition: all 0.5s;
+}
+
+.panel-success > .panel-heading {
+  background-color: #4472c4;
+  color: #fff;
+}
