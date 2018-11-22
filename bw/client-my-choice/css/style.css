@@ -224,3 +224,6 @@ img#Foto {
 .panel-heading .glyphicon {
   top: 3px;
 }
+.panel.panel-success {
+  border: 0px;
+}
