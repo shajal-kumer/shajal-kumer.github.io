@@ -231,7 +231,6 @@ img#Foto {
   textarea:focus,
   input:focus {
     font-size: 16px;
-    background: #eee;
   }
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
