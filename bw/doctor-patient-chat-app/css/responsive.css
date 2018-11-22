@@ -36,10 +36,10 @@
 /*iPhone 6 Portrait*/
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
   .chat__box-field.open {
-    width: 330px;
+    width: 310px;
   }
   .panel-body {
-    height: 500px;
+    height: 450px;
   }
   #iframeCall {
     height: 98% !important;
@@ -48,10 +48,10 @@
 /*iPhone 6+ Portrait*/
 @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
   .chat__box-field.open {
-    width: 360px;
+    width: 340px;
   }
   .panel-body {
-    height: 500px;
+    height: 450px;
   }
 }
 /* Small devices (landscape phones, 576px and up) */
