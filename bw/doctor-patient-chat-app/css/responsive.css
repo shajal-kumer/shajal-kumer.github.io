@@ -39,7 +39,7 @@
     width: 310px;
   }
   .panel-body {
-    height: 450px;
+    height: 400px;
   }
   #iframeCall {
     height: 98% !important;
@@ -51,7 +51,7 @@
     width: 340px;
   }
   .panel-body {
-    height: 450px;
+    height: 400px;
   }
 }
 /* Small devices (landscape phones, 576px and up) */
