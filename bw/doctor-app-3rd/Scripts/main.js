@@ -32,27 +32,6 @@
       localStorage.setItem("roomID", JSON.stringify(roomID));
     }
 
-    // Get Rooms
-    function getRooms(userId, token) {
-      $.ajax({
-        url: "https://nettie.azurewebsites.net/api/getrooms",
-        type: "GET",
-        data: {
-          userID: userId,
-          token: token
-        },
-        success: function(data) {
-          waitingRoom = $.extend(true, {}, data[0]);
-          getWaitingQueue(rID, 1);
-          getMessages(waitingRoom.id, 1);
-          numberOFWaitingRoom = data.length;
-          rederHtml();
-        },
-        error: function(data) {
-          console.error(JSON.stringify(data, null, 4));
-        }
-      });
-    }
     getRooms(userID, 1);
 
     function rederHtml() {
@@ -85,10 +64,6 @@
       });
     }, 2000);
 
-    // 5 Sec interval
-    setInterval(function() {
-      //   getWaitingQueue(rID, 1);
-    }, 5000);
     // Toggle Finished Conversations
     $("#checkboxHideConversations").click(function() {
       if ($(this).is(":checked")) {
@@ -117,7 +92,7 @@
             token: token
           },
           success: function(data) {
-            getMessages(waitingRoom.id, token);
+            getMessages(rID, token);
           },
           error: function(data) {
             console.error(JSON.stringify(data, null, 4));
@@ -138,7 +113,7 @@
           token: token
         },
         success: function(data) {
-          getMessages(waitingRoom.id, token);
+          getMessages(rID, token);
         },
         error: function(data) {
           console.error(JSON.stringify(data, null, 4));
@@ -153,6 +128,27 @@
         .parent()
         .parent()
         .show();
+    }
+
+    // Get Rooms
+    function getRooms(userId, token) {
+      $.ajax({
+        url: "https://nettie.azurewebsites.net/api/getrooms",
+        type: "GET",
+        data: {
+          userID: userId,
+          token: token
+        },
+        success: function(data) {
+          getWaitingQueue(rID, 1);
+          getMessages(rID, 1);
+          numberOFWaitingRoom = data.length;
+          rederHtml();
+        },
+        error: function(data) {
+          console.error(JSON.stringify(data, null, 4));
+        }
+      });
     }
 
     // Get Waiting Queue
@@ -379,6 +375,11 @@
         }
       });
     }
+
+    // 5 Sec interval
+    setInterval(function() {
+      getWaitingQueue(rID, 1);
+    }, 5000);
 
     // Get Rooms
     function Invite() {
