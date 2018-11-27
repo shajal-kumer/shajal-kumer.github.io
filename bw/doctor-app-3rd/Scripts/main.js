@@ -21,9 +21,6 @@
       rID = roomID;
     }
     getRoomNumber();
-    // document.addEventListener("DOMContentLoaded", function() {
-    //   console.log("HELLo");
-    // });
     function storeTaskInLocalStorage(rID) {
       let roomID;
       if (localStorage.getItem("tasks") === null) {
@@ -63,22 +60,15 @@
         $(".select").append("<option>No Waiting Room</option>");
       } else {
         for (var i = 1; i <= numberOFWaitingRoom; i++) {
-          HTML += '<option id="1"> WAITINGROOM ' + i + "</option >";
+          HTML += "<option> WAITINGROOM " + i + "</option >";
         }
         $(".select").append(HTML);
       }
       $("select").niceSelect();
       $(".list li").removeClass("selected");
-      if (rID == 1) {
-        $(".list li:nth-child(1)").addClass("selected");
-        $(".current").text("WAITINGROOM 1");
-      } else if (rID == 2) {
-        $(".list li:nth-child(2)").addClass("selected");
-        $(".current").html("WAITINGROOM 2");
-      } else if (rID == 3) {
-        $(".list li:nth-child(3)").addClass("selected");
-        $(".current").html("WAITINGROOM 3");
-      }
+      $(".list li:nth-child(" + rID + ")").addClass("selected");
+      var text = $(".option.selected").text();
+      $(".current").text(text);
     }
     setTimeout(() => {
       var listUl = document.querySelector(".list");
@@ -86,13 +76,14 @@
         var li = event.target;
         if (event.target.tagName == "LI") {
           var data = $(li).attr("data-value");
-          rID = data.charAt(12);
+          rID = data.split(" ")[1];
           getWaitingQueue(rID, 1);
           getMessages(rID, 1);
           storeTaskInLocalStorage(rID);
         }
       });
     }, 2000);
+
     // 5 Sec interval
     setInterval(function() {
       //   getWaitingQueue(rID, 1);
