@@ -42,8 +42,9 @@
           token: token
         },
         success: function(data) {
+          waitingRoom = $.extend(true, {}, data[0]);
           getWaitingQueue(rID, 1);
-          getMessages(rID, 1);
+          getMessages(waitingRoom.id, 1);
           numberOFWaitingRoom = data.length;
           rederHtml();
         },
@@ -116,7 +117,7 @@
             token: token
           },
           success: function(data) {
-            getMessages(rID, token);
+            getMessages(waitingRoom.id, token);
           },
           error: function(data) {
             console.error(JSON.stringify(data, null, 4));
@@ -137,7 +138,7 @@
           token: token
         },
         success: function(data) {
-          getMessages(rID, token);
+          getMessages(waitingRoom.id, token);
         },
         error: function(data) {
           console.error(JSON.stringify(data, null, 4));
