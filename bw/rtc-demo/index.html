@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Title goes here</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+
+    <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
+    <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-default" id="btn-open-room">Open Room</button>
+          <button class="btn btn-default" id="btn-join-room">Join Room</button>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var connection = new RTCMultiConnection();
+
+      // this line is VERY_important
+      connection.socketURL = "https://rtcmulticonnection.herokuapp.com:443/";
+
+      // all below lines are optional; however recommended.
+
+      connection.session = {
+        audio: true,
+        video: true
+      };
+
+      connection.sdpConstraints.mandatory = {
+        OfferToReceiveAudio: true,
+        OfferToReceiveVideo: true
+      };
+
+      connection.onstream = function(event) {
+        document.body.appendChild(event.mediaElement);
+      };
+
+      var predefinedRoomId = "YOUR_Name";
+
+      document.getElementById("btn-open-room").onclick = function() {
+        this.disabled = true;
+        connection.open(predefinedRoomId);
+      };
+
+      document.getElementById("btn-join-room").onclick = function() {
+        this.disabled = true;
+        connection.join(predefinedRoomId);
+      };
+    </script>
+
+    <!--
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/bootstrap.min.js"></script>
+      <script src="assets/js/main.js"></script>
+    -->
+  </body>
+</html>
