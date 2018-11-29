@@ -10,8 +10,14 @@
     <link href="assets/css/style.css" rel="stylesheet" />
     <link href="assets/css/responsive.css" rel="stylesheet" />
 
-    <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
-    <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+    <!--
+      <script src="https://rtcmulticonnection.herokuapp.com/dist/RTCMultiConnection.min.js"></script>
+
+      <script src="https://rtcmulticonnection.herokuapp.com/socket.io/socket.io.js"></script>
+    -->
+
+    <script src="assets/js/RTCMultiConnection.min.js"></script>
+    <script src="assets/js/socket.io.js"></script>
   </head>
 
   <body>
@@ -19,8 +25,18 @@
       <div class="row">
         <div class="col-md-12">
           <h1>RTC Multiconnection DEMO</h1>
-          <button class="btn btn-default" id="btn-open-room">Open Room</button>
+          <input
+            class="con__token w-25"
+            type="text"
+            class="form-control"
+            placeholder="123456"
+            value="123456"
+          />
+          <button class="btn open-room btn-default" id="btn-open-room">
+            Open Room
+          </button>
           <button class="btn btn-default" id="btn-join-room">Join Room</button>
+          <p>Join Url: <a target="_blank" href="" class="join-url"></a></p>
           <hr />
         </div>
       </div>
@@ -47,12 +63,18 @@
       connection.onstream = function(event) {
         document.body.appendChild(event.mediaElement);
       };
-
-      var predefinedRoomId = "YOUR_Name";
+      var predefinedRoomId = document.querySelector(".con__token");
+      var windowLocation =
+        window.location.href + "?roomid=" + predefinedRoomId.value;
+      var joinUrl = document.querySelector(".join-url");
+      document.querySelector("#btn-open-room").addEventListener("click", () => {
+        joinUrl.innerHTML = windowLocation;
+        joinUrl.setAttribute("href", windowLocation);
+      });
 
       document.getElementById("btn-open-room").onclick = function() {
         this.disabled = true;
-        connection.open(predefinedRoomId);
+        connection.open(predefinedRoomId.value);
       };
 
       document.getElementById("btn-join-room").onclick = function() {
