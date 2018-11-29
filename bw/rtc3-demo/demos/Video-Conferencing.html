@@ -88,7 +88,6 @@
 <link rel="stylesheet" href="/dev/getHTMLMediaElement.css">
 <script src="/dev/getHTMLMediaElement.js"></script>
 
-<script src="/node_modules/recordrtc/RecordRTC.js"></script>
 <script>
 // ......................................................
 // .......................UI Code........................
@@ -277,23 +276,6 @@ connection.onstream = function(event) {
         }
       });
     }
-};
-
-var recordingStatus = document.getElementById('recording-status');
-var chkRecordConference = document.getElementById('record-entire-conference');
-var btnStopRecording = document.getElementById('btn-stop-recording');
-btnStopRecording.onclick = function() {
-  var recorder = connection.recorder;
-  if(!recorder) return alert('No recorder found.');
-  recorder.stopRecording(function() {
-    var blob = recorder.getBlob();
-    invokeSaveAsDialog(blob);
-
-    connection.recorder = null;
-    btnStopRecording.style.display = 'none';
-    recordingStatus.style.display = 'none';
-    chkRecordConference.parentNode.style.display = 'inline-block';
-  });
 };
 
 connection.onstreamended = function(event) {
