@@ -52,10 +52,16 @@ var connection = new RTCMultiConnection();
 
 var roomIdValue = document.getElementById("room-id");
 roomIdValue.value = connection.token();
+console.log(roomIdValue.value);
+
 // document.getElementById("open-or-join-room").onclick = function() {
 window.onload = function() {
   //   disableInputButtons();
-  connection.openOrJoin(roomIdValue, function(isRoomExist, roomid, error) {
+  connection.openOrJoin(roomIdValue.value, function(
+    isRoomExist,
+    roomid,
+    error
+  ) {
     if (error) {
       //   disableInputButtons(true);
       alert(error);
