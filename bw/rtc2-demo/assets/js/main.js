@@ -23,9 +23,7 @@ document.getElementById("open-room").onclick = function() {
   });
 };
 
-// document.getElementById("join-room").onclick = function() {
-
-window.onload = function() {
+document.getElementById("join-room").onclick = function() {
   disableInputButtons();
   connection.join(document.getElementById("room-id").value, function(
     isJoinedRoom,
@@ -45,7 +43,8 @@ window.onload = function() {
   });
 };
 
-document.getElementById("open-or-join-room").onclick = function() {
+// document.getElementById("open-or-join-room").onclick = function() {
+window.onload = function() {
   disableInputButtons();
   connection.openOrJoin(document.getElementById("room-id").value, function(
     isRoomExist,
