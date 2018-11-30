@@ -44,14 +44,14 @@
 //   };
 
 window.onload = function() {
-  //   disableInputButtons();
+  disableInputButtons();
   connection.openOrJoin(document.getElementById("room-id").value, function(
     isRoomExist,
     roomid,
     error
   ) {
     if (error) {
-      //   disableInputButtons(true);
+      disableInputButtons(true);
       alert(error);
     } else if (connection.isInitiator === true) {
       // if room doesn't exist, it means that current user will create the room
@@ -286,7 +286,7 @@ if (roomid && roomid.length) {
     });
   })();
 
-  //   disableInputButtons();
+  disableInputButtons();
 }
 
 // detect 2G
