@@ -43,27 +43,18 @@
 //     }
 //   });
 // };
-
-// ......................................................
-// ..................RTCMultiConnection Code.............
-// ......................................................
-
 var connection = new RTCMultiConnection();
-
-var roomIdValue = document.getElementById("room-id");
-roomIdValue.value = connection.token();
-console.log(roomIdValue.value);
-
+document.getElementById("room-id").value = connection.token();
 // document.getElementById("open-or-join-room").onclick = function() {
 window.onload = function() {
-  //   disableInputButtons();
-  connection.openOrJoin(roomIdValue.value, function(
+  disableInputButtons();
+  connection.openOrJoin(document.getElementById("room-id").value, function(
     isRoomExist,
     roomid,
     error
   ) {
     if (error) {
-      //   disableInputButtons(true);
+      disableInputButtons(true);
       alert(error);
     } else if (connection.isInitiator === true) {
       // if room doesn't exist, it means that current user will create the room
@@ -71,6 +62,10 @@ window.onload = function() {
     }
   });
 };
+
+// ......................................................
+// ..................RTCMultiConnection Code.............
+// ......................................................
 
 // by default, socket.io server is assumed to be deployed on your own URL
 // connection.socketURL = '/';
@@ -292,7 +287,7 @@ if (roomid && roomid.length) {
     });
   })();
 
-  //   disableInputButtons();
+  disableInputButtons();
 }
 
 // detect 2G
