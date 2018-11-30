@@ -44,6 +44,12 @@
 //   });
 // };
 
+// ......................................................
+// ..................RTCMultiConnection Code.............
+// ......................................................
+
+var connection = new RTCMultiConnection();
+
 var roomIdValue = document.getElementById("room-id");
 roomIdValue.value = connection.token();
 // document.getElementById("open-or-join-room").onclick = function() {
@@ -59,12 +65,6 @@ window.onload = function() {
     }
   });
 };
-
-// ......................................................
-// ..................RTCMultiConnection Code.............
-// ......................................................
-
-var connection = new RTCMultiConnection();
 
 // by default, socket.io server is assumed to be deployed on your own URL
 // connection.socketURL = '/';
