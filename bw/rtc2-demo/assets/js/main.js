@@ -46,7 +46,7 @@ document.getElementById("join-room").onclick = function() {
 // document.getElementById("open-or-join-room").onclick = function() {
 window.onload = function() {
   disableInputButtons();
-  connection.openOrJoin(connection.token(), function(
+  connection.openOrJoin(document.getElementById("room-id").value, function(
     isRoomExist,
     roomid,
     error
