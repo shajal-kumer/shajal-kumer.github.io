@@ -14,18 +14,11 @@
 
 
   <h1>
-    Video Conferencing using RTCMultiConnection
-    <p class="no-mobile">
-      Multi-user (many-to-many) video chat using mesh networking model.
-    </p>
+    Demo Video Conferencing using RTCMultiConnection
   </h1>
 
   <section class="make-center">
     <div>
-      <label><input type="checkbox" id="record-entire-conference"> Record Entire Conference In The Browser?</label>
-      <span id="recording-status" style="display: none;"></span>
-      <button id="btn-stop-recording" style="display: none;">Stop Recording</button>
-      <br><br>
 
       <input type="text" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
       <button id="open-room">Open Room</button>
@@ -206,22 +199,7 @@ connection.onstream = function(event) {
     }
 };
 
-var recordingStatus = document.getElementById('recording-status');
-var chkRecordConference = document.getElementById('record-entire-conference');
-var btnStopRecording = document.getElementById('btn-stop-recording');
-btnStopRecording.onclick = function() {
-  var recorder = connection.recorder;
-  if(!recorder) return alert('No recorder found.');
-  recorder.stopRecording(function() {
-    var blob = recorder.getBlob();
-    invokeSaveAsDialog(blob);
 
-    connection.recorder = null;
-    btnStopRecording.style.display = 'none';
-    recordingStatus.style.display = 'none';
-    chkRecordConference.parentNode.style.display = 'inline-block';
-  });
-};
 
 connection.onstreamended = function(event) {
     var mediaElement = document.getElementById(event.streamid);
