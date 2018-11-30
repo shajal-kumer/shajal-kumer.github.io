@@ -44,14 +44,12 @@
 //   });
 // };
 
+var roomIdValue = document.getElementById("room-id");
+roomIdValue.value = connection.token();
 // document.getElementById("open-or-join-room").onclick = function() {
 window.onload = function() {
   disableInputButtons();
-  connection.openOrJoin(document.getElementById("room-id").value, function(
-    isRoomExist,
-    roomid,
-    error
-  ) {
+  connection.openOrJoin(roomIdValue, function(isRoomExist, roomid, error) {
     if (error) {
       disableInputButtons(true);
       alert(error);
