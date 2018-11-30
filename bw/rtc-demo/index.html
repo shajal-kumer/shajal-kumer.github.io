@@ -9,16 +9,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
     />
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1>
-            Video Conferencing using RTCMultiConnection
-            
-          </h1>
+          <h1>Video Conferencing using RTCMultiConnection</h1>
           <section class="make-center">
             <div>
               <br /><br />
@@ -35,7 +32,10 @@
               <button id="open-or-join-room">Auto Open Or Join Room</button>
             </div>
             <div id="videos-container" style="margin: 20px 0;"></div>
-            <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
+            <div
+              id="room-urls"
+              style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"
+            ></div>
           </section>
         </div>
       </div>
@@ -120,7 +120,7 @@
       connection.socketURL = "/";
 
       // comment-out below line if you do not have your own socket.io server
-      connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+      connection.socketURL = "https://rtcmulticonnection.herokuapp.com:443/";
 
       connection.socketMessageEvent = "video-conference-demo";
 
@@ -227,7 +227,6 @@
       var chkRecordConference = document.getElementById(
         "record-entire-conference"
       );
-    
 
       connection.onstreamended = function(event) {
         var mediaElement = document.getElementById(event.streamid);
@@ -273,7 +272,7 @@
 
       function showRoomURL(roomid) {
         var roomHashURL = "#" + roomid;
-        var roomQueryStringURL = "?conversationToken=" + roomid;
+        var roomQueryStringURL = "?roomid=" + roomid;
 
         var html = "<h2>Unique URL for your room:</h2><br>";
 
