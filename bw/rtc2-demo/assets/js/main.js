@@ -1,51 +1,48 @@
 // ......................................................
 // .......................UI Code........................
 // ......................................................
-
-// document.getElementById("open-room").onclick = function() {
-//   disableInputButtons();
-//   connection.open(document.getElementById("room-id").value, function(
-//     isRoomOpened,
-//     roomid,
-//     error
-//   ) {
-//     if (isRoomOpened === true) {
-//       showRoomURL(connection.sessionid);
-//     } else {
-//       disableInputButtons(true);
-//       if (error === "Room not available") {
-//         alert(
-//           "Someone already created this room. Please either join or create a separate room."
-//         );
-//         return;
+//   document.getElementById("open-room").onclick = function() {
+//     disableInputButtons();
+//     connection.open(document.getElementById("room-id").value, function(
+//       isRoomOpened,
+//       roomid,
+//       error
+//     ) {
+//       if (isRoomOpened === true) {
+//         showRoomURL(connection.sessionid);
+//       } else {
+//         disableInputButtons(true);
+//         if (error === "Room not available") {
+//           alert(
+//             "Someone already created this room. Please either join or create a separate room."
+//           );
+//           return;
+//         }
+//         alert(error);
 //       }
-//       alert(error);
-//     }
-//   });
-// };
+//     });
+//   };
 
-// document.getElementById("join-room").onclick = function() {
-//   disableInputButtons();
-//   connection.join(document.getElementById("room-id").value, function(
-//     isJoinedRoom,
-//     roomid,
-//     error
-//   ) {
-//     if (error) {
-//       disableInputButtons(true);
-//       if (error === "Room not available") {
-//         alert(
-//           "This room does not exist. Please either create it or wait for moderator to enter in the room."
-//         );
-//         return;
+//   document.getElementById("join-room").onclick = function() {
+//     disableInputButtons();
+//     connection.join(document.getElementById("room-id").value, function(
+//       isJoinedRoom,
+//       roomid,
+//       error
+//     ) {
+//       if (error) {
+//         disableInputButtons(true);
+//         if (error === "Room not available") {
+//           alert(
+//             "This room does not exist. Please either create it or wait for moderator to enter in the room."
+//           );
+//           return;
+//         }
+//         alert(error);
 //       }
-//       alert(error);
-//     }
-//   });
-// };
-var connection = new RTCMultiConnection();
-document.getElementById("room-id").value = connection.token();
-// document.getElementById("open-or-join-room").onclick = function() {
+//     });
+//   };
+
 window.onload = function() {
   //   disableInputButtons();
   connection.openOrJoin(document.getElementById("room-id").value, function(
@@ -66,6 +63,8 @@ window.onload = function() {
 // ......................................................
 // ..................RTCMultiConnection Code.............
 // ......................................................
+
+var connection = new RTCMultiConnection();
 
 // by default, socket.io server is assumed to be deployed on your own URL
 // connection.socketURL = '/';
