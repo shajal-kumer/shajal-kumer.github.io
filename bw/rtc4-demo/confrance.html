@@ -102,7 +102,11 @@
     };
 
     (function() {
-      setTimeout(() => {}, 5000);
+      $(window).load(function () {
+          if($(window).width() < 992) {
+              $(".container").addClass("container-fluid").removeClass("container");
+          }
+      })
     })();
   </script>
   <script src="js/main.js"></script>
