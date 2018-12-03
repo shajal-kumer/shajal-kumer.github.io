@@ -55,29 +55,36 @@
       // ......................................................
       // .......................UI Code........................
       // ......................................................
-      var convarsationToken = Math.floor(Math.random() * 10000) + 1;
-      if (window.location.search == "") {
-        window.onload = function() {
-          connection.open(convarsationToken, function(
-            isRoomOpened,
-            conversationToken,
-            error
-          ) {
-            if (isRoomOpened === true) {
-              showRoomURL(connection.sessionid);
-            } else {
-              disableInputButtons(true);
-              if (error === "Room not available") {
-                alert(
-                  "Someone already created this room. Please either join or create a separate room."
-                );
-                return;
-              }
-              alert(error);
-            }
-          });
-        };
+      //   var convarsationToken = Math.floor(Math.random() * 10000) + 1;
+      var convarsationToken = getQueryStringValue("tocken");
+      function getQueryStringValue(key) {
+        return decodeURIComponent(
+          window.location.search.replace(
+            new RegExp(
+              "^(?:.*[&\\?]" +
+                encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") +
+                "(?:\\=([^&]*))?)?.*$",
+              "i"
+            ),
+            "$1"
+          )
+        );
       }
+
+      window.onload = function() {
+        connection.openOrJoin(convarsationToken, function(
+          isRoomExist,
+          convarsationToken,
+          error
+        ) {
+          if (error) {
+            alert(error);
+          } else if (connection.isInitiator === true) {
+            // if room doesn't exist, it means that current user will create the room
+            // showRoomURL(roomid);
+          }
+        });
+      };
 
       // ......................................................
       // ..................RTCMultiConnection Code.............
@@ -231,40 +238,9 @@
         }
       };
 
-      // ..................................
-      // ALL below scripts are redundant!!!
-      // ..................................
-
-      //   function disableInputButtons(enable) {
-      //     document.getElementById("room-id").onkeyup();
-      //     document.getElementById("room-id").disabled = !enable;
-      //   }
-
       // ......................................................
       // ......................Handling Room-ID................
       // ......................................................
-
-      function showRoomURL(conversationToken) {
-        var roomQueryStringURL = "?conversationToken=" + conversationToken;
-
-        //window.location.pathname
-        const getPort = window.location.port ? `:${window.location.port}` : "";
-
-        const url =
-          window.location.protocol +
-          "//" +
-          window.location.hostname +
-          getPort +
-          window.location.pathname +
-          roomQueryStringURL;
-        document.getElementById("copyTokenUrl").value = url;
-
-        let copytoken = document.getElementById("copyToken");
-        // var roomURLsDiv = document.getElementById('room-urls');
-        // roomURLsDiv.innerHTML = html;
-        copytoken.value = conversationToken;
-        document.getElementById("tokenCopyBox").style.display = "block";
-      }
 
       (function() {
         var params = {},
