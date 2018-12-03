@@ -19,13 +19,7 @@
       <div class="row">
         <div class="col-md-12">
           <div id="videos-container" style="margin: 20px 0;"></div>
-          <div id="tokenCopyBox" style="display: none;">
-            <button onclick="copyToken(event,'copyTokenUrl')">
-              Copy Conversion Token Url
-            </button>
-            <input id="copyToken" type="text" />
-            <input id="copyTokenUrl" type="text" />
-          </div>
+        
         </div>
       </div>
     </div>
@@ -36,22 +30,7 @@
     <script src="js/socket.io.js"></script>
     <script src="js/getHTMLMediaElement.js"></script>
     <script>
-      const copyToken = (event, id) => {
-        let targetId = event.target;
-        let targetTxt = event.target.textContent;
-
-        let el = document.getElementById(id);
-        if (el.value) {
-          el.select();
-          document.execCommand("copy");
-
-          targetId.textContent = "Copied";
-          setTimeout(() => {
-            targetId.textContent = targetTxt;
-          }, 2000);
-        }
-      };
-
+     
       // ......................................................
       // .......................UI Code........................
       // ......................................................
