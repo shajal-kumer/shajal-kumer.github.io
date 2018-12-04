@@ -19,7 +19,6 @@
       <div class="row">
         <div class="col-md-12">
           <div id="videos-container" style="margin: 20px 0;"></div>
-        
         </div>
       </div>
     </div>
@@ -29,8 +28,9 @@
     <script src="js/adapter.js"></script>
     <script src="js/socket.io.js"></script>
     <script src="js/getHTMLMediaElement.js"></script>
+    <script src="js/main.js"></script>
+
     <script>
-     
       // ......................................................
       // .......................UI Code........................
       // ......................................................
@@ -119,6 +119,7 @@
             video.setAttribute("muted", true);
           }
         }
+
         video.srcObject = event.stream;
 
         var width = parseInt(connection.videosContainer.clientWidth / 3) - 20;
@@ -144,8 +145,14 @@
             .classList.remove("other-video-holder");
         }
 
+        setTimeout(() => {
+          var alogn = $(".media-container").hasClass("other-video-holder");
+          if (!alogn) {
+            alert("Waiting on other person to join conversation");
+          }
+        }, 4000);
+
         var numOfVideo = $(".videos-container");
-        console.dir(numOfVideo);
 
         var otherVideo = $(".other-video-holder");
         switch (numOfVideo) {
