@@ -2,7 +2,7 @@ $.fn.extend({
   ChatSocket: function(opciones) {
     var ChatSocket = this;
 
-    var setrooms = getUrlVars()["room"];
+    var setrooms = $.fn.Doctorconversationtoken;
 
     var idChat = $(ChatSocket).attr("id");
     defaults = {
@@ -61,7 +61,7 @@ $.fn.extend({
 
     function IniciarConexion() {
       conex = '{"setID":"' + Room + '","passwd":"' + pass + '"}';
-      ws = new WebSocket("wss://echo.websocket.org:443");
+      ws = new WebSocket("wss://ws.achex.ca/");
 
       ws.onopen = function() {
         ws.send(conex);
@@ -182,10 +182,9 @@ $.fn.extend({
     function AgregarItem(Obj) {
       if (Obj.Contenido != null && Obj.Nombre != null) {
         if (document.getElementById("txtEntrar").value != Obj.Nombre)
-          console.log("new chat message");
-        if (!$(".chat__box-field").hasClass("open")) {
-          $(".chat__box--btn").addClass("active");
-        }
+          if (!$(".chat__box-field").hasClass("open")) {
+            $(".chat__box--btn").addClass("active");
+          }
 
         $(".itemtemplate")
           .clone()
@@ -219,9 +218,9 @@ $.fn.extend({
   }
 });
 
-function startup() {
-  var name = getUrlVars()["name"];
-  document.getElementById("txtEntrar").value = name;
+function startup(patientdata) {
+  $.fn.extend({ Doctorconversationtoken: patientdata.conversationtoken });
+  document.getElementById("txtEntrar").value = patientdata.clientname;
   document.getElementById("btnEntrar").click();
 }
 function getUrlVars() {

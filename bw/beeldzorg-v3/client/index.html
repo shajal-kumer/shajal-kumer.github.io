@@ -1,19 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- javascript file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <!-- <script src="../Scripts/bootstrap-notify.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"></script>
-    <script src="js/prism.js"></script>
-    <script src="js/chatSocketAchex.js"></script>
-    <script src="js/main.js"></script>
-
-    <!-- CSS File -->
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Client app</title>
+    <!-- Css file -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
@@ -43,23 +36,22 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+
+    <!-- Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/chatSocketAchex.js"></script>
+    <script src="js/main.js"></script>
   </head>
-  <body onload="startup()">
+  <body>
     <div id="contentl"><img src="img/Nettie-logo.png" class="ribbon" /></div>
     <div id="contentr"><img src="img/logo.png" class="ribbon" /></div>
 
     <div class="bgimg-1">
       <div class="caption">
-        <span class="border"><b id="patientCount">&nbsp;</b></span
-        ><br />
-        <a
-          id=""
-          class="btn btn-primary"
-          style="width:85px; display: inline-block; margin-top: 15px"
-          onclick="$('#iframeCall').attr('src', 'https://appr.tc/r/1234564');"
-          href="#popup1"
-          >TEST</a
-        >
+        <span class="border"><b id="patientCount">&nbsp;</b></span>
       </div>
     </div>
 
@@ -88,8 +80,8 @@
     <a id="btnJoinCall" style="display:none;" href="#popup1">TEST</a>
     <div class="notifications bottom-right"></div>
     <script type="text/javascript">
-      var baseULR = location.origin;
-      baseULR = "https://nettie.azurewebsites.net";
+      //var baseULR = location.origin;
+      var baseULR = "https://nettie.azurewebsites.net";
 
       // Patient data
       var patientData;
@@ -112,7 +104,6 @@
 
           _appointmentid = url.searchParams.get("appointmentid");
           //debugger;
-          
           if (_appointmentid != null) {
             enterAppointmentRoom(_appointmentid);
           } else enterRoom(_roomid, _name);
@@ -167,7 +158,7 @@
             }
           },
           error: function(data) {
-            console.error(JSON.stringify(data, null, 4));
+            window.location.replace("error.html?p=gemessages");
           }
         });
       }
@@ -182,6 +173,7 @@
             // debugger;
             patientData = $.extend(true, {}, data[0]);
             setLocalStorage("conversationId", patientData.id);
+            setLocalStorage("clientname", patientData.clientname);
             resetExpireTime();
             $("#patientCount").text(patientData.inline);
             // 5 sec Interval
@@ -190,7 +182,7 @@
             }, 5000);
           },
           error: function(data) {
-            console.error(JSON.stringify(data, null, 4));
+            window.location.replace("error.html?p=enterRoom");
           }
         });
       }
@@ -203,6 +195,7 @@
           success: function(data) {
             patientData = $.extend(true, {}, data[0]);
             setLocalStorage("conversationId", patientData.id);
+            setLocalStorage("clientname", patientData.clientname);
             resetExpireTime();
             $("#patientCount").text(patientData.inline);
             // 5 sec Interval
@@ -211,7 +204,7 @@
             }, 5000);
           },
           error: function(data) {
-            console.error(JSON.stringify(data, null, 4));
+            window.location.replace("error.html?p=enterappoingtment");
           }
         });
       }
@@ -226,15 +219,22 @@
           data: { conversationId: conversationId },
           success: function(data) {
             patientData = $.extend(true, {}, data[0]);
-            setLocalStorage("conversationId", patientData.id);
-            if ($.trim(patientData.conversationtoken) != "") {
+            var pdata = {
+              conversationId: patientData.id,
+              clientname: patientData.clientname
+            };
+            startup(pdata);
+
+            if ($.trim(patientData.conversationtoken) !== "") {
+              $(".chat__box--btn").css("display", "block");
               setLocalStorage(
                 "conversationToken",
                 patientData.conversationtoken
               );
               $("#iframeCall").attr(
                 "src",
-                "https://appr.tc/r/" + patientData.conversationtoken
+                "../call/index.html?conversationToken=" +
+                  patientData.conversationtoken
               );
               $("#btnJoinCall")[0].click();
               clearInterval(updateInterval);
@@ -243,14 +243,14 @@
               }, 1000);
 
               //check if finished
-              checkFinished(patientData.conversationtoken);
+              checkFinished(conversationId);
             }
 
             $("#patientCount").text(patientData.inline);
             resetExpireTime();
           },
           error: function(data) {
-            console.error(JSON.stringify(data, null, 4));
+            window.location.replace("error.html?p=updateroom");
           }
         });
       }
@@ -271,7 +271,7 @@
             }
           },
           error: function(data) {
-            console.error(JSON.stringify(data, null, 4));
+            window.location.replace("error.html?p=checkfinished");
           }
         });
 

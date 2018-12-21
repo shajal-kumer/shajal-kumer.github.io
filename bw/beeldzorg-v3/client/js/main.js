@@ -2,6 +2,9 @@
   "use strict";
 
   jQuery(document).ready(function($) {
+    $("#Elchat").ChatSocket({
+      lblEntradaNombre: "Enter a user name in the field below for the chat room"
+    });
 
     $(".chat__box--btn").on("click", function() {
       $(".chat__box-field").toggleClass("open");
@@ -13,8 +16,6 @@
     $("#txtMensaje").on("click", function() {
       $(".chat__box--btn").removeClass("active");
     });
-
-
   });
 
   jQuery(window).load(function() {});

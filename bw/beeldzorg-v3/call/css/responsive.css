@@ -1,0 +1,77 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    /* background-color: red; */
+  }
+  #other-videos-holder video.two {
+    width: 100%;
+    text-align: inherit;
+    height: auto;
+  }
+  #other-videos-holder video.three {
+    width: 50%;
+    text-align: inherit;
+    height: auto;
+  }
+  #other-videos-holder video.four {
+    width: 50%;
+    text-align: inherit;
+    height: auto;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    /*max-width: 540px;*/
+    /* background-color: green; */
+  }
+  #other-videos-holder video.two {
+    width: 100%;
+    text-align: inherit;
+    height: 50vh;
+  }
+  #other-videos-holder video.three {
+    width: 50%;
+    text-align: inherit;
+    height: auto;
+  }
+  #other-videos-holder video.four {
+    width: 50%;
+    text-align: inherit;
+    height: auto;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    /*max-width: 720px;*/
+    /* background-color: pink; */
+  }
+  #other-videos-holder video.three {
+    width: 50%;
+    text-align: inherit;
+    height: auto;
+  }
+  #other-videos-holder video.four {
+    width: 50%;
+    text-align: inherit;
+    height: auto;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    /*max-width: 960px;*/
+    /* background-color: yellow; */
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    /* background-color: pink; */
+  }
+}

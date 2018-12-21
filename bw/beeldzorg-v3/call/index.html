@@ -1,0 +1,293 @@
+﻿<!-- Demo version: 2018.10.21 -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Video Conferencing using RTCMultiConnection</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/getHTMLMediaElement.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style></style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="videos-container" style="margin: 20px 0;"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/RTCMultiConnection.min.js"></script>
+    <script src="js/adapter.js"></script>
+    <script src="js/socket.io.js"></script>
+    <script src="js/getHTMLMediaElement.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      // ......................................................
+      // .......................UI Code........................
+      // ......................................................
+      //   var convarsationToken = Math.floor(Math.random() * 10000) + 1;
+        var convarsationToken = getQueryStringValue("conversationToken");
+
+        console.log(convarsationToken);
+
+      function getQueryStringValue(key) {
+        return decodeURIComponent(
+          window.location.search.replace(
+            new RegExp(
+              "^(?:.*[&\\?]" +
+                encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") +
+                "(?:\\=([^&]*))?)?.*$",
+              "i"
+            ),
+            "$1"
+          )
+        );
+      }
+
+      window.onload = function() {
+        connection.openOrJoin(convarsationToken, function(
+          isRoomExist,
+          convarsationToken,
+          error
+        ) {
+          if (error) {
+            alert(error);
+          } else if (connection.isInitiator === true) {
+            // if room doesn't exist, it means that current user will create the room
+            // showRoomURL(roomid);
+          }
+        });
+      };
+
+      // ......................................................
+      // ..................RTCMultiConnection Code.............
+      // ......................................................
+
+      var connection = new RTCMultiConnection();
+
+      // by default, socket.io server is assumed to be deployed on your own URL
+      //   connection.socketURL = "/";1
+
+      // comment-out below line if you do not have your own socket.io server
+      connection.socketURL = "https://rtcmulticonnection.herokuapp.com:443/";
+
+      connection.socketMessageEvent = "video-conference-demo";
+
+      connection.session = {
+        audio: true,
+        video: true
+      };
+
+      connection.sdpConstraints.mandatory = {
+        OfferToReceiveAudio: true,
+        OfferToReceiveVideo: true
+      };
+
+      connection.videosContainer = document.getElementById("videos-container");
+      connection.onstream = function(event) {
+        var existing = document.getElementById(event.streamid);
+        if (existing && existing.parentNode) {
+          existing.parentNode.removeChild(existing);
+        }
+
+        event.mediaElement.removeAttribute("src");
+        event.mediaElement.removeAttribute("srcObject");
+        event.mediaElement.muted = true;
+        event.mediaElement.volume = 0;
+
+        var video = document.createElement("video");
+
+        try {
+          video.setAttributeNode(document.createAttribute("autoplay"));
+          video.setAttributeNode(document.createAttribute("playsinline"));
+        } catch (e) {
+          video.setAttribute("autoplay", true);
+          video.setAttribute("playsinline", true);
+        }
+
+        if (event.type === "local") {
+          video.volume = 0;
+          try {
+            video.setAttributeNode(document.createAttribute("muted"));
+          } catch (e) {
+            video.setAttribute("muted", true);
+          }
+        }
+
+        video.srcObject = event.stream;
+
+        var width = parseInt(connection.videosContainer.clientWidth / 3) - 20;
+        var mediaElement = getHTMLMediaElement(video, {
+          title: event.userid,
+          buttons: ["full-screen"],
+          width: width,
+          showOnMouseEnter: false
+        });
+
+        connection.videosContainer.appendChild(mediaElement);
+
+        if (event.type === "local") {
+          document.querySelectorAll(".media-container").forEach(element => {
+            element.classList.add("local-video-holder");
+          });
+        } else {
+          document.querySelectorAll(".media-container").forEach(element => {
+            element.classList.add("other-video-holder");
+          });
+          document
+            .querySelector(".media-container")
+            .classList.remove("other-video-holder");
+        }
+
+        setTimeout(() => {
+          var alogn = $(".media-container").hasClass("other-video-holder");
+          if (!alogn) {
+            //alert("Waiting on other person to join conversation");
+          }
+        }, 4000);
+
+        var numOfVideo = $(".videos-container");
+
+        var otherVideo = $(".other-video-holder");
+        switch (numOfVideo) {
+          case 1:
+            otherVideo.addClass("one");
+            // otherVideo.removeClass("two three four");
+            break;
+          //   case 2:
+          //     video.addClass("two");
+          //     video.removeClass("one three four");
+          //     break;
+          //   case 3:
+          //     video.addClass("three");
+          //     video.removeClass("one two four");
+          //     break;
+          //   case 4:
+          //     video.addClass("four");
+          //     video.removeClass("one two three");
+          //     break;
+          //   case 5:
+          //     video.addClass("five");
+          //     break;
+        }
+        console.dir();
+
+        setTimeout(function() {
+          mediaElement.media.play();
+        }, 5000);
+
+        mediaElement.id = event.streamid;
+
+        // to keep room-id in cache
+        localStorage.setItem(
+          connection.socketMessageEvent,
+          connection.sessionid
+        );
+
+        if (event.type === "local") {
+          connection.socket.on("disconnect", function() {
+            if (!connection.getAllParticipants().length) {
+              location.reload();
+            }
+          });
+        }
+      };
+
+      connection.onstreamended = function(event) {
+        var mediaElement = document.getElementById(event.streamid);
+        if (mediaElement) {
+          mediaElement.parentNode.removeChild(mediaElement);
+        }
+      };
+
+      connection.onMediaError = function(e) {
+        if (e.message === "Concurrent mic process limit.") {
+          if (DetectRTC.audioInputDevices.length <= 1) {
+            alert(
+              "Please select external microphone. Check github issue number 483."
+            );
+            return;
+          }
+
+          var secondaryMic = DetectRTC.audioInputDevices[1].deviceId;
+          connection.mediaConstraints.audio = {
+            deviceId: secondaryMic
+          };
+
+          connection.join(connection.sessionid);
+        }
+      };
+
+      // ......................................................
+      // ......................Handling Room-ID................
+      // ......................................................
+
+      (function() {
+        var params = {},
+          r = /([^&=]+)=?([^&]*)/g;
+
+        function d(s) {
+          return decodeURIComponent(s.replace(/\+/g, " "));
+        }
+        var match,
+          search = window.location.search;
+        while ((match = r.exec(search.substring(1))))
+          params[d(match[1])] = d(match[2]);
+        window.params = params;
+      })();
+
+      var conversationToken = "";
+      if (localStorage.getItem(connection.socketMessageEvent)) {
+        conversationToken = localStorage.getItem(connection.socketMessageEvent);
+      } else {
+        conversationToken = connection.token();
+      }
+
+      var hashString = location.hash.replace("#", "");
+      if (hashString.length && hashString.indexOf("comment-") == 0) {
+        hashString = "";
+      }
+
+      var conversationToken = params.conversationToken;
+      if (!conversationToken && hashString.length) {
+        conversationToken = hashString;
+      }
+
+      if (conversationToken && conversationToken.length) {
+        localStorage.setItem(connection.socketMessageEvent, conversationToken);
+
+        // auto-join-room
+        (function reCheckRoomPresence() {
+          connection.checkPresence(conversationToken, function(isRoomExist) {
+            if (isRoomExist) {
+              connection.join(conversationToken);
+              return;
+            }
+
+            setTimeout(reCheckRoomPresence, 5000);
+          });
+        })();
+      }
+
+      // detect 2G
+      if (
+        navigator.connection &&
+        navigator.connection.type === "cellular" &&
+        navigator.connection.downlinkMax <= 0.115
+      ) {
+        alert("2G is not supported. Please use a better internet service.");
+      }
+    </script>
+
+    <script src="https://cdn.webrtc-experiment.com/common.js"></script>
+  </body>
+</html>

@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>chatSocketAchex</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/prism.css">
-    
-      <script src="js/jquery.min.js"></script> 
-      <script src="js/prism.js"></script>
-      <script src="js/main.js"></script>
-      
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script src="chatSocketAchex.js"></script>
-       <link rel="stylesheet" type="text/css" href="chatSocketAchex.css">
-       <link rel="stylesheet" href="css/style.css">
-             
-  </head>
+    <link rel="stylesheet" href="css/prism.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="chatSocketAchex.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Jquery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="chatSocketAchex.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="js/main.js"></script>
+</head>
 
-  <body onload="startup()">
-        
-         <div style="visibility:hidden;display:none;">
-            <div id="ListaOnline">
-               
-            </div>
-            
-         </div>   
-         
-                    <div class="chat__box">
-                        <div class="chat__box--btn"><span>chat</span></div>
-                        <div id="Elchat" class="chat__box-field">
-                        </div>
-                    </div>
-         
-          </div>   
+<body onload="startup()">
 
-            
-        
-      <script type="text/javascript">
-           $('#Elchat').ChatSocket({
-               'lblEntradaNombre':'Enter a user name in the field below for the chat room'});
-        </script>
-        
-       
-            
-
-    </div>
-    
+  <div>
+    <div style="visibility:hidden;display:none;">
+        <div id="ListaOnline">
         </div>
     </div>
-     </body>
+
+    <div class="chat__box">
+        <div class="chat__box--btn"><span>chat</span></div>
+        <div id="Elchat" class="chat__box-field">
+        </div>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+    $('#Elchat').ChatSocket({
+        'lblEntradaNombre': 'Enter a user name in the field below for the chat room'
+    });
+    </script>
+    </div>
+    </div>
+    </div>
+</body>
+
 </html>

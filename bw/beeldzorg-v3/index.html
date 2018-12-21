@@ -1,0 +1,250 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nettie Beeldbellen Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="css/prism.css" />
+    <link rel="stylesheet" href="css/chatSocketAchex.css" />
+    <link rel="stylesheet" href="Content/nice-select.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Scripts/jquery.nice-select.min.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+    <script src="Scripts/prism.js"></script>
+    <script src="Scripts/chatSocketAchex.js"></script>
+    <script src="Scripts/main.js"></script>
+  </head>
+
+  <body>
+    <form id="form1" runat="server">
+      <div class="header-area">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="nav-wrapper">
+                <a href="#" class="brand-logo left">
+                  <img src="client/logo.png" style="height: 70px;" />
+                </a>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Dennis (<asp:LinkButton
+                  ID="LinkButton1"
+                  runat="server"
+                  OnClick="LinkButton1_Click"
+                  >Logout</asp:LinkButton
+                >)
+              </div>
+            </div>
+            <div class="col-sm-4 text-center">
+              <h1 class="brand-logo center" style="font-size: 30px;">
+                Nettie Beeldzorg
+              </h1>
+            </div>
+            <div class="col-sm-4 text-right">
+              <a href="#" class="brand-logo right">
+                <img src="client/Nettie-logo.png" style="height: 70px;" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 col-sm-offset-9">
+            <div class="select-area"><select class="select"> </select></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-10">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Entered</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="patientsList"></tbody>
+            </table>
+          </div>
+          <div class="col-xs-2">
+            <div class="row">
+              <div
+                class="col-xs-12"
+                style="margin-top: 35px; padding-top: 12px; padding-bottom: 12px; border-top: 1px solid #EEEEEE; border-bottom: 1px solid #EEEEEE;"
+              >
+                <label>
+                  <input type="checkbox" id="checkboxHideConversations" />
+                  <span>Hide finished conversations</span>
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="panel panel-default">
+                  <div class="panel-heading">Messages</div>
+                  <div class="panel-body">
+                    <ul
+                      id="messageList"
+                      class="list-group"
+                      style="max-height: 141px;overflow: auto;"
+                    >
+                      <%--
+                      <li class="list-group-item">
+                        <button
+                          class="btn btn-primary"
+                          type="button"
+                          id="button-addon2"
+                        >
+                          -
+                        </button>
+                        Welcome<span
+                          id="delMessage"
+                          style="cursor: pointer;font-size: 20px;margin-top: -3px;"
+                          class="pull-right"
+                          >&times;</span
+                        >
+                      </li>
+                      --%>
+                    </ul>
+                    <div class="input-group mb-3" style="width: 100%">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="message.."
+                        style="width: 200px"
+                        id="txtMessage"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2"
+                      />
+                      <div class="input-group-append">
+                        <button
+                          id="btnSaveMessage"
+                          class="btn btn-primary"
+                          style="margin-left:15px;"
+                          type="button"
+                          id="button-addon"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="popup1" class="overlay">
+          <div class="popup">
+            <div class="chat__box">
+              <div class="chat__box--btn"><span>chat</span></div>
+              <div id="Elchat" class="chat__box-field"></div>
+            </div>
+            <h2>Conversation: John</h2>
+            <a
+              class="close"
+              href="#"
+              onclick=" $('#iframeCall').attr('src', ''); "
+              >&times;</a
+            >
+            <div class="content" style="height: 100%;">
+              <div class="col-sm-12">
+                <div class="col-sm-9">
+                  <iframe
+                    id="iframeCall"
+                    style="border: none; height: 450px; width: 100%;"
+                    allow="geolocation; microphone; camera"
+                    src=""
+                  ></iframe>
+                </div>
+                <div class="col-sm-3">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Invitations:</h3>
+                    </div>
+                    <div class="panel-body">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="link"
+                        id="invitelink"
+                        value=""
+                        style="width: 100%; font-size: 10px"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2"
+                      />
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="contactin"
+                        placeholder="email"
+                        style="width: 150px"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2"
+                      />
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-primary dropdown-toggle"
+                          type="button"
+                          data-toggle="dropdown"
+                        >
+                          Mail &nbsp;<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Mail</a></li>
+                          <li><a href="#">Sms</a></li>
+                          <li><a href="#">WhatsApp</a></li>
+                        </ul>
+                      </div>
+                      <div class="input-group mb-3" style="width: 100%">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="message.."
+                          style="width: 220px"
+                          aria-label="Recipient's username"
+                          aria-describedby="button-addon21"
+                        />
+                        <div class="input-group-append">
+                          <button
+                            class="btn btn-primary"
+                            type="button"
+                            id="button-addon21"
+                            onclick="Invite();"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tempname" style="visibility: hidden">Dennis</div>
+        <div id="tempaccountID" style="visibility: hidden">1</div>
+        <asp:Label
+          ID="accountID"
+          runat="server"
+          Text="Label"
+          Style="visibility: hidden"
+        ></asp:Label>
+        <asp:Label
+          ID="token"
+          runat="server"
+          Text="Label"
+          Style="visibility: hidden"
+        ></asp:Label>
+      </div>
+    </form>
+  </body>
+</html>
