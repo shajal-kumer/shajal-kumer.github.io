@@ -78,6 +78,7 @@
     </div>
 
     <a id="btnJoinCall" style="display:none;" href="#popup1">TEST</a>
+    <input type="hidden" id="patientname" />
     <div class="notifications bottom-right"></div>
     <script type="text/javascript">
       //var baseULR = location.origin;
@@ -209,7 +210,7 @@
         });
       }
 
-      // Get Rooms
+      // update Rooms
       function updateRoom(conversationId) {
         //  alert(baseULR + '/api/updateRoom');
 
@@ -220,7 +221,7 @@
           success: function(data) {
             patientData = $.extend(true, {}, data[0]);
             var pdata = {
-              conversationId: patientData.id,
+              conversationtoken: patientData.conversationtoken,
               clientname: patientData.clientname
             };
             startup(pdata);

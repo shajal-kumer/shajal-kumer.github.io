@@ -371,8 +371,7 @@
         }
       });
     }
-    var clientnam = document.getElementById("tempname").innerHTML;
-    setLocalStorage("clientnam", clientnam);
+
     // Start call
     function startConversation(conversationId) {
       $.ajax({
@@ -383,12 +382,7 @@
           token: ""
         }),
         success: function(data) {
-          setLocalStorage("conversationtoken", data[0].conversationtoken);
-          var pdata = {
-            conversationtoken: getLocalStorage("conversationtoken"),
-            clientname: getLocalStorage("clientnam")
-          };
-          startup(pdata);
+          startup(data[0].conversationtoken);
           if (activeCallToken !== data[0].conversationtoken) {
             // debugger;
             activeCallToken = data[0].conversationtoken;
@@ -486,13 +480,5 @@
         };
       }
     }
-
-    // setInterval(() => {
-    //   var pdata = {
-    //     conversationId: getLocalStorage("conversationtoken"),
-    //     clientname: getLocalStorage("clientnam")
-    //   };
-    //   startup(pdata);
-    // }, 6000);
   });
 })(jQuery);

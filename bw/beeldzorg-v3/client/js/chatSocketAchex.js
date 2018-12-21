@@ -219,7 +219,7 @@ $.fn.extend({
 });
 
 function startup(patientdata) {
-  $.fn.extend({ Patientconversationtoken: patientdata.conversationId });
+  $.fn.extend({ Patientconversationtoken: patientdata.conversationtoken });
   document.getElementById("txtEntrar").value = patientdata.clientname;
 }
 

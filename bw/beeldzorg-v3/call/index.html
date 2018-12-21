@@ -35,9 +35,7 @@
       // .......................UI Code........................
       // ......................................................
       //   var convarsationToken = Math.floor(Math.random() * 10000) + 1;
-        var convarsationToken = getQueryStringValue("conversationToken");
-
-        console.log(convarsationToken);
+      var convarsationToken = getQueryStringValue("conversationToken");
 
       function getQueryStringValue(key) {
         return decodeURIComponent(
@@ -154,32 +152,6 @@
             //alert("Waiting on other person to join conversation");
           }
         }, 4000);
-
-        var numOfVideo = $(".videos-container");
-
-        var otherVideo = $(".other-video-holder");
-        switch (numOfVideo) {
-          case 1:
-            otherVideo.addClass("one");
-            // otherVideo.removeClass("two three four");
-            break;
-          //   case 2:
-          //     video.addClass("two");
-          //     video.removeClass("one three four");
-          //     break;
-          //   case 3:
-          //     video.addClass("three");
-          //     video.removeClass("one two four");
-          //     break;
-          //   case 4:
-          //     video.addClass("four");
-          //     video.removeClass("one two three");
-          //     break;
-          //   case 5:
-          //     video.addClass("five");
-          //     break;
-        }
-        console.dir();
 
         setTimeout(function() {
           mediaElement.media.play();
