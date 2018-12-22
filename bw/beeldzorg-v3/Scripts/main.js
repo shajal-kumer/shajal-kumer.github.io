@@ -382,7 +382,7 @@
           token: ""
         }),
         success: function(data) {
-          $(".chat__box--btn").css("display", "block");
+          // $(".chat__box--btn").css("display", "block");
           startup(data[0].conversationtoken);
           if (activeCallToken !== data[0].conversationtoken) {
             // debugger;
