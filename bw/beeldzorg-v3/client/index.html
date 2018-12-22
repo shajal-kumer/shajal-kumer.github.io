@@ -78,7 +78,7 @@
     </div>
 
     <a id="btnJoinCall" style="display:none;" href="#popup1">TEST</a>
-    <input type="hidden" id="patientname" />
+
     <div class="notifications bottom-right"></div>
     <script type="text/javascript">
       //var baseULR = location.origin;
@@ -228,6 +228,7 @@
 
             if ($.trim(patientData.conversationtoken) !== "") {
               $(".chat__box--btn").css("display", "block");
+              $(".chat__box--btn").removeClass("active");
               setLocalStorage(
                 "conversationToken",
                 patientData.conversationtoken

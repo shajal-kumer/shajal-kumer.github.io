@@ -136,6 +136,7 @@ h1 {
   border: 1px solid #2f5597;
   border-bottom-color: transparent;
   z-index: 99;
+  display: none;
 }
 .chat__box--btn.active:after {
   content: "";
