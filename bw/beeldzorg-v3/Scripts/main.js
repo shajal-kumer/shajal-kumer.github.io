@@ -356,6 +356,7 @@
           });
           // Adjust video side
           $(".adjust-Video").on("click", function(e) {
+            startup(getLocalStorage("doctorConversationToken"));
             setTimeout(function() {
               $("#iframeCall").height($(".popup").height() - 80);
             }, 1000);
@@ -382,7 +383,7 @@
           token: ""
         }),
         success: function(data) {
-          // $(".chat__box--btn").css("display", "block");
+          setLocalStorage("doctorConversationToken", data[0].conversationtoken);
           startup(data[0].conversationtoken);
           if (activeCallToken !== data[0].conversationtoken) {
             // debugger;
