@@ -18,6 +18,7 @@ var htmlDOM = {
   lblBtnEntrar: "Enter",
   idDialogo: "DialogoEntrada",
   classChat: "",
+  
   idOnline: "ListaOnline",
   lblUsuariosOnline: "Users joined",
   lblEntradaNombre: "Name:",
