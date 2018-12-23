@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#videos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  height: 100vh;
+}
+
+.local-video-holder {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: auto;
+}
+.local-video-holder video,
+.other-video-holder video {
+  border-radius: 5px;
+}
+/* other video holder */
+.other-video-holder {
+  height: 100vh;
+  width: 100% !important;
+}
+.other-video-holder video {
+  max-height: 100% !important;
+  height: 100%;
+}
+.other-video-holder .media-box {
+  height: 100%;
+}
+/* other video holder */
+.local-video-holder .media-controls {
+  display: none;
+}
