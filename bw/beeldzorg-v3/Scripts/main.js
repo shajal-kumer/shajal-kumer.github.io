@@ -11,9 +11,6 @@
         return false;
       }
     });
-    $("#Elchat").ChatSocket({
-      lblEntradaNombre: "Enter a user name in the field below for the chat room"
-    });
 
     $(".chat__box--btn").on("click", function() {
       $(".chat__box-field").toggleClass("open");
@@ -26,16 +23,9 @@
       $(".chat__box--btn").removeClass("active");
     });
 
-    //Get LocalStorage
-    function getLocalStorage(key) {
-      var value = localStorage.getItem(key);
-      return null == value ? "" : value;
-    }
-
-    //Set LocalStorage
-    function setLocalStorage(key, value) {
-      localStorage.setItem(key, null == value ? "" : value);
-    }
+    $(".popup .close").on("click", function() {
+      $(".chatpluginchat").html("");
+    });
 
     var activeCallToken = "";
     var waitingRoom = {};
@@ -306,6 +296,7 @@
                 elemTemplate.push(
                   '<td class="conversation"><a data-conId="' +
                     item.id +
+                    '" data-conToken="' +
                     '" data-clientname="' +
                     item.clientname +
                     '" class="adjust-Video btn btn-primary" style="width: 100px" href="#popup1">Join</a>&nbsp;<a data-conId="' +
@@ -356,7 +347,6 @@
           });
           // Adjust video side
           $(".adjust-Video").on("click", function(e) {
-            startup(getLocalStorage("doctorConversationToken"));
             setTimeout(function() {
               $("#iframeCall").height($(".popup").height() - 80);
             }, 1000);
@@ -383,11 +373,12 @@
           token: ""
         }),
         success: function(data) {
-          setLocalStorage("doctorConversationToken", data[0].conversationtoken);
           startup(data[0].conversationtoken);
+          //   $(".call-client").attr("data-conToken", data[0].conversationtoken);
           if (activeCallToken !== data[0].conversationtoken) {
             // debugger;
             activeCallToken = data[0].conversationtoken;
+
             $("#iframeCall").attr(
               "src",
               "call/index.html?conversationToken=" + data[0].conversationtoken

@@ -41,9 +41,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"></script>
-    <script src="js/prism.js"></script>
-    <script src="js/chatSocketAchex.js"></script>
-    <script src="js/main.js"></script>
   </head>
   <body>
     <div id="contentl"><img src="img/Nettie-logo.png" class="ribbon" /></div>
@@ -80,6 +77,7 @@
     <a id="btnJoinCall" style="display:none;" href="#popup1">TEST</a>
 
     <div class="notifications bottom-right"></div>
+    <input type="hidden" id="token" /> <input type="hidden" id="patientname" />
     <script type="text/javascript">
       //var baseULR = location.origin;
       var baseULR = "https://nettie.azurewebsites.net";
@@ -224,6 +222,7 @@
               conversationtoken: patientData.conversationtoken,
               clientname: patientData.clientname
             };
+
             startup(pdata);
 
             if ($.trim(patientData.conversationtoken) !== "") {
@@ -337,5 +336,9 @@
         }, 700);
       }
     </script>
+
+    <script src="js/prism.js"></script>
+    <script src="js/chatSocketAchex.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

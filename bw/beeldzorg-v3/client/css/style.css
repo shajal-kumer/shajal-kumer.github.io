@@ -149,7 +149,7 @@ h3 {
 .chat__box {
   position: absolute;
   right: 0px;
-  top: 40px;
+  top: 100px;
 }
 
 .chat__box--btn {
@@ -162,7 +162,7 @@ h3 {
   letter-spacing: 2px;
   text-transform: uppercase;
   position: absolute;
-  top: 80px;
+  top: 53px;
   left: -99px;
   transform: rotate(-90deg);
   border: 1px solid #2f5597;

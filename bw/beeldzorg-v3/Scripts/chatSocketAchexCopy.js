@@ -1,33 +1,8 @@
-let token, flag;
-function startup(conversationtoken) {
-  document.getElementById("token").value = conversationtoken;
-}
-
-let check = setInterval(() => {
-  token = document.getElementById("token").value;
-  console.log("Doctor Token: ", token);
-  aa(token);
-  if (token) {
-    flag = 1;
-  }
-}, 500);
-
-let c = setInterval(() => {
-  if (flag) {
-    $("#Elchat").ChatSocket({
-      lblEntradaNombre: "Enter a user name in the field below for the chat room"
-    });
-    clearInterval(c);
-  }
-}, 500);
-
-function aa(token) {
-  console.log("Doctor Conversation Token: ", setrooms);
-
+function callChat(token) {
   var htmlDOM = {
-    idChat: $(ChatSocket).attr("id"),
-    ws,
-    Room: setrooms,
+    idChat: "Elchat",
+    ws: null,
+    Room: token,
     pass: "1",
     lblTitulChat: " Nettie Beeldzorg Chat",
     lblCampoEntrada: "bericht",
@@ -50,15 +25,9 @@ function aa(token) {
     panelColor: "success"
   };
 
-  if ($("#" + htmlDOM.idOnline).length == 0) {
-    htmlDOM.idOnline = htmlDOM.idChat + "listaOnline";
-    $("#" + htmlDOM.idChat).append(
-      '<br/><div id="' + htmlDOM.idOnline + '"></div>'
-    );
-  }
-
   function IniciarConexion() {
-    conex = '{"setID":"' + htmlDOM.Room + '","passwd":"' + htmlDOM.pass + '"}';
+    var conex =
+      '{"setID":"' + htmlDOM.Room + '","passwd":"' + htmlDOM.pass + '"}';
     htmlDOM.ws = new WebSocket("wss://ws.achex.ca/");
 
     htmlDOM.ws.onopen = function() {
@@ -85,12 +54,13 @@ function aa(token) {
       alert("connection closed");
     };
   }
+
   IniciarConexion();
 
   htmlDOM.Nombre = document.getElementById("tempname").innerHTML;
 
   function CrearChat() {
-    $("#" + htmlDOM.idChat).append(
+    $("#" + htmlDOM.idChat).html(
       '<div class="' +
         htmlDOM.classChat +
         '"><div class="panel panel-' +
@@ -121,6 +91,7 @@ function aa(token) {
       EnviarMensaje();
     });
   }
+  CrearChat();
 
   function EnviarMensaje() {
     htmlDOM.ws.send(
@@ -156,15 +127,14 @@ function aa(token) {
       var h = formattedDate.getHours();
       var min = formattedDate.getMinutes();
 
-      // Fecha = d + "/" + m + "/" + y + " " + h + ":" + min;
       var Fecha = h + ":" + min;
 
       $(".chatpluginchat .itemtemplate #Tiempo").html(Fecha);
       $(".chatpluginchat .itemtemplate").removeClass("itemtemplate");
     }
   }
-  CrearChat();
-  // CrearEntrada();
-  /// Fin ///
-  //////////
+}
+callChat();
+function startup(conversationtoken) {
+  callChat(conversationtoken);
 }
