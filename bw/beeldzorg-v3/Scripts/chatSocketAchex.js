@@ -1,75 +1,41 @@
-$(function() {
+function callChat(token) {
   var htmlDOM = {
     idChat: "Elchat",
+    ws: null,
+    Room: token,
+    pass: "1",
     lblTitulChat: " Nettie Beeldzorg Chat",
-    lblCampoEntrada: "Enter",
+    lblCampoEntrada: "bericht",
     lblEnviar: "Send",
     textoAyuda: "Nettie Beeldzorg",
     Nombre: "Anónimo",
 
     urlImg: "http://placehold.it/50/55C1E7/55C1E7",
+    btnEntrar: "btnEntrar",
     btnEnviar: "btnEnviar",
-    lblTxtEnviar: "txtMensaje",
-    lblBtnEntrar: "Enter",
-    classChat: "",
-    panelColor: "success"
-  };
-
-  htmlDOM.Nombre = document.getElementById("tempname").innerHTML;
-
-  function CrearChat() {
-    $("#" + htmlDOM.idChat).append(
-      '<div class="' +
-        htmlDOM.classChat +
-        '"><div class="panel panel-' +
-        htmlDOM.panelColor +
-        '"><div class="panel-heading"><span class="glyphicon glyphicon-comment"></span>' +
-        htmlDOM.lblTitulChat +
-        " : " +
-        htmlDOM.Nombre +
-        '</div><div class="panel-body"><ul class="chatpluginchat"></ul></div><div class="panel-footer"><div class="input-group"><input id="' +
-        htmlDOM.lblTxtEnviar +
-        '" type="text" class="form-control input-sm" placeholder="' +
-        htmlDOM.lblCampoEntrada +
-        '" /><span class="input-group-btn"><button  class="btn btn-warning btn-sm" id="' +
-        htmlDOM.btnEnviar +
-        '">' +
-        htmlDOM.lblEnviar +
-        '</button></span></div></div></div></div><li class="left clearfix itemtemplate" style="display:none"><span class="chat-img pull-left"><img src="' +
-        htmlDOM.urlImg +
-        '" alt="User Avatar" class="img-circle" id="Foto"/></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font" id="Nombre">Nombre</strong><small class="pull-right text-muted"><span class="glyphicon glyphicon-asterisk"></span><span id="Tiempo">12 mins ago</span></small></div> <p id="Contenido">Contenido</p></div></li>'
-    );
-  }
-  CrearChat();
-});
-
-function callChat(token) {
-  var htmlDOM = {
-    ws: null,
-    Room: token,
-    pass: "1",
-    Nombre: "Anónimo",
     lblBtnEnviar: "Stuur",
     lblTxtEntrar: "txtEntrar",
     lblTxtEnviar: "txtMensaje",
-    lblBtnEntrar: "Enter"
+    lblBtnEntrar: "Enter",
+    idDialogo: "DialogoEntrada",
+    classChat: "",
+    idOnline: "ListaOnline",
+    lblUsuariosOnline: "Users joined",
+    lblEntradaNombre: "Name:",
+    panelColor: "success"
   };
 
-  htmlDOM.Nombre = document.getElementById("tempname").innerHTML;
   function IniciarConexion() {
-    console.log("Websocket");
     var conex =
       '{"setID":"' + htmlDOM.Room + '","passwd":"' + htmlDOM.pass + '"}';
     htmlDOM.ws = new WebSocket("wss://ws.achex.ca/");
 
     htmlDOM.ws.onopen = function() {
       htmlDOM.ws.send(conex);
-      console.log("Onopen");
     };
     htmlDOM.ws.onmessage = function(Mensajes) {
       var MensajesObtenidos = Mensajes.data;
       var obj = jQuery.parseJSON(MensajesObtenidos);
-      console.log(obj);
       AgregarItem(obj);
 
       if (obj.sID != null) {
@@ -91,20 +57,43 @@ function callChat(token) {
 
   IniciarConexion();
 
-  $("#" + htmlDOM.lblTxtEnviar).keyup(function(e) {
-    if (e.keyCode == 13) {
-      console.log("keyup");
-      EnviarMensaje();
-    }
-  });
+  htmlDOM.Nombre = document.getElementById("tempname").innerHTML;
 
-  $("#" + htmlDOM.btnEnviar).click(function() {
-    console.log("click");
-    EnviarMensaje();
-  });
+  function CrearChat() {
+    $("#" + htmlDOM.idChat).html(
+      '<div class="' +
+        htmlDOM.classChat +
+        '"><div class="panel panel-' +
+        htmlDOM.panelColor +
+        '"><div class="panel-heading"><span class="glyphicon glyphicon-comment"></span>' +
+        htmlDOM.lblTitulChat +
+        " : " +
+        htmlDOM.Nombre +
+        '</div><div class="panel-body"><ul class="chatpluginchat"></ul></div><div class="panel-footer"><div class="input-group"><input id="' +
+        htmlDOM.lblTxtEnviar +
+        '" type="text" class="form-control input-sm" placeholder="' +
+        htmlDOM.lblCampoEntrada +
+        '" /><span class="input-group-btn"><button  class="btn btn-warning btn-sm" id="' +
+        htmlDOM.btnEnviar +
+        '">' +
+        htmlDOM.lblEnviar +
+        '</button></span></div></div></div></div><li class="left clearfix itemtemplate" style="display:none"><span class="chat-img pull-left"><img src="' +
+        htmlDOM.urlImg +
+        '" alt="User Avatar" class="img-circle" id="Foto"/></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font" id="Nombre">Nombre</strong><small class="pull-right text-muted"><span class="glyphicon glyphicon-asterisk"></span><span id="Tiempo">12 mins ago</span></small></div> <p id="Contenido">Contenido</p></div></li>'
+    );
+
+    $("#" + htmlDOM.lblTxtEnviar).keyup(function(e) {
+      if (e.keyCode == 13) {
+        EnviarMensaje();
+      }
+    });
+    $("#" + htmlDOM.btnEnviar).click(function() {
+      EnviarMensaje();
+    });
+  }
+  CrearChat();
 
   function EnviarMensaje() {
-    console.log("Send");
     htmlDOM.ws.send(
       '{"to":"' +
         htmlDOM.Room +
@@ -138,7 +127,6 @@ function callChat(token) {
       var h = formattedDate.getHours();
       var min = formattedDate.getMinutes();
 
-      // Fecha = d + "/" + m + "/" + y + " " + h + ":" + min;
       var Fecha = h + ":" + min;
 
       $(".chatpluginchat .itemtemplate #Tiempo").html(Fecha);
@@ -146,7 +134,7 @@ function callChat(token) {
     }
   }
 }
-
+callChat();
 function startup(conversationtoken) {
   callChat(conversationtoken);
 }
