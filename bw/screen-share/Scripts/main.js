@@ -1,4 +1,19 @@
 (function($) {
+  // var iframe = document.getElementById("iframeCall");
+  // var btn = iframe.contentWindow.document.getElementsByTagName(
+  //     "button"
+  // )[0];
+  // btn.addEventListener("click", function () {
+  //     console.log("Hello bangladesh");
+  //     var token = localStorage.getItem("Doctorconversationtoken");
+  //     console.log(token);
+  //     $("#invitelink").val(
+  //         "https://nettie.azurewebsites.net/call/index.html?conversationId=" +
+  //         token +
+  //         "&shre=on"
+  //     );
+  // });
+
   //  "use strict";
 
   //var baseURL='';
@@ -375,6 +390,11 @@
         success: function(data) {
           startup(data[0].conversationtoken);
           //   $(".call-client").attr("data-conToken", data[0].conversationtoken);
+          localStorage.setItem(
+            "Doctorconversationtoken",
+            data[0].conversationtoken
+          );
+
           if (activeCallToken !== data[0].conversationtoken) {
             // debugger;
             activeCallToken = data[0].conversationtoken;

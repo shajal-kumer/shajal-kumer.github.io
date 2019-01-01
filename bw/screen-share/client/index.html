@@ -185,6 +185,7 @@
           }
         });
       }
+
       // enter appointment Rooms
       function enterAppointmentRoom(appoinmentID) {
         $.ajax({
@@ -222,7 +223,6 @@
               conversationtoken: patientData.conversationtoken,
               clientname: patientData.clientname
             };
-            console.log("Patient token: ", patientData.conversationtoken);
 
             startup(pdata);
 
@@ -238,12 +238,21 @@
                 "../call/index.html?conversationToken=" +
                   patientData.conversationtoken
               );
+
               $("#btnJoinCall")[0].click();
               clearInterval(updateInterval);
               setTimeout(function() {
                 $("#iframeCall").height($(".popup").height() - 80);
               }, 1000);
-
+              setTimeout(() => {
+                let iframe = document.getElementById("iframeCall");
+                iframe.contentWindow.document.getElementsByTagName(
+                  "a"
+                )[0].style.display = "none";
+                iframe.contentWindow.document.getElementsByTagName(
+                  "button"
+                )[0].style.display = "none";
+              }, 100);
               //check if finished
               checkFinished(conversationId);
             }
