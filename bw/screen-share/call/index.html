@@ -311,7 +311,7 @@
       };
 
       btnShareScreen.onclick = function() {
-        // this.disabled = true;
+        this.disabled = true;
         getScreenStream(function(screen) {
           var isLiveSession = connection.getAllParticipants().length > 0;
           if (isLiveSession) {
