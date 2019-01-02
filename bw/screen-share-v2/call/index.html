@@ -59,19 +59,17 @@
           )
         );
       }
-      console.log("convarsationToken : ", convarsationToken);
+
       window.onload = function() {
         var searchStr = window.location.search.indexOf("patient");
 
         if (searchStr !== -1) {
-          console.log("Not Empty search");
           beforeOpenOrJoin(convarsationToken, function() {
             connection.join(convarsationToken, function() {
               afterOpenOrJoin();
             });
           });
         } else {
-          console.log("Empty search");
           beforeOpenOrJoin(convarsationToken, function() {
             connection.open(convarsationToken, function() {
               afterOpenOrJoin();
