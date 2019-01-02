@@ -49,7 +49,9 @@ h1 {
 .button:hover {
   background: #06d85f;
 }
-
+.panel {
+  border-radius: 0px;
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -117,6 +119,7 @@ h1 {
 .padding-tb {
   padding: 20px 0px;
 }
+
 .chat__box {
   position: absolute;
   right: 0px;
@@ -194,7 +197,8 @@ img#Foto {
   display: none !important;
 }
 .panel-body {
-  height: 320px;
+  height: auto;
+  overflow-y: auto;
 }
 .panel-heading .glyphicon {
   top: 3px;

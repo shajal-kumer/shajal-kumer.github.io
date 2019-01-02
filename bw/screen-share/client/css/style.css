@@ -252,7 +252,7 @@ ul.info-list {
   bottom: 40px;
   border: 1px solid #000;
   padding: 15px;
-  width: 290px;
+  width: 300px;
   list-style: none;
   opacity: 0;
   visibility: hidden;
@@ -265,6 +265,18 @@ ul.info-list.active {
 .info-list li {
   color: #000;
   display: block;
+  position: relative;
+  padding-left: 18px;
+}
+.info-list li:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
 }
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select:focus,
