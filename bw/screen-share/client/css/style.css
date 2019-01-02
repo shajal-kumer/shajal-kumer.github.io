@@ -229,6 +229,43 @@ img#Foto {
   border: 0px;
 }
 
+.info-left-icon {
+  position: absolute;
+  left: 25px;
+  bottom: 25px;
+}
+.info-left-icon i {
+  background-color: #333;
+  width: 36px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  font-size: 35px;
+}
+.info-left-icon i:hover {
+  cursor: pointer;
+}
+ul.info-list {
+  margin: 0;
+  position: absolute;
+  left: 36px;
+  bottom: 40px;
+  border: 1px solid #000;
+  padding: 15px;
+  width: 290px;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+ul.info-list.active {
+  opacity: 1;
+  visibility: visible;
+}
+.info-list li {
+  color: #000;
+  display: block;
+}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   select:focus,
   textarea:focus,

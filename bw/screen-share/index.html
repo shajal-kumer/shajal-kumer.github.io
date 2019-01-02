@@ -47,14 +47,20 @@
       </div>
 
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-3 col-sm-offset-9">
+        <div class="row padding-tb">
+          <div class="col-sm-3 col-md-2">
             <div class="select-area"><select class="select"> </select></div>
+          </div>
+          <div class="col-sm-9 col-md-9">
+            <div class="hidecheckbox">
+              <input type="checkbox" id="checkboxHideConversations" />
+              <span>Hide finished conversations</span>
+            </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-10">
-            <table class="table table-hover">
+          <div class="col-sm-9">
+            <table class="table table-hover table-bordered">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -65,18 +71,7 @@
               <tbody id="patientsList"></tbody>
             </table>
           </div>
-          <div class="col-xs-2">
-            <div class="row">
-              <div
-                class="col-xs-12"
-                style="margin-top: 35px; padding-top: 12px; padding-bottom: 12px; border-top: 1px solid #EEEEEE; border-bottom: 1px solid #EEEEEE;"
-              >
-                <label>
-                  <input type="checkbox" id="checkboxHideConversations" />
-                  <span>Hide finished conversations</span>
-                </label>
-              </div>
-            </div>
+          <div class="col-sm-3">
             <div class="row">
               <div class="col-xs-12">
                 <div class="panel panel-default">
@@ -87,7 +82,6 @@
                       class="list-group"
                       style="max-height: 141px;overflow: auto;"
                     >
-                      <%--
                       <li class="list-group-item">
                         <button
                           class="btn btn-primary"
@@ -103,7 +97,6 @@
                           >&times;</span
                         >
                       </li>
-                      --%>
                     </ul>
                     <div class="input-group mb-3" style="width: 100%">
                       <input

@@ -77,7 +77,17 @@
     <a id="btnJoinCall" style="display:none;" href="#popup1">TEST</a>
 
     <div class="notifications bottom-right"></div>
-    <input type="hidden" id="token" /> <input type="hidden" id="patientname" />
+    <span class="info-left-icon">
+      <i class="fa fa-info"></i>
+      <ul class="info-list">
+        <li>Browser Supports WebRTC? <span></span></li>
+        <li>System has Speakers? <span></span></li>
+        <li>System has Webcam? <span></span></li>
+        <li>Is your connection fast enough? <span></span></li>
+        <li>Is it a mobile device? <span></span></li>
+        <li>Website has webcam permissions? <span></span></li>
+      </ul>
+    </span>
     <script type="text/javascript">
       //var baseULR = location.origin;
       var baseULR = "https://nettie.azurewebsites.net";
@@ -347,6 +357,7 @@
 
     <script src="js/prism.js"></script>
     <script src="js/chatSocketAchex.js"></script>
+    <script src="js/DetectRTC.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

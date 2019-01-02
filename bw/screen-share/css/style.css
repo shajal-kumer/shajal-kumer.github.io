@@ -111,15 +111,21 @@ h1 {
   min-height: 450px;
   overflow: auto;
 }
-.select-area {
-  margin-top: 30px;
+.hidecheckbox {
+  margin-top: 10px;
+}
+.padding-tb {
+  padding: 20px 0px;
 }
 .chat__box {
   position: absolute;
   right: 0px;
   top: 60px;
 }
-
+.table-bordered > thead > tr > td,
+.table-bordered > thead > tr > th {
+  border-bottom: none;
+}
 .chat__box--btn {
   background: #4472c4;
   border-radius: 15px 15px 0px 0;
