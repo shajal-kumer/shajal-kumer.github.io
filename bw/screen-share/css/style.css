@@ -197,6 +197,9 @@ img#Foto {
   display: none !important;
 }
 .panel-body {
+  height: 320px;
+}
+.panel-body.message-panel-body {
   height: auto;
   overflow-y: auto;
 }

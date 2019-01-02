@@ -92,7 +92,10 @@
         OfferToReceiveAudio: true,
         OfferToReceiveVideo: true
       };
-
+ 		connection.socketOptions = {
+        forceNew: true, // For SocketIO version >= 1.0
+        transport: "polling" // fixing transport:unknown issues
+      };
       connection.videosContainer = document.getElementById("videos-container");
 
       connection.onstream = function(event) {
@@ -311,7 +314,7 @@
       };
 
       btnShareScreen.onclick = function() {
-        // this.disabled = true;
+        this.disabled = true;
         getScreenStream(function(screen) {
           var isLiveSession = connection.getAllParticipants().length > 0;
           if (isLiveSession) {
