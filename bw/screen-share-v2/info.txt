@@ -1,0 +1,64 @@
+Hello X!
+
+gotokal doctor patient application er video calling proglem ta niye kaj korar somoy ami j thinking korechilam...
+
+    Step 1: jkn call/index.html file e  connection.openOrJoin() er function call kora ache.
+    jkn video call start hocchilo na tkn patient er console e eirokom warning message show korchilo,
+    (not error) (isRoomJoined:  Room not available  roomid:  fe69ab24-e979-4f54-a700-043cbd219538) 
+    tar mane, patient er rtcmulticonnection code room e join korte parche na or room create korte o parche na, karon
+     i) room e join korte parche na  or video call start hocche na karon , doctor er room create kora process ses hoini. (socket.io connecting to the server)
+        but patient join koarar jonno ready
+     ii) same roomid te doctor room create korche , jar jonno patiernt same room id te room create korte parche na 
+
+    ami test korara jonno patient er index.html file updateinterval name e j function ta ache , oita 5 second er poriborte 8 second por
+    por call kori, ete kore kintu ager problem pri solve hoye jai. mane 100 time work , but 5 times not work. kno solve holo, karon 
+    ami mone kori, doctor rtcmulticonnection code 8 second time pacche, er moddhe all code ready hoye jacche (jmn socket.io), jer jonno 
+    patiernt jkn 8 second por video call start hocche
+
+    Step 2 : jkn call/index.html file e  connection.open() and  connection.join() alada alada function call kora ache. jeta file tmk deya hoyeche
+        ami vablam , auto open join na kore, alada alada open or join function use kori. ei alada alada function use korte giye ami 
+        ektu problem e pori. karon same call/index.html file doctor and patient e call kora ache. amk jevabei hok , alada alada vabe tract korte hobe
+        , otherwise ami alada alada connection.open() and  connection.join() function call korte parbo na.  For solving the problem ami ektu chalaki kori.
+        client/index.html file er 
+        $("#iframeCall").attr(
+                "src",
+                "../call/index.html?conversationToken=" +
+                  patientData.conversationtoken +
+                  "&patient=yes"
+              );
+        ekhane ami patient er url e querystring hisebe patient=yes pathiyechi. 
+
+        jkn doctor video call start korben , tkn call/index.html file e ami check korbo j url e "patient=yes" ache ki na.. jodi thake 
+        tahole only connection.join call hobe r jodi na thake tahole  connection.open function call hobe
+        bellow the code
+
+        var searchStr = window.location.search.indexOf("patient");
+        if (searchStr !== -1) {
+          beforeOpenOrJoin(convarsationToken, function() {
+            connection.join(convarsationToken, function() {
+              afterOpenOrJoin();
+            });
+          });
+        } else {
+          beforeOpenOrJoin(convarsationToken, function() {
+            connection.open(convarsationToken, function() {
+              afterOpenOrJoin();
+            });
+          });
+        }
+
+        ami vebechiam,, ei solution e solve hoye jabe, karon ami alada alada connection.join and connection.open function call korechi.
+        but we get the same problem. 
+
+        Note : last kichu kotha 
+            i) i think internet speed also fact ( jeta ami nije proman)
+                karon amr ekhane night e speed kom thake, tkn video call hote problem hoi 
+                but sokale speed besi thake , all video call sucessfully started
+
+            ii) why internet speed fact? karon net speed besi thakle, doctor er rtcmulticonnection code quickly sobkichu process kore felche
+                ete kore patient er call room or video te join korte problem hocche na.
+                (Please open the client/index/html) click left bottom icon and see the (Is your connection fast enough? ) 
+
+    Thanks 
+    Shajal kumer sarker
+

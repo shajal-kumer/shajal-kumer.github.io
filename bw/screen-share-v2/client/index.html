@@ -116,7 +116,7 @@
           updateInterval = setInterval(function() {
             updateRoom(getLocalStorage("conversationId"));
             getMessages("");
-          }, 8000);
+          }, 1000);
         }
       });
 
@@ -180,7 +180,7 @@
             // 5 sec Interval
             updateInterval = setInterval(function() {
               updateRoom(patientData.id);
-            }, 8000);
+            }, 1000);
           },
           error: function(data) {
             window.location.replace("error.html?p=enterRoom");
@@ -203,7 +203,7 @@
             // 5 sec Interval
             updateInterval = setInterval(function() {
               updateRoom(patientData.id);
-            }, 8000);
+            }, 1000);
           },
           error: function(data) {
             window.location.replace("error.html?p=enterappoingtment");
@@ -227,7 +227,10 @@
             };
 
             startup(pdata);
-
+            console.log(
+              "patientData.conversationtoken: ",
+              patientData.conversationtoken
+            );
             if ($.trim(patientData.conversationtoken) !== "") {
               $(".chat__box--btn").css("display", "block");
               $(".chat__box--btn").removeClass("active");

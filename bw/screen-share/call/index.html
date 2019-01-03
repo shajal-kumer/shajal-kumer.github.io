@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/getHTMLMediaElement.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <style></style>
   </head>
 
   <body>
@@ -46,7 +45,7 @@
       // .......................UI Code........................
       // ......................................................
 
-      var convarsationToken = getQueryStringValue("tocken");
+      var convarsationToken = getQueryStringValue("conversationtoken");
       function getQueryStringValue(key) {
         return decodeURIComponent(
           window.location.search.replace(
@@ -87,14 +86,13 @@
         audio: true,
         video: true
       };
-
-      connection.sdpConstraints.mandatory = {
-        OfferToReceiveAudio: true,
-        OfferToReceiveVideo: true
-      };
       connection.socketOptions = {
         forceNew: true, // For SocketIO version >= 1.0
         transport: "polling" // fixing transport:unknown issues
+      };
+      connection.sdpConstraints.mandatory = {
+        OfferToReceiveAudio: true,
+        OfferToReceiveVideo: true
       };
       connection.videosContainer = document.getElementById("videos-container");
 
@@ -103,10 +101,13 @@
         if (existing && existing.parentNode) {
           existing.parentNode.removeChild(existing);
         }
+
+        //  Screen share code start
         if (event.type === "local" && event.stream.isVideo) {
           RMCMediaTrack.cameraStream = event.stream;
           RMCMediaTrack.cameraTrack = event.stream.getVideoTracks()[0];
         }
+        //  Screen share code end
         event.mediaElement.removeAttribute("src");
         event.mediaElement.removeAttribute("srcObject");
         event.mediaElement.muted = true;
@@ -183,7 +184,9 @@
         );
 
         if (event.type === "local") {
+          //  Screen share code start
           RMCMediaTrack.selfVideo = mediaElement.media;
+          //  Screen share code end
           connection.socket.on("disconnect", function() {
             if (!connection.getAllParticipants().length) {
               location.reload();

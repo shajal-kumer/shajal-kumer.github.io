@@ -389,7 +389,6 @@
         }),
         success: function(data) {
           startup(data[0].conversationtoken);
-          //   $(".call-client").attr("data-conToken", data[0].conversationtoken);
           localStorage.setItem(
             "Doctorconversationtoken",
             data[0].conversationtoken

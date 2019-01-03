@@ -14,7 +14,7 @@
   //     );
   // });
 
-  //  "use strict";
+  "use strict";
 
   //var baseURL='';
   var baseURL = "https://nettie.azurewebsites.net/";
