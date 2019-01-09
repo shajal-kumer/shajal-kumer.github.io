@@ -388,6 +388,7 @@
             data[0].conversationtoken
           );
 
+
           if (data[0].conversationtoken !== "") {
             $("#iframeCall").attr(
               "src",
@@ -415,7 +416,6 @@
         }),
         success: function(data) {
           console.log(data);
-
           if (data[0].conversationtoken !== "") {
             $("#iframeCall").attr(
               "src",
