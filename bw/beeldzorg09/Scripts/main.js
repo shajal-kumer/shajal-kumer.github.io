@@ -281,12 +281,12 @@
                     item.id +
                     '" data-clientname="' +
                     item.clientname +
-                    '" href="#popup1" type="button" class="adjust-Video btn btn-success call-client" style="width: 100px">Start</a></td>'
+                    '" href="#popup1" type="button" class="adjust-Video btn btn-success call-client start-call" style="width: 100px">Start</a></td>'
                 );
                 break;
               case "finished":
                 elemTemplate.push(
-                  '<td class="conversationOffline"><a href="" type="button" class="btn btn-finished" style="width: 100px">Finished</a></td>'
+                  '<td class="conversationOffline"><a href="" type="button" class="btn btn-finished" style="width: 100px" >Finished</a></td>'
                 );
                 break;
               case "plannend":
@@ -349,19 +349,20 @@
 
           // Start call
           $(".call-client").on("click", function(e) {
-            startConversation($(e.target).attr("data-conId"));
-            // document.getElementById("invitelink").value = $(e.target).attr("data-conId");
+            if (e.target.classList.contains("start-call")) {
+              startConversation($(e.target).attr("data-conId"));
+            }
           });
-          // Adjust video side
+          // Join video call
           $(".adjust-Video").on("click", function(e) {
-            joinConversation($(e.target).attr("data-conId"));
-            // setTimeout(function() {
-            //   $("#iframeCall").height($(".popup").height() - 80);
-            // }, 1000);
+            if (e.target.classList.contains("adjust-Video")) {
+              joinConversation($(e.target).attr("data-conId"));
+            }
           });
 
           // Stop Call
           $(".stop-call").on("click", function(e) {
+            $(this).prop("disabled", true);
             stopConversation($(e.target).attr("data-conId"));
           });
         },
@@ -388,15 +389,12 @@
           );
 
           if (data[0].conversationtoken !== "") {
-            // debugger;
-            // activeCallToken = data[0].conversationtoken;
-
             $("#iframeCall").attr(
               "src",
-              "call2/index.html?conversationToken=" + data[0].conversationtoken
+              "call/index.html?conversationToken=" + data[0].conversationtoken
             );
             document.getElementById("invitelink").value =
-              "https://nettie.azurewebsites.net/call2/index.html?conversationId=" +
+              "https://nettie.azurewebsites.net/call/index.html?conversationId=" +
               data[0].conversationtoken;
           }
         },
@@ -416,19 +414,13 @@
           token: ""
         }),
         success: function(data) {
-          console.log(data);
-          console.log(activeCallToken);
-
           if (data[0].conversationtoken !== "") {
-            // debugger;
-            // activeCallToken = data[0].conversationtoken;
-
             $("#iframeCall").attr(
               "src",
-              "call2/index.html?conversationToken=" + data[0].conversationtoken
+              "call/index.html?conversationToken=" + data[0].conversationtoken
             );
             document.getElementById("invitelink").value =
-              "https://nettie.azurewebsites.net/call2/index.html?conversationId=" +
+              "https://nettie.azurewebsites.net/call/index.html?conversationId=" +
               data[0].conversationtoken;
           }
         },

@@ -69,7 +69,10 @@ h1 {
   visibility: visible;
   opacity: 1;
 }
-
+.btn-finished {
+  pointer-events: none;
+  cursor: default;
+}
 .popup {
   z-index: 99999;
   margin: 70px auto;

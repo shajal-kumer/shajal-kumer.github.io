@@ -56,7 +56,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8" id="other-videos-holder">
-          Wacht op andere persoon...
+          <h2>Wacht op andere persoon...</h2>
         </div>
         <div class="col-md-2" id="local-video-holder">
           <video
@@ -78,7 +78,6 @@
         //Loop though all Video tags and set Controls as false
 
         $("video").click(function() {
-          //console.log(this);
           if (this.paused) {
             this.play();
           } else {
@@ -103,14 +102,15 @@
           )
         );
       }
+
       var connection = new RTCMultiConnection();
 
-      var searchStr = window.location.search.indexOf("patient");
+      var patientCall = window.location.search.indexOf("patient");
 
-      if (searchStr !== -1) {
+      if (patientCall !== -1) {
         setTimeout(() => {
           connection.openOrJoin(predefinedRoomId);
-        }, 6000);
+        }, 5000);
       } else {
         window.onload = function() {
           connection.openOrJoin(predefinedRoomId);
@@ -131,9 +131,10 @@
         OfferToReceiveAudio: true,
         OfferToReceiveVideo: true
       };
-
+      var flag = 0;
       var other_videos_holder = document.getElementById("other-videos-holder");
       var local_video_holder = document.getElementById("local-video-holder");
+
       connection.onstream = function(event) {
         if (event.type === "local")
           local_video_holder.appendChild(event.mediaElement);
@@ -141,6 +142,14 @@
           document.getElementById("other-videos-holder").innerHTML = "";
           other_videos_holder.appendChild(event.mediaElement);
         }
+      };
+      connection.onerror = function(event) {
+        var remoteUserId = event.userid;
+        var remoteUserFullName = event.extra.fullName;
+
+        alert(
+          "unable to open data connection between you and " + remoteUserFullName
+        );
       };
     </script>
   </body>
