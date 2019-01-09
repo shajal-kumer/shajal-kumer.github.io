@@ -414,6 +414,8 @@
           token: ""
         }),
         success: function(data) {
+          console.log(data);
+
           if (data[0].conversationtoken !== "") {
             $("#iframeCall").attr(
               "src",
