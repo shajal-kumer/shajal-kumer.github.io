@@ -3,7 +3,6 @@
   .caption span.border {
     letter-spacing: 4px !important;
   }
-
   .chat__box-field.open {
     width: 275px;
   }
@@ -19,7 +18,7 @@
   .chatpluginchat li.left .chat-body {
     margin-left: 50px;
   }
-  .popup-inner {
+  .popup {
     margin: 0;
     width: 100%;
     height: 100%;
@@ -45,9 +44,6 @@
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .caption span.border {
-    letter-spacing: 4px !important;
-  }
   .chat__box-field.open {
     width: 275px;
   }
@@ -63,7 +59,7 @@
   .chatpluginchat li.left .chat-body {
     margin-left: 50px;
   }
-  .popup-inner {
+  .popup {
     margin: 0;
     width: 100%;
     height: 100%;
@@ -75,7 +71,7 @@
     width: 500px;
   }
 
-  .popup-inner {
+  .popup {
     margin: 0;
     width: 100%;
     height: 100%;

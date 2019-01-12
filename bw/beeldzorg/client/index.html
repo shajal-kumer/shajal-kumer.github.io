@@ -48,14 +48,14 @@
       </div>
     </div>
     <div id="popup1" class="overlay">
-      <div class="popup">
+      <div class="popup-inner">
         <div class="chat__box">
           <div class="chat__box--btn"><span>chat</span></div>
           <div id="Elchat" class="chat__box-field"></div>
         </div>
         <div class="content" style="z-index:-1">
-          <div>
-            <h2>Conversation: Dennis</h2>
+          <div class="title">
+            <h2>Conversation:</h2>
             <a class="close" href="endConversation.html">&times;</a>
           </div>
           <iframe
@@ -118,6 +118,9 @@
             getMessages("");
           }, 500);
         }
+
+        var iframeCallHeight = $("#iframeCall").height();
+        setLocalStorage("iframeCallHeight", iframeCallHeight);
       });
 
       // Get Messages
@@ -237,16 +240,16 @@
               );
               $("#iframeCall").attr(
                 "src",
-                "../call2/index.html?conversationToken=" +
+                "../call/index.html?conversationToken=" +
                   patientData.conversationtoken +
                   "&patient=yes"
               );
 
               $("#btnJoinCall")[0].click();
               clearInterval(updateInterval);
-              setTimeout(function() {
-                $("#iframeCall").height($(".popup").height() - 80);
-              }, 1000);
+              //   setTimeout(function() {
+              //     $("#iframeCall").height($(".popup").height() - 80);
+              //   }, 1000);
               //   setTimeout(() => {
               //     let iframe = document.getElementById("iframeCall");
               //     iframe.contentWindow.document.getElementsByTagName(
@@ -273,7 +276,7 @@
       function checkFinished(conversationId) {
         resetExpireTime();
         $.ajax({
-          url: baseULR + "/api/updateRoom",
+          url: baseULR + "/api/checkFinsih",
           type: "GET",
           data: { conversationId: conversationId },
           success: function(data) {

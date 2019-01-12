@@ -1,3 +1,8 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
 body,
 html {
   height: 100%;
@@ -87,7 +92,7 @@ h3 {
   opacity: 1;
 }
 
-.popup {
+.popup-inner {
   z-index: 99999;
   margin: 70px auto;
   padding: 20px;
@@ -100,16 +105,17 @@ h3 {
   overflow: hidden;
 }
 
-.popup h2 {
-  margin-top: 0;
+.popup-inner h2 {
+  margin: 0;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
   font-size: 22px;
   font-weight: 700;
-  margin-bottom: 18px;
 }
-
-.popup .close {
+.title {
+  padding-bottom: 20px;
+}
+.popup-inner .close {
   position: absolute;
   top: 20px;
   right: 30px;
@@ -120,16 +126,16 @@ h3 {
   color: #333;
 }
 
-.popup .close:hover {
+.popup-inner .close:hover {
   color: #06d85f;
 }
 
-.popup .content {
+.popup-inner .content {
   /* overflow: auto; */
   height: 100%;
 }
 #iframeCall {
-  height: calc(100% - 40px);
+  height: calc(100% - 44px);
 }
 
 .notifications.bottom-right a {

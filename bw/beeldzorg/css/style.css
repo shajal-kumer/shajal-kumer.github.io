@@ -69,7 +69,10 @@ h1 {
   visibility: visible;
   opacity: 1;
 }
-
+.btn-finished {
+  pointer-events: none;
+  cursor: default;
+}
 .popup {
   z-index: 99999;
   margin: 70px auto;
@@ -79,7 +82,7 @@ h1 {
   width: 80%;
   height: 80%;
   position: relative;
-  transition: all 5s ease-in-out;
+  transition: all 0s ease-in-out;
   overflow: hidden;
 }
 
@@ -103,6 +106,12 @@ h1 {
 .popup .close:hover {
   color: #06d85f;
 }
+.title {
+  padding-bottom: 15px;
+}
+.title h2 {
+  margin: 0;
+}
 .panel-success {
   border: 1px solid #d6e9c6 !important;
 }
@@ -110,8 +119,7 @@ h1 {
   border-top-left-radius: 0px !important;
 }
 .popup .content {
-  min-height: 450px;
-  overflow: auto;
+  height: calc(100% - 48px);
 }
 .hidecheckbox {
   margin-top: 10px;

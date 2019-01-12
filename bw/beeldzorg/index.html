@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/chatSocketAchex.css" />
     <link rel="stylesheet" href="Content/nice-select.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
   </head>
 
   <body>
@@ -20,7 +21,7 @@
                 <a href="#" class="brand-logo left">
                   <img src="client/logo.png" style="height: 60px;" />
                 </a>
-                &nbsp; &nbsp; &nbsp; &nbsp; Dennis (<asp:LinkButton
+                &nbsp; &nbsp; &nbsp; &nbsp;  (<asp:LinkButton
                   ID="LinkButton1"
                   runat="server"
                   OnClick="LinkButton1_Click"
@@ -125,19 +126,17 @@
               <div class="chat__box--btn"><span>chat</span></div>
               <div id="Elchat" class="chat__box-field"></div>
             </div>
-            <h2>Conversation: John</h2>
-            <a
-              class="close"
-              href="#"
-              onclick=" $('#iframeCall').attr('src', ''); "
-              >&times;</a
-            >
-            <div class="content" style="height: 100%;">
-              <div class="col-sm-12">
-                <div class="col-sm-9">
+            <div class="title">
+                <h2>Conversation: John</h2>
+                <a class="close" href="#" onclick=" $('#iframeCall').attr('src', ''); ">&times;</a>
+            </div>
+            <div class="content">
+              <div class="row" style="height: 100%;">
+                <div class="col-sm-9" style="height: 100%;">
                   <iframe
+                  class="doctor-iframe"
                     id="iframeCall"
-                    style="border: none; height: 450px; width: 100%;"
+                    style="border: none; height: 100%; width: 100%;"
                     allow="geolocation; microphone; camera"
                     src=""
                   ></iframe>
@@ -225,12 +224,12 @@
       </div>
     </form>
 
-    <script src="Scripts/jquery.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/jquery.nice-select.min.js"></script>
-    <script src="Scripts/underscore-min.js"></script>
-    <script src="Scripts/prism.js"></script>
-    <script src="Scripts/chatSocketAchex.js"></script>
-    <script src="Scripts/main.js"></script>
-  </body>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/jquery.nice-select.min.js"></script>
+    <script src="scripts/underscore-min.js"></script>
+    <script src="scripts/prism.js"></script>
+    <script src="scripts/chatSocketAchex.js"></script>
+    <script src="scripts/main.js"></script>
+  </bodys
 </html>

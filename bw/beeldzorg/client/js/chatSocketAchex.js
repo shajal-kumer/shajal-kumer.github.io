@@ -10,7 +10,7 @@ $(function() {
     textoAyuda: "Nettie Beeldzorg",
     Nombre: "Anónimo",
 
-    urlImg: "http://placehold.it/50/55C1E7/55C1E7",
+    urlImg: "https://placehold.it/50/55C1E7/55C1E7",
     btnEntrar: "btnEntrar",
     btnEnviar: "btnEnviar",
     lblBtnEnviar: "Stuur",
