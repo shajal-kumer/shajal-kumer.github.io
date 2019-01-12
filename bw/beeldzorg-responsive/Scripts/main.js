@@ -28,7 +28,6 @@
     });
 
     var doctorIframeHeight = $("#iframeCall").height();
-
     localStorage.setItem("doctorIframeHeight", doctorIframeHeight);
 
     var activeCallToken = "";

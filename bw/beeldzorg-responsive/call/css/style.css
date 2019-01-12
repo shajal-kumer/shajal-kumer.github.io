@@ -21,6 +21,9 @@
   position: absolute;
   bottom: 0px;
 }
+.media-controls {
+  display: none;
+}
 
 video::-webkit-media-controls {
   display: none;

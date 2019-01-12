@@ -107,7 +107,6 @@
         OfferToReceiveVideo: true
       };
 
-      //   connection.videosContainer = document.getElementById("video-container");
       var other_videos_holder = document.getElementById("other-videos-holder");
       var local_video_holder = document.getElementById("local-video-holder");
       connection.onstream = function(event) {
@@ -183,8 +182,6 @@
           connection.socketMessageEvent,
           connection.sessionid
         );
-
-        chkRecordConference.parentNode.style.display = "none";
 
         if (event.type === "local") {
           connection.socket.on("disconnect", function() {
