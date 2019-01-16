@@ -67,7 +67,7 @@
         $(".select").append("<option>No Waiting Room</option>");
       } else {
         for (var i = 0; i < waitingRoomdata.length; i++) {
-           HTML +=
+          HTML +=
             "<option data-id=" +
             waitingRoomdata[i].id +
             ">" +
@@ -77,7 +77,6 @@
         $(".select").append(HTML);
       }
       $("select").niceSelect();
-
       $(".list").on("click", function(event) {
         var li = event.target;
         if (event.target.tagName === "LI") {
@@ -165,6 +164,8 @@
           token: token
         },
         success: function(data) {
+          console.log(data);
+
           getWaitingQueue(rID, 1);
           getMessages(rID, 1);
           rederHtml(data);
@@ -305,11 +306,11 @@
                     '" data-conToken="' +
                     '" data-clientname="' +
                     item.clientname +
-                    '" class="adjust-Video btn btn-primary" style="width: 100px" href="#popup1">Join</a>&nbsp;<a data-conId="' +
+                    '" class="adjust-Video btn btn-primary" style="width: 100px" href="#popup1">Join</a>&nbsp;<button data-conId="' +
                     item.id +
                     '" data-clientname="' +
                     item.clientname +
-                    '" class="btn btn-danger stop-call" style="width: 100px" href="">Stop</a></td>'
+                    '" class="btn btn-danger stop-call" style="width: 100px">Stop</button></td>'
                 );
                 break;
               default:
@@ -363,6 +364,7 @@
           $(".stop-call").on("click", function(e) {
             $(this).prop("disabled", true);
             stopConversation($(e.target).attr("data-conId"));
+            e.preventDefault();
           });
         },
         error: function(data) {
