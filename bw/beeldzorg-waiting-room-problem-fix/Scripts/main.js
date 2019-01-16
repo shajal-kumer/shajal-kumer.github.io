@@ -67,11 +67,11 @@
         $(".select").append("<option>No Waiting Room</option>");
       } else {
         for (var i = 0; i < waitingRoomdata.length; i++) {
-          HTML +=
+           HTML +=
             "<option data-id=" +
             waitingRoomdata[i].id +
-            "> WAITINGROOM " +
-            waitingRoomdata[i].id +
+            ">" +
+            waitingRoomdata[i].name +
             "</option >";
         }
         $(".select").append(HTML);
