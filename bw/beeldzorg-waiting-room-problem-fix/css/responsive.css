@@ -1,0 +1,88 @@
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .caption span.border {
+    letter-spacing: 4px !important;
+  }
+  .chat__box-field.open {
+    width: 275px;
+  }
+
+  .panel-body {
+    height: 400px;
+  }
+  img#Foto {
+    width: 35px;
+  }
+  .chatpluginchat li.left .chat-body {
+    margin-left: 50px;
+  }
+  .popup {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+/*iPhone 6 Portrait*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+  .chat__box-field.open {
+    width: 310px;
+  }
+  .panel-body {
+    height: 400px;
+  }
+}
+/*iPhone 6+ Portrait*/
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: portrait) {
+  .chat__box-field.open {
+    width: 340px;
+  }
+  .panel-body {
+    height: 400px;
+  }
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .chat__box-field.open {
+    width: 275px;
+  }
+  .chat__box {
+    top: 22px;
+  }
+  .panel-body {
+    height: 400px;
+  }
+  img#Foto {
+    width: 35px;
+  }
+  .chatpluginchat li.left .chat-body {
+    margin-left: 50px;
+  }
+  .popup {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .chat__box-field.open {
+    width: 500px;
+  }
+
+  .popup {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .chat__box-field.open {
+    width: 650px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

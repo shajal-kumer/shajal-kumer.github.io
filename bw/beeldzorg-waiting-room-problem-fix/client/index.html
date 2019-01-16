@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>Client app</title>
+    <!-- Css file -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/chatSocketAchex.css" />
+    <link rel="stylesheet" href="css/prism.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/styles/alert-bangtidy.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/styles/alert-blackgloss.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/js/bootstrap-notify.min.js"></script>
+  </head>
+
+  <body>
+    <div id="contentl"><img src="img/Nettie-logo.png" class="ribbon" /></div>
+    <div id="contentr"><img src="img/logo.png" class="ribbon" /></div>
+    <div class="bgimg-1">
+      <div class="caption">
+        <span class="border"><b id="patientCount">&nbsp;</b></span>
+      </div>
+    </div>
+    <div id="popup1" class="overlay">
+      <div class="popup-inner">
+        <div class="chat__box">
+          <div class="chat__box--btn"><span>chat</span></div>
+          <div id="Elchat" class="chat__box-field"></div>
+        </div>
+        <div class="content" style="z-index:-1">
+          <div class="title">
+            <h2>Conversation:</h2>
+            <a class="close" href="endConversation.html">&times;</a>
+          </div>
+          <iframe
+            id="iframeCall"
+            style="border:none; width:100%;"
+            allow="geolocation; microphone; camera"
+            src=""
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <a id="btnJoinCall" style="display:none;" href="#popup1">TEST</a>
+    <div class="notifications bottom-right"></div>
+    <span class="info-left-icon">
+      <i class="fa fa-info"></i>
+      <ul class="info-list">
+        <li>Browser Supports WebRTC? <span></span></li>
+        <li>System has Speakers? <span></span></li>
+        <li>System has Webcam? <span></span></li>
+        <li>Is your connection fast enough? <span></span></li>
+        <li>Is it a mobile device? <span></span></li>
+        <li>Website has webcam permissions? <span></span></li>
+      </ul>
+    </span>
+    <script type="text/javascript">
+      //var baseULR = location.origin;
+      var baseULR = "https://nettie.azurewebsites.net";
+
+      // Patient data
+      var patientData;
+      var updateInterval;
+      var sessionTimeOut;
+      var sessionExpireTime = 1 * 60000; // 1 min
+
+      var _name;
+      var _roomid;
+      var _appointmentid;
+      var messages = [];
+      // Document Ready
+      $(function() {
+        // Check Conversation Token
+        if ($.trim(getLocalStorage("conversationId")) == "") {
+          // Get querystring
+          var url = new URL(location.href.toLocaleLowerCase());
+          _name = url.searchParams.get("clientname");
+          _roomid = url.searchParams.get("roomid");
+
+          _appointmentid = url.searchParams.get("appointmentid");
+          //debugger;
+          if (_appointmentid != null) {
+            enterAppointmentRoom(_appointmentid);
+          } else enterRoom(_roomid, _name);
+
+          getMessages("");
+        } else {
+          // 5 sec Interval
+          checkSession();
+          updateInterval = setInterval(function() {
+            updateRoom(getLocalStorage("conversationId"));
+            getMessages("");
+          }, 500);
+        }
+
+        var iframeCallHeight = $("#iframeCall").height();
+        setLocalStorage("iframeCallHeight", iframeCallHeight);
+      });
+
+      // Get Messages
+      function getMessages(token) {
+        var url = new URL(location.href.toLocaleLowerCase());
+        _roomid = url.searchParams.get("roomid");
+        $.ajax({
+          url: baseULR + "/api/getmessages",
+          type: "GET",
+          data: { roomid: _roomid, token: token },
+          success: function(data) {
+            if (null != data && data.length > 0) {
+              // Don't Show already displayed messages
+              for (var i = 0; i < messages.length; i++) {
+                for (var j = 0; j < data.length; j++) {
+                  if (messages[i].id == data[j].id) {
+                    messages[i] = $.extend(true, {}, data[j]);
+                    data.splice(j, 1);
+                  }
+                }
+              }
+              // Show popup
+              for (var i = 0; i < data.length; i++) {
+                $(".bottom-right")
+                  .notify({
+                    message: {
+                      text: data[i].messagetext
+                    },
+                    fadeOut: {
+                      enabled: false
+                    }
+                  })
+                  .show();
+              }
+
+              $.each(data, function(index, item) {
+                messages.push(item);
+              });
+            }
+          },
+          error: function(data) {
+            window.location.replace("error.html?p=gemessages");
+          }
+        });
+      }
+
+      // enter Rooms
+      function enterRoom(roomId, clientName) {
+        $.ajax({
+          url: baseULR + "/api/enterRoom",
+          type: "GET",
+          data: jQuery.param({ roomID: roomId, clientname: clientName }),
+          success: function(data) {
+            // debugger;
+            patientData = $.extend(true, {}, data[0]);
+            setLocalStorage("conversationId", patientData.id);
+            setLocalStorage("clientname", patientData.clientname);
+            resetExpireTime();
+            $("#patientCount").text(patientData.inline);
+            // 5 sec Interval
+            updateInterval = setInterval(function() {
+              updateRoom(patientData.id);
+            }, 500);
+          },
+          error: function(data) {
+            window.location.replace("error.html?p=enterRoom");
+          }
+        });
+      }
+
+      // enter appointment Rooms
+      function enterAppointmentRoom(appoinmentID) {
+        $.ajax({
+          url: baseULR + "/api/enterAppointmentRoom",
+          type: "GET",
+          data: jQuery.param({ appoinmentID: appoinmentID }),
+          success: function(data) {
+            patientData = $.extend(true, {}, data[0]);
+            setLocalStorage("conversationId", patientData.id);
+            setLocalStorage("clientname", patientData.clientname);
+            resetExpireTime();
+            $("#patientCount").text(patientData.inline);
+            // 5 sec Interval
+            updateInterval = setInterval(function() {
+              updateRoom(patientData.id);
+            }, 500);
+          },
+          error: function(data) {
+            window.location.replace("error.html?p=enterappoingtment");
+          }
+        });
+      }
+
+      // update Rooms
+      function updateRoom(conversationId) {
+        //  alert(baseULR + '/api/updateRoom');
+
+        $.ajax({
+          url: baseULR + "/api/updateRoom",
+          type: "GET",
+          data: { conversationId: conversationId },
+          success: function(data) {
+            patientData = $.extend(true, {}, data[0]);
+            var pdata = {
+              conversationtoken: patientData.conversationtoken,
+              clientname: patientData.clientname
+            };
+
+            startup(pdata);
+
+            if ($.trim(patientData.conversationtoken) !== "") {
+              $(".chat__box--btn").css("display", "block");
+              $(".chat__box--btn").removeClass("active");
+              setLocalStorage(
+                "conversationToken",
+                patientData.conversationtoken
+              );
+              $("#iframeCall").attr(
+                "src",
+                "../call/index.html?conversationToken=" +
+                  patientData.conversationtoken +
+                  "&patient=yes"
+              );
+
+              $("#btnJoinCall")[0].click();
+              clearInterval(updateInterval);
+              //   setTimeout(function() {
+              //     $("#iframeCall").height($(".popup").height() - 80);
+              //   }, 1000);
+              //   setTimeout(() => {
+              //     let iframe = document.getElementById("iframeCall");
+              //     iframe.contentWindow.document.getElementsByTagName(
+              //       "a"
+              //     )[0].style.display = "none";
+              //     iframe.contentWindow.document.getElementsByTagName(
+              //       "button"
+              //     )[0].style.display = "none";
+              //   }, 1000);
+              //check if finished
+              checkFinished(conversationId);
+            }
+
+            $("#patientCount").text(patientData.inline);
+            resetExpireTime();
+          },
+          error: function(data) {
+            window.location.replace("error.html?p=updateroom");
+          }
+        });
+      }
+
+      // check finsihed
+      function checkFinished(conversationId) {
+        resetExpireTime();
+        $.ajax({
+          url: baseULR + "/api/checkFinsih",
+          type: "GET",
+          data: { conversationId: conversationId },
+          success: function(data) {
+            patientData = $.extend(true, {}, data[0]);
+
+            if ($.trim(patientData.status) == "finished") {
+              window.location.replace("endConversation.html");
+            }
+          },
+          error: function(data) {
+            window.location.replace("error.html?p=checkfinished");
+          }
+        });
+
+        setTimeout(function() {
+          checkFinished(getLocalStorage("conversationId"));
+        }, 5000);
+      }
+
+      //Get LocalStorage
+      function getLocalStorage(key) {
+        var value = localStorage.getItem(key);
+        return null == value ? "" : value;
+      }
+
+      //Set LocalStorage
+      function setLocalStorage(key, value) {
+        localStorage.setItem(key, null == value ? "" : value);
+      }
+
+      // Check Session
+      function checkSession() {
+        // Check If User Session Expire
+        var sessionTime = getLocalStorage("sessionTime");
+        if ($.trim(sessionTime) != "") {
+          var _sessionDate = new Date(sessionTime);
+          var currentDate = new Date();
+          var difference_ms = _sessionDate.getTime() - currentDate.getTime();
+          if (difference_ms < 0) {
+            sessionExpire();
+          } else {
+            resetExpireTime();
+          }
+        }
+      }
+
+      // Reset Session Time
+      function resetExpireTime() {
+        // Clear timer
+        clearTimeout(sessionTimeOut);
+        var _d = new Date();
+        localStorage.setItem(
+          "sessionTime",
+          new Date(
+            _d.setMinutes(_d.getMinutes() + sessionExpireTime / 1000 / 60)
+          )
+        );
+        // Create new timer instance
+        sessionTimeOut = setTimeout(function() {
+          sessionExpire();
+        }, sessionExpireTime);
+      }
+
+      // Session Expire
+      function sessionExpire() {
+        // Expire Cookie
+        setLocalStorage("conversationId", "");
+        setLocalStorage("sessionTime", "");
+        setTimeout(function() {
+          setLocalStorage("conversationId", "");
+          location.reload();
+        }, 700);
+      }
+    </script>
+    <script src="js/prism.js"></script>
+    <script src="js/chatSocketAchex.js"></script>
+    <script src="js/DetectRTC.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
