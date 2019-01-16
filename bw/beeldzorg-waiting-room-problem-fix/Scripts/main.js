@@ -164,8 +164,6 @@
           token: token
         },
         success: function(data) {
-          console.log(data);
-
           getWaitingQueue(rID, 1);
           getMessages(rID, 1);
           rederHtml(data);
