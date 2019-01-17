@@ -96,6 +96,9 @@
       var messages = [];
       // Document Ready
       $(function() {
+        $("window").on("load", function name(params) {
+          localStorage.removeItem("conversationId");
+        });
         // Check Conversation Token
         if ($.trim(getLocalStorage("conversationId")) == "") {
           // Get querystring
