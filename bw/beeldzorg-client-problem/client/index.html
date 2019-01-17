@@ -96,30 +96,40 @@
       var messages = [];
       // Document Ready
 
+      /*
+http://127.0.0.1:5647/index.html?roomid=1&clientname=a
+
+
+3b7fce8d-a27a-4752-926c-36b3d084e3a5
+*/
+
       $(function() {
         // Check Conversation Token
-        if ($.trim(getLocalStorage("conversationId")) == "") {
-          // Get querystring
+        function getQueryString() {
           var url = new URL(location.href.toLocaleLowerCase());
           _name = url.searchParams.get("clientname");
           _roomid = url.searchParams.get("roomid");
 
-          _appointmentid = url.searchParams.get("appointmentid");
-          console.log("_appointmentid : ", _appointmentid);
+          console.log("Check roomid and name");
+          enterRoom(_roomid, _name);
+        }
+        if ($.trim(getLocalStorage("conversationId")) === "") {
+          // Get querystring
+          console.log("Empty ");
 
-          //debugger;
-          if (_appointmentid != null) {
-            enterAppointmentRoom(_appointmentid);
-          } else enterRoom(_roomid, _name);
-
+          getQueryString();
           getMessages("");
         } else {
+          console.log("Not Empty ");
           // .5 sec Interval
-          checkSession();
-          updateInterval = setInterval(function() {
-            updateRoom(getLocalStorage("conversationId"));
-            getMessages("");
-          }, 500);
+          if (checkSession()) {
+            updateInterval = setInterval(function() {
+              updateRoom(getLocalStorage("conversationId"));
+              getMessages("");
+            }, 500);
+          } else {
+            getQueryString();
+          }
         }
 
         var iframeCallHeight = $("#iframeCall").height();
@@ -253,19 +263,7 @@
 
               $("#btnJoinCall")[0].click();
               clearInterval(updateInterval);
-              //   setTimeout(function() {
-              //     $("#iframeCall").height($(".popup").height() - 80);
-              //   }, 1000);
-              //   setTimeout(() => {
-              //     let iframe = document.getElementById("iframeCall");
-              //     iframe.contentWindow.document.getElementsByTagName(
-              //       "a"
-              //     )[0].style.display = "none";
-              //     iframe.contentWindow.document.getElementsByTagName(
-              //       "button"
-              //     )[0].style.display = "none";
-              //   }, 1000);
-              //check if finished
+
               checkFinished(conversationId);
             }
 
@@ -320,21 +318,26 @@
         if ($.trim(sessionTime) != "") {
           var _sessionDate = new Date(sessionTime);
           var currentDate = new Date();
-          var difference_ms = _sessionDate.getTime() - currentDate.getTime();
+          console.log("_sessionDate : ", _sessionDate.getTime());
+          console.log("currentDate : ", currentDate.getTime());
+
+          var difference_ms = currentDate.getTime() - _sessionDate.getTime();
           console.log(difference_ms);
 
-          if (difference_ms < 0) {
-            sessionExpire();
-          } else {
+          if (difference_ms < sessionExpireTime) {
             resetExpireTime();
+            console.log("Session does not expeired");
+            return true;
+          } else {
+            console.log("Session expeired");
+            sessionExpire();
+            return false;
           }
         }
       }
 
       // Reset Session Time
       function resetExpireTime() {
-        // Clear timer
-        clearTimeout(sessionTimeOut);
         var _d = new Date();
         localStorage.setItem(
           "sessionTime",
@@ -342,10 +345,6 @@
             _d.setMinutes(_d.getMinutes() + sessionExpireTime / 1000 / 60)
           )
         );
-        // Create new timer instance
-        sessionTimeOut = setTimeout(function() {
-          sessionExpire();
-        }, sessionExpireTime);
       }
 
       // Session Expire
@@ -353,10 +352,7 @@
         // Expire Cookie
         setLocalStorage("conversationId", "");
         setLocalStorage("sessionTime", "");
-        setTimeout(function() {
-          setLocalStorage("conversationId", "");
-          location.reload();
-        }, 700);
+        setLocalStorage("conversationId", "");
       }
     </script>
     <script src="js/prism.js"></script>
