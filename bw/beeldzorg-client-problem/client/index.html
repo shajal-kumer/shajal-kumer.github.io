@@ -95,10 +95,8 @@
       var _appointmentid;
       var messages = [];
       // Document Ready
+
       $(function() {
-        $("window").on("load", function name(params) {
-          localStorage.removeItem("conversationId");
-        });
         // Check Conversation Token
         if ($.trim(getLocalStorage("conversationId")) == "") {
           // Get querystring
@@ -127,6 +125,9 @@
         var iframeCallHeight = $("#iframeCall").height();
         setLocalStorage("iframeCallHeight", iframeCallHeight);
       });
+      window.onload = function() {
+        localStorage.removeItem("conversationId");
+      };
 
       // Get Messages
       function getMessages(token) {
