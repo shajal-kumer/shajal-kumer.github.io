@@ -321,6 +321,8 @@
           var _sessionDate = new Date(sessionTime);
           var currentDate = new Date();
           var difference_ms = _sessionDate.getTime() - currentDate.getTime();
+          console.log(difference_ms);
+
           if (difference_ms < 0) {
             sessionExpire();
           } else {
