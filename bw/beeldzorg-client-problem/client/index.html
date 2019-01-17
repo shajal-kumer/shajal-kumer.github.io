@@ -97,11 +97,9 @@
       // Document Ready
 
       /*
-http://127.0.0.1:5647/index.html?roomid=1&clientname=a
+      http://127.0.0.1:5647/index.html?roomid=1&clientname=a
 
-
-3b7fce8d-a27a-4752-926c-36b3d084e3a5
-*/
+      */
 
       $(function() {
         // Check Conversation Token
@@ -316,22 +314,22 @@ http://127.0.0.1:5647/index.html?roomid=1&clientname=a
         // Check If User Session Expire
         var sessionTime = getLocalStorage("sessionTime");
         if ($.trim(sessionTime) != "") {
-          var _sessionDate = new Date(sessionTime);
+          //   var _sessionDate = new Date(sessionTime);
           var currentDate = new Date();
-          console.log("_sessionDate : ", _sessionDate.getTime());
+          console.log("_sessionDate : ", sessionTime);
           console.log("currentDate : ", currentDate.getTime());
 
-          var difference_ms = currentDate.getTime() - _sessionDate.getTime();
+          var difference_ms = currentDate.getTime() - sessionTime;
           console.log(difference_ms);
 
-          if (difference_ms < sessionExpireTime) {
-            resetExpireTime();
-            console.log("Session does not expeired");
-            return true;
-          } else {
+          if (difference_ms > sessionExpireTime) {
             console.log("Session expeired");
             sessionExpire();
             return false;
+          } else {
+            resetExpireTime();
+            console.log("Session does not expeired");
+            return true;
           }
         }
       }
@@ -339,12 +337,7 @@ http://127.0.0.1:5647/index.html?roomid=1&clientname=a
       // Reset Session Time
       function resetExpireTime() {
         var _d = new Date();
-        localStorage.setItem(
-          "sessionTime",
-          new Date(
-            _d.setMinutes(_d.getMinutes() + sessionExpireTime / 1000 / 60)
-          )
-        );
+        localStorage.setItem("sessionTime", _d.getTime());
       }
 
       // Session Expire
@@ -352,7 +345,6 @@ http://127.0.0.1:5647/index.html?roomid=1&clientname=a
         // Expire Cookie
         setLocalStorage("conversationId", "");
         setLocalStorage("sessionTime", "");
-        setLocalStorage("conversationId", "");
       }
     </script>
     <script src="js/prism.js"></script>
