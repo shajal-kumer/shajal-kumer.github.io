@@ -92,27 +92,26 @@
       var appointmentid;
       var roomid;
       var messages = [];
-
+      var url = new URL(location.href.toLocaleLowerCase());
       // Document Ready
       $(function() {
         // Check Conversation Token
         function getQueryString() {
-          var url = new URL(location.href.toLocaleLowerCase());
           clientName = url.searchParams.get("clientname");
           roomid = url.searchParams.get("roomid");
           enterRoom(roomid, clientName);
+          getMessages("");
         }
 
         if ($.trim(getLocalStorage("conversationId")) === "") {
           // Get querystring
           appointmentid = url.searchParams.get("appointmentid");
-          //debugger;
           if (appointmentid != null) {
             enterAppointmentRoom(appointmentid);
+            getMessages("");
           } else {
             getQueryString();
           }
-          getMessages("");
         } else {
           // 0.5 sec Interval
           if (checkSession()) {
@@ -121,7 +120,16 @@
               getMessages("");
             }, 500);
           } else {
-            getQueryString();
+            if ($.trim(getLocalStorage("conversationId")) === "") {
+              // Get querystring
+              appointmentid = url.searchParams.get("appointmentid");
+              if (appointmentid != null) {
+                enterAppointmentRoom(appointmentid);
+                getMessages("");
+              } else {
+                getQueryString();
+              }
+            }
           }
         }
 
