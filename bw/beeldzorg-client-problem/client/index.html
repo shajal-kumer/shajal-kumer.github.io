@@ -88,7 +88,7 @@
       var patientData;
       var updateInterval;
       var sessionExpireTime = 1 * 60000; // 1 min
-      var patientName;
+      var clientName;
       var roomid;
       var messages = [];
 
@@ -97,9 +97,9 @@
         // Check Conversation Token
         function getQueryString() {
           var url = new URL(location.href.toLocaleLowerCase());
-          patientName = url.searchParams.get("clientname");
+          clientName = url.searchParams.get("clientname");
           roomid = url.searchParams.get("roomid");
-          enterRoom(roomid, patientName);
+          enterRoom(roomid, clientName);
         }
 
         if ($.trim(getLocalStorage("conversationId")) === "") {
@@ -300,6 +300,7 @@
         if ($.trim(sessionTime) != "") {
           var currentDate = new Date();
           var difference_ms = currentDate.getTime() - sessionTime;
+
           if (difference_ms > sessionExpireTime) {
             sessionExpire();
             return false;
