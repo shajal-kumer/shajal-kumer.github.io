@@ -89,6 +89,7 @@
       var updateInterval;
       var sessionExpireTime = 1 * 60000; // 1 min
       var clientName;
+      var appointmentid;
       var roomid;
       var messages = [];
 
@@ -104,7 +105,13 @@
 
         if ($.trim(getLocalStorage("conversationId")) === "") {
           // Get querystring
-          getQueryString();
+          appointmentid = url.searchParams.get("appointmentid");
+          //debugger;
+          if (appointmentid != null) {
+            enterAppointmentRoom(appointmentid);
+          } else {
+            getQueryString();
+          }
           getMessages("");
         } else {
           // 0.5 sec Interval
