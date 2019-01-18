@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta
@@ -87,27 +87,39 @@
       // Patient data
       var patientData;
       var updateInterval;
+      var sessionTimeOut;
       var sessionExpireTime = 1 * 60000; // 1 min
-      var patientName;
-      var roomid;
-      var messages = [];
 
+      var _name;
+      var _roomid;
+      var _appointmentid;
+      var messages = [];
       // Document Ready
+
+      /*
+            http://127.0.0.1:5647/index.html?roomid=1&clientname=a
+      
+            */
+
       $(function() {
         // Check Conversation Token
         function getQueryString() {
           var url = new URL(location.href.toLocaleLowerCase());
-          patientName = url.searchParams.get("clientname");
-          roomid = url.searchParams.get("roomid");
-          enterRoom(roomid, patientName);
-        }
+          _name = url.searchParams.get("clientname");
+          _roomid = url.searchParams.get("roomid");
 
+          console.log("Check roomid and name");
+          enterRoom(_roomid, _name);
+        }
         if ($.trim(getLocalStorage("conversationId")) === "") {
           // Get querystring
+          console.log("Empty ");
+
           getQueryString();
           getMessages("");
         } else {
-          // 0.5 sec Interval
+          console.log("Not Empty ");
+          // .5 sec Interval
           if (checkSession()) {
             updateInterval = setInterval(function() {
               updateRoom(getLocalStorage("conversationId"));
@@ -121,15 +133,18 @@
         var iframeCallHeight = $("#iframeCall").height();
         setLocalStorage("iframeCallHeight", iframeCallHeight);
       });
+      //   window.onload = function() {
+      //     localStorage.removeItem("conversationId");
+      //   };
 
       // Get Messages
       function getMessages(token) {
         var url = new URL(location.href.toLocaleLowerCase());
-        roomid = url.searchParams.get("roomid");
+        _roomid = url.searchParams.get("roomid");
         $.ajax({
           url: baseULR + "/api/getmessages",
           type: "GET",
-          data: { roomid: roomid, token: token },
+          data: { roomid: _roomid, token: token },
           success: function(data) {
             if (null != data && data.length > 0) {
               // Don't Show already displayed messages
@@ -142,7 +157,7 @@
                 }
               }
               // Show popup
-              for (i = 0; i < data.length; i++) {
+              for (var i = 0; i < data.length; i++) {
                 $(".bottom-right")
                   .notify({
                     message: {
@@ -162,29 +177,6 @@
           },
           error: function(data) {
             window.location.replace("error.html?p=gemessages");
-          }
-        });
-      }
-
-      // enter appointment Rooms
-      function enterAppointmentRoom(appoinmentID) {
-        $.ajax({
-          url: baseULR + "/api/enterAppointmentRoom",
-          type: "GET",
-          data: jQuery.param({ appoinmentID: appoinmentID }),
-          success: function(data) {
-            patientData = $.extend(true, {}, data[0]);
-            setLocalStorage("conversationId", patientData.id);
-            setLocalStorage("clientname", patientData.clientname);
-            resetExpireTime();
-            $("#patientCount").text(patientData.inline);
-            // 5 sec Interval
-            updateInterval = setInterval(function() {
-              updateRoom(patientData.id);
-            }, 500);
-          },
-          error: function(data) {
-            window.location.replace("error.html?p=enterappoingtment");
           }
         });
       }
@@ -209,6 +201,29 @@
           },
           error: function(data) {
             window.location.replace("error.html?p=enterRoom");
+          }
+        });
+      }
+
+      // enter appointment Rooms
+      function enterAppointmentRoom(appoinmentID) {
+        $.ajax({
+          url: baseULR + "/api/enterAppointmentRoom",
+          type: "GET",
+          data: jQuery.param({ appoinmentID: appoinmentID }),
+          success: function(data) {
+            patientData = $.extend(true, {}, data[0]);
+            setLocalStorage("conversationId", patientData.id);
+            setLocalStorage("clientname", patientData.clientname);
+            resetExpireTime();
+            $("#patientCount").text(patientData.inline);
+            // 5 sec Interval
+            updateInterval = setInterval(function() {
+              updateRoom(patientData.id);
+            }, 500);
+          },
+          error: function(data) {
+            window.location.replace("error.html?p=enterappoingtment");
           }
         });
       }
@@ -296,15 +311,24 @@
 
       // Check Session
       function checkSession() {
+        // Check If User Session Expire
         var sessionTime = getLocalStorage("sessionTime");
         if ($.trim(sessionTime) != "") {
+          //   var _sessionDate = new Date(sessionTime);
           var currentDate = new Date();
+          console.log("_sessionDate : ", sessionTime);
+          console.log("currentDate : ", currentDate.getTime());
+
           var difference_ms = currentDate.getTime() - sessionTime;
+          console.log(difference_ms);
+
           if (difference_ms > sessionExpireTime) {
+            console.log("Session expeired");
             sessionExpire();
             return false;
           } else {
             resetExpireTime();
+            console.log("Session does not expeired");
             return true;
           }
         }
