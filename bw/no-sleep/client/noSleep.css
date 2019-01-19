@@ -1,65 +1,22 @@
-.popup {
-  display: block;
+#popup2 {
   position: fixed;
-  padding: 10px;
-
   left: 50%;
-  margin-left: -150px;
-
   top: 50%;
-  margin-top: -100px;
-  background: #fff;
-  z-index: 20;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  display: none;
 }
 
-#popup2:after {
-  position: fixed;
-  content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: -2;
+.btn-nosleep {
+  position: relative;
 }
-
-#popup2:before {
+.btn-nosleep:after {
   position: absolute;
   content: "";
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #fff;
+  left: -12px;
+  top: -12px;
+  background-color: #fff;
+  width: 88px;
+  height: 58px;
   z-index: -1;
-}
-
-/* From here on, just aesthetics */
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.btn-success {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
 }

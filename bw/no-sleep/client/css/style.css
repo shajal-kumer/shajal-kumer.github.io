@@ -1,7 +1,7 @@
-*{
- margin: 0;
- padding: 0;
- box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body,
 html {
@@ -33,11 +33,12 @@ html {
 }
 .caption {
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 50%;
   width: 100%;
   text-align: center;
   color: #000;
+  transform: translate(-50%, -50%);
 }
 
 .caption span.border {
