@@ -8,8 +8,22 @@ function enableNoSleep() {
 }
 
 btnEnter.addEventListener("click", enableNoSleep, false);
-// if (window.innerWidth < 992) {
-//   popup2.style.display = "block";
-// }
 
- popup2.style.display = "block";
+function isMobile() {
+  try {
+    if (
+      /Android|webOS|iPhone|iPad|iPod|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(
+        navigator.userAgent
+      )
+    ) {
+      return true;
+    }
+    return false;
+  } catch (e) {
+    console.log("Error in isMobile");
+    return false;
+  }
+}
+if (isMobile()) {
+  popup2.style.display = "block";
+}
