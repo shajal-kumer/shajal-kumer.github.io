@@ -8,6 +8,8 @@ function enableNoSleep() {
 }
 
 btnEnter.addEventListener("click", enableNoSleep, false);
-if (window.innerWidth < 992) {
-  popup2.style.display = "block";
-}
+// if (window.innerWidth < 992) {
+//   popup2.style.display = "block";
+// }
+
+ popup2.style.display = "block";
