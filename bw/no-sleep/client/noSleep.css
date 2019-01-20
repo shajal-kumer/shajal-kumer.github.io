@@ -10,6 +10,7 @@
 .btn-nosleep {
   position: relative;
   cursor: pointer;
+  z-index: 999999;
 }
 .btn-nosleep:after {
   position: absolute;
