@@ -85,7 +85,7 @@ h3 {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
-  z-index: 9999999;
+  z-index: 999;
 }
 
 .overlay:target {
@@ -243,6 +243,7 @@ img#Foto {
   position: absolute;
   left: 25px;
   bottom: 25px;
+  z-index: 9999;
 }
 .info-left-icon i {
   background-color: #333;
