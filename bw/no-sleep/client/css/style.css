@@ -243,7 +243,7 @@ img#Foto {
   position: absolute;
   left: 25px;
   bottom: 25px;
-  z-index: 9;
+  z-index: 9999;
   cursor: pointer;
 }
 .info-left-icon button {
