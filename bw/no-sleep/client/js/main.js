@@ -13,7 +13,7 @@
       $(".chat__box--btn").removeClass("active");
     });
 
-    $(".info-left-icon i").on("click", function() {
+    $(".info-left-icon button").on("click", function() {
       $(".info-list").toggleClass("active");
 
       DetectRTC.load(function() {

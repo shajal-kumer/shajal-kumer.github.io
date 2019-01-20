@@ -246,6 +246,10 @@ img#Foto {
   z-index: 9;
   cursor: pointer;
 }
+.info-left-icon button {
+  cursor: pointer;
+  border: none;
+}
 .info-left-icon i {
   background-color: #333;
   width: 36px;
