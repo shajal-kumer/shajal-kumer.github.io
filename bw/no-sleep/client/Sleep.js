@@ -2,9 +2,10 @@ var btnEnter = document.querySelector(".btn-enter");
 var popup2 = document.querySelector("#popup2");
 
 var noSleep = new NoSleep();
-function enableNoSleep() {
+function enableNoSleep(e) {
   noSleep.enable();
   popup2.style.display = "none";
+  e.preventDefault();
 }
 
 btnEnter.addEventListener("click", enableNoSleep, false);
