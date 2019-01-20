@@ -5,7 +5,6 @@ var noSleep = new NoSleep();
 function enableNoSleep(e) {
   noSleep.enable();
   popup2.style.display = "none";
-  e.preventDefault();
 }
 
 btnEnter.addEventListener("click", enableNoSleep, false);
