@@ -10,9 +10,6 @@
 .btn-nosleep {
   position: relative;
   cursor: pointer;
-  z-index: 999999;
-  background-color: #25d6c6;
-  color: #000;
 }
 .btn-nosleep:after {
   position: absolute;

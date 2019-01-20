@@ -244,6 +244,7 @@ img#Foto {
   left: 25px;
   bottom: 25px;
   z-index: 9;
+  cursor: pointer;
 }
 .info-left-icon i {
   background-color: #333;

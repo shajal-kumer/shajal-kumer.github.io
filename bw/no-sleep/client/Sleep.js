@@ -27,4 +27,3 @@ function isMobile() {
 if (isMobile()) {
   popup2.style.display = "block";
 }
-popup2.style.display = "block";
