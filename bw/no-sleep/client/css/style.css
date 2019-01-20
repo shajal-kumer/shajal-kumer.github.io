@@ -253,6 +253,7 @@ img#Foto {
   height: 40px;
   line-height: 40px;
   font-size: 35px;
+  cursor: pointer;
 }
 .info-left-icon i:hover {
   cursor: pointer;
