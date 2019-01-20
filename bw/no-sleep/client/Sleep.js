@@ -8,7 +8,7 @@ function enableNoSleep() {
 }
 
 btnEnter.addEventListener("click", enableNoSleep, false);
-
+popup2.style.display = "block";
 function isMobile() {
   try {
     if (
@@ -25,5 +25,5 @@ function isMobile() {
   }
 }
 if (isMobile()) {
-  popup2.style.display = "block";
+  //   popup2.style.display = "block";
 }
