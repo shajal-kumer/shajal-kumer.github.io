@@ -3,7 +3,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 9999;
+  z-index: 99999;
   display: none;
 }
 
@@ -11,6 +11,8 @@
   position: relative;
   cursor: pointer;
   z-index: 999999;
+  background-color: #25d6c6;
+  color: #000;
 }
 .btn-nosleep:after {
   position: absolute;
