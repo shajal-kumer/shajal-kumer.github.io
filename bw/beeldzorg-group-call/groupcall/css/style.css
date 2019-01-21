@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#other-videos-holder {
+  text-align: center;
+}
+#other-videos-holder video {
+  border-radius: 10px;
+}
+#local-video-holder {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 25%;
+}
+#local-video-holder video {
+  width: 100%;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+}
+.media-controls {
+  display: none;
+}
+
+video::-webkit-media-controls {
+  display: none;
+}
+
+.show-message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}
+
+.patient-two .media-container {
+  width: 50%;
+  float: left;
+}
+#other-videos-holder .media-box,
+#other-videos-holder .media-box video {
+  height: 100%;
+}

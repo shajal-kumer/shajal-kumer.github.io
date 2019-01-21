@@ -1,0 +1,23 @@
+#popup2 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  display: none;
+}
+
+.btn-nosleep {
+  position: relative;
+  cursor: pointer;
+}
+.btn-nosleep:after {
+  position: absolute;
+  content: "";
+  left: -12px;
+  top: -12px;
+  background-color: #fff;
+  width: 88px;
+  height: 58px;
+  z-index: -1;
+}
