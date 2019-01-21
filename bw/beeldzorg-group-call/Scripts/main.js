@@ -447,7 +447,7 @@
             );
             document.getElementById("invitelink").value =
               window.location.host +
-              "/groupcall/index.html?conversationToken=" +
+              "/bw/beeldzorg-group-call/groupcall/index.html?conversationToken=" +
               data[0].conversationtoken;
           }
         },
@@ -475,7 +475,7 @@
             );
             document.getElementById("invitelink").value =
               window.location.host +
-              "/groupcall/index.html?conversationToken=" +
+              "/bw/beeldzorg-group-call/groupcall/index.html?conversationToken=" +
               data[0].conversationtoken;
           }
         },
