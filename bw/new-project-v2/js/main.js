@@ -71,6 +71,7 @@ function renderDevices(para1, para2) {
 // Go to second step
 HTMLDOM.settingBtn.addEventListener("click", () => {
   renderDevices(HTMLDOM.stepOne, HTMLDOM.stepTwo);
+  HTMLDOM.clientNumber.value = getLocalStorage("client Number");
 });
 
 // Back to step One
@@ -89,8 +90,8 @@ HTMLDOM.stepOnePlusIcon.addEventListener("click", () => {
 HTMLDOM.stepTwoBtnOK.addEventListener("click", () => {
   if (HTMLDOM.clientNumber.value !== "") {
     HTMLDOM.clientNumber.classList.remove("empty-input");
-    HTMLDOM.clientNumber.value = HTMLDOM.clientNumber.value;
     setLocalStorage("client Number", HTMLDOM.clientNumber.value);
+    HTMLDOM.clientNumber.value = getLocalStorage("client Number");
   } else {
     HTMLDOM.clientNumber.classList.add("empty-input");
   }
