@@ -8,6 +8,8 @@ const HTMLDOM = {
   stepFour: document.querySelector(".step-4"),
   stepOnePlusIcon: document.querySelector(".step-1 .plus-icon"),
   stepTwoArrayLeftBtn: document.querySelector(".step-2 .array-left-btn"),
+  stepThreeArrayLeftBtn: document.querySelector(".step-3 .array-left-btn"),
+  stepFourArrayLeftBtn: document.querySelector(".step-4 .array-left-btn"),
   clientNumber: document.querySelector(".device-number"),
   stepTwoBtnOK: document.querySelector(".step-2 .ok-btn"),
   deviceList: document.querySelector(".device-list"),
@@ -150,7 +152,6 @@ HTMLDOM.deviceList.addEventListener("click", e => {
 });
 
 // Set client name and go back to Home
-
 HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
   if (HTMLDOM.clientName.value !== "") {
     axios
@@ -175,6 +176,15 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
   } else {
     HTMLDOM.clientName.classList.add("empty-input");
   }
+});
+
+HTMLDOM.stepFourArrayLeftBtn.addEventListener("click", () => {
+  HTMLDOM.stepFour.classList.remove("active");
+  HTMLDOM.stepOne.classList.add("active");
+});
+HTMLDOM.stepThreeArrayLeftBtn.addEventListener("click", () => {
+  HTMLDOM.stepThree.classList.remove("active");
+  HTMLDOM.stepTwo.classList.add("active");
 });
 
 /*
