@@ -20,7 +20,7 @@ button:hover {
 .header-area {
   border-bottom: 1px solid #333;
   margin-bottom: 40px;
-  padding: 20px;
+  padding: 10px 20px;
 }
 .welcome-msg-area {
   padding: 0px 20px;
@@ -82,12 +82,6 @@ button:hover {
 .min-height-600 {
   min-height: 600px;
 }
-.steps-wrap {
-  /* overflow: hidden; */
-  /* position: relative; */
-  /* height: 700px; */
-  /* width: 100%; */
-}
 
 .Aligner {
   display: flex;
@@ -127,9 +121,13 @@ button:hover {
   visibility: visible;
   display: block;
 }
-button.btn.setting-btn,
-.array-left-btn {
-  border: 2px solid;
+.setting-btn {
+  font-size: 25px;
+}
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
 }
 /*  Step 2 */
 .ok-btn {
