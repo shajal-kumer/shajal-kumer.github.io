@@ -237,7 +237,7 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
       url:
         "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
       data: {
-        userid: 5,
+        userid: clientNumberToSrt,
         PromisOutcome: "good"
       },
       config: { headers: { "Content-Type": "application/json" } }
