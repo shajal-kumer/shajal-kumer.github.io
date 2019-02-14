@@ -197,10 +197,7 @@ HTMLDOM.stepThreeArrayLeftBtn.addEventListener("click", () => {
 });
 
 HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
-  let clientNumberToSrt = getLocalStorage("client Number");
-  console.log(typeof clientNumberToSrt);
-  console.log(clientNumberToSrt);
-
+  let clientNumber = getLocalStorage("client Number");
   if (HTMLDOM.clientName.value !== "") {
     /*
     const Url =
@@ -208,7 +205,7 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
 
     const othePram = {
       headers: { "Content-Type": "application/json" },
-      body: clientNumberToSrt,
+      body: clientNumber,
       method: "POST"
     };
 
@@ -224,7 +221,7 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
     axios
       .post(
         "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
-        clientNumberToSrt,
+        clientNumber,
         {
           headers: { "Content-Type": "application/json" }
         }
@@ -237,17 +234,12 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
       url:
         "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
       data: {
-        userid: clientNumberToSrt,
-        PromisOutcome: "good"
+        userid: clientNumber,
+        PromisOutcome: HTMLDOM.clientName.value
       },
       config: { headers: { "Content-Type": "application/json" } }
     })
       .then(function(response) {
-        console.log("HEllo");
-        console.log(response);
-        console.log(response.request.readyState);
-
-        // setLocalStorage("client status", response.data[0].clientstatus);
         if (response.request.readyState === 4) {
           HTMLDOM.smileIcon.classList.add("active");
         } else {
@@ -262,33 +254,3 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
     HTMLDOM.clientName.classList.add("empty-input");
   }
 });
-
-/*
-(function($) {
-  "use strict";
-
-  jQuery(document).ready(function($) {
-    let data = {
-      clientID: "5"
-    };
-    let dataJSON = JSON.stringify(data);
-    $(".step-4 .ok-btn").on("click", function() {
-      $.ajax({
-        type: "POST",
-        url:
-          "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
-        data: "3",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function(data) {
-          alert(data);
-        },
-        error: function(data) {
-          alert("fail");
-        }
-      });
-    });
-  });
-})(jQuery);
-
-*/
