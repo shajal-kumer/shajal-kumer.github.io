@@ -220,7 +220,7 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
         console.log(e);
       });
 */
-
+    /*
     axios
       .post(
         "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
@@ -229,6 +229,19 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
           headers: { "Content-Type": "application/json" }
         }
       )
+
+      */
+
+    axios({
+      method: "post",
+      url:
+        "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
+      data: {
+        userid: 5,
+        PromisOutcome: "good"
+      },
+      config: { headers: { "Content-Type": "application/json" } }
+    })
       .then(function(response) {
         console.log("HEllo");
         console.log(response);
