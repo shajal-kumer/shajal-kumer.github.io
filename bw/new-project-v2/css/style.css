@@ -37,21 +37,19 @@ button:hover {
 }
 .smile-icon,
 .sad-icon {
-  position: absolute;
-  top: calc(50% - 46px);
-  left: 50%;
   width: 200px;
   height: 200px;
   font-size: 120px;
-  transform: translate(-50%, -50%);
   text-align: center;
-  line-height: 200px;
   visibility: hidden;
+  display: none;
   color: #fff;
+  margin: 0 auto;
 }
 .smile-icon.active,
 .sad-icon.active {
   visibility: visible;
+  display: block;
 }
 .smile-icon i {
   color: #fff;

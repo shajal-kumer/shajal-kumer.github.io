@@ -72,7 +72,10 @@ function renderDevices(para1, para2) {
 
 // Go to second step
 HTMLDOM.settingBtn.addEventListener("click", () => {
-  renderDevices(HTMLDOM.stepOne, HTMLDOM.stepTwo);
+  // renderDevices(HTMLDOM.stepOne, HTMLDOM.stepTwo);
+
+  HTMLDOM.stepOne.classList.remove("active");
+  HTMLDOM.stepTwo.classList.add("active");
   HTMLDOM.clientNumber.value = getLocalStorage("client Number");
 });
 
@@ -94,6 +97,7 @@ HTMLDOM.stepTwoBtnOK.addEventListener("click", () => {
     HTMLDOM.clientNumber.classList.remove("empty-input");
     setLocalStorage("client Number", HTMLDOM.clientNumber.value);
     HTMLDOM.clientNumber.value = getLocalStorage("client Number");
+    console.log(getLocalStorage("client Number"));
   } else {
     HTMLDOM.clientNumber.classList.add("empty-input");
   }
@@ -112,10 +116,13 @@ HTMLDOM.selectDeviceBtn.addEventListener("click", () => {
 HTMLDOM.stepThreeBtnOK.addEventListener("click", () => {
   let deviceTokenVal = HTMLDOM.deviceToken.value;
   let deviceType = getLocalStorage("Device type");
+  let d = getLocalStorage("client Number");
+  console.log(d);
+
   axios
     .get(baseURL + "AddDevice", {
       params: {
-        userid: getLocalStorage("client Number"),
+        userid: d,
         deviceType: deviceType,
         Token: deviceTokenVal
       }
@@ -152,6 +159,7 @@ HTMLDOM.deviceList.addEventListener("click", e => {
 });
 
 // Set client name and go back to Home
+/*
 HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
   if (HTMLDOM.clientName.value !== "") {
     axios
@@ -177,6 +185,7 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
     HTMLDOM.clientName.classList.add("empty-input");
   }
 });
+*/
 
 HTMLDOM.stepFourArrayLeftBtn.addEventListener("click", () => {
   HTMLDOM.stepFour.classList.remove("active");
@@ -187,19 +196,46 @@ HTMLDOM.stepThreeArrayLeftBtn.addEventListener("click", () => {
   HTMLDOM.stepTwo.classList.add("active");
 });
 
-/*
 HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
+  let clientNumberToSrt = getLocalStorage("client Number");
+  console.log(typeof clientNumberToSrt);
+  console.log(clientNumberToSrt);
+
   if (HTMLDOM.clientName.value !== "") {
-    axios
-      .get("https://nettie-in.azurewebsites.net/api/api/PromisForm", {
-        params: {
-          userid: HTMLDOM.clientName.value
-          // clientData: HTMLDOM.clientName.value
-        }
+    /*
+    const Url =
+      "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm";
+
+    const othePram = {
+      headers: { "Content-Type": "application/json" },
+      body: clientNumberToSrt,
+      method: "POST"
+    };
+
+    fetch(Url, othePram)
+      .then(res => {
+        console.log(res);
       })
+      .then(e => {
+        console.log(e);
+      });
+*/
+
+    axios
+      .post(
+        "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
+        clientNumberToSrt,
+        {
+          headers: { "Content-Type": "application/json" }
+        }
+      )
       .then(function(response) {
-        setLocalStorage("client status", response.data[0].clientstatus);
-        if (response.data[0].clientstatus === "Good") {
+        console.log("HEllo");
+        console.log(response);
+        console.log(response.request.readyState);
+
+        // setLocalStorage("client status", response.data[0].clientstatus);
+        if (response.request.readyState === 4) {
           HTMLDOM.smileIcon.classList.add("active");
         } else {
           HTMLDOM.sadIcon.classList.add("active");
@@ -213,4 +249,33 @@ HTMLDOM.stepFourBtnOK.addEventListener("click", () => {
     HTMLDOM.clientName.classList.add("empty-input");
   }
 });
+
+/*
+(function($) {
+  "use strict";
+
+  jQuery(document).ready(function($) {
+    let data = {
+      clientID: "5"
+    };
+    let dataJSON = JSON.stringify(data);
+    $(".step-4 .ok-btn").on("click", function() {
+      $.ajax({
+        type: "POST",
+        url:
+          "https://cors-anywhere.herokuapp.com/http://nettie-in.azurewebsites.net/api/PromisForm",
+        data: "3",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function(data) {
+          alert(data);
+        },
+        error: function(data) {
+          alert("fail");
+        }
+      });
+    });
+  });
+})(jQuery);
+
 */
