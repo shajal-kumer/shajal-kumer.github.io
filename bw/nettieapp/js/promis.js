@@ -3,7 +3,7 @@ const auth_data = {
   username: "mobilecare_admin@cleversoft.nl", 
   password: "123456", 
   SessionID: "062235ba-cf18-4d6e-b633-a5fc30c15e20",
-  PatientID: "123", 
+  PatientID: Math.floor(Math.random() * 10), 
   access_token: null, 
   customerID: null, 
   ItembankID: null, 
