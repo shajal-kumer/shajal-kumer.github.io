@@ -106,6 +106,8 @@ button:hover {
   border: 1px solid #333;
   width: 500px;
   display: none;
+    
+
 }
 .active.step-1 {
   z-index: 999;
