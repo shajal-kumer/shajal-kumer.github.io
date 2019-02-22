@@ -1,4 +1,4 @@
-const BASE_URL = "http://apiv11.myquestionnaire.nl";
+const BASE_URL = "https://apiv11.myquestionnaire.nl";
 const auth_data = {
   username: "mobilecare_admin@cleversoft.nl", 
   password: "123456", 
