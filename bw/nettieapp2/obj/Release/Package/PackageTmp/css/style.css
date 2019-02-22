@@ -1,0 +1,186 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #00d8c5;
+  font-size: 18px;
+  line-height: 1.8;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+}
+button,
+button:hover {
+  cursor: pointer;
+}
+.height-100 {
+  height: 100vh;
+}
+.header-area {
+  border-bottom: 1px solid #333;
+  margin-bottom: 40px;
+  padding: 10px 20px;
+}
+.welcome-msg-area {
+  padding: 0px 20px;
+}
+.plus-icon {
+  font-size: 50px;
+  border-top: 1px solid #333;
+  margin-top: 40px;
+  padding-right: 20px;
+}
+.plus-icon:hover,
+.fa-bars:hover {
+  cursor: pointer;
+}
+.smile-icon,
+.sad-icon {
+  width: 200px;
+  height: 200px;
+  font-size: 120px;
+  text-align: center;
+  visibility: hidden;
+  display: none;
+  color: #fff;
+  margin: 0 auto;
+}
+.smile-icon.active,
+.sad-icon.active {
+  visibility: visible;
+  display: block;
+}
+.smile-icon i {
+  color: #fff;
+}
+.single-msg img {
+  width: 35px;
+}
+.single-msg p {
+  background-color: #fff;
+  padding: 8px 20px;
+  margin-left: 15px;
+  border-radius: 8px;
+  border-bottom-left-radius: 0;
+  position: relative;
+}
+.single-msg p::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 20px solid #fff;
+  transform: rotate(81deg);
+}
+.min-height-600 {
+  min-height: 600px;
+}
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.step {
+  transition: all 0.5s ease-in;
+  opacity: 0;
+  visibility: hidden;
+  border: 1px solid #333;
+  width: 500px;
+  display: none;
+}
+.active.step-1 {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.active.step-2 {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.active.step-3 {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.active.step-4 {
+  z-index: 999;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+.setting-btn {
+  font-size: 25px;
+}
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+/*  Step 2 */
+.ok-btn {
+  height: 40px;
+}
+.ok-btn i {
+  font-size: 25px;
+}
+.custom-select {
+  width: 85%;
+}
+.select-device-btn {
+  font-size: 30px;
+}
+.client-number-input {
+  margin-bottom: 20px;
+  padding: 0px 20px;
+}
+.my-devices,
+.select-devices {
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+.header-border-nobottom {
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.header-border-bottom {
+  border-bottom: 1px solid #333;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.array-left-btn i {
+  font-size: 30px;
+}
+.empty-input {
+  border-color: red;
+}
+h2.device-type {
+  padding-left: 20px;
+}
+.step-3 .form-row,
+.step-4 .form-row {
+  padding: 0px 20px 5px;
+}
+
+.second-row-height {
+  height: calc(100% - 46px);
+}
+.second-row-height > div {
+  height: 100%;
+}
+.step-2-inner {
+  width: 350px;
+  height: 100%;
+}

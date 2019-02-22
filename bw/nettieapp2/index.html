@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="My App" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <link rel="shortcut icon" sizes="196x196" href=" img/196x196.png" />
+    <link rel="apple-touch-icon" href="img/touch-icon-iphone.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="img/touch-icon-ipad.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="touch-icon-ipad-retina.png"
+    />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome-5.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <title>New project</title>
+  </head>
+  <body>
+    <div class="container height-100 mobile-h-full">
+      <div class="row height-100">
+        <div class="col-md-8 offset-md-2 mobile-p-0">
+          <div class="steps-wrap height-100 Aligner">
+            <!-- step 1 -->
+            <div class="step active step-1">
+              <div class="wrapper">
+                <div class="row">
+                  <div class="col text-right">
+                    <div class="header-area">
+                      <button class="btn setting-btn" type="button">
+                        <i class="fas fa-wrench"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <div class="welcome-msg-area">
+                      <div class="single-msg d-flex">
+                        <img class="align-self-end" src="img/logo.svg" alt="" />
+                        <p class="">Good Morning</p>
+                      </div>
+                    </div>
+                    <div class="smile-icon">
+                      <i class="far fa-smile"></i>
+                    </div>
+                    <div class="sad-icon">
+                      <i class="far fa-frown"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col text-right">
+                    <div class="plus-icon">
+                      <i class="fas fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End step 1 -->
+
+            <!-- Step 2 -->
+            <div class="step step-2">
+              <div class="wrapper">
+                <div class="row">
+                  <div class="col">
+                    <div class="header-area">
+                      <button type="button" class="btn array-left-btn">
+                        <i class="fas fa-angle-left"></i>  <h3 class="header-border-nobottom">Setup:</h3>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="client-number-input">
+                <h3 class="header-border-bottom">Client ID:</h3>
+                      <div class="form-row">
+                        <div class="form-group col-10">
+                          <input
+                            type="text"
+                            class="form-control device-number"
+                            placeholder="Client Number"
+                          />
+                        </div>
+                        <div class="form-group col-md-1 col-2">
+                          <button type="button" class="btn ok-btn">
+                            <i class="far fa-check-circle"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="my-devices">
+                      <h3 class="header-border-bottom">My Devices:</h3>
+                      <div class="device-list"></div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="select-devices">
+            <h3 class="header-border-bottom">Add device:</h3>
+                      <select
+                        class="custom-select selected-device custom-select-md">
+
+                        <option value="LEA">LEA</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Sensara">Sensara</option>
+                        <option value="Vivago">Vivago</option>
+                      </select>
+                      <button type="button" class="btn select-device-btn">
+                        <i class="fas fa-plus"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End step 2 -->
+            <!-- Step 3 -->
+            <div class="step step-3">
+              <div class="wrapper">
+                <div class="row">
+                  <div class="col">
+                    <div class="header-area">
+                      <button type="button" class="btn array-left-btn">
+                        <i class="fas fa-angle-left"></i>
+                      </button> <h3 class="header-border-nobottom">Add Device:</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <h2 class="device-type"></h2>
+                    <div class="form-row mt-4">
+                      <div class="form-group col-10">
+                        <input
+                          type="text"
+                          class="form-control device-token"
+                          placeholder="Token"
+                        />
+                      </div>
+                      <div class="form-group col-1">
+                        <button type="button" class="btn ok-btn">
+                          <i class="far fa-check-circle"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End step 3 -->
+
+            <!-- Step 4 -->
+            <div class="step step-4 question_box">
+              <div class="wrapper">
+                <div class="row">
+                  <div class="col">
+                    <div class="header-area d-flex align-items-center">
+                      <button type="button" class="btn array-left-btn">
+                        <i class="fas fa-angle-left"></i>
+                      </button> 
+                      <h3>Promis</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="row question_box_row">
+                  <div class="col">
+                    <div class="question_box_content">
+                      <div id="app"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="question_box_footer text-right">
+                      <button id="select_category">
+                        <span>Select</span>
+                        <i class="fas fa-angle-right"></i>
+                      </button>
+                      <button id="submit_answer">
+                        <span>Next</span>
+                        <i class="fas fa-angle-right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Preloader -->
+                <div class="preloader">
+                  <i class="fas fa-sync fa-spin"></i>
+                </div>
+                <!-- Preloader -->
+              </div>
+            </div>
+            <!-- End step 4 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- library for http requests -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- a library for handling query string -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <!-- a library for generating uuid -->
+    <script src="./js/uuid.js"></script>
+    <script src="js/main.js"></script>
+    <script src="./js/promis.js"></script>
+  </body>
+</html>
