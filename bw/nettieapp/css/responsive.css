@@ -6,6 +6,17 @@
   .custom-select {
     width: 80%;
   }
+
+  .wrapper {
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .question_box_row {
+    flex: 1 0 auto;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */

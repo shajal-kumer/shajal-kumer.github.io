@@ -36,7 +36,7 @@ function setLocalStorage(key, value) {
 }
 
 // API base URL
-const baseURL = "https://nettie-in.azurewebsites.net/Api/";
+const baseURL = "https://nettiethuis-in.azurewebsites.net/Api/";
 
 // Render Device List Function
 function renderDevices(para1, para2) {

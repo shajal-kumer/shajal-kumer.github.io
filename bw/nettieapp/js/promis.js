@@ -1,15 +1,17 @@
-const BASE_URL = "https://apiv11.myquestionnaire.nl";
+const BASE_URL = "http://apiv11.myquestionnaire.nl";
 const auth_data = {
   username: "mobilecare_admin@cleversoft.nl", 
   password: "123456", 
-  SessionID: "062235ba-cf18-4d6e-b633-a5fc30c15e20",
-  PatientID: Math.floor(Math.random() * 10), 
+  SessionID: UUIDjs.create().hex,
+  PatientID: localStorage.getItem('client Number'), 
+  MaxQuestions: 5,
   access_token: null, 
   customerID: null, 
   ItembankID: null, 
   ItemID: null
 };
 let isLoading = false;
+
 
 //login and get the access-token on page load
 (function() {
@@ -34,8 +36,7 @@ let isLoading = false;
   });
 })();
 
-
-//load categories on document load
+//load categories
 (function() {
   "use strict"
 
@@ -54,6 +55,8 @@ let isLoading = false;
       .then(function(res) {
         console.log(res.data);
         insertIntoApp(chooseCategoryTemplate(res.data));
+        //show category select button
+        showButton('category');
         //hide preloader
         setPreloaderState(false);
       })
@@ -75,11 +78,12 @@ let isLoading = false;
   categorySelectBtn.addEventListener('click', function() {
     if(!getSelectedCategory()) {
       console.log('please select a category');
-      return true;
+      return false;
     }
 
     //init preloader
     setPreloaderState(true);
+    console.log(auth_data);
     
     axios(`${BASE_URL}/api/ItemBank/GetItem`, { 
       headers: {
@@ -90,14 +94,15 @@ let isLoading = false;
         PatientID: auth_data.PatientID, 
         ItembankID: getSelectedCategory(), 
         SessionID: auth_data.SessionID, 
-        CustomerID: auth_data.customerID
+        CustomerID: auth_data.customerID, 
+        MaxQuestions: auth_data.MaxQuestions
       }), 
       method: 'POST'
       })
       .then(function(res) {
         console.log(res.data.ItembankID);
         insertIntoApp(questionTemplate(res.data));
-        changeId();
+        showButton('question');
 
         //hide preloader
         setPreloaderState(false);
@@ -124,6 +129,7 @@ function renderQuestions() {
     
     if(questionSubmitBtn) {
       questionSubmitBtn.addEventListener('click', function() {
+        console.log(getSelectedAnswer());
         
         if(!getSelectedAnswer()) {
           console.log('please select an answer');
@@ -132,6 +138,8 @@ function renderQuestions() {
 
         //init preloader
         setPreloaderState(true);
+        console.log(getSelectedAnswer());
+        console.log(auth_data);
 
         axios(`${BASE_URL}/api/ItemBank/UpdateResponse`, { 
           headers: {
@@ -144,7 +152,8 @@ function renderQuestions() {
             SessionID: auth_data.SessionID, 
             CustomerID: auth_data.customerID, 
             RespondedID: getSelectedAnswer(), 
-            ItemID: auth_data.ItemID
+            ItemID: auth_data.ItemID, 
+            MaxQuestions: auth_data.MaxQuestions
           }), 
           method: 'POST'
           })
@@ -164,7 +173,7 @@ function renderQuestions() {
 //category choosing template
 function chooseCategoryTemplate(lists) {
   return `
-    <h6>Please select a category from below</h6>
+    <h6 class="mb-3">Please select a category from below</h6>
     <div class="categories">
       <ul>
         ${
@@ -186,24 +195,30 @@ function chooseCategoryTemplate(lists) {
 
 //question template
 function questionTemplate(question) {
+  if(question.Responses.length > 0) {
+    return `
+      <div class="question" id=${question.ItembankID}>
+        <h6 class="mb-3">${question.ItemTitle}</h6>
+        <ul>
+          ${
+            question.Responses.map(function(response) {
+              return `
+                <li>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id=${response.ResponseID} name="radio-question" required>
+                    <label class="custom-control-label" for=${response.ResponseID}>${response.Description}</label>
+                  </div>
+                </li>
+              `
+            }).join('')
+          }
+        </ul>
+      </div>
+    `
+  }
+
   return `
-    <div class="question" id=${question.ItembankID}>
-      <h6>${question.ItemTitle}</h6>
-      <ul>
-        ${
-          question.Responses.map(function(response) {
-            return `
-              <li>
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id=${response.ResponseID} name="radio-question" required>
-                  <label class="custom-control-label" for=${response.ResponseID}>${response.Description}</label>
-                </div>
-              </li>
-            `
-          }).join('')
-        }
-      </ul>
-    </div>
+    <h6>No more question, Thanks</h6>
   `
 }
 
@@ -234,9 +249,22 @@ function getSelectedAnswer() {
 }
 
 //change the submit button id to submit question
-function changeId() {
-  const categoryBtn = document.querySelector('#select_category');
-  categoryBtn.setAttribute('id', 'submit_answer');
+function showButton(button) {
+  if(button === "category") {
+    const submitBtn = document.querySelector('#submit_answer');
+    submitBtn.style.display = 'none';
+
+    const categoryBtn = document.querySelector('#select_category');
+    categoryBtn.style.display = 'inline-block';
+  }
+
+  if(button === "question") {
+    const categoryBtn = document.querySelector('#select_category');
+    categoryBtn.style.display = 'none';
+
+    const submitBtn = document.querySelector('#submit_answer');
+    submitBtn.style.display = 'inline-block';
+  }
 }
 
 //initalize preloader
