@@ -1,10 +1,10 @@
-const BASE_URL = "https://apiv11.myquestionnaire.nl";
+const BASE_URL = "http://apiv11.myquestionnaire.nl";
 const auth_data = {
   username: "mobilecare_admin@cleversoft.nl", 
   password: "123456", 
   SessionID: UUIDjs.create().hex,
   PatientID: localStorage.getItem('client Number'), 
-  MaxQuestions: 5,
+  MaxQuestions: 3,
   access_token: null, 
   customerID: null, 
   ItembankID: null, 
@@ -26,13 +26,14 @@ let isLoading = false;
       password: auth_data.password
     })
   }).then(function(res) {
+    // console.log('login response = ', res.data);
     
     auth_data.customerID = res.data.customerID;
     auth_data.access_token = res.data.access_token;
-    auth_data.username = res.data.username;
+    // auth_data.username = res.data.username;
     
   }).catch(function(error) {
-    console.log(error);
+   alert(error);
   });
 })();
 
@@ -53,7 +54,7 @@ let isLoading = false;
       method: 'GET'
       })
       .then(function(res) {
-        console.log(res.data);
+        // console.log('getItemBank ', res.data);
         insertIntoApp(chooseCategoryTemplate(res.data));
         //show category select button
         showButton('category');
@@ -61,7 +62,7 @@ let isLoading = false;
         setPreloaderState(false);
       })
       .catch(function(error) {
-        console.log(error);
+        alert(error);
         setPreloaderState(false);
       });
 
@@ -77,13 +78,13 @@ let isLoading = false;
   
   categorySelectBtn.addEventListener('click', function() {
     if(!getSelectedCategory()) {
-      console.log('please select a category');
+      alert('please select a category');
       return false;
     }
 
     //init preloader
     setPreloaderState(true);
-    console.log(auth_data);
+    // console.log('auth data = ', auth_data);
     
     axios(`${BASE_URL}/api/ItemBank/GetItem`, { 
       headers: {
@@ -100,7 +101,8 @@ let isLoading = false;
       method: 'POST'
       })
       .then(function(res) {
-        console.log(res.data.ItembankID);
+        // console.log('itembandid = ', res.data.ItembankID);
+        // console.log(res.data);
         insertIntoApp(questionTemplate(res.data));
         showButton('question');
 
@@ -114,7 +116,7 @@ let isLoading = false;
 
       })
       .catch(function(error) {
-        console.log(error);
+        alert(error);
         setPreloaderState(true);
       });
 
@@ -129,25 +131,24 @@ function renderQuestions() {
     
     if(questionSubmitBtn) {
       questionSubmitBtn.addEventListener('click', function() {
-        console.log(getSelectedAnswer());
+        // console.log('selected answer ', getSelectedAnswer());
         
         if(!getSelectedAnswer()) {
-          console.log('please select an answer');
+          alert('please select an answer');
           return true;
         }
 
         //init preloader
         setPreloaderState(true);
-        console.log(getSelectedAnswer());
-        console.log(auth_data);
-
+        // console.log('selected answer ', getSelectedAnswer());
+        
         axios(`${BASE_URL}/api/ItemBank/UpdateResponse`, { 
           headers: {
             'Content-Type': 'application/json', 
             'Authorization': `Bearer ${auth_data.access_token}`
           }, 
           data: JSON.stringify({
-            PatientID: "123", 
+            PatientID: auth_data.PatientID, 
             ItembankID: auth_data.ItembankID, 
             SessionID: auth_data.SessionID, 
             CustomerID: auth_data.customerID, 
@@ -158,8 +159,22 @@ function renderQuestions() {
           method: 'POST'
           })
           .then(function(res) {
+            // console.log(res.data);
+
+            if(res.data.ScoreInterpretations.length > 0) {
+              let report = '';
+              res.data.ScoreInterpretations.forEach(function(score) {
+                report += `${score.Norm} = ${score.Score} \n`;
+              });
+              alert(report);
+              insertIntoApp(renderReport());
+              setPreloaderState(false);
+              return true;
+            }
             
             insertIntoApp(questionTemplate(res.data));
+
+            auth_data.ItemID = res.data.ItemID;
 
             //hide preloader
             setPreloaderState(false);
@@ -197,7 +212,7 @@ function chooseCategoryTemplate(lists) {
 function questionTemplate(question) {
   if(question.Responses.length > 0) {
     return `
-      <div class="question" id=${question.ItembankID}>
+      <div class="question" id=${question.ItemID}>
         <h6 class="mb-3">${question.ItemTitle}</h6>
         <ul>
           ${
@@ -220,6 +235,11 @@ function questionTemplate(question) {
   return `
     <h6>No more question, Thanks</h6>
   `
+}
+
+function renderReport() {
+  const submitBtn = document.querySelector('#submit_answer').style.display = 'none';
+  return `<h4>Thanks for participating!</h4>`;
 }
 
 //insert something into DOM (#app)
