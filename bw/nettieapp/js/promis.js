@@ -162,6 +162,7 @@ let categorySelected = false;
           if(res.data.ScoreInterpretations.length > 0) {
             insertIntoApp(renderReport(res.data.ScoreInterpretations[0]));
             setPreloaderState(false);
+            const submitBtn = document.querySelector('#submit_answer').style.display = "none";
             return true;
           }
          
