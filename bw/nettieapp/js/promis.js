@@ -1,4 +1,4 @@
-const BASE_URL = "https://apiv11.myquestionnaire.nl";
+const BASE_URL = "http://apiv11.myquestionnaire.nl";
 const auth_data = {
   username: "mobilecare_admin@cleversoft.nl", 
   password: "123456", 
@@ -7,10 +7,11 @@ const auth_data = {
   MaxQuestions: 3,
   access_token: null, 
   customerID: null, 
-  ItembankID: null,
+  ItembankID: null, 
   ItemID: null
 };
 let isLoading = false;
+let categorySelected = false;
 
 
 //login and get the access-token on page load
@@ -26,14 +27,14 @@ let isLoading = false;
       password: auth_data.password
     })
   }).then(function(res) {
-    // console.log('login response = ', res.data);
+    
     
     auth_data.customerID = res.data.customerID;
     auth_data.access_token = res.data.access_token;
     // auth_data.username = res.data.username;
     
   }).catch(function(error) {
-   alert(error);
+    console.log(error);
   });
 })();
 
@@ -54,7 +55,7 @@ let isLoading = false;
       method: 'GET'
       })
       .then(function(res) {
-        // console.log('getItemBank ', res.data);
+        
         insertIntoApp(chooseCategoryTemplate(res.data));
         //show category select button
         showButton('category');
@@ -62,7 +63,7 @@ let isLoading = false;
         setPreloaderState(false);
       })
       .catch(function(error) {
-        alert(error);
+        
         setPreloaderState(false);
       });
 
@@ -78,13 +79,13 @@ let isLoading = false;
   
   categorySelectBtn.addEventListener('click', function() {
     if(!getSelectedCategory()) {
-      alert('please select a category');
+      
       return false;
     }
 
     //init preloader
     setPreloaderState(true);
-    // console.log('auth data = ', auth_data);
+    
     
     axios(`${BASE_URL}/api/ItemBank/GetItem`, { 
       headers: {
@@ -101,88 +102,93 @@ let isLoading = false;
       method: 'POST'
       })
       .then(function(res) {
-        // console.log('itembandid = ', res.data.ItembankID);
-        // console.log(res.data);
+        
         insertIntoApp(questionTemplate(res.data));
         showButton('question');
 
+        categorySelected = true;
+
         //hide preloader
         setPreloaderState(false);
-
-        renderQuestions();
 
         auth_data.ItembankID = res.data.ItembankID;
         auth_data.ItemID = res.data.ItemID;
 
       })
       .catch(function(error) {
-        alert(error);
+        console.log(error);
         setPreloaderState(true);
       });
 
   });
 })();
 
+
 //submit a question answer
-function renderQuestions() {
-  return (function() {
-    "use strict"
-    const questionSubmitBtn = document.querySelector('#submit_answer');
-    
-    if(questionSubmitBtn) {
-      questionSubmitBtn.addEventListener('click', function() {
-        // console.log('selected answer ', getSelectedAnswer());
+(function() {
+  "use strict"
+  const questionSubmitBtn = document.querySelector('#submit_answer');
+  
+  if(questionSubmitBtn) {
+    questionSubmitBtn.addEventListener('click', function() {
+      
+      
+      if(!getSelectedAnswer()) {
         
-        if(!getSelectedAnswer()) {
-          alert('please select an answer');
-          return true;
-        }
+        return true;
+      }
 
-        //init preloader
-        setPreloaderState(true);
-        // console.log('selected answer ', getSelectedAnswer());
-        
-        axios(`${BASE_URL}/api/ItemBank/UpdateResponse`, { 
-          headers: {
-            'Content-Type': 'application/json', 
-            'Authorization': `Bearer ${auth_data.access_token}`
-          }, 
-          data: JSON.stringify({
-            PatientID: auth_data.PatientID, 
-            ItembankID: auth_data.ItembankID, 
-            SessionID: auth_data.SessionID, 
-            CustomerID: auth_data.customerID, 
-            RespondedID: getSelectedAnswer(), 
-            ItemID: auth_data.ItemID, 
-            MaxQuestions: auth_data.MaxQuestions
-          }), 
-          method: 'POST'
-          })
-          .then(function(res) {
-            // console.log(res.data);
+      //init preloader
+      setPreloaderState(true);
+      
 
-            if(res.data.ScoreInterpretations.length > 0) {
-              let report = '';
-              res.data.ScoreInterpretations.forEach(function(score) {
-                report += `${score.Norm} = ${score.Score} \n`;
-              });
-              alert(report);
-              insertIntoApp(renderReport());
-              setPreloaderState(false);
-              return true;
-            }
-            
-            insertIntoApp(questionTemplate(res.data));
-
-            auth_data.ItemID = res.data.ItemID;
-
-            //hide preloader
+      axios(`${BASE_URL}/api/ItemBank/UpdateResponse`, { 
+        headers: {
+          'Content-Type': 'application/json', 
+          'Authorization': `Bearer ${auth_data.access_token}`
+        }, 
+        data: JSON.stringify({
+          PatientID: auth_data.PatientID, 
+          ItembankID: auth_data.ItembankID, 
+          SessionID: auth_data.SessionID, 
+          CustomerID: auth_data.customerID, 
+          RespondedID: getSelectedAnswer(), 
+          ItemID: auth_data.ItemID, 
+          MaxQuestions: auth_data.MaxQuestions
+        }), 
+        method: 'POST'
+        })
+        .then(function(res) {
+          if(res.data.ScoreInterpretations.length > 0) {
+            insertIntoApp(renderReport(res.data.ScoreInterpretations[0]));
             setPreloaderState(false);
-          });
-      });
-    }
-  })();
-}
+            return true;
+          }
+         
+          
+          insertIntoApp(questionTemplate(res.data));
+
+          auth_data.ItemID = res.data.ItemID;
+
+          //hide preloader
+          setPreloaderState(false);
+        });
+    });
+  }
+})();
+
+//back button
+(function() {
+
+  const backButton = document.querySelector('#question_back_button');
+  
+  backButton.addEventListener('click', function() {
+    
+    auth_data.SessionID = UUIDjs.create().hex;
+    
+  });
+
+})();
 
 
 //category choosing template
@@ -195,9 +201,14 @@ function chooseCategoryTemplate(lists) {
           lists.map(function(list) {
             return `
               <li>
-                <div class="custom-control custom-radio">
-                  <input type="radio" class="custom-control-input" id=${list.ID} name="radio-category" required>
-                  <label class="custom-control-label" for=${list.ID}>${list.Name}</label>
+                <div class="d-flex align-items-center">
+                  <div>
+                    <input type="radio" id=${list.ID} name="radio-category" required>
+                    <label class="radio-button" for=${list.ID}></label>
+                  </div>
+                  <div class="ml-3">
+                    ${list.Name.slice(26,)}
+                  </div>
                 </div>
               </li>
             `
@@ -219,9 +230,14 @@ function questionTemplate(question) {
             question.Responses.map(function(response) {
               return `
                 <li>
-                  <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id=${response.ResponseID} name="radio-question" required>
-                    <label class="custom-control-label" for=${response.ResponseID}>${response.Description}</label>
+                  <div class="d-flex align-items-start">
+                    <div>
+                      <input type="radio" id=${response.ResponseID} name="radio-question" required>
+                      <label class="radio-button" for=${response.ResponseID}></label>
+                    </div>
+                    <div class="ml-2">
+                      ${response.Description}
+                    </div>
                   </div>
                 </li>
               `
@@ -237,9 +253,12 @@ function questionTemplate(question) {
   `
 }
 
-function renderReport() {
-  const submitBtn = document.querySelector('#submit_answer').style.display = 'none';
-  return `<h4>Thanks for participating!</h4>`;
+function renderReport(report) {
+  return `<h4 class="show_result">
+            ${
+    report.Score >= report.SE ? "<i class='far fa-smile'></i>": "<i class='far fa-frown'></i>"
+            }
+          </h4>`;
 }
 
 //insert something into DOM (#app)
