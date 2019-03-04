@@ -1,4 +1,4 @@
-const BASE_URL = "http://apiv11.myquestionnaire.nl";
+const BASE_URL = "https://apiv11.myquestionnaire.nl";
 const auth_data = {
 	username: "mobilecare_admin@cleversoft.nl",
 	password: "123456",
@@ -151,7 +151,7 @@ let categoryName = "";
 
 				if (res.data.ReturnStatusCode === 1) {
 					axios(
-						"https://cors-anywhere.herokuapp.com/http://nettiethuis-in.azurewebsites.net/Api/PromisForm",
+						"https://cors-anywhere.herokuapp.com/https://nettiethuis-in.azurewebsites.net/Api/PromisForm",
 						{
 							headers: {
 								"Content-Type": "application/json"
