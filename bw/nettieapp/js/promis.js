@@ -3,7 +3,7 @@ const auth_data = {
 	username: "mobilecare_admin@cleversoft.nl",
 	password: "123456",
 	SessionID: UUIDjs.create().hex,
-	PatientID: localStorage.getItem("client Number"),
+	PatientID: localStorage.getItem("clientID"),
 	MaxQuestions: 3,
 	access_token: null,
 	customerID: null,
@@ -32,7 +32,7 @@ let categoryName = "";
 			// auth_data.username = res.data.username;
 		})
 		.catch(function(error) {
-			console.log(error);
+			alert(error);
 		});
 })();
 
@@ -44,6 +44,9 @@ let categoryName = "";
 
 	plus_icon.addEventListener("click", function() {
 		//set preloader
+		if (localStorage.getItem("clientID") === null) {
+			alert("Please first set your ID");
+		}
 		setPreloaderState(true);
 		axios(
 			`${BASE_URL}/api/ItemBank/GetItemBank?customerID=${auth_data.customerID}`,
@@ -97,8 +100,6 @@ let categoryName = "";
 			method: "POST"
 		})
 			.then(function(res) {
-				console.log(res.data);
-
 				insertIntoApp(questionTemplate(res.data));
 				showButton("question");
 
@@ -111,7 +112,7 @@ let categoryName = "";
 				auth_data.ItemID = res.data.ItemID;
 			})
 			.catch(function(error) {
-				console.log(error);
+				alert(error);
 				setPreloaderState(true);
 			});
 	});
@@ -147,17 +148,17 @@ let categoryName = "";
 				}),
 				method: "POST"
 			}).then(function(res) {
-				console.log(res.data);
-
+				let CORSProxy = "https://cors-anywhere.herokuapp.com/";
 				if (res.data.ReturnStatusCode === 1) {
 					axios(
-						"https://cors-anywhere.herokuapp.com/http://nettiethuis-in.azurewebsites.net/Api/PromisForm",
+						CORSProxy +
+							"http://nettiethuis-in.azurewebsites.net/Api/PromisForm",
 						{
 							headers: {
 								"Content-Type": "application/json"
 							},
 							data: JSON.stringify({
-								userid: localStorage.getItem("client Number"),
+								userid: localStorage.getItem("clientID"),
 								PromisFormName: getLocalStorage("categoryName").trim(),
 								PromisOutcome: res.data.ScoreInterpretations[0].Score.toString(),
 								PromisAverage: res.data.ScoreInterpretations[0].SE.toString(),
@@ -170,7 +171,7 @@ let categoryName = "";
 							console.log(res);
 						})
 						.catch(function(error) {
-							console.log(error);
+							alert(error);
 						});
 
 					insertIntoApp(renderReport(res.data.ScoreInterpretations[0]));

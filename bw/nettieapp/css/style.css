@@ -29,10 +29,8 @@ button:hover {
 
 .header-area {
 	border-bottom: 1px solid #333;
-	/* margin-bottom: 0; */
 	padding: 16px 20px;
-	/* display: flex;
-  align-items: center; */
+	margin-bottom: 20px;
 }
 .welcome-msg-area {
 	padding: 0px 20px;
@@ -163,8 +161,8 @@ button:hover {
 }
 .header-border-nobottom {
 	display: inline-block;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
 }
 .header-border-bottom {
 	border-bottom: 1px solid #333;
@@ -220,6 +218,7 @@ h2.device-type {
 .question_box_content {
 	min-height: 100px;
 	padding: 25px;
+	padding-top: 5px;
 }
 
 #submit_answer {
