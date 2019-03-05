@@ -6,7 +6,7 @@
 		height: 100%;
 	}
 	.custom-select {
-		width: 80%;
+		width: 75%;
 	}
 	.mobile-padding-0 .col {
 		padding: 0px !important;
@@ -26,6 +26,7 @@
 		width: 115%;
 		left: -10%;
 	}
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
