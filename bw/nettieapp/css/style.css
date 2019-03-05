@@ -42,7 +42,7 @@ button:active {
 	outline: transparent;
 }
 .height-100 {
-	height: 100vh;
+	height: 100%;
 }
 .vertical-center {
 	display: flex;
