@@ -1,32 +1,42 @@
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-  .step {
-    width: 100%;
-  }
-  .custom-select {
-    width: 80%;
-  }
+	.step {
+		width: 100%;
+		border: 0px;
+		height: 100vh;
+	}
+	.custom-select {
+		width: 80%;
+	}
+	.mobile-padding-0 .col {
+		padding: 0px !important;
+	}
 
-  .wrapper {
-    height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-
-  .question_box_row {
-    flex: 1 0 auto;
-  }
+	.main-content {
+		padding: 60px 20px 20px;
+	}
+	.question_box_row {
+		flex: 1 0 auto;
+	}
+	.footer-area {
+		border-top: none;
+		margin-bottom: 20px;
+	}
+	.preloader {
+		width: 115%;
+		left: -10%;
+	}
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .step {
-    width: 100%;
-  }
-  .custom-select {
-    width: 80%;
-  }
+	.step {
+		width: 100%;
+		height: 100vh;
+	}
+	.custom-select {
+		width: 80%;
+	}
 }
 
 /* Medium devices (tablets, 768px and up) */

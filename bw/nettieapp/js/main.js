@@ -1,28 +1,5 @@
-const HTMLDOM = {
-	settingBtn: document.querySelector(".setting-btn"),
-	stepOne: document.querySelector(".step-1"),
-	stepTwo: document.querySelector(".step-2"),
-	stepThree: document.querySelector(".step-3"),
-	stepFour: document.querySelector(".step-4"),
-	DeviceList: document.querySelector(".device-list"),
-	stepFour: document.querySelector(".step-4"),
-	stepOnePlusIcon: document.querySelector(".step-1 .plus-icon"),
-	stepTwoArrayLeftBtn: document.querySelector(".step-2 .array-left-btn"),
-	stepThreeArrayLeftBtn: document.querySelector(".step-3 .array-left-btn"),
-	stepFourArrayLeftBtn: document.querySelector(".step-4 .array-left-btn"),
-	clientID: document.querySelector(".device-number"),
-	stepTwoBtnOK: document.querySelector(".step-2 .ok-btn"),
-	deviceList: document.querySelector(".device-list"),
-	selectedDevice: document.querySelector(".selected-device"),
-	selectDeviceBtn: document.querySelector(".select-device-btn"),
-	deviceType: document.querySelector(".device-type"),
-	stepThreeBtnOK: document.querySelector(".step-3 .ok-btn"),
-	deviceToken: document.querySelector(".device-token"),
-	clientName: document.querySelector(".client-name"),
-	stepFourBtnOK: document.querySelector(".step-4 .ok-btn"),
-	sadIcon: document.querySelector(".sad-icon"),
-	smileIcon: document.querySelector(".smile-icon")
-};
+// API base URL
+const baseURL = "https://nettiethuis-in.azurewebsites.net/Api/";
 
 //Get LocalStorage
 function getLocalStorage(key) {
@@ -35,119 +12,70 @@ function setLocalStorage(key, value) {
 	localStorage.setItem(key, null == value ? "" : value);
 }
 
-// API base URL
-const baseURL = "https://nettiethuis-in.azurewebsites.net/Api/";
-
-// Render Device List Function
-function renderDevices(para1, para2) {
-	let clientID = getLocalStorage("clientID");
-	if (clientID === "") {
-		clientID = null;
+//initialize pre loader
+function setPreloaderState(state) {
+	console.log(state);
+	isLoading = state;
+	const preloader = document.querySelector(".preloader");
+	if (isLoading) {
+		preloader.classList.add("active");
+	} else {
+		preloader.classList.remove("active");
 	}
-	var renderHTML = "<ul>";
-	axios
-		.get(baseURL + "MyDevices?userid=" + clientID)
-		.then(function(response) {
-			// console.log(response);
-			response.data.forEach(element => {
-				renderHTML += `<li data-deviceID=${
-					element.deviceID
-				} class="delete-device">${
-					element.deviceType
-				} <button type="button" class="btn">
-        <i class="fas fa-times"></i>
-      </button> </li>`;
-			});
-			renderHTML += "</ul>";
-			if (para1 !== null || para2 !== null) {
-				para1.classList.remove("active");
-				para2.classList.add("active");
-			}
-			$(".device-list").html(renderHTML);
-		})
-		.catch(function(error) {
-			alert(error);
-		});
 }
 
-// Go to second step
-HTMLDOM.settingBtn.addEventListener("click", () => {
-	renderDevices(HTMLDOM.stepOne, HTMLDOM.stepTwo);
-	HTMLDOM.clientID.value = getLocalStorage("clientID");
+// After DOM Content Loaded render home content
+document.addEventListener("DOMContentLoaded", () => {
+	renderHomeStep();
 });
 
-// Back to step One
-HTMLDOM.stepTwoArrayLeftBtn.addEventListener("click", () => {
-	HTMLDOM.stepOne.classList.add("active");
-	HTMLDOM.stepTwo.classList.remove("active");
-});
+// Document Event listener
+document.addEventListener("click", event => {
+	let className = event.target.classList[event.target.classList.length - 1];
+	let parentParentClassName =
+		event.target.parentNode.parentNode.classList[
+			event.target.parentNode.parentNode.classList.length - 1
+		];
 
-// Go to step four
-HTMLDOM.stepOnePlusIcon.addEventListener("click", () => {
-	HTMLDOM.stepOne.classList.remove("active");
-	HTMLDOM.stepFour.classList.add("active");
-});
+	switch (className) {
+		case "fa-cog":
+			// Go to step two
+			goToSecondStep();
+			break;
+		case "back-to-step-one":
+			// Back to step One
+			renderHomeStep();
+			break;
+		case "back-to-home":
+			// Back to step One
+			renderHomeStep();
+			break;
 
-// Set clientID to LocalStorage
-HTMLDOM.stepTwoBtnOK.addEventListener("click", () => {
-	if (HTMLDOM.clientID.value !== "") {
-		HTMLDOM.clientID.classList.remove("empty-input");
-		setLocalStorage("clientID", HTMLDOM.clientID.value);
-		HTMLDOM.clientID.value = getLocalStorage("clientID");
-		// console.log(getLocalStorage("clientID"));
-	} else {
-		HTMLDOM.clientID.classList.add("empty-input");
+		case "client-id-btn":
+			// Set clientID to LocalStorage
+			setClientIDTOLocalstorage();
+			break;
+		case "select-device-btn-icon":
+			//  selectDevice function
+			selectDevice();
+			break;
+		case "token-set-btn":
+			// Set device token
+			setDeviceToken();
+			break;
+		case "back-to-step-two":
+			// Back to step Two from three
+			backToStepTwoFromThree();
+			break;
+		case "form-btn":
+			// Set Promis Header functionality
+			setpromizHeader();
+			break;
 	}
-});
 
-// Select Device from list
-HTMLDOM.selectDeviceBtn.addEventListener("click", () => {
-	let deviceType = HTMLDOM.selectedDevice.value;
-	setLocalStorage("Device type", deviceType);
-	if (HTMLDOM.clientID.value !== "") {
-		HTMLDOM.stepTwo.classList.remove("active");
-		HTMLDOM.stepThree.classList.add("active");
-		HTMLDOM.deviceType.innerHTML = deviceType;
-	} else {
-		HTMLDOM.clientID.classList.add("empty-input");
-	}
-});
-
-// Add Device token on step 3
-HTMLDOM.stepThreeBtnOK.addEventListener("click", () => {
-	let deviceTokenVal = HTMLDOM.deviceToken.value;
-	if (deviceTokenVal !== "") {
-		let deviceType = getLocalStorage("Device type");
-		let clientID = getLocalStorage("clientID");
-
-		axios
-			.get(baseURL + "AddDevice", {
-				params: {
-					userid: clientID,
-					deviceType: deviceType,
-					Token: deviceTokenVal
-				}
-			})
-			.then(function(response) {
-				// console.log(response);
-
-				HTMLDOM.stepThree.classList.remove("active");
-				HTMLDOM.stepTwo.classList.add("active");
-				HTMLDOM.selectedDevice.options[0].selected = true;
-				renderDevices(HTMLDOM.stepThree, HTMLDOM.stepTwo);
-			})
-			.catch(function(error) {
-				alert(error);
-			});
-	} else {
-		HTMLDOM.deviceToken.classList.add("empty-input");
-	}
-});
-
-// Delete device
-HTMLDOM.deviceList.addEventListener("click", e => {
-	if (e.target.parentNode.parentNode.classList.contains("delete-device")) {
-		let deviceID = e.target.parentNode.parentNode.dataset.deviceid;
+	// Delete Device
+	if (parentParentClassName === "delete-device") {
+		let deviceID = event.target.parentNode.parentNode.dataset.deviceid;
 		axios
 			.get(baseURL + "DelDevice", {
 				params: {
@@ -157,22 +85,258 @@ HTMLDOM.deviceList.addEventListener("click", e => {
 			})
 			.then(function(response) {
 				// console.log(response);
-
-				renderDevices(null, null);
+				renderDeviceList();
 			})
 			.catch(function(error) {
 				alert(error);
 			});
 	}
+
+	// Set Promis Header functionality
+	function setpromizHeader() {
+		document.querySelector(".header-area").innerHTML = headerTemplate(
+			"Promis",
+			"long-arrow-left reset-session-id",
+			"go-back-btn"
+		);
+	}
+	// Go to second step
+	function goToSecondStep() {
+		setPreloaderState(true);
+		document.querySelector(".header-area").innerHTML = headerTemplate(
+			"Setup",
+			"long-arrow-left back-to-step-one",
+			"go-back-btn"
+		);
+		document.querySelector(
+			".main-content"
+		).innerHTML = renderDeviceListAndSelect();
+		document.querySelector(".footer-area").innerHTML = "";
+		document.querySelector(".footer-area").classList.add("no-border");
+		let clientID = document.querySelector(".device-number");
+		clientID.value = getLocalStorage("clientID");
+	}
+
+	// Set clientID to LocalStorage
+	function setClientIDTOLocalstorage() {
+		let clientID = document.querySelector(".device-number");
+		if (clientID.value !== "") {
+			clientID.classList.remove("empty-input");
+			setLocalStorage("clientID", clientID.value);
+			clientID.value = getLocalStorage("clientID");
+			// console.log(getLocalStorage("clientID"));
+		} else {
+			clientID.classList.add("empty-input");
+		}
+	}
+
+	// Select Device from list
+	function selectDevice() {
+		const selectedDevice = document.querySelector(".selected-device");
+		let clientID = document.querySelector(".device-number");
+		setLocalStorage("Device type", selectedDevice.value);
+		if (clientID.value !== "") {
+			document.querySelector(".header-area").innerHTML = headerTemplate(
+				"Setup",
+				"long-arrow-left back-to-step-two",
+				"go-back-btn"
+			);
+			document.querySelector(".main-content").innerHTML = renderDeviceToken();
+			document.querySelector(".footer-area").innerHTML = "";
+		} else {
+			clientID.classList.add("empty-input");
+		}
+	}
+
+	// Add Device token on step 3
+	function setDeviceToken() {
+		const deviceToken = document.querySelector(".device-token");
+		let deviceTokenVal = deviceToken.value;
+		if (deviceTokenVal !== "") {
+			const deviceType = getLocalStorage("Device type");
+			const clientID = getLocalStorage("clientID");
+			setPreloaderState(true);
+			axios
+				.get(baseURL + "AddDevice", {
+					params: {
+						userid: clientID,
+						deviceType: deviceType,
+						Token: deviceTokenVal
+					}
+				})
+				.then(function(response) {
+					document.querySelector(".header-area").innerHTML = headerTemplate(
+						"Setup",
+						"long-arrow-left back-to-step-one",
+						"go-back-btn"
+					);
+					document.querySelector(
+						".main-content"
+					).innerHTML = renderDeviceListAndSelect();
+					document.querySelector(".footer-area").innerHTML = "";
+					let clientID = document.querySelector(".device-number");
+					clientID.value = getLocalStorage("clientID");
+					setPreloaderState(false);
+				})
+				.catch(function(error) {
+					alert(error);
+				});
+		} else {
+			deviceToken.classList.add("empty-input");
+		}
+	}
+
+	// Back to step Two from three
+	function backToStepTwoFromThree() {
+		document.querySelector(".header-area").innerHTML = headerTemplate(
+			"Setup",
+			"long-arrow-left back-to-step-one",
+			"go-back-btn"
+		);
+		document.querySelector(
+			".main-content"
+		).innerHTML = renderDeviceListAndSelect();
+		document.querySelector(".footer-area").innerHTML = "";
+		let clientID = document.querySelector(".device-number");
+		clientID.value = getLocalStorage("clientID");
+	}
 });
 
-// Go back to step 1 from step 4
-HTMLDOM.stepFourArrayLeftBtn.addEventListener("click", () => {
-	HTMLDOM.stepFour.classList.remove("active");
-	HTMLDOM.stepOne.classList.add("active");
-});
-// Go back to step 3 from step 2
-HTMLDOM.stepThreeArrayLeftBtn.addEventListener("click", () => {
-	HTMLDOM.stepThree.classList.remove("active");
-	HTMLDOM.stepTwo.classList.add("active");
-});
+// Header Template
+function headerTemplate(title, iconOne, btnClass) {
+	return `
+		 <h2 class="title">${title}</h2>
+		 <button class="btn ${btnClass}" type="button">
+			<i class="fa fa-${iconOne}"></i>
+		</button>
+		`;
+}
+
+// Footer Template
+function footerTemplate(icon) {
+	return `
+		<button class="form-btn">Form
+			<i class="fa fa-${icon}"></i>
+		</button>
+	`;
+}
+
+// Welcome message Template
+function welcomeMsgTemplate() {
+	return `
+		<div class="welcome-msg-area">
+			<div class="single-msg d-flex">
+				<img class="align-self-end" src="img/logo.svg" alt="" />
+				<p class="">Good Morning</p>
+			</div>
+		</div>
+	`;
+}
+
+// Render Device List And Select Device select box
+function renderDeviceListAndSelect() {
+	return `
+		<div class="client-number-input">
+			<h3 class="header-border-bottom">Client ID:</h3>
+			<div class="form-row">
+				<div class="form-group col-10">
+					<input
+						type="text"
+						class="form-control device-number"
+						placeholder="Client id"
+					/>
+				</div>
+				<div class="form-group col-2">
+					<button type="button" class="btn ok-btn">
+						<i class="fa fa-check-circle client-id-btn"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+			<div class="my-devices">
+			<h3 class="header-border-bottom">My Devices:</h3>
+			<div class="device-list">${renderDeviceList()}</div>
+		</div>
+		<div class="select-devices">
+			<h3 class="header-border-bottom">Add device:</h3>
+			<select class="custom-select selected-device custom-select-md">
+				<option value="LEA">LEA</option>
+				<option value="Apple">Apple</option>
+				<option value="Sensara">Sensara</option>
+				<option value="Vivago">Vivago</option>
+			</select>
+			<button type="button" class="btn select-device-btn">
+				<i class="fa fa-plus select-device-btn-icon"></i>
+			</button>
+		</div>
+	`;
+}
+
+// Render Home step
+function renderHomeStep() {
+	document.querySelector(".header-area").innerHTML = headerTemplate(
+		"Nettie Thuis",
+		"cog",
+		"setting-btn"
+	);
+	document.querySelector(".main-content").innerHTML = welcomeMsgTemplate();
+	document.querySelector(".footer-area").innerHTML = footerTemplate("list-alt");
+}
+
+// Render Device List
+function renderDeviceList() {
+	let clientID = getLocalStorage("clientID");
+	setPreloaderState(true);
+	if (clientID === "") {
+		clientID = null;
+	}
+	axios
+		.get(baseURL + "MyDevices?userid=" + clientID)
+		.then(function(response) {
+			let renderHTML = "<ul>";
+			response.data.forEach(element => {
+				renderHTML += `<li data-deviceID=${
+					element.deviceID
+				} class="delete-device">${
+					element.deviceType
+				} <button type="button" class="btn delete-device-btn">
+					<i class="fa fa-times"></i>
+					</button> </li>`;
+			});
+			renderHTML += "</ul>";
+
+			$(".device-list").html(renderHTML);
+
+			setPreloaderState(false);
+		})
+		.catch(function(error) {
+			alert(error);
+		});
+}
+
+// Render Device Token
+function renderDeviceToken() {
+	return `
+		<div class="form-row mt-4">
+			<div class="form-group col-10">
+				<input
+					type="text"
+					class="form-control device-token"
+					placeholder="Token"
+				/>
+			</div>
+			<div class="form-group col-1">
+				<button type="button" class="btn ok-btn">
+					<i class="fa fa-check-circle token-set-btn"></i>
+				</button>
+			</div>
+		</div>
+	`;
+}
+
+//back to Home from Promis
+(function() {
+	document.addEventListener("click", function(e) {
+		if (e.target.classList.contains("reset-session-id")) renderHomeStep();
+	});
+})();

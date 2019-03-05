@@ -40,91 +40,103 @@ let categoryName = "";
 (function() {
 	"use strict";
 
-	const plus_icon = document.querySelector(".plus-icon");
-
-	plus_icon.addEventListener("click", function() {
-		//set preloader
-		if (localStorage.getItem("clientID") === null) {
-			alert("Please first set your ID");
-		}
-		setPreloaderState(true);
-		axios(
-			`${BASE_URL}/api/ItemBank/GetItemBank?customerID=${auth_data.customerID}`,
-			{
-				headers: {
-					"Content-Type": "application/x-www-form-urlencoded",
-					Authorization: `Bearer ${auth_data.access_token}`
-				},
-				method: "GET"
+	document.addEventListener("click", function(event) {
+		if (event.target.classList.contains("form-btn")) {
+			//set preloader
+			if (localStorage.getItem("clientID") === null) {
+				alert("Please first set your ID");
 			}
-		)
-			.then(function(res) {
-				insertIntoApp(chooseCategoryTemplate(res.data));
-				//show category select button
-				showButton("category");
-				//hide preloader
-				setPreloaderState(false);
-			})
-			.catch(function(error) {
-				setPreloaderState(false);
-			});
+			setPreloaderState(true);
+			axios(
+				`${BASE_URL}/api/ItemBank/GetItemBank?customerID=${
+					auth_data.customerID
+				}`,
+				{
+					headers: {
+						"Content-Type": "application/x-www-form-urlencoded",
+						Authorization: `Bearer ${auth_data.access_token}`
+					},
+					method: "GET"
+				}
+			)
+				.then(function(res) {
+					insertIntoApp(chooseCategoryTemplate(res.data));
+					//show category select button
+
+					document.querySelector(".footer-area").innerHTML = showButton(
+						"category"
+					);
+					//hide preloader
+					setPreloaderState(false);
+				})
+				.catch(function(error) {
+					setPreloaderState(false);
+				});
+		}
 	});
 })();
 
 //select question category
 (function() {
 	"use strict";
+	document.addEventListener("click", function(e) {
+		if (
+			e.target.classList.contains("select_category") ||
+			e.target.classList.contains("fa") ||
+			e.target.classList.contains("select-text")
+		) {
+			if (!getSelectedCategory()) {
+				return false;
+			}
 
-	const categorySelectBtn = document.querySelector("#select_category");
+			//init preloader
+			setPreloaderState(true);
 
-	categorySelectBtn.addEventListener("click", function() {
-		if (!getSelectedCategory()) {
-			return false;
-		}
-
-		//init preloader
-		setPreloaderState(true);
-
-		axios(`${BASE_URL}/api/ItemBank/GetItem`, {
-			headers: {
-				"Content-Type": "application/json",
-				Authorization: `Bearer ${auth_data.access_token}`
-			},
-			data: JSON.stringify({
-				PatientID: auth_data.PatientID,
-				ItembankID: getSelectedCategory(),
-				SessionID: auth_data.SessionID,
-				CustomerID: auth_data.customerID,
-				MaxQuestions: auth_data.MaxQuestions
-			}),
-			method: "POST"
-		})
-			.then(function(res) {
-				insertIntoApp(questionTemplate(res.data));
-				showButton("question");
-
-				categorySelected = true;
-
-				//hide preloader
-				setPreloaderState(false);
-
-				auth_data.ItembankID = res.data.ItembankID;
-				auth_data.ItemID = res.data.ItemID;
+			axios(`${BASE_URL}/api/ItemBank/GetItem`, {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${auth_data.access_token}`
+				},
+				data: JSON.stringify({
+					PatientID: auth_data.PatientID,
+					ItembankID: getSelectedCategory(),
+					SessionID: auth_data.SessionID,
+					CustomerID: auth_data.customerID,
+					MaxQuestions: auth_data.MaxQuestions
+				}),
+				method: "POST"
 			})
-			.catch(function(error) {
-				alert(error);
-				setPreloaderState(true);
-			});
+				.then(function(res) {
+					insertIntoApp(questionTemplate(res.data));
+
+					document.querySelector(".footer-area").innerHTML = showButton(
+						"question"
+					);
+					categorySelected = true;
+
+					//hide preloader
+					setPreloaderState(false);
+
+					auth_data.ItembankID = res.data.ItembankID;
+					auth_data.ItemID = res.data.ItemID;
+				})
+				.catch(function(error) {
+					alert(error);
+					setPreloaderState(true);
+				});
+		}
 	});
 })();
 
 //submit a question answer
 (function() {
 	"use strict";
-	const questionSubmitBtn = document.querySelector("#submit_answer");
-
-	if (questionSubmitBtn) {
-		questionSubmitBtn.addEventListener("click", function() {
+	document.addEventListener("click", function(e) {
+		if (
+			e.target.classList.contains("submit_answer") ||
+			e.target.classList.contains("fa") ||
+			e.target.classList.contains("next-text")
+		) {
 			if (!getSelectedAnswer()) {
 				return true;
 			}
@@ -187,23 +199,22 @@ let categoryName = "";
 				//hide preloader
 				setPreloaderState(false);
 			});
-		});
-	}
+		}
+	});
 })();
 
-//back button
+//back to home button
 (function() {
-	const backButton = document.querySelector("#question_back_button");
-
-	backButton.addEventListener("click", function() {
-		auth_data.SessionID = UUIDjs.create().hex;
+	document.addEventListener("click", function(e) {
+		if (e.target.classList.contains("reset-session-id"))
+			auth_data.SessionID = UUIDjs.create().hex;
 	});
 })();
 
 //category choosing template
 function chooseCategoryTemplate(lists) {
 	return `
-    <h6 class="mb-3">Please select a category from below</h6>
+    <h5 class="mb-3">Please select a category from below</h5>
     <div class="categories">
       <ul>
         ${lists
@@ -235,7 +246,7 @@ function questionTemplate(question) {
 	if (question.Responses.length > 0) {
 		return `
       <div class="question" id=${question.ItemID}>
-        <h6 class="mb-3">${question.ItemTitle}</h6>
+        <h5 class="mb-3">${question.ItemTitle}</h5>
         <ul>
           ${question.Responses.map(function(response) {
 						return `
@@ -266,19 +277,20 @@ function questionTemplate(question) {
   `;
 }
 
+// Render Report
 function renderReport(report) {
 	return `<h4 class="show_result">
             ${
 							report.Score >= report.SE
-								? "<i class='far fa-smile'></i>"
-								: "<i class='far fa-frown'></i>"
+								? "<i class='fa fa-smile-o'></i>"
+								: "<i class='fa fa-frown-o'></i>"
 						}
           </h4>`;
 }
 
 //insert something into DOM (#app)
 function insertIntoApp(DOM) {
-	document.querySelector("#app").innerHTML = DOM;
+	document.querySelector(".main-content").innerHTML = DOM;
 }
 
 //get the category user selected
@@ -290,7 +302,6 @@ function getSelectedCategory() {
 				"categoryName",
 				radioButtons[i].parentNode.parentNode.children[1].innerHTML
 			);
-
 			return radioButtons[i].getAttribute("id");
 		}
 	}
@@ -309,23 +320,29 @@ function getSelectedAnswer() {
 //change the submit button id to submit question
 function showButton(button) {
 	if (button === "category") {
-		const submitBtn = document.querySelector("#submit_answer");
-		submitBtn.style.display = "none";
-
-		const categoryBtn = document.querySelector("#select_category");
-		categoryBtn.style.display = "inline-block";
+		return `
+			<div class="question_box_footer text-right">
+					<button id="select_category" class="select_category">
+						<span class="select-text">Select</span>
+						<i class="fa fa-angle-right"></i>
+					</button>
+				</div>
+		`;
 	}
 
 	if (button === "question") {
-		const categoryBtn = document.querySelector("#select_category");
-		categoryBtn.style.display = "none";
-
-		const submitBtn = document.querySelector("#submit_answer");
-		submitBtn.style.display = "inline-block";
+		return `
+			<div class="question_box_footer text-right">
+					<button id="submit_answer" class="submit_answer">
+						<span class="next-text">Next</span>
+						<i class="fa fa-angle-right"></i>
+					</button>
+			</div>
+		`;
 	}
 }
 
-//initalize preloader
+//initialize preloader
 function setPreloaderState(state) {
 	isLoading = state;
 	const preloader = document.querySelector(".preloader");
