@@ -280,6 +280,7 @@ function renderHomeStep() {
 	);
 	document.querySelector(".main-content").innerHTML = welcomeMsgTemplate();
 	document.querySelector(".footer-area").innerHTML = footerTemplate("list-alt");
+	document.querySelector(".footer-area").style.display = "block"
 }
 
 // Render Device List
