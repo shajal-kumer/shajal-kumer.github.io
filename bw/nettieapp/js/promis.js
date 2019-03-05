@@ -164,7 +164,7 @@ let categoryName = "";
 				if (res.data.ReturnStatusCode === 1) {
 					axios(
 						CORSProxy +
-							"http://nettiethuis-in.azurewebsites.net/Api/PromisForm",
+							"https://nettiethuis-in.azurewebsites.net/Api/PromisForm",
 						{
 							headers: {
 								"Content-Type": "application/json"
