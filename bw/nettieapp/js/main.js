@@ -111,7 +111,7 @@ document.addEventListener("click", event => {
 		document.querySelector(
 			".main-content"
 		).innerHTML = renderDeviceListAndSelect();
-		document.querySelector(".footer-area").innerHTML = "";
+		document.querySelector(".footer-area").innerHTML = ".";
 		document.querySelector(".footer-area").classList.add("no-border");
 		let clientID = document.querySelector(".device-number");
 		clientID.value = getLocalStorage("clientID");
@@ -142,7 +142,7 @@ document.addEventListener("click", event => {
 				"go-back-btn"
 			);
 			document.querySelector(".main-content").innerHTML = renderDeviceToken();
-			document.querySelector(".footer-area").innerHTML = "";
+			document.querySelector(".footer-area").innerHTML = ".";
 		} else {
 			clientID.classList.add("empty-input");
 		}
@@ -173,7 +173,7 @@ document.addEventListener("click", event => {
 					document.querySelector(
 						".main-content"
 					).innerHTML = renderDeviceListAndSelect();
-					document.querySelector(".footer-area").innerHTML = "";
+					document.querySelector(".footer-area").innerHTML = ".";
 					let clientID = document.querySelector(".device-number");
 					clientID.value = getLocalStorage("clientID");
 					setPreloaderState(false);
@@ -196,7 +196,7 @@ document.addEventListener("click", event => {
 		document.querySelector(
 			".main-content"
 		).innerHTML = renderDeviceListAndSelect();
-		document.querySelector(".footer-area").innerHTML = "";
+		document.querySelector(".footer-area").innerHTML = ".";
 		let clientID = document.querySelector(".device-number");
 		clientID.value = getLocalStorage("clientID");
 	}
