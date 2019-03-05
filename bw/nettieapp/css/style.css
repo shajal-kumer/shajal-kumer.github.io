@@ -10,6 +10,23 @@ body {
 	line-height: 1.8;
 	font-weight: 400;
 	font-family: "Roboto", sans-serif;
+	background: rgb(0, 175, 159);
+	background: -moz-linear-gradient(
+		top,
+		rgba(0, 175, 159, 1) 0%,
+		rgba(0, 216, 197, 1) 100%
+	);
+	background: -webkit-linear-gradient(
+		top,
+		rgba(0, 175, 159, 1) 0%,
+		rgba(0, 216, 197, 1) 100%
+	);
+	background: linear-gradient(
+		to bottom,
+		rgba(0, 175, 159, 1) 0%,
+		rgba(0, 216, 197, 1) 100%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00af9f', endColorstr='#00d8c5',GradientType=0 );
 }
 .main-content h5,
 h3 {
@@ -101,6 +118,7 @@ button:active {
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+	background: rgb(0, 175, 159);
 	background: -moz-linear-gradient(
 		top,
 		rgba(0, 175, 159, 1) 0%,
