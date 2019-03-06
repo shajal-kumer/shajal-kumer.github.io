@@ -24,11 +24,6 @@ function setPreloaderState(state) {
 	}
 }
 
-// After DOM Content Loaded render home content
-document.addEventListener("DOMContentLoaded", () => {
-	renderHomeStep();
-});
-
 // Document Event listener
 document.addEventListener("click", event => {
 	let className = event.target.classList[event.target.classList.length - 1];
@@ -91,115 +86,115 @@ document.addEventListener("click", event => {
 				alert(error);
 			});
 	}
-
-	// Set Promis Header functionality
-	function setpromizHeader() {
-		document.querySelector(".header-area").innerHTML = headerTemplate(
-			"Promis",
-			"long-arrow-left reset-session-id",
-			"go-back-btn"
-		);
-	}
-	// Go to second step
-	function goToSecondStep() {
-		setPreloaderState(true);
-		document.querySelector(".header-area").innerHTML = headerTemplate(
-			"Setup",
-			"long-arrow-left back-to-step-one",
-			"go-back-btn"
-		);
-		document.querySelector(
-			".main-content"
-		).innerHTML = renderDeviceListAndSelect();
-		document.querySelector(".footer-area").style.display = "none";
-		let clientID = document.querySelector(".device-number");
-		clientID.value = getLocalStorage("clientID");
-	}
-
-	// Set clientID to LocalStorage
-	function setClientIDTOLocalstorage() {
-		let clientID = document.querySelector(".device-number");
-		if (clientID.value !== "") {
-			clientID.classList.remove("empty-input");
-			setLocalStorage("clientID", clientID.value);
-			clientID.value = getLocalStorage("clientID");
-			// console.log(getLocalStorage("clientID"));
-		} else {
-			clientID.classList.add("empty-input");
-		}
-	}
-
-	// Select Device from list
-	function selectDevice() {
-		const selectedDevice = document.querySelector(".selected-device");
-		let clientID = document.querySelector(".device-number");
-		setLocalStorage("Device type", selectedDevice.value);
-		if (clientID.value !== "") {
-			document.querySelector(".header-area").innerHTML = headerTemplate(
-				"Setup",
-				"long-arrow-left back-to-step-two",
-				"go-back-btn"
-			);
-			document.querySelector(".main-content").innerHTML = renderDeviceToken();
-			document.querySelector(".footer-area").style.display = "none";
-		} else {
-			clientID.classList.add("empty-input");
-		}
-	}
-
-	// Add Device token on step 3
-	function setDeviceToken() {
-		const deviceToken = document.querySelector(".device-token");
-		let deviceTokenVal = deviceToken.value;
-		if (deviceTokenVal !== "") {
-			const deviceType = getLocalStorage("Device type");
-			const clientID = getLocalStorage("clientID");
-			setPreloaderState(true);
-			axios
-				.get(baseURL + "AddDevice", {
-					params: {
-						userid: clientID,
-						deviceType: deviceType,
-						Token: deviceTokenVal
-					}
-				})
-				.then(function(response) {
-					document.querySelector(".header-area").innerHTML = headerTemplate(
-						"Setup",
-						"long-arrow-left back-to-step-one",
-						"go-back-btn"
-					);
-					document.querySelector(
-						".main-content"
-					).innerHTML = renderDeviceListAndSelect();
-					document.querySelector(".footer-area").style.display = "none";
-					let clientID = document.querySelector(".device-number");
-					clientID.value = getLocalStorage("clientID");
-					setPreloaderState(false);
-				})
-				.catch(function(error) {
-					alert(error);
-				});
-		} else {
-			deviceToken.classList.add("empty-input");
-		}
-	}
-
-	// Back to step Two from three
-	function backToStepTwoFromThree() {
-		document.querySelector(".header-area").innerHTML = headerTemplate(
-			"Setup",
-			"long-arrow-left back-to-step-one",
-			"go-back-btn"
-		);
-		document.querySelector(
-			".main-content"
-		).innerHTML = renderDeviceListAndSelect();
-		document.querySelector(".footer-area").style.display = "none";
-		let clientID = document.querySelector(".device-number");
-		clientID.value = getLocalStorage("clientID");
-	}
 });
+
+// Set Promis Header Content
+function setpromizHeader() {
+	document.querySelector(".header-area").innerHTML = headerTemplate(
+		"Promis",
+		"long-arrow-left reset-session-id",
+		"go-back-btn"
+	);
+}
+// Go to second step
+function goToSecondStep() {
+	setPreloaderState(true);
+	document.querySelector(".header-area").innerHTML = headerTemplate(
+		"Setup",
+		"long-arrow-left back-to-step-one",
+		"go-back-btn"
+	);
+	document.querySelector(
+		".main-content"
+	).innerHTML = renderDeviceListAndSelect();
+	document.querySelector(".footer-area").style.display = "none";
+	let clientID = document.querySelector(".device-number");
+	clientID.value = getLocalStorage("clientID");
+}
+
+// Set clientID to LocalStorage
+function setClientIDTOLocalstorage() {
+	let clientID = document.querySelector(".device-number");
+	if (clientID.value !== "") {
+		clientID.classList.remove("empty-input");
+		setLocalStorage("clientID", clientID.value);
+		clientID.value = getLocalStorage("clientID");
+		// console.log(getLocalStorage("clientID"));
+	} else {
+		clientID.classList.add("empty-input");
+	}
+}
+
+// Select Device from list
+function selectDevice() {
+	const selectedDevice = document.querySelector(".selected-device");
+	let clientID = document.querySelector(".device-number");
+	setLocalStorage("Device type", selectedDevice.value);
+	if (clientID.value !== "") {
+		document.querySelector(".header-area").innerHTML = headerTemplate(
+			"Setup",
+			"long-arrow-left back-to-step-two",
+			"go-back-btn"
+		);
+		document.querySelector(".main-content").innerHTML = renderDeviceToken();
+		document.querySelector(".footer-area").style.display = "none";
+	} else {
+		clientID.classList.add("empty-input");
+	}
+}
+
+// Add Device token on step 3
+function setDeviceToken() {
+	const deviceToken = document.querySelector(".device-token");
+	let deviceTokenVal = deviceToken.value;
+	if (deviceTokenVal !== "") {
+		const deviceType = getLocalStorage("Device type");
+		const clientID = getLocalStorage("clientID");
+		setPreloaderState(true);
+		axios
+			.get(baseURL + "AddDevice", {
+				params: {
+					userid: clientID,
+					deviceType: deviceType,
+					Token: deviceTokenVal
+				}
+			})
+			.then(function(response) {
+				document.querySelector(".header-area").innerHTML = headerTemplate(
+					"Setup",
+					"long-arrow-left back-to-step-one",
+					"go-back-btn"
+				);
+				document.querySelector(
+					".main-content"
+				).innerHTML = renderDeviceListAndSelect();
+				document.querySelector(".footer-area").style.display = "none";
+				let clientID = document.querySelector(".device-number");
+				clientID.value = getLocalStorage("clientID");
+				setPreloaderState(false);
+			})
+			.catch(function(error) {
+				alert(error);
+			});
+	} else {
+		deviceToken.classList.add("empty-input");
+	}
+}
+
+// Back to step Two from three
+function backToStepTwoFromThree() {
+	document.querySelector(".header-area").innerHTML = headerTemplate(
+		"Setup",
+		"long-arrow-left back-to-step-one",
+		"go-back-btn"
+	);
+	document.querySelector(
+		".main-content"
+	).innerHTML = renderDeviceListAndSelect();
+	document.querySelector(".footer-area").style.display = "none";
+	let clientID = document.querySelector(".device-number");
+	clientID.value = getLocalStorage("clientID");
+}
 
 // Header Template
 function headerTemplate(title, iconOne, btnClass) {
@@ -271,18 +266,6 @@ function renderDeviceListAndSelect() {
 	`;
 }
 
-// Render Home step
-function renderHomeStep() {
-	document.querySelector(".header-area").innerHTML = headerTemplate(
-		"Nettie Thuis",
-		"cog",
-		"setting-btn"
-	);
-	document.querySelector(".main-content").innerHTML = welcomeMsgTemplate();
-	document.querySelector(".footer-area").innerHTML = footerTemplate("list-alt");
-	document.querySelector(".footer-area").style.display = "block"
-}
-
 // Render Device List
 function renderDeviceList() {
 	let clientID = getLocalStorage("clientID");
@@ -312,6 +295,18 @@ function renderDeviceList() {
 		.catch(function(error) {
 			alert(error);
 		});
+}
+
+// Render Home step
+function renderHomeStep() {
+	document.querySelector(".header-area").innerHTML = headerTemplate(
+		"Nettie Thuis",
+		"cog",
+		"setting-btn"
+	);
+	document.querySelector(".main-content").innerHTML = welcomeMsgTemplate();
+	document.querySelector(".footer-area").innerHTML = footerTemplate("list-alt");
+	document.querySelector(".footer-area").style.display = "block";
 }
 
 // Render Device Token
