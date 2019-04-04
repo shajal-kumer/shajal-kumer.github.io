@@ -508,3 +508,20 @@ button#select_category i,
 	right: 24px;
 	top: 10px;
 }
+.radio-label {
+    position: relative;
+    width: 100%
+}
+.radio-label div {
+    display: inline-block;
+    position: relative;
+}
+.radio-label .radio-label-text {
+    position: absolute;
+    top: 3px;
+    left: 35px;
+    width: auto;
+}
+img.vivago {
+    width: 100px;
+}

@@ -4,7 +4,7 @@ const auth_data = {
 	password: "123456",
 	SessionID: UUIDjs.create().hex,
 	PatientID: localStorage.getItem("clientID"),
-	MaxQuestions: 3,
+	// MaxQuestions: 3,
 	access_token: null,
 	customerID: null,
 	ItembankID: null,
@@ -44,9 +44,11 @@ let categoryName = "";
 		if (event.target.classList.contains("form-btn")) {
 			//set preloader
 			if (localStorage.getItem("clientID") === null) {
-				alert("Please first set your ID");
+                console.log(alert("Uw clientID is nog niet ingevuld"));
+                return;
 			}
-			setPreloaderState(true);
+            setPreloaderState(true);
+            
 			axios(
 				`${BASE_URL}/api/ItemBank/GetItemBank?customerID=${
 					auth_data.customerID
@@ -102,7 +104,7 @@ let categoryName = "";
 					ItembankID: getSelectedCategory(),
 					SessionID: auth_data.SessionID,
 					CustomerID: auth_data.customerID,
-					MaxQuestions: auth_data.MaxQuestions
+					// MaxQuestions: auth_data.MaxQuestions
 				}),
 				method: "POST"
 			})
@@ -156,12 +158,26 @@ let categoryName = "";
 					CustomerID: auth_data.customerID,
 					RespondedID: getSelectedAnswer(),
 					ItemID: auth_data.ItemID,
-					MaxQuestions: auth_data.MaxQuestions
+					// MaxQuestions: auth_data.MaxQuestions
 				}),
 				method: "POST"
 			}).then(function(res) {
 				let CORSProxy = "https://cors-anywhere.herokuapp.com/";
 				if (res.data.ReturnStatusCode === 1) {
+					let posNeg = null;
+					if (
+						localStorage
+							.getItem("categoryName")
+							.trim()
+							.toLowerCase()
+							.includes("angst")
+					) {
+						posNeg =
+							res.data.ScoreInterpretations[0].Score < 50 ? "pos" : "neg";
+					} else {
+						posNeg =
+							res.data.ScoreInterpretations[0].Score > 50 ? "pos" : "neg";
+					}
 					axios(
 						CORSProxy +
 							"https://nettiethuis-in.azurewebsites.net/Api/PromisForm",
@@ -171,22 +187,27 @@ let categoryName = "";
 							},
 							data: JSON.stringify({
 								userid: localStorage.getItem("clientID"),
-								PromisFormName: getLocalStorage("categoryName").trim(),
+								PromisFormName: localStorage.getItem("categoryName").trim(),
 								PromisOutcome: res.data.ScoreInterpretations[0].Score.toString(),
 								PromisAverage: res.data.ScoreInterpretations[0].SE.toString(),
-								Description: ""
+								Description: posNeg
 							}),
 							method: "POST"
 						}
 					)
 						.then(function(res) {
-							console.log(res);
+							// console.log(res);
 						})
 						.catch(function(error) {
 							alert(error);
 						});
 
-					insertIntoApp(renderReport(res.data.ScoreInterpretations[0]));
+					insertIntoApp(
+						renderReport(
+							res.data.ScoreInterpretations[0],
+							localStorage.getItem("categoryName").trim()
+						)
+					);
 					setPreloaderState(false);
 					document.querySelector("#submit_answer").style.display = "none";
 					return true;
@@ -214,7 +235,7 @@ let categoryName = "";
 //category choosing template
 function chooseCategoryTemplate(lists) {
 	return `
-    <h5 class="mb-3">Please select a category from below</h5>
+    <h5 class="mb-3">Selecteer een categorie:</h5>
     <div class="categories">
       <ul>
         ${lists
@@ -222,15 +243,17 @@ function chooseCategoryTemplate(lists) {
 						return `
               <li>
                 <div class="d-flex align-items-center">
-                  <div>
+                  <label class="radio-label">
+                        <div>
                     <input type="radio" id=${
-											list.ID
-										} name="radio-category" required>
+                            list.ID
+                            } name="radio-category" required>
                     <label class="radio-button" for=${list.ID}></label>
                   </div>
-                  <div class="ml-3">
-                    ${list.Name.slice(26).split("|")[0]}
+                  <div class="radio-label-text">
+                    ${list.Name.replace("Dutch", "").replace("Flemish", "").replace("PROMIS", "").replace("Bank", "").replace("bank", "").replace("Nederlandse versie", "").replace("v1.2", "").replace("v1.0", "").replace("US v0.2", "").replace("DF v0.6", "").replace("|", "").replace("-", "").replace("-", "").replace("-", "")}
                   </div>
+                  </label>
                 </div>
               </li>
             `;
@@ -249,20 +272,22 @@ function questionTemplate(question) {
         <h5 class="mb-3">${question.ItemTitle}</h5>
         <ul>
           ${question.Responses.map(function(response) {
-						return `
+			return `
                 <li>
                   <div class="d-flex align-items-start">
-                    <div>
-                      <input type="radio" id=${
-												response.ResponseID
-											} name="radio-question" required>
-                      <label class="radio-button" for=${
-												response.ResponseID
-											}></label>
-                    </div>
-                    <div class="ml-2">
-                      ${response.Description}
-                    </div>
+                        <label class="radio-label">
+                            <div>
+                                <input type="radio" id=${
+                                        response.ResponseID
+                                        } name="radio-question" required>
+                                <label class="radio-button" for=${
+                                        response.ResponseID
+                                        }></label>
+                            </div>
+                            <div class="radio-label-text">
+                            ${response.Description}
+                            </div>
+                        </label>
                   </div>
                 </li>
               `;
@@ -278,14 +303,24 @@ function questionTemplate(question) {
 }
 
 // Render Report
-function renderReport(report) {
-	return `<h4 class="show_result">
+function renderReport(report, categoryName) {
+	if (categoryName.toLowerCase().includes("angst")) {
+		return `<h4 class="show_result">
             ${
-							report.Score >= report.SE
+							report.Score < 50
 								? "<i class='fa fa-smile-o'></i>"
 								: "<i class='fa fa-frown-o'></i>"
 						}
           </h4>`;
+	} else {
+		return `<h4 class="show_result">
+            ${
+							report.Score > 50
+								? "<i class='fa fa-smile-o'></i>"
+								: "<i class='fa fa-frown-o'></i>"
+						}
+          </h4>`;
+	}
 }
 
 //insert something into DOM (#app)
@@ -323,7 +358,7 @@ function showButton(button) {
 		return `
 			<div class="question_box_footer text-right">
 					<button id="select_category" class="select_category">
-						<span class="select-text">Select</span>
+						<span class="select-text">Start</span>
 						<i class="fa fa-angle-right"></i>
 					</button>
 				</div>
@@ -334,7 +369,7 @@ function showButton(button) {
 		return `
 			<div class="question_box_footer text-right">
 					<button id="submit_answer" class="submit_answer">
-						<span class="next-text">Next</span>
+						<span class="next-text">Volgende</span>
 						<i class="fa fa-angle-right"></i>
 					</button>
 			</div>
