@@ -162,8 +162,9 @@ let categoryName = "";
 				}),
 				method: "POST"
 			}).then(function(res) {
+                               
 				let CORSProxy = "https://cors-anywhere.herokuapp.com/";
-				if (res.data.ReturnStatusCode === 1) {
+                if (res.data.ScoreInterpretations.length !== 0) {
 					let posNeg = null;
 					if (
 						localStorage
