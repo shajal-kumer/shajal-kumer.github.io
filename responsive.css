@@ -64,6 +64,7 @@
     .header-sec .navbar-collapse {
             opacity: 1;
             visibility: visible;
+            background-color: #41C4FF;
         }
     .navbar{
         min-height: 0px
