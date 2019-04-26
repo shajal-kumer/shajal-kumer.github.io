@@ -91,16 +91,43 @@
 
         function getRoomNumber() {
             let roomID;
-            if (localStorage.getItem("roomID") === null) {
+            if (localStorage.getItem("activeRoomNumber") === null) {
                 roomID = 1;
+
             } else {
-                roomID = JSON.parse(localStorage.getItem("roomID"));
+                roomID = localStorage.getItem("activeRoomNumber");
             }
             rID = roomID;
         }
         getRoomNumber();
-
         getRooms(userID, 1);
+        // Get Rooms
+        function getRooms(userId, token) {
+            $.ajax({
+                url: baseURL + "api/getrooms",
+                type: "GET",
+                data: {
+                    userID: userId,
+                    token: token
+                },
+                success: function (data) {
+                    rID = parseInt(data[0].id);
+                    
+                    if(localStorage.getItem("activeRoomNumber") === null) {
+                        getWaitingQueue(rID, 1);
+                        getMessages(rID, 1);
+                    } else {
+                        getWaitingQueue(localStorage.getItem("activeRoomNumber"), 1);
+                        getMessages(localStorage.getItem("activeRoomNumber"), 1);
+                    }
+                    
+                    rederHtml(data);
+                },
+                error: function (data) {
+                    console.error(JSON.stringify(data, null, 4));
+                }
+            });
+        }
 
         function rederHtml(waitingRoomdata) {
             var HTML = "";
@@ -129,11 +156,12 @@
                 var activeRoomNumber = localStorage.getItem("activeRoomNumber");
                 var roomList = $(".list li");
                 for (var i = 0; i < roomList.length; i++) {
-                    roomList[i].classList.remove("selected")
+                    roomList[i].classList.remove("selected");
                 }
-                $(".list .option:nth-child(" + activeRoomNumber + ")").addClass("selected");
-                var currentRoomText = $(".list .option:nth-child(" + activeRoomNumber + ")").text();
-                $(".current").text(currentRoomText)
+                $(".list .option:nth-child(" + parseInt(activeRoomNumber) + ")").addClass("selected");
+                var currentRoomText = $(".list .option:nth-child(" + parseInt(activeRoomNumber) + ")").text();
+          
+                $(".current").text(currentRoomText);
                 getWaitingQueue(activeRoomNumber, 1);
                 getMessages(activeRoomNumber, 1);
             }
@@ -143,9 +171,11 @@
                 var li = event.target;
                 if (event.target.tagName === "LI") {
                     rID = $(li).attr("data-id");
+                    console.log("room id on click : ", rID);
+                    console.log(typeof rID);
                     getWaitingQueue(rID, 1);
                     getMessages(rID, 1);
-                    localStorage.setItem("activeRoomNumber", rID)
+                    localStorage.setItem("activeRoomNumber", rID);
                 }
             });
 
@@ -224,29 +254,7 @@
                 .show();
         }
 
-        // Get Rooms
-        function getRooms(userId, token) {
-            $.ajax({
-                url: baseURL + "api/getrooms",
-                type: "GET",
-                data: {
-                    userID: userId,
-                    token: token
-                },
-                success: function (data) {
-                    rID = parseInt(data[0].id);
-                    console.log('Room ID on Get Room : ', rID);
-
-                    getWaitingQueue(rID, 1);
-                    getMessages(rID, 1);
-                    rederHtml(data);
-                },
-                error: function (data) {
-                    console.error(JSON.stringify(data, null, 4));
-                }
-            });
-        }
-
+       
         // Get Waiting Queue
         var totalnewQueue;
         var totalOldQueue;
@@ -262,8 +270,6 @@
                     token: token
                 },
                 success: function (data) {
-
-
                     messages = $.extend(true, {}, data);
                     var elem = [];
                     $.each(data, function (index, item) {
@@ -299,7 +305,6 @@
                     token: token
                 },
                 success: function (data) {
-
 
                     tempPatientList = $.extend(true, [], data);
                     if (null !== data && data.length > 0) {
@@ -529,12 +534,15 @@
 
         // 5 Sec interval
         setInterval(function () {
-            console.log('Local storeage room id : ', localStorage.getItem("activeRoomNumber"));
-
-            getWaitingQueue(localStorage.getItem("activeRoomNumber"), 1);
-            getMessages(localStorage.getItem("activeRoomNumber"), 1);
+            if(localStorage.getItem("activeRoomNumber") === null) {
+                getWaitingQueue(rID, 1);
+                getMessages(rID, 1);
+            } else {
+                getWaitingQueue(localStorage.getItem("activeRoomNumber"), 1);
+                getMessages(localStorage.getItem("activeRoomNumber"), 1);
+            }
+           
         }, 5000);
-
         // Get Rooms
         function Invite() {
             var contactin = document.getElementById("contactin").value;
