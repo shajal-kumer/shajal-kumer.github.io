@@ -1,196 +1,251 @@
 /* Extra large Desktop - 1920px */
 @media only screen and (min-width: 1920px) {
-      
-    .container{
+
+    .container {
         width: 1880px
-    }  
-    
-}/*End Query*/
+    }
+
+}
+
+/*End Query*/
 
 /* Large Desktop - 1366px */
-@media only screen and (min-width: 1200px) and (max-width: 1919px){
-     
-    .container{
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+
+    .container {
         width: 1170px
-    }   
-    
-}/*End Query*/
+    }
+
+}
+
+/*End Query*/
 
 /* Medium Desktop - 992px - 1024px */
-@media only screen and (min-width: 992px) and (max-width: 1199px){
-    
-    .container{
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .container {
         width: 970px;
     }
-    
-}/*End Query*/
+
+}
+
+/*End Query*/
 
 /* Tablet - 768px */
-@media only screen and (min-width: 768px) and (max-width: 991px){
-     
-    .container{
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .container {
         width: 750px;
-    }   
-    .navbar-nonbg .navbar-nav > li > a{
+    }
+
+    .navbar-nonbg .navbar-nav>li>a {
         padding: 14px 4px;
     }
-    .about-info{
+
+    .about-info {
         text-align: center;
-        margin-top:30px 
+        margin-top: 30px
     }
+
     .single-service {
         margin-bottom: 30px
     }
+
     .contact-left-sec {
         text-align: center;
         margin-bottom: 30px
     }
-    .contact-right-sec .submit{
+
+    .contact-right-sec .submit {
         margin: 0 auto;
         display: block;
         margin-top: 30px
     }
-    
-}/*End Query*/
+
+}
+
+/*End Query*/
 
 /*   All Mobile Device */
-@media only screen and (max-width: 767px){
-     
-    .container{
+@media only screen and (max-width: 767px) {
+
+    .container {
         width: 100%;
         padding: 0px 15px;
         box-sizing: border-box;
     }
+
     .header-sec .navbar-collapse {
-            opacity: 1;
-            visibility: visible;
-        }
-    .navbar{
+        opacity: 1;
+        visibility: visible;
+        background-color: #41C4FF;
+    }
+
+    .navbar {
         min-height: 0px
     }
+
     .navbar-nonbg .navbar-toggle {
-      border-color: #41C4FF;
-      background: transparent;
-      transition: all .3s ease;
-      margin-top: -42px
+        border-color: #41C4FF;
+        background: transparent;
+        transition: all .3s ease;
+        margin-top: -42px
     }
-    .navbar-nonbg .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+
+    .navbar-nonbg .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover {
         background: transparent;
         border-color: #41C4FF;
     }
-    .navbar-nonbg .navbar-toggle:hover{
+
+    .navbar-nonbg .navbar-toggle:hover {
         border-radius: 0px
     }
-    .navbar-nonbg .navbar-toggle:focus .icon-bar, .navbar-nonbg .navbar-toggle:hover .icon-bar {
+
+    .navbar-nonbg .navbar-toggle:focus .icon-bar,
+    .navbar-nonbg .navbar-toggle:hover .icon-bar {
         background: #fff;
     }
-    .navbar-nonbg .navbar-toggle .icon-bar{
+
+    .navbar-nonbg .navbar-toggle .icon-bar {
         background: #41C4FF;
         transition: all .3s ease
     }
-    
-    .welcome-text h1{
+
+    .welcome-text h1 {
         font-size: 26px;
     }
-    .welcome-text h2{
+
+    .welcome-text h2 {
         font-size: 16px;
-    }   
-    .about-info{
+    }
+
+    .about-info {
         text-align: center;
-        margin-top:30px 
+        margin-top: 30px
     }
-    .about-info h1{
-        font-size: 28px 
+
+    .about-info h1 {
+        font-size: 28px
     }
-    .about-info h2{
-        font-size: 16px 
+
+    .about-info h2 {
+        font-size: 16px
     }
+
     .single-service {
         margin-bottom: 30px
     }
-    .hire-me h2{
+
+    .hire-me h2 {
         font-size: 20px;
     }
-    .hire-me h1{ 
+
+    .hire-me h1 {
         font-size: 26px;
     }
+
     .contact-left-sec {
         text-align: center;
         margin-bottom: 30px
     }
-    .contact-right-sec .submit{
+
+    .contact-right-sec .submit {
         margin: 0 auto;
         display: block;
         margin-top: 30px
     }
-}/*End Query*/
+}
+
+/*End Query*/
 
 /* Wide Screen Mobile Device */
-@media only screen and (min-width: 480px) and (max-width: 767px){
-     
-   .container{
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .container {
         width: 450px;
     }
+
     .header-sec .navbar-collapse {
         opacity: 1;
         visibility: visible;
     }
-    .navbar{
+
+    .navbar {
         min-height: 0px
     }
+
     .navbar-nonbg .navbar-toggle {
-      border-color: #41C4FF;
-      background: transparent;
-      transition: all .3s ease;
-      margin-top: -42px
+        border-color: #41C4FF;
+        background: transparent;
+        transition: all .3s ease;
+        margin-top: -42px
     }
-    .navbar-nonbg .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+
+    .navbar-nonbg .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover {
         background: transparent;
         border-color: #41C4FF;
     }
-    .navbar-nonbg .navbar-toggle:hover{
+
+    .navbar-nonbg .navbar-toggle:hover {
         border-radius: 0px
     }
-    .navbar-nonbg .navbar-toggle:focus .icon-bar, .navbar-nonbg .navbar-toggle:hover .icon-bar {
+
+    .navbar-nonbg .navbar-toggle:focus .icon-bar,
+    .navbar-nonbg .navbar-toggle:hover .icon-bar {
         background: #fff;
     }
-    .navbar-nonbg .navbar-toggle .icon-bar{
+
+    .navbar-nonbg .navbar-toggle .icon-bar {
         background: #41C4FF;
         transition: all .3s ease
     }
-    .welcome-text h1{
+
+    .welcome-text h1 {
         font-size: 28px;
     }
-    .welcome-text h2{
+
+    .welcome-text h2 {
         font-size: 16px;
-    }   
-    .about-info{
+    }
+
+    .about-info {
         text-align: center;
-        margin-top:30px 
+        margin-top: 30px
     }
-    .about-info h1{
-        font-size: 28px 
+
+    .about-info h1 {
+        font-size: 28px
     }
-    .about-info h2{
-        font-size: 16px 
+
+    .about-info h2 {
+        font-size: 16px
     }
+
     .single-service {
         margin-bottom: 30px
     }
-    .hire-me h2{
+
+    .hire-me h2 {
         font-size: 20px;
     }
-    .hire-me h1{ 
+
+    .hire-me h1 {
         font-size: 26px;
     }
+
     .contact-left-sec {
         text-align: center;
         margin-bottom: 30px
     }
-    .contact-right-sec .submit{
+
+    .contact-right-sec .submit {
         margin: 0 auto;
         display: block;
         margin-top: 30px
-    }   
-    
-}/*End Query*/
+    }
+
+}
+
+/*End Query*/
