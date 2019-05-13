@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SpeedOf.Me API Consumer - Advanced Sample Page</title>
+		<meta
+			name="viewport"
+			content="user-scalable=no, width=device-width, maximum-scale=1.0"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script src="//speedof.me/api/api.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<h2>SpeedOf.Me API Consumer - Advanced Sample Page</h2>
+
+		<script type="text/javascript">
+			SomApi.account = 'SOM5cd96452362f0';
+			SomApi.domainName =
+				'http://shajal-kumer.github.io/bw/internet-speed';
+			SomApi.config = {
+				sustainTime: 8,
+				testServerEnabled: false,
+				userInfoEnabled: false,
+				latencyTestEnabled: false,
+				uploadTestEnabled: false,
+				progress: {
+					enabled: true,
+					verbose: false
+				}
+			};
+			SomApi.onTestCompleted = onTestCompleted;
+			SomApi.onError = onError;
+
+			function onTestCompleted(testResult) {
+				alert(testResult.download);
+			}
+
+			function onError(error) {
+				// msgDiv.innerHTML = 'Error ' + error.code + ': ' + error.message;
+				alert(error);
+			}
+		</script>
+	</body>
+</html>
