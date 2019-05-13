@@ -12,14 +12,20 @@
 					console.log('Enter press');
 					$('.panel-body').scrollTop(height);
 				}
-			}, 300);
+			}, 350);
 		});
 
 		$('#btnEnviar').on('click', function() {
 			var height = $('.chatpluginchat').height();
 			console.log('You Clicked me ');
-			$('.panel-body').scrollTop(10000);
+			setTimeout(function() {
+				if (e.keyCode === 13) {
+					console.log('Enter press');
+					$('.panel-body').scrollTop(height);
+				}
+			}, 350);
 		});
+
 
 		$('#form1').keydown(function(event) {
 			if (event.keyCode === 13) {
