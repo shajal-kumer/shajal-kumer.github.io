@@ -6,25 +6,10 @@
 
 	jQuery(document).ready(function($) {
       
-
-        // Select the node that will be observed for mutations
-        var targetNode = document.querySelector('.chatpluginchat');
-
-        // Options for the observer (which mutations to observe)
-        var config = { attributes: true, childList: true, subtree: true };
-
-        // Callback function to execute when mutations are observed
-        var callback = function (mutationsList, observer) {
-            for (var mutation of mutationsList) {
-                $('.panel-body').scrollTop(10000);
-            }
-        };
-
-        // Create an observer instance linked to the callback function
-        var observer = new MutationObserver(callback);
-
-        // Start observing the target node for configured mutations
-        observer.observe(targetNode, config);
+        setInterval(function () {
+            var height = $('.chatpluginchat').height();
+            $('.panel-body').scrollTop(height);
+        }, 10);
 
 		$('#form1').keydown(function(event) {
 			if (event.keyCode === 13) {
