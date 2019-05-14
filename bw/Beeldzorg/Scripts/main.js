@@ -5,27 +5,13 @@
 	var baseURL = 'https://nettie.azurewebsites.net/';
 
 	jQuery(document).ready(function($) {
-		$('#txtMensaje').keyup(function(e) {
-			var height = $('.chatpluginchat').height();
-			setTimeout(function() {
-				if (e.keyCode === 13) {
-					console.log('Enter press');
-					$('.panel-body').scrollTop(height);
-				}
-			}, 350);
-		});
-
-		$('#btnEnviar').on('click', function() {
-			var height = $('.chatpluginchat').height();
-			console.log('You Clicked me ');
-			setTimeout(function() {
-				if (e.keyCode === 13) {
-					console.log('Enter press');
-					$('.panel-body').scrollTop(height);
-				}
-			}, 350);
-		});
-
+        $('.panel-body').bind('DOMSubtreeModified', function () {
+            var height = $('.chatpluginchat').height();
+            setTimeout(function () {
+                $('.panel-body').scrollTop(height);
+            }, 400);
+            console.log('Hello');
+        });
 
 		$('#form1').keydown(function(event) {
 			if (event.keyCode === 13) {

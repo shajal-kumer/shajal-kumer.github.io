@@ -2,6 +2,14 @@
   "use strict";
 
   jQuery(document).ready(function($) {
+
+      $('.panel-body').bind('DOMSubtreeModified', function () {
+          var height = $('.chatpluginchat').height();
+          setTimeout(function () {
+              $('.panel-body').scrollTop(height);
+          }, 500);
+          console.log('Hello');
+      });
     $(".chat__box--btn").on("click", function() {
       $(".chat__box-field").toggleClass("open");
       if ($(".chat__box-field").hasClass("open")) {
