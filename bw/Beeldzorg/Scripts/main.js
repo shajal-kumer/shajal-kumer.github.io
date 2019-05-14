@@ -5,13 +5,26 @@
 	var baseURL = 'https://nettie.azurewebsites.net/';
 
 	jQuery(document).ready(function($) {
-        $('.panel-body').bind('DOMSubtreeModified', function () {
-            var height = $('.chatpluginchat').height();
-            setTimeout(function () {
-                $('.panel-body').scrollTop(height);
-            }, 400);
-            console.log('Hello');
-        });
+      
+
+        // Select the node that will be observed for mutations
+        var targetNode = document.querySelector('.chatpluginchat');
+
+        // Options for the observer (which mutations to observe)
+        var config = { attributes: true, childList: true, subtree: true };
+
+        // Callback function to execute when mutations are observed
+        var callback = function (mutationsList, observer) {
+            for (var mutation of mutationsList) {
+                $('.panel-body').scrollTop(10000);
+            }
+        };
+
+        // Create an observer instance linked to the callback function
+        var observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(targetNode, config);
 
 		$('#form1').keydown(function(event) {
 			if (event.keyCode === 13) {
