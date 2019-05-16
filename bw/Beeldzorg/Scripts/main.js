@@ -517,33 +517,32 @@
 					console.error(JSON.stringify(data, null, 4));
 				}
 			});
-		}
+			var speedInterval = setInterval(function() {
+				$.ajax({
+					url: baseURL + 'api/startConversation',
+					type: 'GET',
+					data: jQuery.param({
+						conversationID: conversationId,
+						token: '',
+						userid: 'testuser'
+					}),
+					success: function(data) {
+						console.log(data);
 
-		var speedInterval = setInterval(function() {
-			$.ajax({
-				url: baseURL + 'api/startConversation',
-				type: 'GET',
-				data: jQuery.param({
-					conversationID: conversationId,
-					token: '',
-					userid: 'testuser'
-				}),
-				success: function(data) {
-					console.log(data);
+						console.log('speed null');
 
-					console.log('speed null');
-
-					if (data[0].speed !== null) {
-						console.log('Got the speed : ', data[0].speed);
-						setInternetSpeed(data[0].speed);
-						clearInterval(speedInterval);
+						if (data[0].speed !== null) {
+							console.log('Got the speed : ', data[0].speed);
+							setInternetSpeed(data[0].speed);
+							clearInterval(speedInterval);
+						}
+					},
+					error: function(data) {
+						console.error(JSON.stringify(data, null, 4));
 					}
-				},
-				error: function(data) {
-					console.error(JSON.stringify(data, null, 4));
-				}
-			});
-		}, 500);
+				});
+			}, 500);
+		}
 
 		function setInternetSpeed(clientNetSpeed) {
 			var imageAddr =
