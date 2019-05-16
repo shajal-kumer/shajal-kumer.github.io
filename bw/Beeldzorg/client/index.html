@@ -271,8 +271,9 @@
 
 					var a = setInterval(function() {
 						var frameRate = localStorage.getItem('frameRate');
+						console.log('frameRate : ', frameRate);
+
 						if (frameRate) {
-							clearInterval(a);
 							$('.bandwidth-framerate-wrap').css(
 								'display',
 								'block'
@@ -308,6 +309,8 @@
 									alert(e);
 								}
 							});
+
+							clearInterval(a);
 						}
 					}, 500);
 				}

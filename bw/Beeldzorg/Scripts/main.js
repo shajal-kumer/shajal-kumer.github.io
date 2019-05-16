@@ -494,12 +494,14 @@
 					userid: 'testuser'
 				}),
 				success: function(data) {
+					console.log(data);
+
 					startup(data[0].conversationtoken);
 					localStorage.setItem(
 						'Doctorconversationtoken',
 						data[0].conversationtoken
 					);
-					setInternetSpeed(data[0].speed);
+
 					if (data[0].conversationtoken !== '') {
 						$('#iframeCall').attr(
 							'src',
@@ -511,6 +513,25 @@
 							window.location.origin +
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
+					}
+					if (data[0].speed === null) {
+						$.ajax({
+							url: baseURL + 'api/startConversation',
+							type: 'GET',
+							data: jQuery.param({
+								conversationID: conversationId,
+								token: '',
+								userid: 'testuser'
+							}),
+							success: function(data) {
+								setInternetSpeed(data[0].speed);
+							},
+							error: function(data) {
+								console.error(JSON.stringify(data, null, 4));
+							}
+						});
+					} else {
+						setInternetSpeed(data[0].speed);
 					}
 				},
 				error: function(data) {
