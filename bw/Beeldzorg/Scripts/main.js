@@ -30,6 +30,7 @@
 
 		$('.popup .close').on('click', function() {
 			$('.chatpluginchat').html('');
+			$('.bandwidth-framerate-wrap').css('display', 'none');
 		});
 
 		var doctorIframeHeight = $('#iframeCall').height();
@@ -527,10 +528,7 @@
 						userid: 'testuser'
 					}),
 					success: function(data) {
-						console.log(data);
-
 						console.log('speed null');
-
 						if (data[0].speed !== null) {
 							console.log('Got the speed : ', data[0].speed);
 							setInternetSpeed(data[0].speed);
@@ -600,6 +598,7 @@
 				}),
 				success: function(data) {
 					if (data[0].conversationtoken !== '') {
+						$('.bandwidth-framerate-wrap').css('display', 'block');
 						$('#iframeCall').attr(
 							'src',
 							'callbasic/index.html?room=' +
@@ -611,7 +610,7 @@
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
 
-						console.log(data);
+						console.log('joinConversation data : ', data);
 					}
 				},
 				error: function(data) {
