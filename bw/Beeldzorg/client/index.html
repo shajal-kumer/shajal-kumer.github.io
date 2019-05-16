@@ -236,12 +236,12 @@
 						setLocalStorage('clientname', patientData.clientname);
 						resetExpireTime();
 						console.log('Hello');
+						setInternetSpeed(patientData.id);
 
 						$('#patientCount').text(patientData.inline);
 						// .5 sec Interval
 						updateInterval = setInterval(function() {
 							updateRoom(patientData.id);
-							setInternetSpeed(patientData.id);
 						}, 500);
 					},
 					error: function(data) {
