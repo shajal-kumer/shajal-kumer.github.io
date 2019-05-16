@@ -514,31 +514,33 @@
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
 					}
-					if (data[0].speed === null) {
-						$.ajax({
-							url: baseURL + 'api/startConversation',
-							type: 'GET',
-							data: jQuery.param({
-								conversationID: conversationId,
-								token: '',
-								userid: 'testuser'
-							}),
-							success: function(data) {
-								setInternetSpeed(data[0].speed);
-							},
-							error: function(data) {
-								console.error(JSON.stringify(data, null, 4));
-							}
-						});
-					} else {
-						setInternetSpeed(data[0].speed);
-					}
 				},
 				error: function(data) {
 					console.error(JSON.stringify(data, null, 4));
 				}
 			});
 		}
+
+		var b = setInterval(function() {
+			$.ajax({
+				url: baseURL + 'api/startConversation',
+				type: 'GET',
+				data: jQuery.param({
+					conversationID: conversationId,
+					token: '',
+					userid: 'testuser'
+				}),
+				success: function(data) {
+					if (data[0].speed !== null) {
+						setInternetSpeed(data[0].speed);
+						clearInterval(b);
+					}
+				},
+				error: function(data) {
+					console.error(JSON.stringify(data, null, 4));
+				}
+			});
+		}, 500);
 
 		function setInternetSpeed(clientNetSpeed) {
 			var imageAddr =
