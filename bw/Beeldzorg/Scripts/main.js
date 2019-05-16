@@ -541,7 +541,10 @@
 		}
 
 		function setInternetSpeed(clientNetSpeed) {
-			var imageAddr = '../Images/img.jpg' + '?n=' + Math.random();
+			var imageAddr =
+				'https://shajal-kumer.github.io/bw/Beeldzorg/Images/img.jpg' +
+				'?n=' +
+				Math.random();
 			var startTime, endTime;
 			var downloadSize = [4995374];
 
