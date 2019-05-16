@@ -71,6 +71,10 @@
 						allow="geolocation; microphone; camera"
 						src=""
 					></iframe>
+					<div class="bandwidth-framerate-wrap">
+						<p class="bandwidth"></p>
+						<p class="framerate"></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -231,6 +235,9 @@
 						setLocalStorage('conversationId', patientData.id);
 						setLocalStorage('clientname', patientData.clientname);
 						resetExpireTime();
+						console.log('Hello');
+						setInternetSpeed(patientData.id);
+
 						$('#patientCount').text(patientData.inline);
 						// .5 sec Interval
 						updateInterval = setInterval(function() {
@@ -242,7 +249,69 @@
 					}
 				});
 			}
+			function setInternetSpeed(conversationID) {
+				var imageAddr = '../Images/img.jpg' + '?n=' + Math.random();
+				var startTime, endTime;
+				var downloadSize = [4995374];
 
+				var download = new Image();
+				download.onload = function() {
+					endTime = new Date().getTime();
+					showResults();
+				};
+				startTime = new Date().getTime();
+				download.src = imageAddr;
+
+				function showResults() {
+					var duration = (endTime - startTime) / 1000;
+					var bitsLoaded = downloadSize * 8;
+					var speedBps = (bitsLoaded / duration).toFixed(2);
+					var speedKbps = (speedBps / 1024).toFixed(2);
+					var speedMbps = (speedKbps / 1024).toFixed(2).toString();
+
+					var a = setInterval(function() {
+						var frameRate = localStorage.getItem('frameRate');
+						if (frameRate) {
+							clearInterval(a);
+							$('.bandwidth-framerate-wrap').css(
+								'display',
+								'block'
+							);
+							$('.framerate').text(
+								'Your video quality is (' + frameRate + 'fps)'
+							);
+							$('.bandwidth').html(
+								'Your internetspeed  ' + speedMbps + 'Mbps'
+							);
+							console.log('conversationID : ', conversationID);
+							console.log(
+								'conversationID type : ',
+								typeof conversationID
+							);
+							console.log('speedMbps : ', speedMbps);
+							console.log('speedMbps typeof: ', typeof speedMbps);
+							console.log('frameRate : ', frameRate);
+							console.log('frameRate typeof: ', typeof frameRate);
+
+							$.ajax({
+								url: baseULR + '/api/speed',
+								type: 'GET',
+								data: jQuery.param({
+									conversationID: conversationID,
+									speed: speedMbps,
+									framerate: frameRate
+								}),
+								success: function(data) {
+									console.log(data);
+								},
+								error: function(e) {
+									alert(e);
+								}
+							});
+						}
+					}, 500);
+				}
+			}
 			// update Rooms
 			function updateRoom(conversationId) {
 				//  alert(baseULR + '/api/updateRoom');
@@ -267,7 +336,7 @@
 								'conversationToken',
 								patientData.conversationtoken
 							);
-							
+
 							$('#iframeCall').attr(
 								'src',
 								'../callbasic/index.html?room=' +

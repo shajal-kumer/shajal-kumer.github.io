@@ -5,11 +5,10 @@
 	var baseURL = 'https://nettie.azurewebsites.net/';
 
 	jQuery(document).ready(function($) {
-      
-        setInterval(function () {
-            var height = $('.chatpluginchat').height();
-            $('.panel-body').scrollTop(height);
-        }, 10);
+		setInterval(function() {
+			var height = $('.chatpluginchat').height();
+			$('.panel-body').scrollTop(height);
+		}, 10);
 
 		$('#form1').keydown(function(event) {
 			if (event.keyCode === 13) {
@@ -500,7 +499,7 @@
 						'Doctorconversationtoken',
 						data[0].conversationtoken
 					);
-
+					setInternetSpeed(data[0].speed);
 					if (data[0].conversationtoken !== '') {
 						$('#iframeCall').attr(
 							'src',
@@ -518,6 +517,48 @@
 					console.error(JSON.stringify(data, null, 4));
 				}
 			});
+		}
+
+		function setInternetSpeed(clientNetSpeed) {
+			var imageAddr = '../Images/img.jpg' + '?n=' + Math.random();
+			var startTime, endTime;
+			var downloadSize = [4995374];
+
+			var download = new Image();
+			download.onload = function() {
+				endTime = new Date().getTime();
+				showResults();
+			};
+			startTime = new Date().getTime();
+			download.src = imageAddr;
+
+			function showResults() {
+				var duration = (endTime - startTime) / 1000;
+				var bitsLoaded = downloadSize * 8;
+				var speedBps = (bitsLoaded / duration).toFixed(2);
+				var speedKbps = (speedBps / 1024).toFixed(2);
+				var speedMbps = (speedKbps / 1024).toFixed(2).toString();
+				console.log('clientNetSpeed : ', clientNetSpeed);
+
+				var a = setInterval(function() {
+					var frameRate = localStorage.getItem('frameRate');
+					if (frameRate) {
+						clearInterval(a);
+						$('.bandwidth-framerate-wrap').css('display', 'block');
+						$('.framerate').text(
+							'Your video quality is (' + frameRate + 'fps)'
+						);
+						$('.bandwidth').html(
+							'Your internet speed (' + speedMbps + 'Mbps)'
+						);
+						$('.client-bandwidth').text(
+							'Client internet speed is (' +
+								clientNetSpeed +
+								'Mbps)'
+						);
+					}
+				}, 500);
+			}
 		}
 
 		// Join call
@@ -541,6 +582,8 @@
 							window.location.origin +
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
+
+						console.log(data);
 					}
 				},
 				error: function(data) {

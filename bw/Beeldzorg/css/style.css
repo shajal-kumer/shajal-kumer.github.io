@@ -40,6 +40,21 @@ h1 {
 	border: 1px solid #000 !important;
 }
 
+.bandwidth-framerate-wrap {
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+	background: #4472c4;
+	color: #fff;
+	padding: 7px 10px;
+	display: none;
+}
+
+.bandwidth-framerate-wrap p {
+	margin: 0;
+	font-size: 14px;
+}
+
 .button {
 	font-size: 1em;
 	padding: 10px;
