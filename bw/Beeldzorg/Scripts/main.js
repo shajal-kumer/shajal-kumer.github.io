@@ -494,8 +494,6 @@
 					userid: 'testuser'
 				}),
 				success: function(data) {
-					console.log(data);
-
 					startup(data[0].conversationtoken);
 					localStorage.setItem(
 						'Doctorconversationtoken',
@@ -521,7 +519,7 @@
 			});
 		}
 
-		var b = setInterval(function() {
+		var speedInterval = setInterval(function() {
 			$.ajax({
 				url: baseURL + 'api/startConversation',
 				type: 'GET',
@@ -531,9 +529,14 @@
 					userid: 'testuser'
 				}),
 				success: function(data) {
+					console.log(data);
+
+					console.log('speed null');
+
 					if (data[0].speed !== null) {
+						console.log('Got the speed : ', data[0].speed);
 						setInternetSpeed(data[0].speed);
-						clearInterval(b);
+						clearInterval(speedInterval);
 					}
 				},
 				error: function(data) {

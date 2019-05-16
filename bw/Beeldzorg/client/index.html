@@ -236,12 +236,12 @@
 						setLocalStorage('clientname', patientData.clientname);
 						resetExpireTime();
 						console.log('Hello');
-						setInternetSpeed(patientData.id);
 
 						$('#patientCount').text(patientData.inline);
 						// .5 sec Interval
 						updateInterval = setInterval(function() {
 							updateRoom(patientData.id);
+							setInternetSpeed(patientData.id);
 						}, 500);
 					},
 					error: function(data) {
@@ -249,6 +249,7 @@
 					}
 				});
 			}
+
 			function setInternetSpeed(conversationID) {
 				var imageAddr =
 					'https://shajal-kumer.github.io/bw/Beeldzorg/Images/img.jpg' +
@@ -272,11 +273,12 @@
 					var speedKbps = (speedBps / 1024).toFixed(2);
 					var speedMbps = (speedKbps / 1024).toFixed(2).toString();
 
-					var a = setInterval(function() {
+					var framerateInterval = setInterval(function() {
 						var frameRate = localStorage.getItem('frameRate');
 						console.log('frameRate : ', frameRate);
 
 						if (frameRate) {
+							clearInterval(framerateInterval);
 							$('.bandwidth-framerate-wrap').css(
 								'display',
 								'block'
@@ -312,8 +314,6 @@
 									alert(e);
 								}
 							});
-
-							clearInterval(a);
 						}
 					}, 500);
 				}
@@ -321,7 +321,7 @@
 			// update Rooms
 			function updateRoom(conversationId) {
 				//  alert(baseULR + '/api/updateRoom');
-				setInternetSpeed(conversationId);
+
 				$.ajax({
 					url: baseULR + '/api/updateRoom',
 					type: 'GET',
