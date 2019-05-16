@@ -513,6 +513,10 @@
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
 					}
+					console.log(
+						'data[0].conversationtoken : ',
+						data[0].conversationtoken
+					);
 				},
 				error: function(data) {
 					console.error(JSON.stringify(data, null, 4));
@@ -610,7 +614,10 @@
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
 
-						console.log('joinConversation data : ', data);
+						console.log(
+							'data[0].conversationtoken : ',
+							data[0].conversationtoken
+						);
 					}
 				},
 				error: function(data) {
