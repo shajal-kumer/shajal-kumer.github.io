@@ -321,7 +321,7 @@
 			// update Rooms
 			function updateRoom(conversationId) {
 				//  alert(baseULR + '/api/updateRoom');
-
+				setInternetSpeed(conversationId);
 				$.ajax({
 					url: baseULR + '/api/updateRoom',
 					type: 'GET',
