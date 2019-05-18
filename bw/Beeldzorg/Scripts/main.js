@@ -5,10 +5,10 @@
 	var baseURL = 'https://nettie.azurewebsites.net/';
 
 	jQuery(document).ready(function($) {
-		// setInterval(function() {
-		// 	var height = $('.chatpluginchat').height();
-		// 	$('.panel-body').scrollTop(height);
-        // }, 10);
+		setInterval(function() {
+			var height = $('.chatpluginchat').height();
+			$('.panel-body').scrollTop(height);
+        }, 10);
 
         // Select the node that will be observed for mutations
         var doctorChatList = document.querySelector('.doctor-chatlist');
@@ -572,6 +572,7 @@
 				var speedBps = (bitsLoaded / duration).toFixed(2);
 				var speedKbps = (speedBps / 1024).toFixed(2);
 				var speedMbps = (speedKbps / 1024).toFixed(2).toString();
+                console.log('speedMbps : ', speedMbps);
 
 				// var intervalForGettingFramerate = setInterval(function() {
 				// 	var frameRate = localStorage.getItem('frameRate');
