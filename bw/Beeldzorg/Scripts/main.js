@@ -5,11 +5,37 @@
 	var baseURL = 'https://nettie.azurewebsites.net/';
 
 	jQuery(document).ready(function($) {
-		setInterval(function() {
-			var height = $('.chatpluginchat').height();
-			$('.panel-body').scrollTop(height);
-		}, 10);
+		// setInterval(function() {
+		// 	var height = $('.chatpluginchat').height();
+		// 	$('.panel-body').scrollTop(height);
+        // }, 10);
 
+        // Select the node that will be observed for mutations
+        var chatList = document.querySelector('.doctor-chatlist');
+
+        // Options for the observer (which mutations to observe)
+        var configChatList = { attributes: true, childList: true, subtree: true };
+
+        // Callback function to execute when mutations are observed
+        var callback = function (mutationsList, observer) {
+            for (var mutation of mutationsList) {
+                $('.doctor-panel-body').scrollTop(10000);
+            }
+        };
+        // Create an observer instance linked to the callback function
+        var observer = new MutationObserver(callback);
+
+        // Start observing the target node for configured mutations
+        observer.observe(chatList, configChatList);
+        
+        // Chat panel body height set
+        var contentHeight = $(".popup .content").height();
+        $('#Elchat .panel-body').css('height', contentHeight - 150)
+       
+        
+        
+
+        // Dont reload the page or form preventDefault
 		$('#form1').keydown(function(event) {
 			if (event.keyCode === 13) {
 				event.preventDefault();
@@ -17,6 +43,7 @@
 			}
 		});
 
+        // Chat open / close
 		$('.chat__box--btn').on('click', function() {
 			$('.chat__box-field').toggleClass('open');
 			if ($('.chat__box-field').hasClass('open')) {
@@ -486,6 +513,7 @@
 
 		// Start call
 		function startConversation(conversationId) {
+			
 			$.ajax({
 				url: baseURL + 'api/startConversation',
 				type: 'GET',
@@ -500,6 +528,7 @@
 						'Doctorconversationtoken',
 						data[0].conversationtoken
 					);
+					console.log('data: ', data[0].speed);
 
 					if (data[0].conversationtoken !== '') {
 						$('#iframeCall').attr(
@@ -513,42 +542,17 @@
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
 					}
-					console.log(
-						'data[0].conversationtoken : ',
-						data[0].conversationtoken
-					);
+					
 				},
 				error: function(data) {
 					console.error(JSON.stringify(data, null, 4));
 				}
 			});
-			var speedInterval = setInterval(function() {
-				$.ajax({
-					url: baseURL + 'api/startConversation',
-					type: 'GET',
-					data: jQuery.param({
-						conversationID: conversationId,
-						token: '',
-						userid: 'testuser'
-					}),
-					success: function(data) {
-						console.log('speed null');
-						if (data[0].speed !== null) {
-							console.log('Got the speed : ', data[0].speed);
-							setInternetSpeed(data[0].speed);
-							clearInterval(speedInterval);
-						}
-					},
-					error: function(data) {
-						console.error(JSON.stringify(data, null, 4));
-					}
-				});
-			}, 500);
 		}
-
+        
 		function setInternetSpeed(clientNetSpeed) {
 			var imageAddr =
-				'https://shajal-kumer.github.io/bw/Beeldzorg/Images/img.jpg' +
+				'../Images/img.jpg' +
 				'?n=' +
 				Math.random();
 			var startTime, endTime;
@@ -568,31 +572,31 @@
 				var speedBps = (bitsLoaded / duration).toFixed(2);
 				var speedKbps = (speedBps / 1024).toFixed(2);
 				var speedMbps = (speedKbps / 1024).toFixed(2).toString();
-				console.log('clientNetSpeed : ', clientNetSpeed);
 
-				var a = setInterval(function() {
-					var frameRate = localStorage.getItem('frameRate');
-					if (frameRate) {
-						clearInterval(a);
-						$('.bandwidth-framerate-wrap').css('display', 'block');
-						$('.framerate').text(
-							'Your video quality is (' + frameRate + 'fps)'
-						);
-						$('.bandwidth').html(
-							'Your internet speed (' + speedMbps + 'Mbps)'
-						);
-						$('.client-bandwidth').text(
-							'Client internet speed is (' +
-								clientNetSpeed +
-								'Mbps)'
-						);
-					}
-				}, 500);
+				// var intervalForGettingFramerate = setInterval(function() {
+				// 	var frameRate = localStorage.getItem('frameRate');
+				// 	if (frameRate) {
+                //         clearInterval(intervalForGettingFramerate);
+				// 		$('.bandwidth-framerate-wrap').css('display', 'block');
+				// 		$('.framerate').text(
+				// 			'Your video quality is (' + frameRate + 'fps)'
+				// 		);
+				// 		$('.bandwidth').html(
+				// 			'Your internet speed (' + speedMbps + 'Mbps)'
+				// 		);
+				// 		$('.client-bandwidth').text(
+				// 			'Client internet speed is (' +
+				// 				clientNetSpeed +
+				// 				'Mbps)'
+				// 		);
+				// 	}
+				// }, 500);
 			}
 		}
-
+        setInternetSpeed()
 		// Join call
 		function joinConversation(conversationId) {
+			
 			$.ajax({
 				url: baseURL + 'api/join',
 				type: 'GET',
@@ -601,8 +605,9 @@
 					token: ''
 				}),
 				success: function(data) {
+
 					if (data[0].conversationtoken !== '') {
-						$('.bandwidth-framerate-wrap').css('display', 'block');
+
 						$('#iframeCall').attr(
 							'src',
 							'callbasic/index.html?room=' +
@@ -614,10 +619,7 @@
 							'/callbasic/index.html/?room=' +
 							data[0].conversationtoken;
 
-						console.log(
-							'data[0].conversationtoken : ',
-							data[0].conversationtoken
-						);
+						
 					}
 				},
 				error: function(data) {
@@ -635,7 +637,10 @@
 					conversationID: conversationId,
 					token: ''
 				}),
-				success: function(data) {},
+				success: function(data) {
+                   
+                    
+                },
 				error: function(data) {
 					console.error(JSON.stringify(data, null, 4));
 				}

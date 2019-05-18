@@ -71,10 +71,10 @@
 						allow="geolocation; microphone; camera"
 						src=""
 					></iframe>
-					<div class="bandwidth-framerate-wrap">
+					<!-- <div class="bandwidth-framerate-wrap">
 						<p class="bandwidth"></p>
 						<p class="framerate"></p>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -242,7 +242,8 @@
 						// .5 sec Interval
 						updateInterval = setInterval(function() {
 							updateRoom(patientData.id);
-						}, 500);
+                        }, 500);
+                        
 					},
 					error: function(data) {
 						window.location.replace('error.html?p=enterRoom');
@@ -252,7 +253,7 @@
 
 			function setInternetSpeed(conversationID) {
 				var imageAddr =
-					'https://shajal-kumer.github.io/bw/Beeldzorg/Images/img.jpg' +
+					'../Images/img.jpg' +
 					'?n=' +
 					Math.random();
 				var startTime, endTime;
@@ -275,29 +276,20 @@
 
 					var framerateInterval = setInterval(function() {
 						var frameRate = localStorage.getItem('frameRate');
-						console.log('frameRate : ', frameRate);
 
 						if (frameRate) {
 							clearInterval(framerateInterval);
-							$('.bandwidth-framerate-wrap').css(
-								'display',
-								'block'
-							);
-							$('.framerate').text(
-								'Your video quality is (' + frameRate + 'fps)'
-							);
-							$('.bandwidth').html(
-								'Your internetspeed  ' + speedMbps + 'Mbps'
-							);
-							console.log('conversationID : ', conversationID);
-							console.log(
-								'conversationID type : ',
-								typeof conversationID
-							);
-							console.log('speedMbps : ', speedMbps);
-							console.log('speedMbps typeof: ', typeof speedMbps);
-							console.log('frameRate : ', frameRate);
-							console.log('frameRate typeof: ', typeof frameRate);
+							// $('.bandwidth-framerate-wrap').css(
+							// 	'display',
+							// 	'block'
+							// );
+							// $('.framerate').text(
+							// 	'Your video quality is (' + frameRate + 'fps)'
+							// );
+							// $('.bandwidth').html(
+							// 	'Your internetspeed  ' + speedMbps + 'Mbps'
+							// );
+							
 
 							$.ajax({
 								url: baseULR + '/api/speed',
@@ -320,7 +312,7 @@
 			}
 			// update Rooms
 			function updateRoom(conversationId) {
-				//  alert(baseULR + '/api/updateRoom');
+				
 
 				$.ajax({
 					url: baseULR + '/api/updateRoom',
@@ -332,7 +324,7 @@
 							conversationtoken: patientData.conversationtoken,
 							clientname: patientData.clientname
 						};
-
+						
 						startup(pdata);
 
 						if ($.trim(patientData.conversationtoken) !== '') {
@@ -350,8 +342,11 @@
 							);
 
 							$('#btnJoinCall')[0].click();
+                            // Chat panel body height set
+                            var contentHeight = $('#iframeCall').height();
+                            $('#Elchat .panel-body').css('height', contentHeight - 150);
+                            
 							clearInterval(updateInterval);
-
 							checkFinished(conversationId);
 
 							$('.info-left-icon').css('display', 'none');
@@ -367,7 +362,7 @@
 				});
 			}
 
-			// check finsihed
+			// check finished
 			function checkFinished(conversationId) {
 				resetExpireTime();
 				$.ajax({

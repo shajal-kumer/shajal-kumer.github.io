@@ -225,8 +225,8 @@ img#Foto {
 #ElchatlistaOnline {
 	display: none !important;
 }
-.panel-body {
-	height: 320px;
+
+#Elchat .panel-body {
 	padding-bottom: 0px !important;
 }
 .panel-body.message-panel-body {
