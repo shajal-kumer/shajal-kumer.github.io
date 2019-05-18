@@ -11,22 +11,22 @@
         // }, 10);
 
         // Select the node that will be observed for mutations
-        var chatList = document.querySelector('.doctor-chatlist');
+        var doctorChatList = document.querySelector('.doctor-chatlist');
 
         // Options for the observer (which mutations to observe)
-        var configChatList = { attributes: true, childList: true, subtree: true };
+        var doctorConfig = { attributes: true, childList: true, subtree: true };
 
         // Callback function to execute when mutations are observed
-        var callback = function (mutationsList, observer) {
+        var doctorCallback = function (mutationsList, observer) {
             for (var mutation of mutationsList) {
                 $('.doctor-panel-body').scrollTop(10000);
             }
         };
         // Create an observer instance linked to the callback function
-        var observer = new MutationObserver(callback);
+        var doctorObserver = new MutationObserver(doctorCallback);
 
         // Start observing the target node for configured mutations
-        observer.observe(chatList, configChatList);
+        doctorObserver.observe(doctorChatList, doctorConfig);
         
         // Chat panel body height set
         var contentHeight = $(".popup .content").height();

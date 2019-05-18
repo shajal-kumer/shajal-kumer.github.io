@@ -3,22 +3,22 @@
 
 	jQuery(document).ready(function($) {
 		// Select the node that will be observed for mutations
-		var targetNode = document.querySelector('.client-chatlist');
+		var clientChatlist = document.querySelector('.client-chatlist');
 
 		// Options for the observer (which mutations to observe)
-		var config = { attributes: true, childList: true, subtree: true };
+		var clientConfig = { attributes: true, childList: true, subtree: true };
 
 		// Callback function to execute when mutations are observed
-		var callback = function(mutationsList, observer) {
+		var clientCallback = function(mutationsList, observer) {
 			for (var mutation of mutationsList) {
 				$('.client-panel-body').scrollTop(10000);
 			}
 		};
 		// Create an observer instance linked to the callback function
-		var observer = new MutationObserver(callback);
+		var clientObserver = new MutationObserver(clientCallback);
 
 		// Start observing the target node for configured mutations
-		observer.observe(targetNode, config);
+		clientObserver.observe(clientChatlist, clientConfig);
 
 		$('.chat__box--btn').on('click', function() {
 			$('.chat__box-field').toggleClass('open');
