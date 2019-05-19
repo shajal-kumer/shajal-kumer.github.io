@@ -154,7 +154,6 @@
 					type: 'GET',
 					data: { roomid: roomid, token: token },
 					success: function(data) {
-						console.log();
 
 						if (null != data && data.length > 0) {
 							// Don't Show already displayed messages
@@ -235,7 +234,6 @@
 						setLocalStorage('conversationId', patientData.id);
 						setLocalStorage('clientname', patientData.clientname);
 						resetExpireTime();
-						console.log('Hello');
 						setInternetSpeed(patientData.id);
 
 						$('#patientCount').text(patientData.inline);
@@ -300,7 +298,6 @@
 									framerate: frameRate
 								}),
 								success: function(data) {
-									console.log(data);
 								},
 								error: function(e) {
 									alert(e);

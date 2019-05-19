@@ -5,19 +5,12 @@
 	var baseURL = 'https://nettie.azurewebsites.net/';
 
 	jQuery(document).ready(function($) {
-		// setInterval(function() {
-		// 	var height = $('.chatpluginchat').height();
-		// 	$('.panel-body').scrollTop(height);
-        // }, 10);
-
         
         // Chat panel body height set
         var contentHeight = $(".popup .content").height();
         $('#Elchat .panel-body').css('height', contentHeight - 150)
        
         
-        
-
         // Dont reload the page or form preventDefault
 		$('#form1').keydown(function(event) {
 			if (event.keyCode === 13) {
@@ -202,8 +195,6 @@
 				var li = event.target;
 				if (event.target.tagName === 'LI') {
 					rID = $(li).attr('data-id');
-					console.log('room id on click : ', rID);
-					console.log(typeof rID);
 					getWaitingQueue(rID, 1);
 					getMessages(rID, 1);
 					localStorage.setItem('activeRoomNumber', rID);
@@ -506,12 +497,12 @@
 					userid: 'testuser'
 				}),
 				success: function(data) {
+                
 					startup(data[0].conversationtoken);
 					localStorage.setItem(
 						'Doctorconversationtoken',
 						data[0].conversationtoken
 					);
-					console.log('data: ', data[0].speed);
 
 					if (data[0].conversationtoken !== '') {
 						$('#iframeCall').attr(
@@ -555,7 +546,6 @@
 				var speedBps = (bitsLoaded / duration).toFixed(2);
 				var speedKbps = (speedBps / 1024).toFixed(2);
 				var speedMbps = (speedKbps / 1024).toFixed(2).toString();
-                console.log('speedMbps : ', speedMbps);
 
 				// var intervalForGettingFramerate = setInterval(function() {
 				// 	var frameRate = localStorage.getItem('frameRate');
@@ -589,7 +579,6 @@
 					token: ''
 				}),
 				success: function(data) {
-
 					if (data[0].conversationtoken !== '') {
 
 						$('#iframeCall').attr(
