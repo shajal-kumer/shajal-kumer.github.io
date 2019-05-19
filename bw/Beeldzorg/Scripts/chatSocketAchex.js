@@ -91,6 +91,23 @@ function callChat(token) {
 		$('#' + htmlDOM.btnEnviar).click(function() {
 			EnviarMensaje();
 		});
+		// Select the node that will be observed for mutations
+		var doctorChatList = document.querySelector('.doctor-chatlist');
+
+		// Options for the observer (which mutations to observe)
+		var doctorConfig = { attributes: true, childList: true, subtree: true };
+
+		// Callback function to execute when mutations are observed
+		var doctorCallback = function(mutationsList, observer) {
+			for (var mutation of mutationsList) {
+				$('.doctor-panel-body').scrollTop(10000);
+			}
+		};
+		// Create an observer instance linked to the callback function
+		var doctorObserver = new MutationObserver(doctorCallback);
+
+		// Start observing the target node for configured mutations
+		doctorObserver.observe(doctorChatList, doctorConfig);
 	}
 	CrearChat();
 
