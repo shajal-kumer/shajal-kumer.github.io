@@ -1,70 +1,150 @@
 <html>
 	<head>
-		<style>
-			.videogrid {
-				height: 100%;
-			}
-
-			.video-wrap {
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				width: 30%;
-				height: auto !important;
-				border-radius: 10px;
-				z-index: 999;
-			}
-
-			.video-wrap video {
-				width: 100%;
-				border-radius: 10px;
-			}
-
-			.videogrid .video-wrap:nth-child(2) video {
-				object-fit: fill;
-				height: 100%;
-			}
-
-			.videogrid .video-wrap:nth-child(2) {
-				position: relative;
-				right: auto;
-				bottom: auto;
-				width: 100%;
-				height: 100%;
-				border-radius: 10px;
-				z-index: -1;
-			}
-
-			.video-info {
-				position: absolute;
-				right: 0;
-				bottom: 0;
-				z-index: 99999;
-				color: #fff;
-				background-color: #4472c4;
-				padding: 0 5px;
-				border-radius: 3px;
-			}
-
-			.video-info p {
-				margin: 5px 0;
-			}
-
-			@media screen and (max-width: 767px) {
-				.videogrid .video-wrap:nth-child(2) {
-					height: 100% !important;
-				}
-
-				.videogrid .video-wrap:nth-child(2) video {
-					object-fit: fill;
-					height: 100%;
-				}
-
-				.videogrid .video-wrap:nth-child(1) {
-					width: 40%;
-				}
-			}
-		</style>
+        <style>
+            .videogrid {
+                height: 100%;
+            }
+        
+            .video-wrap {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 30%;
+                height: 100%;
+                border-radius: 10px;
+                z-index: 999;
+            }
+        
+            .videogrid .video-wrap video {
+                object-fit: fill;
+                height: 100%;
+                width: 100%;
+                border-radius: 10px;
+            }
+        
+            .videogrid .video-wrap:nth-child(1) {
+                height: auto;
+            }
+        
+            .videogrid .video-wrap:nth-child(1) video {
+                height: auto;
+            }
+        
+            .videogrid.videogrid-2 .video-wrap:nth-child(2) {
+                right: auto;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        
+            .videogrid.videogrid-3 .video-wrap:nth-child(2) {
+                right: auto;
+                left: 0;
+                width: 50%;
+                z-index: -1;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0;
+            }
+        
+            .videogrid.videogrid-3 .video-wrap:nth-child(2) video {
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0;
+            }
+        
+            .videogrid.videogrid-3 .video-wrap:nth-child(3) {
+                left: 50%;
+                width: 50%;
+                z-index: -1;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0;
+            }
+        
+            .videogrid.videogrid-3 .video-wrap:nth-child(3) video {
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0;
+            }
+        
+            .video-info {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                z-index: 99999;
+                color: #fff;
+                background-color: #4472c4;
+                padding: 0 5px;
+                border-radius: 3px;
+            }
+        
+            .video-info p {
+                margin: 5px 0;
+            }
+        
+            .share-screen {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        
+            .share-screen button {
+                background: red;
+                border: navajowhite;
+                padding: 10px 15px;
+                color: #fff;
+                margin: 0;
+                border-radius: 4px;
+            }
+        
+            .share-screen button:hover {
+                cursor: pointer;
+            }
+        
+            @media screen and (max-width: 767px) {
+                .videogrid .video-wrap:nth-child(2) {
+                    height: 100% !important;
+                }
+        
+                .videogrid .video-wrap:nth-child(2) video {
+                    object-fit: fill;
+                    height: 100%;
+                }
+        
+                .videogrid .video-wrap:nth-child(1) {
+                    width: 40%;
+                }
+        
+                /* For 3 call */
+                .videogrid.videogrid-3 .video-wrap:nth-child(2) {
+                    right: auto;
+                    left: 0;
+                    width: 100%;
+                    height: 50%;
+                    z-index: -1;
+        
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+        
+                .videogrid.videogrid-3 .video-wrap:nth-child(2) video {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+        
+                .videogrid.videogrid-3 .video-wrap:nth-child(3) {
+                    left: 0;
+                    top: 50%;
+                    width: 100%;
+                    height: 50%;
+                    z-index: -1;
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+        
+                .videogrid.videogrid-3 .video-wrap:nth-child(3) video {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+            }
+        </style>
 	</head>
 	<body>
 		<div id="app"></div>
