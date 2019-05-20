@@ -32,8 +32,10 @@
 		});
 
 		$('.popup .close').on('click', function() {
-			$('.chatpluginchat').html('');
-			$('.bandwidth-framerate-wrap').css('display', 'none');
+            $('.chatpluginchat').html('');
+            if ($('.chat__box-field').hasClass('open')) {
+                $('.chat__box-field').css('display', 'none');
+            }
 		});
 
 		var doctorIframeHeight = $('#iframeCall').height();
@@ -463,13 +465,15 @@
 					$('.call-client').on('click', function(e) {
 						if (e.target.classList.contains('start-call')) {
 							startConversation($(e.target).attr('data-conId'));
-						}
+                        }
+                        $('.chat__box-field').css('display', 'block');
 					});
 					// Join video call
 					$('.adjust-Video').on('click', function(e) {
 						if (e.target.classList.contains('adjust-Video')) {
 							joinConversation($(e.target).attr('data-conId'));
-						}
+                        }
+                        $('.chat__box-field').css('display', 'block');
 					});
 
 					// Stop Call
