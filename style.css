@@ -568,3 +568,10 @@ a.wl-read-more{
     color: #DD5144;
     border-color: #DD5144
 }
+
+#my-form-status {
+    color: green;
+    background: #ddd;
+    display: inline-block;
+    padding: 13px 20px;
+}
