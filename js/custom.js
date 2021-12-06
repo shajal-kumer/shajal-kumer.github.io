@@ -109,10 +109,13 @@
 
         /*-------End PARALAX js--------*/
 
+	   /*----------AJAX FORM js-------------------*/    
+	$("#ajax-contact").on("click", function(){
+		$('#my-form-status').delay(5000).fadeOut('slow');
 
+	})
 
-$('#my-form-status').delay(5000).fadeOut('slow');
-
+ /*-------End AJAX FORM js--------*/
 
 
 
