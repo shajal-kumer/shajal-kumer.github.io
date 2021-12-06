@@ -111,7 +111,7 @@
 
 
 
-
+$('#my-form-status').delay(5000).fadeOut('slow');
 
 
 
